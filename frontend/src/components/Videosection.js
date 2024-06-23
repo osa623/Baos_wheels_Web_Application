@@ -142,13 +142,16 @@ const Videosection = () => {
             Baos Wheels
           </span>
      </div>
-  <div className='flex flex-grow w-[75vw] items-start justify-start'>
-    <div className='flex flex-row flex-wrap w-full  h-[100vh] justify-start items-start '>
+  <div className='flex flex-grow w-full items-start justify-start'>
+
+
+    <div className='flex flex-row w-[60vw]  h-[100vh] justify-start items-start '>
+      
 
       {/* Rendering TikTok videos */}
 
       {/* TikTok embed HTML */}
-      <div className='flex w-[20vw] h-full scale-75'>
+      <div className='flex w-[20vw] h-full scale-75 hover:scale-90 transition duration-500'>
         <blockquote className="tiktok-embed mx-auto full rounded-2xl" cite="https://www.tiktok.com/@baos_623/video/7382543004868922642" data-aos='zoom-in' data-aos-duration='5000' data-aos-delay='100' data-video-id="7382543004868922642" style={{ maxWidth: '605px', minWidth: '325px' }}>
           <section>
             <a target="_blank" title="@baos_623" href="https://www.tiktok.com/@baos_623?refer=embed">@baos_623</a> Hybrid Technology ගැන කෙටියෙන් 💥⚙️🚗
@@ -194,7 +197,7 @@ const Videosection = () => {
         </blockquote>
       </div>
 
-      <div className='flex w-[20vw] h-full scale-75'>
+      <div className='flex w-[20vw] h-full scale-75 hover:scale-90 transition duration-500'>
         <blockquote className="tiktok-embed mx-auto rounded-2xl" cite="https://www.tiktok.com/@baos_623/video/7382543004868922642" data-aos='zoom-in' data-aos-duration='8000' data-aos-delay='150' data-video-id="7382543004868922642" style={{ maxWidth: '605px', minWidth: '325px' }}>
           <section>
             <a target="_blank" title="@baos_623" href="https://www.tiktok.com/@baos_623?refer=embed">@baos_623</a> Hybrid Technology ගැන කෙටියෙන් 💥⚙️🚗
@@ -239,7 +242,7 @@ const Videosection = () => {
           </section>
         </blockquote>
       </div>
-      <div className='flex w-[20vw] h-full scale-75' >
+      <div className='flex w-[20vw] h-full scale-75 hover:scale-90 transition duration-500' >
         <blockquote className="tiktok-embed mx-auto rounded-2xl" cite="https://www.tiktok.com/@baos_623/video/7382543004868922642" data-video-id="7382543004868922642"  data-aos='zoom-in' data-aos-duration='10000' data-aos-delay='200' style={{ maxWidth: '605px', minWidth: '325px' }}>
           <section>
             <a target="_blank" title="@baos_623" href="https://www.tiktok.com/@baos_623?refer=embed">@baos_623</a> Hybrid Technology ගැන කෙටියෙන් 💥⚙️🚗
@@ -284,10 +287,19 @@ const Videosection = () => {
           </section>
         </blockquote>
       </div>
-
       <script async src="https://www.tiktok.com/embed.js"></script>
-
     </div>
+
+    <div className='flex flex-col w-[40vw] h-[100vh] items-center justify-start p-8'>
+  <h2 className='flex text-5xl font-russoone lg:w-full text-primary mb-4 text-center'>
+    Our Tiktok Gallery
+  </h2>
+  <p className='text-sm text-center w-full lg:w-[30vw] text-primary font-kanit'>
+    To display the TikTok embed views in a horizontal, categorical layout using Tailwind CSS and React, you can update your layout to make use of flex properties. Here’s how you can modify your code to achieve this:
+  </p>
+</div>
+
+
   </div>
 </div>
 
