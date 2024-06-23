@@ -90,7 +90,7 @@ const Reviewsection = () => {
           <Note data-aos='zoom-out'>Explore by Brand Names</Note>
         </div>
         <div className='flex lg:w-[95vw] lg:h-[30vh] sm:w-[20vw] sm:h-[50vh] items-center justify-center'>
-        <div className='flex flex-wrap lg:w-inherit  gap-5'>
+        <div className='flex flex-wrap lg:w-inherit  gap-5 cursor-pointer'>
           {Autobrands.map((brand, index) => (
             <BrandCard key={index} data-aos='fade-up'>
               <img 

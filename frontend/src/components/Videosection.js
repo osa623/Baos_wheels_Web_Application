@@ -28,7 +28,7 @@ const Videosection = () => {
 
 
   return (
-    <div className='relative flex-grow w-full bg-baseextra1 rounded-md  hover:transition duration-1000 ease-in-out' style={{
+    <div className='relative flex-grow w-full  bg-baseextra1 rounded-md  hover:transition duration-1000 ease-in-out' style={{
     
     }}>
 
@@ -132,27 +132,165 @@ const Videosection = () => {
       </Marquee>
       </div> 
 
-      <div class="whitespace-nowrap w-[60vw] mx-auto pt-5 space-x-2 text-center" data-aos="zoom-in">
-  <span class="text-primary text-lg h-[70vh] font-kanit pt-5">
-    Some of Our Favourite Automobile Videos from  
-  </span>
-  <span class="text-primary text-lg font-extrabold font-russoone">
-    Baos Wheels
-  </span>
-</div>
 
+<div className='relative h-full w-full'>
+     <div class="whitespace-nowrap w-[60vw] mx-auto mt-4 space-x-2 text-center" data-aos="zoom-in">
+          <span class="text-primary text-lg h-[70vh] font-kanit ">
+            Some of Our Favourite Automobile Videos from  
+          </span>
+          <span class="text-primary text-lg font-extrabold font-russoone">
+            Baos Wheels
+          </span>
+     </div>
+  <div className='flex flex-grow w-[75vw] items-start justify-start'>
+    <div className='flex flex-row flex-wrap w-full  h-[100vh] justify-start items-start '>
 
+      {/* Rendering TikTok videos */}
 
-  <div className='relative flex-grow h-[75vh] w-full justify-start items-start'>
-  <div className='flex flex-grow h-full w-[50vw] pl-20' data-aos='fade-right'>
-    <blockquote className="tiktok-embed mx-auto rounded-xl" cite="https://www.tiktok.com/@baos_623" data-unique-id="baos_623" data-embed-from="embed_page" data-embed-type="creator" style={{ maxWidth: '780px', minWidth: '288px' }}>
-      <section>
-        <a href="https://www.tiktok.com/@baos_623?refer=creator_embed" target="_blank" rel="noopener noreferrer">@baos_623</a>
-      </section>
-    </blockquote>
-    <script async src="https://www.tiktok.com/embed.js"></script>
+      {/* TikTok embed HTML */}
+      <div className='flex w-[20vw] h-full scale-75'>
+        <blockquote className="tiktok-embed mx-auto full rounded-2xl" cite="https://www.tiktok.com/@baos_623/video/7382543004868922642" data-aos='zoom-in' data-aos-duration='5000' data-aos-delay='100' data-video-id="7382543004868922642" style={{ maxWidth: '605px', minWidth: '325px' }}>
+          <section>
+            <a target="_blank" title="@baos_623" href="https://www.tiktok.com/@baos_623?refer=embed">@baos_623</a> Hybrid Technology ගැන කෙටියෙන් 💥⚙️🚗
+            <a title="hybrid" target="_blank" href="https://www.tiktok.com/tag/hybrid?refer=embed">#hybrid</a>
+            <a title="technology" target="_blank" href="https://www.tiktok.com/tag/technology?refer=embed">#technology</a>
+            <a title="cars" target="_blank" href="https://www.tiktok.com/tag/cars?refer=embed">#cars</a>
+            <a title="battery" target="_blank" href="https://www.tiktok.com/tag/battery?refer=embed">#battery</a>
+            <a title="engine" target="_blank" href="https://www.tiktok.com/tag/engine?refer=embed">#engine</a>
+            <a title="fuel" target="_blank" href="https://www.tiktok.com/tag/fuel?refer=embed">#fuel</a>
+            <a title="efficiency" target="_blank" href="https://www.tiktok.com/tag/efficiency?refer=embed">#efficiency</a>
+            <a title="energy" target="_blank" href="https://www.tiktok.com/tag/energy?refer=embed">#energy</a>
+            <a title="saving" target="_blank" href="https://www.tiktok.com/tag/saving?refer=embed">#saving</a>
+            <a title="how" target="_blank" href="https://www.tiktok.com/tag/how?refer=embed">#how</a>
+            <a title="this" target="_blank" href="https://www.tiktok.com/tag/this?refer=embed">#this</a>
+            <a title="thing" target="_blank" href="https://www.tiktok.com/tag/thing?refer=embed">#thing</a>
+            <a title="works" target="_blank" href="https://www.tiktok.com/tag/works?refer=embed">#works</a>
+            <a title="?" target="_blank" href="https://www.tiktok.com/tag/%3F?refer=embed">#?</a>
+            <a title="toyota" target="_blank" href="https://www.tiktok.com/tag/toyota?refer=embed">#toyota</a>
+            <a title="prius" target="_blank" href="https://www.tiktok.com/tag/prius?refer=embed">#prius</a>
+            <a title="mitsubishi" target="_blank" href="https://www.tiktok.com/tag/mitsubishi?refer=embed">#mitsubishi</a>
+            <a title="outlander" target="_blank" href="https://www.tiktok.com/tag/outlander?refer=embed">#outlander</a>
+            <a title="phev" target="_blank" href="https://www.tiktok.com/tag/phev?refer=embed">#phev</a>
+            <a title="plug" target="_blank" href="https://www.tiktok.com/tag/plug?refer=embed">#plug</a>
+            <a title="in" target="_blank" href="https://www.tiktok.com/tag/in?refer=embed">#in</a>
+            <a title="hybrid" target="_blank" href="https://www.tiktok.com/tag/hybrid?refer=embed">#hybrid</a>
+            <a title="baoswheels" target="_blank" href="https://www.tiktok.com/tag/baoswheels?refer=embed">#baoswheels</a>
+            <a title="japan" target="_blank" href="https://www.tiktok.com/tag/japan?refer=embed">#japan</a>
+            <a title="srilanka" target="_blank" href="https://www.tiktok.com/tag/srilanka?refer=embed">#srilanka</a>
+            <a title="cartech" target="_blank" href="https://www.tiktok.com/tag/cartech?refer=embed">#cartech</a>
+            <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a>
+            <a title="foryou" target="_blank" href="https://www.tiktok.com/tag/foryou?refer=embed">#foryou</a>
+            <a title="trending" target="_blank" href="https://www.tiktok.com/tag/trending?refer=embed">#trending</a>
+            <a title="engineering" target="_blank" href="https://www.tiktok.com/tag/engineering?refer=embed">#engineering</a>
+            <a title="shorts" target="_blank" href="https://www.tiktok.com/tag/shorts?refer=embed">#shorts</a>
+            <a title="viral" target="_blank" href="https://www.tiktok.com/tag/viral?refer=embed">#viral</a>
+            <a title="tech" target="_blank" href="https://www.tiktok.com/tag/tech?refer=embed">#tech</a>
+            <a title="car" target="_blank" href="https://www.tiktok.com/tag/car?refer=embed">#car</a>
+            <a title="brake" target="_blank" href="https://www.tiktok.com/tag/brake?refer=embed">#brake</a>
+            <a title="comfortable" target="_blank" href="https://www.tiktok.com/tag/comfortable?refer=embed">#comfortable</a>
+            <a title="carreview" target="_blank" href="https://www.tiktok.com/tag/carreview?refer=embed">#carreview</a>
+            <a target="_blank" title="♬ original sound - Baos Wheels" href="https://www.tiktok.com/music/original-sound-7382543070937533185?refer=embed">♬ original sound - Baos Wheels</a>
+          </section>
+        </blockquote>
+      </div>
+
+      <div className='flex w-[20vw] h-full scale-75'>
+        <blockquote className="tiktok-embed mx-auto rounded-2xl" cite="https://www.tiktok.com/@baos_623/video/7382543004868922642" data-aos='zoom-in' data-aos-duration='8000' data-aos-delay='150' data-video-id="7382543004868922642" style={{ maxWidth: '605px', minWidth: '325px' }}>
+          <section>
+            <a target="_blank" title="@baos_623" href="https://www.tiktok.com/@baos_623?refer=embed">@baos_623</a> Hybrid Technology ගැන කෙටියෙන් 💥⚙️🚗
+            <a title="hybrid" target="_blank" href="https://www.tiktok.com/tag/hybrid?refer=embed">#hybrid</a>
+            <a title="technology" target="_blank" href="https://www.tiktok.com/tag/technology?refer=embed">#technology</a>
+            <a title="cars" target="_blank" href="https://www.tiktok.com/tag/cars?refer=embed">#cars</a>
+            <a title="battery" target="_blank" href="https://www.tiktok.com/tag/battery?refer=embed">#battery</a>
+            <a title="engine" target="_blank" href="https://www.tiktok.com/tag/engine?refer=embed">#engine</a>
+            <a title="fuel" target="_blank" href="https://www.tiktok.com/tag/fuel?refer=embed">#fuel</a>
+            <a title="efficiency" target="_blank" href="https://www.tiktok.com/tag/efficiency?refer=embed">#efficiency</a>
+            <a title="energy" target="_blank" href="https://www.tiktok.com/tag/energy?refer=embed">#energy</a>
+            <a title="saving" target="_blank" href="https://www.tiktok.com/tag/saving?refer=embed">#saving</a>
+            <a title="how" target="_blank" href="https://www.tiktok.com/tag/how?refer=embed">#how</a>
+            <a title="this" target="_blank" href="https://www.tiktok.com/tag/this?refer=embed">#this</a>
+            <a title="thing" target="_blank" href="https://www.tiktok.com/tag/thing?refer=embed">#thing</a>
+            <a title="works" target="_blank" href="https://www.tiktok.com/tag/works?refer=embed">#works</a>
+            <a title="?" target="_blank" href="https://www.tiktok.com/tag/%3F?refer=embed">#?</a>
+            <a title="toyota" target="_blank" href="https://www.tiktok.com/tag/toyota?refer=embed">#toyota</a>
+            <a title="prius" target="_blank" href="https://www.tiktok.com/tag/prius?refer=embed">#prius</a>
+            <a title="mitsubishi" target="_blank" href="https://www.tiktok.com/tag/mitsubishi?refer=embed">#mitsubishi</a>
+            <a title="outlander" target="_blank" href="https://www.tiktok.com/tag/outlander?refer=embed">#outlander</a>
+            <a title="phev" target="_blank" href="https://www.tiktok.com/tag/phev?refer=embed">#phev</a>
+            <a title="plug" target="_blank" href="https://www.tiktok.com/tag/plug?refer=embed">#plug</a>
+            <a title="in" target="_blank" href="https://www.tiktok.com/tag/in?refer=embed">#in</a>
+            <a title="hybrid" target="_blank" href="https://www.tiktok.com/tag/hybrid?refer=embed">#hybrid</a>
+            <a title="baoswheels" target="_blank" href="https://www.tiktok.com/tag/baoswheels?refer=embed">#baoswheels</a>
+            <a title="japan" target="_blank" href="https://www.tiktok.com/tag/japan?refer=embed">#japan</a>
+            <a title="srilanka" target="_blank" href="https://www.tiktok.com/tag/srilanka?refer=embed">#srilanka</a>
+            <a title="cartech" target="_blank" href="https://www.tiktok.com/tag/cartech?refer=embed">#cartech</a>
+            <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a>
+            <a title="foryou" target="_blank" href="https://www.tiktok.com/tag/foryou?refer=embed">#foryou</a>
+            <a title="trending" target="_blank" href="https://www.tiktok.com/tag/trending?refer=embed">#trending</a>
+            <a title="engineering" target="_blank" href="https://www.tiktok.com/tag/engineering?refer=embed">#engineering</a>
+            <a title="shorts" target="_blank" href="https://www.tiktok.com/tag/shorts?refer=embed">#shorts</a>
+            <a title="viral" target="_blank" href="https://www.tiktok.com/tag/viral?refer=embed">#viral</a>
+            <a title="tech" target="_blank" href="https://www.tiktok.com/tag/tech?refer=embed">#tech</a>
+            <a title="car" target="_blank" href="https://www.tiktok.com/tag/car?refer=embed">#car</a>
+            <a title="brake" target="_blank" href="https://www.tiktok.com/tag/brake?refer=embed">#brake</a>
+            <a title="comfortable" target="_blank" href="https://www.tiktok.com/tag/comfortable?refer=embed">#comfortable</a>
+            <a title="carreview" target="_blank" href="https://www.tiktok.com/tag/carreview?refer=embed">#carreview</a>
+            <a target="_blank" title="♬ original sound - Baos Wheels" href="https://www.tiktok.com/music/original-sound-7382543070937533185?refer=embed">♬ original sound - Baos Wheels</a>
+          </section>
+        </blockquote>
+      </div>
+      <div className='flex w-[20vw] h-full scale-75' >
+        <blockquote className="tiktok-embed mx-auto rounded-2xl" cite="https://www.tiktok.com/@baos_623/video/7382543004868922642" data-video-id="7382543004868922642"  data-aos='zoom-in' data-aos-duration='10000' data-aos-delay='200' style={{ maxWidth: '605px', minWidth: '325px' }}>
+          <section>
+            <a target="_blank" title="@baos_623" href="https://www.tiktok.com/@baos_623?refer=embed">@baos_623</a> Hybrid Technology ගැන කෙටියෙන් 💥⚙️🚗
+            <a title="hybrid" target="_blank" href="https://www.tiktok.com/tag/hybrid?refer=embed">#hybrid</a>
+            <a title="technology" target="_blank" href="https://www.tiktok.com/tag/technology?refer=embed">#technology</a>
+            <a title="cars" target="_blank" href="https://www.tiktok.com/tag/cars?refer=embed">#cars</a>
+            <a title="battery" target="_blank" href="https://www.tiktok.com/tag/battery?refer=embed">#battery</a>
+            <a title="engine" target="_blank" href="https://www.tiktok.com/tag/engine?refer=embed">#engine</a>
+            <a title="fuel" target="_blank" href="https://www.tiktok.com/tag/fuel?refer=embed">#fuel</a>
+            <a title="efficiency" target="_blank" href="https://www.tiktok.com/tag/efficiency?refer=embed">#efficiency</a>
+            <a title="energy" target="_blank" href="https://www.tiktok.com/tag/energy?refer=embed">#energy</a>
+            <a title="saving" target="_blank" href="https://www.tiktok.com/tag/saving?refer=embed">#saving</a>
+            <a title="how" target="_blank" href="https://www.tiktok.com/tag/how?refer=embed">#how</a>
+            <a title="this" target="_blank" href="https://www.tiktok.com/tag/this?refer=embed">#this</a>
+            <a title="thing" target="_blank" href="https://www.tiktok.com/tag/thing?refer=embed">#thing</a>
+            <a title="works" target="_blank" href="https://www.tiktok.com/tag/works?refer=embed">#works</a>
+            <a title="?" target="_blank" href="https://www.tiktok.com/tag/%3F?refer=embed">#?</a>
+            <a title="toyota" target="_blank" href="https://www.tiktok.com/tag/toyota?refer=embed">#toyota</a>
+            <a title="prius" target="_blank" href="https://www.tiktok.com/tag/prius?refer=embed">#prius</a>
+            <a title="mitsubishi" target="_blank" href="https://www.tiktok.com/tag/mitsubishi?refer=embed">#mitsubishi</a>
+            <a title="outlander" target="_blank" href="https://www.tiktok.com/tag/outlander?refer=embed">#outlander</a>
+            <a title="phev" target="_blank" href="https://www.tiktok.com/tag/phev?refer=embed">#phev</a>
+            <a title="plug" target="_blank" href="https://www.tiktok.com/tag/plug?refer=embed">#plug</a>
+            <a title="in" target="_blank" href="https://www.tiktok.com/tag/in?refer=embed">#in</a>
+            <a title="hybrid" target="_blank" href="https://www.tiktok.com/tag/hybrid?refer=embed">#hybrid</a>
+            <a title="baoswheels" target="_blank" href="https://www.tiktok.com/tag/baoswheels?refer=embed">#baoswheels</a>
+            <a title="japan" target="_blank" href="https://www.tiktok.com/tag/japan?refer=embed">#japan</a>
+            <a title="srilanka" target="_blank" href="https://www.tiktok.com/tag/srilanka?refer=embed">#srilanka</a>
+            <a title="cartech" target="_blank" href="https://www.tiktok.com/tag/cartech?refer=embed">#cartech</a>
+            <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a>
+            <a title="foryou" target="_blank" href="https://www.tiktok.com/tag/foryou?refer=embed">#foryou</a>
+            <a title="trending" target="_blank" href="https://www.tiktok.com/tag/trending?refer=embed">#trending</a>
+            <a title="engineering" target="_blank" href="https://www.tiktok.com/tag/engineering?refer=embed">#engineering</a>
+            <a title="shorts" target="_blank" href="https://www.tiktok.com/tag/shorts?refer=embed">#shorts</a>
+            <a title="viral" target="_blank" href="https://www.tiktok.com/tag/viral?refer=embed">#viral</a>
+            <a title="tech" target="_blank" href="https://www.tiktok.com/tag/tech?refer=embed">#tech</a>
+            <a title="car" target="_blank" href="https://www.tiktok.com/tag/car?refer=embed">#car</a>
+            <a title="brake" target="_blank" href="https://www.tiktok.com/tag/brake?refer=embed">#brake</a>
+            <a title="comfortable" target="_blank" href="https://www.tiktok.com/tag/comfortable?refer=embed">#comfortable</a>
+            <a title="carreview" target="_blank" href="https://www.tiktok.com/tag/carreview?refer=embed">#carreview</a>
+            <a target="_blank" title="♬ original sound - Baos Wheels" href="https://www.tiktok.com/music/original-sound-7382543070937533185?refer=embed">♬ original sound - Baos Wheels</a>
+          </section>
+        </blockquote>
+      </div>
+
+      <script async src="https://www.tiktok.com/embed.js"></script>
+
+    </div>
   </div>
 </div>
+
 
 
     
