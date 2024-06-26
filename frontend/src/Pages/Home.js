@@ -4,6 +4,7 @@ import Herosection from '../components/Herosection';
 import Newsection from '../components/Newsection';
 import Reviewsection from '../components/Reviewsection';
 import Videosection from '../components/Videosection';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
@@ -18,6 +19,9 @@ const Home = () => {
       </div>
       < div>
       <Videosection/>
+      </div>
+      <div>
+        <Footer/>
       </div>
     </div>
 
