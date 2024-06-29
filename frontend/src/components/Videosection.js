@@ -291,7 +291,7 @@ const Videosection = () => {
     </div>
 
     <div className='flex flex-col w-[40vw] h-[100vh] items-center justify-start p-8'>
-  <h2 className='flex text-5xl font-russoone lg:w-full text-primary mb-4 text-center'>
+  <h2 className='text-5xl font-russoone lg:w-full text-primary mb-4 text-center'>
     Our Tiktok Gallery
   </h2>
   <p className='text-sm text-center w-full lg:w-[30vw] text-primary font-kanit'>

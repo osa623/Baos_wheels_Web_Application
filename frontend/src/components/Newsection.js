@@ -32,7 +32,7 @@ const Newsection = () => {
 
   return (
     <div className='relative h-auto w-auto bg-primary'>
-      <div className='flex flex-col items-center justify-center w-full h-[30vh] bg-primary top-[5vh]'>
+      <div className='hidden md:flex flex-col items-center justify-center w-full h-[30vh] bg-primary top-[5vh]'>
         <div className='flex w-[50vw] h-0.5 bg-secondary items-start justify-start mx-20'/>
         <h2 className='text-6xl text-secondary font-russoone' data-aos='fade-up'>What's New</h2>
         <div className='flex w-[50vw] h-0.5 bg-secondary items-end justify-end mx-20'/>

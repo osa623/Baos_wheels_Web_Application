@@ -11,7 +11,8 @@ module.exports = {
           baseextra1: "#0C090A",
           baseextra2: "#fcfcfc",
           baseextra3: "#f0f0f0",
-          baseextra4: "#02203c"
+          baseextra4: "#02203c",
+          baseextra5: "#171614"
       },
       fontFamily:{
 

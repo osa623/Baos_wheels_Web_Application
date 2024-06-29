@@ -1,16 +1,16 @@
 // src/Pages/Home.js
 import React from 'react';
-import Herosection from '../components/Herosection';
 import Newsection from '../components/Newsection';
 import Reviewsection from '../components/Reviewsection';
 import Videosection from '../components/Videosection';
 import Footer from '../components/Footer';
+import NewHeroSection from '../components/NewHeroSection';
 
 const Home = () => {
   return (
     <>
     <div className='flex-grow'>
-      <Herosection />
+      <NewHeroSection/>
       < div className='h screen'>
       <Newsection/>
       </div>

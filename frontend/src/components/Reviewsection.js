@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import styled, { keyframes, css } from "styled-components";
@@ -22,6 +22,17 @@ import mazda from '../assests/Brand Logos/mazda.png';
 
 
 const Reviewsection = () => {
+
+  const [isPaused, setIsPaused] = useState(false);
+
+  const handleMouseEnter =() =>{
+      setIsPaused(true);
+  }
+
+  const handleMouseLeave =() =>{
+    setIsPaused(false);
+}
+
   const row1 = [
     { url: "https://example.com/page1", src: mercedesbenz },
     { url: "https://example.com/page2", src: mercedesbenz },
@@ -49,6 +60,8 @@ const Reviewsection = () => {
     AOS.init({ duration: 2000 });
   }, []);
 
+
+
   return (
     <AppContainer>
       <Wrapper>
@@ -66,18 +79,18 @@ const Reviewsection = () => {
         </div>
         <Note data-aos='zoom-in'>Explore by Vehicle Type</Note>
         <Marquee>
-          <MarqueeGroup>
+          <MarqueeGroup isPaused ={isPaused}>
             {row1.map((el, index) => (
-              <ImageGroup key={index}>
+              <ImageGroup key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                 <a href={el.url} target="_blank" rel="noopener noreferrer">
                   <Image src={el.src} />
                 </a>
               </ImageGroup>
             ))}
           </MarqueeGroup>
-          <MarqueeGroup>
+          <MarqueeGroup isPaused ={isPaused}>
             {row1.map((el, index) => (
-              <ImageGroup key={index}>
+              <ImageGroup key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                 <a href={el.url} target="_blank" rel="noopener noreferrer">
                   <Image src={el.src} />
                 </a>
@@ -175,6 +188,7 @@ const common = css`
   width: 100%;
   height: relative;
   animation: ${scrollX} 50s linear infinite;
+  animation-play-state: ${({ isPaused }) => (isPaused ? 'paused' : 'running')};
 `;
 
 const MarqueeGroup = styled.div`
