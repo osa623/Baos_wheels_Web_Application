@@ -20,9 +20,6 @@ const Home = () => {
       < div>
       <Videosection/>
       </div>
-      <div>
-        <Footer/>
-      </div>
     </div>
 
     </>

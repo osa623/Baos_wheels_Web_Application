@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './Pages/Home';
 import Reviews from './Pages/Reviews';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -14,8 +15,10 @@ const App = () => {
           <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/reviews" element={<Reviews/>}/>
-
           </Routes>
+        </div>
+        <div className='relative flex-col'>
+        <Footer/>
         </div>
       </div>
     </BrowserRouter>

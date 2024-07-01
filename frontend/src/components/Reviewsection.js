@@ -67,9 +67,9 @@ const Reviewsection = () => {
       <Wrapper>
         <div className='flex flex-col h-[30vh] w-full items-center justify-center mb-10'>
           <div className='flex flex-col h-[10vh] w-[50vw] items-center justify-center '>
-            <div className='flex h-0.5 w-[50vw] bg-black cursor-default' data-aos='fade-right'></div>
-            <h2 className='text-6xl font-russoone text-baseextra1' data-aos='fade-up'>Reviews</h2>
-            <div className='flex h-0.5 w-[50vw] bg-black cursor-default' data-aos='fade-left'></div>
+            <div className='flex h-0.5 w-[20vw] bg-black cursor-default' data-aos='fade-right'></div>
+            <h2 className='text-6xl font-russoone text-baseextra1' data-aos='flip-up'>Reviews</h2>
+            <div className='flex h-0.5 w-[20vw] bg-black cursor-default' data-aos='fade-left'></div>
             </div>  
             <p className='text-m text-baseextra1 font-kanit w-[60vw] h-inherit mb-5 mt-5 text-center' data-aos='zoom-in'
             style={{
