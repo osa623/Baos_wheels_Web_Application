@@ -44,6 +44,18 @@ const Reviews = () => {
     { name: 'Toyota', logo: toyota },
   ];
 
+  const bodystyle =[
+
+    { name:'Hatchback', logo: bmw},
+    { name: 'Sedan', logo: bmw },
+    { name: 'SUV', logo: honda },
+    { name: 'Crossover', logo: mazda },
+    { name: 'Wagon', logo: mercedesbenz },
+    { name: 'Mini', logo: mitsubhishi },
+
+
+  ]
+
   return (
     <div className='relative w-full h-auto'>
       <div className='flex flex-col w-full h-auto bg-primary items-center justify-start'>
@@ -63,7 +75,10 @@ const Reviews = () => {
 
           <div className='flex flex-row flex-wrap w-full h-auto gap-3 cursor-pointer justify-center items-center'>
             {Autobrands.map((brand, index) => (
-              <div className='flex flex-col w-[10vw] items-center justify-center rounded-lg bg-primary p-5 m-3 border-2' key={index} data-aos='flip-up'>
+              <div className='flex flex-col w-[10vw] items-center justify-center rounded-lg bg-primary p-5 m-5 border-2 hover: scale-120 transition-transform' key={index} data-aos='flip-up'
+              style={{
+                transform: 0.5
+              }}>
                 <img
                   src={brand.logo}
                   alt={brand.name}
@@ -74,8 +89,27 @@ const Reviews = () => {
               </div>
             ))}
           </div>
+
+
+
               <h2 className='text-2xl font-russoone text-baseextra4 m-6' data-aos='zoom-out'>Explore by Body Styles</h2>
 
+              <div className='flex flex-row flex-wrap w-full h-auto gap-4 justify-center items-center cursor-pointer'>
+                {bodystyle.map((bstyle, index) =>(
+                  <div className='flex flex-col w-[10vw] items-center justify-center rounded-lg bg-primary p-5 m-3 border-2 hover: scale-120 transition-transform' key={index} data-aos='flip-right'
+                  style={{
+                    transform: 0.5
+                  }}>
+                    <img
+                      src={bstyle.logo}
+                      alt={bstyle.name}
+                      className="w-16 h-16"
+                      style={{
+                        objectFit: 'contain'}}/>
+                    <span className="text-sm pt-2 font-poppins">{bstyle.name}</span>
+                  </div>
+                ))}
+              </div>
 
         </div>
       </div>
