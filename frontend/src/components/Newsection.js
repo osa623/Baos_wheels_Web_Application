@@ -32,14 +32,14 @@ const Newsection = () => {
 
   return (
     <div className='relative h-auto w-auto bg-primary'>
-      <div className='hidden md:flex flex-col items-center justify-center w-full h-[30vh] bg-primary top-[5vh]'>
-        <div className='flex w-[30vw] h-0.5 bg-secondary items-start justify-start mx-20' data-aos='fade-right'/>
-        <h2 className='text-6xl text-secondary font-russoone' data-aos='flip-up'>What's New</h2>
-        <div className='flex w-[30vw] h-0.5 bg-secondary items-end justify-end mx-20'  data-aos='fade-left'/>
+      <div className=' flex flex-col items-center justify-center w-full h-[30vh]  bg-primary top-[5vh]'>
+        <div className='lg:flex w-[40vw] h-0.5 md:w-[30vw] bg-secondary items-start justify-start mx-20' data-aos='fade-right'/>
+        <h2 className='lg:text-6xl text-secondary md: text-5xl font-russoone' data-aos='flip-up'>What's New</h2>
+        <div className='lg:flex w-[40vw] h-0.5 md:w-[30vw] bg-secondary items-end justify-end mx-20'  data-aos='fade-left'/>
       </div>
       <div className='flex justify-center w-full mt-[-5vh]' data-aos='zoom-in'>
         <div className='flex flex-col items-center justify-center w-[75vw]'>
-          <h2 className='text-m font-kanit h-[5vh] w-[60vw] text-center justify-center align-middle'
+          <h2 className='lg:text-lg font-kanit lg:h-[5vh] lg:w-[60vw] sm:text-sm text-center justify-center align-middle'
           style={{
             fontWeight:500
           }}>
@@ -47,7 +47,7 @@ const Newsection = () => {
           </h2>
         </div>
       </div>
-      <div className='grid grid-cols-4 gap-4 p-10 mt-[5vh]'>
+      <div className='grid lg:grid-cols-4 lg:gap-4 lg:p-10 lg:mt-[5vh] md:grid-cols-2 gap-3 p-10'>
         {latestArticles.map((article) => (
           <div key={article.id} className='bg-basesecondary rounded-xl p-0' data-aos='fade-right'>
             <div className='bg-gray-700 h-40 w-auto mb-10 rounded-t-lg'></div> {/* Placeholder for image */}

@@ -3,7 +3,6 @@ import React from 'react';
 import Newsection from '../components/Newsection';
 import Reviewsection from '../components/Reviewsection';
 import Videosection from '../components/Videosection';
-import Footer from '../components/Footer';
 import NewHeroSection from '../components/NewHeroSection';
 
 const Home = () => {

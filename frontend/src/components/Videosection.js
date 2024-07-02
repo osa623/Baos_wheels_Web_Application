@@ -297,23 +297,23 @@ const Videosection = () => {
   <p className='text-sm text-center w-full lg:w-[30vw] text-primary font-kanit'>
     To display the TikTok embed views in a horizontal, categorical layout using Tailwind CSS and React, you can update your layout to make use of flex properties. Here’s how you can modify your code to achieve this:
   </p>
-  <div className='flex flex-col w-full h-auto  mt-4 items-center justify-center'>
-        <div className='flex w-[25vw] h-[5vh] bg-primary mt-4 rounded-xl items-center justify-center cursor-pointer' data-aos='flip-right' data-aos-delay='300'>
+  <div className='flex flex-col w-full h-auto  mt-4 items-center justify-center space-y-4'>
+        <div className='flex w-[25vw] h-[5vh] bg-primary rounded-xl items-center justify-center cursor-pointer' data-aos='flip-right' data-aos-delay='300'>
             <h2 className='h-auto w-inherit text-xl text-baseextra4 font-kanit'>Car Tech ❤</h2>
         </div>
-        <div className='flex  w-[25vw] h-[5vh] bg-primary mt-4 rounded-xl cursor-pointer items-center justify-center'data-aos='flip-left' data-aos-delay='350'>
+        <div className='flex  w-[25vw] h-[5vh] bg-primary rounded-xl cursor-pointer items-center justify-center'data-aos='flip-left' data-aos-delay='350'>
         <h2 className='h-auto w-inherit text-xl text-baseextra4 font-kanit'>Strange Cars 💥</h2>
        </div>
-       <div className='flex w-[25vw] h-[5vh] bg-primary mt-4 rounded-xl cursor-pointer items-center justify-center' data-aos='flip-right' data-aos-delay='400'>
+       <div className='flex w-[25vw] h-[5vh] bg-primary rounded-xl cursor-pointer items-center justify-center' data-aos='flip-right' data-aos-delay='400'>
        <h2 className='h-auto w-inherit text-xl text-baseextra4 font-kanit'>Interesting Stories</h2>
         </div>
-        <div className='flex  w-[25vw] h-[5vh] bg-primary mt-4 rounded-xl cursor-pointer items-center justify-center' data-aos='flip-left' data-aos-delay='450'>
+        <div className='flex  w-[25vw] h-[5vh] bg-primary  rounded-xl cursor-pointer items-center justify-center' data-aos='flip-left' data-aos-delay='450'>
         <h2 className='h-auto w-inherit text-xl text-baseextra4 font-kanit'>Engine's Roar</h2>
         </div>
-        <div className='flex w-[25vw] h-[5vh] bg-primary mt-4 rounded-xl cursor-pointer items-center justify-center' data-aos='flip-right' data-aos-delay='500'>
+        <div className='flex w-[25vw] h-[5vh] bg-primary  rounded-xl cursor-pointer items-center justify-center' data-aos='flip-right' data-aos-delay='500'>
         <h2 className='h-auto w-inherit text-xl text-baseextra4 font-kanit'>Mercedes Benz</h2>
         </div>
-        <div className='flex  w-[25vw] h-[5vh] bg-primary mt-4 rounded-xl cursor-pointer items-center justify-center'data-aos='flip-left' data-aos-delay='550'>
+        <div className='flex  w-[25vw] h-[5vh] bg-primary  rounded-xl cursor-pointer items-center justify-center'data-aos='flip-left' data-aos-delay='550'>
         <h2 className='h-auto w-inherit text-xl text-baseextra4 font-kanit'>Ferarri</h2>
         </div>
 
