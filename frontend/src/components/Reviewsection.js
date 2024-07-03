@@ -66,12 +66,13 @@ const Reviewsection = () => {
     <AppContainer>
       <Wrapper>
         <div className='flex flex-col h-[30vh] w-full items-center justify-center mb-10'>
-          <div className='flex flex-col h-[10vh] w-[50vw] items-center justify-center '>
+          <div className='md:flex flex-col h-[20vh] w-full bg-primary'/>
+          <div className='flex flex-col lg:h-[10vh] w-[50vw] md:mt-20 items-center justify-center '>
             <div className='flex h-0.5 w-[20vw] bg-black cursor-default' data-aos='fade-right'></div>
-            <h2 className='text-6xl font-russoone text-baseextra1' data-aos='flip-up'>Reviews</h2>
+            <h2 className='lg:text-6xl md:text-5xl font-russoone text-baseextra1' data-aos='flip-up'>Reviews</h2>
             <div className='flex h-0.5 w-[20vw] bg-black cursor-default' data-aos='fade-left'></div>
             </div>  
-            <p className='text-m text-baseextra1 font-kanit w-[60vw] h-inherit mb-5 mt-5 text-center' data-aos='zoom-in'
+            <p className='lg:text-m md:text-sm  text-baseextra1 font-kanit lg:w-[60vw] h-inherit mb-5 mt-5 text-center md:w-[' data-aos='zoom-in'
             style={{
               fontWeight: 500
             }}>Welcome to our Car Reviews section! Here, you'll find detailed and easy-to-understand reviews of various cars. We cover everything from speed and safety to comfort and technology. Whether you're interested in a car that's fast, safe, or packed with the latest features, our reviews will help you make an informed decision. Read insights from our experts and real car owners, and discover the perfect car for you today</p>
@@ -102,8 +103,8 @@ const Reviewsection = () => {
         <div className='flex flex-col w-auto items-center justify-center'>
           <Note data-aos='zoom-out'>Explore by Brand Names</Note>
         </div>
-        <div className='flex lg:w-[95vw] lg:h-[30vh] sm:w-[20vw] sm:h-[50vh] items-center justify-center'>
-        <div className='flex flex-wrap lg:w-inherit  gap-5 cursor-pointer'>
+        <div className='flex lg:w-[95vw] lg:h-[30vh] sm:w-[90vw] sm:h-[50vh] items-center justify-center'>
+        <div className='flex flex-wrap lg:w-inherit md:w-[100vw]  lg:gap-5 md:gap-5 cursor-pointer justify-center'>
           {Autobrands.map((brand, index) => (
             <BrandCard key={index} data-aos='fade-up'>
               <img 
@@ -168,6 +169,11 @@ const Marquee = styled.div`
   width: 1200px;
   overflow: hidden;
   user-select: none;
+
+  @media(max-width: 640px ){
+    width:1000px;
+  
+  }
 `;
 
 const scrollX = keyframes`
@@ -232,5 +238,17 @@ const BrandCard = styled.div`
   &:hover {
     transform: scale(1.05);
     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 10px;
+  }
+      @media (max-width: 640px) {
+      
+    width: 100px;
+    padding: 10px;
+    font-size: 14px;
+    
+  }
+
+    @media (min-width: 641px) and (max-width: 1024px) {
+    width: 120px;
+    font-size: 16px;
   }
 `;

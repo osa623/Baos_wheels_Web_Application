@@ -11,9 +11,9 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed w-full flex items-center justify-between bg-secondary h-15 max-w-auto mx-auto px-4 z-50">
+    <div className="fixed lg:w-full md:w-full sm:w-full flex items-center  justify-between bg-secondary h-15 max-w-auto mx-auto px-4 z-50">
       <div className="flex items-center">
-        <img src={logo} alt="bwlogo" className="h-12 w-auto m-4" />
+        <img src={logo} alt="bwlogo" className="hidden sm:flex flex-col lg:h-12 w-auto m-4" />
       </div>
       <ul className="hidden md:flex flex-grow items-end justify-end font-russoone text-primary text-xl cursor-pointer pr-10">
         <li className="p-4 hover:text-baseprimary"><a href='/home'>Home</a></li>
@@ -27,7 +27,7 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? 'fixed left-0 top-0 w-[80%] sm:w-[50%] md:w-[40%] h-full border-r border-r-gray-400 bg-secondary ease-in-out duration-500'
+            ? 'fixed left-0 top-0 w-[80%] sm:w-100 md:w-[40%] h-full border-r border-r-gray-400 bg-secondary ease-in-out duration-500'
             : 'fixed left-[-100%] top-0 w-[60%] sm:w-[50%] md:w-[40%] h-full ease-in-out duration-500'
         }
       >
