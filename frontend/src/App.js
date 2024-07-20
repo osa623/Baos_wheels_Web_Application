@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 const App = () => {
   return (
     <BrowserRouter>
-      <div className='relative flex-col min-h-screen'>
+      <div className='relative flex-col min-h-screen overflow-hidden'>
         <Navbar />
         <div className='flex-grow'>
           <Routes>

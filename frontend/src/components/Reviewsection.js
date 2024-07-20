@@ -65,14 +65,13 @@ const Reviewsection = () => {
   return (
     <AppContainer>
       <Wrapper>
-        <div className='flex flex-col h-[30vh] w-full items-center justify-center mb-10'>
-          <div className='md:flex flex-col h-[20vh] w-full bg-primary'/>
-          <div className='flex flex-col lg:h-[10vh] w-[50vw] md:mt-20 items-center justify-center '>
+        <div className='flex flex-col h-auto w-full items-center justify-center  overflow-hidden'>
+          <div className='flex flex-col lg:h-[10vh]  w-[50vw] md:mt-20 items-center justify-center '>
             <div className='flex h-0.5 w-[20vw] bg-black cursor-default' data-aos='fade-right'></div>
-            <h2 className='lg:text-6xl md:text-5xl font-russoone text-baseextra1' data-aos='flip-up'>Reviews</h2>
+            <h2 className='lg:text-6xl md:text-5xl sms:text-7xl font-russoone text-baseextra1' data-aos='flip-up'>Reviews</h2>
             <div className='flex h-0.5 w-[20vw] bg-black cursor-default' data-aos='fade-left'></div>
             </div>  
-            <p className='lg:text-m md:text-sm  text-baseextra1 font-kanit lg:w-[60vw] h-inherit mb-5 mt-5 text-center md:w-[' data-aos='zoom-in'
+            <p className='lg:text-m md:text-sm sms:text-lg sms:p-10  text-baseextra1 font-kanit lg:w-[60vw] h-inherit mb-5 mt-5 text-center md:w-[' data-aos='zoom-in'
             style={{
               fontWeight: 500
             }}>Welcome to our Car Reviews section! Here, you'll find detailed and easy-to-understand reviews of various cars. We cover everything from speed and safety to comfort and technology. Whether you're interested in a car that's fast, safe, or packed with the latest features, our reviews will help you make an informed decision. Read insights from our experts and real car owners, and discover the perfect car for you today</p>
@@ -130,7 +129,7 @@ export default Reviewsection;
 
 const AppContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 'auto';
   background-color: #FFFFFF;
   position: relative;
   display: flex;

@@ -62,11 +62,11 @@ const Reviews = () => {
         <div className='flex h-[10vh] w-full items-center justify-center' />
         <div className='flex flex-col h-[20vh] w-full items-center justify-center'>
           <div className='flex w-[30vw] h-0.5 bg-secondary' data-aos='fade-right' />
-          <h2 className='flex text-6xl font-russoone text-baseextra4' data-aos='flip-up'>Reviews</h2>
+          <h2 className='flex text-6xl sms:text-7xl font-russoone text-baseextra4' data-aos='flip-up'>Reviews</h2>
           <div className='flex w-[30vw] h-0.5 bg-secondary' data-aos='fade-left' />
         </div>
 
-        <p className='flex flex-col w-[70vw] h-auto text-wrap text-m font-kanit text-secondary text-center m-2' data-aos='zoom-in'>
+        <p className='flex flex-col w-[70vw] sms:w-[90vw] h-auto text-wrap text-m font-kanit text-secondary text-center sms:m-4 m-2' data-aos='zoom-in'>
           Explore the world of automobiles with Baos Wheels' comprehensive Review Section. Our mission is to provide you with detailed, impartial, and insightful evaluations of the latest and most sought-after vehicles on the market. We delve deep into every aspect of each car, from performance and features to comfort and reliability, ensuring you have all the information you need to make an informed decision.
         </p>
 
@@ -75,17 +75,17 @@ const Reviews = () => {
 
           <div className='flex flex-row flex-wrap w-full h-auto gap-3 cursor-pointer justify-center items-center'>
             {Autobrands.map((brand, index) => (
-              <div className='flex flex-col w-[10vw] items-center justify-center rounded-lg bg-primary p-5 m-5 border-2 hover: scale-120 transition-transform' key={index} data-aos='flip-up'
+              <div className='flex flex-col  w-[10vw] sms:w-[30vw] items-center h-[20vh] justify-center rounded-lg space-y-3 bg-primary p-5 m-5 border-2 hover: scale-120 transition-transform' key={index} data-aos='flip-up'
               style={{
                 transform: 0.5
               }}>
                 <img
                   src={brand.logo}
                   alt={brand.name}
-                  className="w-16 h-16"
+                  className="w-16 h-16 scale-125"
                   style={{
                     objectFit: 'contain'}}/>
-                <span className="text-sm pt-2 font-poppins">{brand.name}</span>
+                <span className="text-sm sms:text-lg pt-2 font-kanit text-center">{brand.name}</span>
               </div>
             ))}
           </div>
