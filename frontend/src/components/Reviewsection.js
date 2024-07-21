@@ -34,7 +34,7 @@ const Reviewsection = () => {
 }
 
   const row1 = [
-    { url: "https://example.com/page1", src: mercedesbenz },
+    { url: "https://example.com/page1", src: mercedesbenz, name: 'Mercedes Benz' },
     { url: "https://example.com/page2", src: mercedesbenz },
     { url: "https://example.com/page3", src: "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/3b7d9f4b073deb6a9b74.png" },
     { url: "https://example.com/page4", src: "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/3cd767dea94a85078ca4.png" },
@@ -78,7 +78,7 @@ const Reviewsection = () => {
 
         </div>
         <Note data-aos='zoom-in'>Explore by Vehicle Type</Note>
-        <Marquee>
+        <Marquee >
           <MarqueeGroup isPaused ={isPaused}>
             {row1.map((el, index) => (
               <ImageGroup key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
@@ -99,11 +99,30 @@ const Reviewsection = () => {
           </MarqueeGroup>
         </Marquee>
 
+        {/* screen adjustments for 640px screens */}
+        <div className='hidden:md flex flex-col w-full h-auto items-center justify-center p-5' data-aos='fade-up' data-aos-delay='20'>
+              <div className='grid grid-flow-row grid-cols-3 gap-4'>
+                {row1.map((el, index) => (
+                      
+                        <div className='flex flex-col border-2 p-3 rounded-lg items-center' key={index}>
+                          <img src={el.src}
+                                alt={el.url}
+                                className='w-20 h-20' style={{
+                                  objectFit:'contain'
+                                }}/>
+
+                                <span className='text-sm font-russoone text-secondary text-center'>{el.name}</span>
+                        </div>
+
+                ))}
+              </div>
+        </div>
+
         <div className='flex flex-col w-auto items-center justify-center'>
           <Note data-aos='zoom-out'>Explore by Brand Names</Note>
         </div>
-        <div className='flex lg:w-[95vw] lg:h-[30vh] sm:w-[90vw] sm:h-[50vh] items-center justify-center'>
-        <div className='flex flex-wrap lg:w-inherit md:w-[100vw]  lg:gap-5 md:gap-5 cursor-pointer justify-center'>
+        <div className='flex lg:w-[95vw] lg:h-[30vh] sm:w-[90vw] sm:h-[50vh] items-center justify-center sms:p-2'>
+        <div className='flex flex-wrap lg:w-inherit md:w-[100vw]  lg:gap-5 md:gap-5 sms:gap-3 cursor-pointer justify-center '>
           {Autobrands.map((brand, index) => (
             <BrandCard key={index} data-aos='fade-up'>
               <img 
@@ -137,6 +156,7 @@ const AppContainer = styled.div`
   justify-content: center;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.4s ease;
+  padding-top: 10%;
 
   &:hover {
     box-shadow: 0 0 30px 20px rgba(0, 0, 0, 0.5);
@@ -171,6 +191,7 @@ const Marquee = styled.div`
 
   @media(max-width: 640px ){
     width:1000px;
+    display: none;
   
   }
 `;

@@ -34,16 +34,16 @@ const Videosection = () => {
 
     <div className='flex flex-col h-auto items-center justify-center pt-20'>
       <div className='flex bg-baseextra3 w-[50vw] h-0.5 mt'data-aos='fade-right'/>
-      <h2 className='text-6xl font-extrabold font-russoone text-primary cursor-default hover:text-baseprimary transition duration-2000 ease-in-out p-2' data-aos='flip-up'>High-Octane Showdowns</h2>
+      <h2 className='lg:text-6xl sms:text-5xl sms:text-center font-extrabold font-russoone text-primary cursor-default hover:text-baseprimary transition duration-2000 ease-in-out p-2' data-aos='flip-up'>High-Octane Showdowns</h2>
       <div className='flex bg-baseextra3 w-[50vw] h-0.5'data-aos='fade-left'/>
 
-      <div class="whitespace-nowrap w-[60vw] mx-auto pt-5 space-x-2 text-center" data-aos="zoom-in">
-  <span class="text-primary text-lg h-[70vh] font-kanit pt-5">
-    Some of Our Favourite Automobile Videos from  
-  </span>
-  <span class="text-primary text-lg font-extrabold font-russoone">
-    Baos Wheels
-  </span>
+      <div class="whitespace-nowrap sms:flex sms:flex-col lg:w-[60vw] mx-auto lg:pt-5 space-x-2 items-center justify-start text-center sms:w-[90vw]" data-aos="zoom-in">
+              <span class="text-primary lg:text-lg h-auto sms:text-md font-kanit lg:pt-5 sms:pt-2 sms:text-center">
+                Some of Our Favourite Automobile Videos from  
+              </span>
+              <span class="text-primary lg:text-lg sms:text-sm font-extrabold font-russoone">
+                Baos Wheels
+              </span>
 </div>
 
     </div>
