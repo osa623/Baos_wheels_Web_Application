@@ -1,10 +1,15 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+//nav-bar
 import Navbar from './components/Navbar';
+
+//routes
 import Home from './Pages/Home';
 import Reviews from './Pages/Reviews';
 import Footer from './components/Footer';
+import Articlesec from './Pages/Articlesec';
+
 
 const App = () => {
   return (
@@ -15,6 +20,7 @@ const App = () => {
           <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/reviews" element={<Reviews/>}/>
+            <Route path="/articles" element={<Articlesec/>}/>
           </Routes>
         </div>
         <div className='relative flex-col'>

@@ -32,19 +32,19 @@ const Newsection = () => {
 
   return (
     <div className='relative h-auto w-auto bg-primary'>
-      <div className=' flex flex-col items-center justify-center w-full h-[30vh]  bg-primary top-[5vh]'>
-        <div className='lg:flex w-[40vw] h-0.5 md:w-[30vw] bg-secondary items-start justify-start mx-20' data-aos='fade-right'/>
-        <h2 className='lg:text-6xl text-secondary md:text-5xl sms:text-5xl text-center font-russoone' data-aos='flip-up'>What's New</h2>
-        <div className='lg:flex w-[40vw] h-0.5 md:w-[30vw] bg-secondary items-end justify-end mx-20'  data-aos='fade-left'/>
+      <div className=' flex flex-col items-center justify-center w-full lg:h-[30vh] sms:h-[15vh]  bg-primary md:top-[5vh] sms:space-y-2'>
+        <div className='lg:flex w-[40vw] h-0.5 md:w-[30vw] sms:w-[70vw] bg-secondary items-start justify-start mx-20' data-aos='fade-right'/>
+        <h2 className='lg:text-6xl text-secondary md:text-5xl sms:text-6xl text-center font-russoone' data-aos='flip-up'>What's New</h2>
+        <div className='lg:flex w-[40vw] h-0.5 md:w-[30vw]  sms:w-[70vw] bg-secondary items-end justify-end mx-20'  data-aos='fade-left'/>
       </div>
-      <div className='flex justify-center w-full mt-[-5vh]' data-aos='zoom-in'>
-        <div className='flex flex-col items-center justify-center w-[75vw]'>
-          <h2 className='lg:text-lg font-kanit lg:h-[5vh] lg:w-[60vw] sm:text-sm text-center justify-center align-middle'
+      <div className='flex justify-center w-full ' data-aos='zoom-in'>
+        <div className='flex flex-col items-center justify-center lg:w-[75vw]'>
+          <p className='lg:text-lg font-kanit lg:h-[5vh] lg:w-[60vw] sms:w-[80vw] sms:text-md text-center justify-center align-middle'
           style={{
-            fontWeight:500
+            
           }}>
             News Stay Updated with the Latest in the Automotive World. From new model releases and industry trends to expert reviews and technological innovations, our news section has it all. Whether you are a car enthusiast or just curious, explore and stay informed about the future of transportation
-          </h2>
+          </p>
         </div>
       </div>
       <div className='grid lg:grid-cols-4 lg:gap-4 lg:p-10 lg:mt-[5vh] md:grid-cols-2 gap-3 p-10'>

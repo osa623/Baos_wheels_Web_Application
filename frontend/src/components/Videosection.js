@@ -171,7 +171,9 @@ const Videosection = () => {
 
   <div className='sm:hidden flex flex-col w-full items-center justify-center'>
 
-  <div className='flex flex-col w-full h-auto items-center justify-start p-4 space-y-5'>
+  <div className='absolute w-full bottom-0 h-[20vh] bg-gradient-to-t from-baseprimary to-transparent'/>
+
+  <div className='flex flex-col w-full h-auto items-center justify-start p-4 space-y-5 z-30'>
                 <h2 className='text-4xl font-russoone  text-primary mb-4 text-center' data-aos='zoom-out'>
                   Our Tiktok Gallery
                 </h2>
@@ -180,22 +182,22 @@ const Videosection = () => {
                 </p>
                 <div className='grid grid-cols-2 gap-y-6 gap-x-4 w-auto h-auto items-center justify-center p-2'>
                       <div className='flex w-[40vw] h-[5vh] bg-primary rounded-full items-center justify-center cursor-pointer shadow-lg shadow-baseprimary' data-aos='flip-right' data-aos-delay='300'>
-                          <h2 className='h-auto w-inherit text-lg text-baseextra4 font-poppins'>Car Tech</h2>
+                          <h2 className='h-auto w-inherit text-lg text-baseextra4 font-'>Car Tech</h2>
                       </div>
                       <div className='flex  w-[40vw] h-[5vh] bg-primary rounded-full cursor-pointer items-center justify-center shadow-lg shadow-baseprimary'data-aos='flip-left' data-aos-delay='350'>
-                      <h2 className='h-auto w-inherit text-lg text-baseextra4 font-poppins'>Strange Cars</h2>
+                      <h2 className='h-auto w-inherit text-lg text-baseextra4 font-'>Strange Cars</h2>
                     </div>
                     <div className='flex w-[40vw] h-[5vh] bg-primary rounded-full cursor-pointer items-center justify-center shadow-lg shadow-baseprimary' data-aos='flip-right' data-aos-delay='400'>
-                    <h2 className='h-auto w-inherit text-lg text-baseextra4 font-poppins'>Stories</h2>
+                    <h2 className='h-auto w-inherit text-lg text-baseextra4 font-'>Stories</h2>
                       </div>
                       <div className='flex  w-[40vw] h-[5vh] bg-primary  rounded-full cursor-pointer items-center justify-center shadow-lg shadow-baseprimary' data-aos='flip-left' data-aos-delay='450'>
-                      <h2 className='h-auto w-inherit text-lg text-baseextra4 font-poppins'>Engine's Roar</h2>
+                      <h2 className='h-auto w-inherit text-lg text-baseextra4 font-'>Engine's Roar</h2>
                       </div>
                       <div className='flex w-[40vw] h-[5vh] bg-primary  rounded-full cursor-pointer items-center justify-center shadow-lg shadow-baseprimary' data-aos='flip-right' data-aos-delay='500'>
-                      <h2 className='h-auto w-inherit text-lg text-baseextra4 font-poppins'>Mercedes Benz</h2>
+                      <h2 className='h-auto w-inherit text-lg text-baseextra4 font-'>Mercedes Benz</h2>
                       </div>
                       <div className='flex  w-[40vw] h-[5vh] bg-primary  rounded-full cursor-pointer items-center justify-center shadow-lg shadow-baseprimary'data-aos='flip-left' data-aos-delay='550'>
-                      <h2 className='h-auto w-inherit text-lg text-baseextra4 font-poppins'>Ferarri</h2>
+                      <h2 className='h-auto w-inherit text-lg text-baseextra4 font-'>Ferarri</h2>
                       </div>
 
                 </div>
@@ -251,7 +253,7 @@ const Videosection = () => {
       <script async src="https://www.tiktok.com/embed.js"></script>
     </div>
 
-    <div className='flex flex-col items-center justify-center w-full h-auto p-2'>
+    <div className='flex flex-col items-center justify-center w-full h-auto p-2 z-40'>
         <button className='flex w-[40vw] h-[5vh] text-xl bg-primary text-baseprimary items-center justify-center font-russoone rounded-full'>Watch more</button>
     </div>
 
