@@ -40,7 +40,7 @@ const Videosection = () => {
 
 
   return (
-    <div className='relative flex-grow w-full  bg-baseextra1 rounded-md  hover:transition duration-1000 ease-in-out' style={{
+    <div className='relative flex-grow w-full  bg-baseextra1 rounded-t-md  hover:transition duration-1000 ease-in-out' style={{
     
     }}>
 
@@ -172,30 +172,30 @@ const Videosection = () => {
   <div className='sm:hidden flex flex-col w-full items-center justify-center'>
 
   <div className='flex flex-col w-full h-auto items-center justify-start p-4 space-y-5'>
-                <h2 className='text-4xl font-russoone  text-primary mb-4 text-center'>
+                <h2 className='text-4xl font-russoone  text-primary mb-4 text-center' data-aos='zoom-out'>
                   Our Tiktok Gallery
                 </h2>
-                <p className='text-sm text-center w-full text-primary font-kanit'>
-                  To display the TikTok embed views in a horizontal, categorical layout using Tailwind CSS and React, you can update your layout to make use of flex properties. Here’s how you can modify your code to achieve this:
+                <p className='text-sm text-center w-full text-primary font-kanit' data-aos='fade-up' fade-aos-delay='20'>
+               {''}<span className='font-semibold text-baseprimary text-lg pr-1'>Baos Wheels</span> {' '} brings you engaging auto mechanical videos on TikTok. We offer in-depth mechanical explanations, detailed car reviews, insights into the latest inventions, and record-breaking information in the auto industry. Stay informed and entertained with the newest trends and developments in the world of automobiles.
                 </p>
                 <div className='grid grid-cols-2 gap-y-6 gap-x-4 w-auto h-auto items-center justify-center p-2'>
-                      <div className='flex w-[40vw] h-[5vh] bg-primary rounded-xl items-center justify-center cursor-pointer' data-aos='flip-right' data-aos-delay='300'>
-                          <h2 className='h-auto w-inherit text-xl text-baseextra4 font-kanit'>Car Tech ❤</h2>
+                      <div className='flex w-[40vw] h-[5vh] bg-primary rounded-full items-center justify-center cursor-pointer shadow-lg shadow-baseprimary' data-aos='flip-right' data-aos-delay='300'>
+                          <h2 className='h-auto w-inherit text-lg text-baseextra4 font-poppins'>Car Tech</h2>
                       </div>
-                      <div className='flex  w-[40vw] h-[5vh] bg-primary rounded-xl cursor-pointer items-center justify-center'data-aos='flip-left' data-aos-delay='350'>
-                      <h2 className='h-auto w-inherit text-xl text-baseextra4 font-kanit'>Strange Cars 💥</h2>
+                      <div className='flex  w-[40vw] h-[5vh] bg-primary rounded-full cursor-pointer items-center justify-center shadow-lg shadow-baseprimary'data-aos='flip-left' data-aos-delay='350'>
+                      <h2 className='h-auto w-inherit text-lg text-baseextra4 font-poppins'>Strange Cars</h2>
                     </div>
-                    <div className='flex w-[40vw] h-[5vh] bg-primary rounded-xl cursor-pointer items-center justify-center' data-aos='flip-right' data-aos-delay='400'>
-                    <h2 className='h-auto w-inherit text-xl text-baseextra4 font-kanit'>Interesting Stories</h2>
+                    <div className='flex w-[40vw] h-[5vh] bg-primary rounded-full cursor-pointer items-center justify-center shadow-lg shadow-baseprimary' data-aos='flip-right' data-aos-delay='400'>
+                    <h2 className='h-auto w-inherit text-lg text-baseextra4 font-poppins'>Stories</h2>
                       </div>
-                      <div className='flex  w-[40vw] h-[5vh] bg-primary  rounded-xl cursor-pointer items-center justify-center' data-aos='flip-left' data-aos-delay='450'>
-                      <h2 className='h-auto w-inherit text-xl text-baseextra4 font-kanit'>Engine's Roar</h2>
+                      <div className='flex  w-[40vw] h-[5vh] bg-primary  rounded-full cursor-pointer items-center justify-center shadow-lg shadow-baseprimary' data-aos='flip-left' data-aos-delay='450'>
+                      <h2 className='h-auto w-inherit text-lg text-baseextra4 font-poppins'>Engine's Roar</h2>
                       </div>
-                      <div className='flex w-[40vw] h-[5vh] bg-primary  rounded-xl cursor-pointer items-center justify-center' data-aos='flip-right' data-aos-delay='500'>
-                      <h2 className='h-auto w-inherit text-xl text-baseextra4 font-kanit'>Mercedes Benz</h2>
+                      <div className='flex w-[40vw] h-[5vh] bg-primary  rounded-full cursor-pointer items-center justify-center shadow-lg shadow-baseprimary' data-aos='flip-right' data-aos-delay='500'>
+                      <h2 className='h-auto w-inherit text-lg text-baseextra4 font-poppins'>Mercedes Benz</h2>
                       </div>
-                      <div className='flex  w-[40vw] h-[5vh] bg-primary  rounded-xl cursor-pointer items-center justify-center'data-aos='flip-left' data-aos-delay='550'>
-                      <h2 className='h-auto w-inherit text-xl text-baseextra4 font-kanit'>Ferarri</h2>
+                      <div className='flex  w-[40vw] h-[5vh] bg-primary  rounded-full cursor-pointer items-center justify-center shadow-lg shadow-baseprimary'data-aos='flip-left' data-aos-delay='550'>
+                      <h2 className='h-auto w-inherit text-lg text-baseextra4 font-poppins'>Ferarri</h2>
                       </div>
 
                 </div>
@@ -251,7 +251,9 @@ const Videosection = () => {
       <script async src="https://www.tiktok.com/embed.js"></script>
     </div>
 
-    <h2 className='flex text-xl font-russoone text-primary items-center justify-center w-full'>Watch more</h2>
+    <div className='flex flex-col items-center justify-center w-full h-auto p-2'>
+        <button className='flex w-[40vw] h-[5vh] text-xl bg-primary text-baseprimary items-center justify-center font-russoone rounded-full'>Watch more</button>
+    </div>
 
 
   </div>

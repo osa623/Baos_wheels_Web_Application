@@ -26,7 +26,7 @@ const Reviews = () => {
     { name: 'BMW', logo: bmw },
     { name: 'Honda', logo: honda },
     { name: 'Mazda', logo: mazda },
-    { name: 'Mercedes Benz', logo: mercedesbenz },
+    { name: 'Mercedes', logo: mercedesbenz },
     { name: 'mitsubhishi', logo: mitsubhishi },
     { name: 'Nissan', logo: nissan },
     { name: 'Range Rover', logo: rangerover },
@@ -36,7 +36,7 @@ const Reviews = () => {
     { name: 'BMW', logo: bmw },
     { name: 'Honda', logo: honda },
     { name: 'Mazda', logo: mazda },
-    { name: 'Mercedes Benz', logo: mercedesbenz },
+    { name: 'Mercedes', logo: mercedesbenz },
     { name: 'mitsubhishi', logo: mitsubhishi },
     { name: 'Nissan', logo: nissan },
     { name: 'Range Rover', logo: rangerover },
@@ -59,7 +59,7 @@ const Reviews = () => {
   return (
     <div className='relative w-full h-auto'>
       <div className='flex flex-col w-full h-auto bg-primary items-center justify-start'>
-        <div className='flex h-[10vh] w-full items-center justify-center' />
+        <div className='flex md:h-[10vh] sms:h-[5vh]   w-full items-center justify-center' />
         <div className='flex flex-col h-[20vh] w-full items-center justify-center'>
           <div className='flex w-[30vw] h-0.5 bg-secondary' data-aos='fade-right' />
           <h2 className='flex text-6xl sms:text-7xl font-russoone text-baseextra4' data-aos='flip-up'>Reviews</h2>
@@ -70,12 +70,15 @@ const Reviews = () => {
           Explore the world of automobiles with Baos Wheels' comprehensive Review Section. Our mission is to provide you with detailed, impartial, and insightful evaluations of the latest and most sought-after vehicles on the market. We delve deep into every aspect of each car, from performance and features to comfort and reliability, ensuring you have all the information you need to make an informed decision.
         </p>
 
+        <div className='sm:hidden flex sms:h-[5vh]   w-full items-center justify-center' />
+
         <div className='flex flex-col w-full h-auto items-center justify-center'>
           <h2 className='text-2xl font-russoone text-baseextra4 m-2' data-aos='zoom-in'>Explore by Brand Names</h2>
 
-          <div className='flex flex-row flex-wrap w-full h-auto gap-3 cursor-pointer justify-center items-center'>
+         <div className='flex w-full h-auto items-center justify-center p-2'>
+          <div className='lg:flex flex-row flex-wrap sms:grid grid-cols-3 gap-x-2 lg:w-full h-auto gap-3 cursor-pointer justify-center items-center'>
             {Autobrands.map((brand, index) => (
-              <div className='flex flex-col  w-[10vw] sms:w-[30vw] items-center h-[20vh] justify-center rounded-lg space-y-3 bg-primary p-5 m-5 border-2 hover: scale-120 transition-transform' key={index} data-aos='flip-up'
+              <div className='flex flex-col w-[10vw] sms:w-[25vw] sms:h-[15vh] items-center h-[20vh] justify-center rounded-lg space-y-3 bg-primary p-5 m-2 border-2 hover: scale-120 transition-transform' key={index} data-aos='flip-up'
               style={{
                 transform: 0.5
               }}>
@@ -85,10 +88,13 @@ const Reviews = () => {
                   className="w-16 h-16 scale-125"
                   style={{
                     objectFit: 'contain'}}/>
-                <span className="text-sm sms:text-lg pt-2 font-kanit text-center">{brand.name}</span>
+                <span className="text-sm sms:text-sm pt-2 font-kanit text-center" style={{
+                  
+                }}>{brand.name}</span>
               </div>
             ))}
           </div>
+          </div>  
 
 
 
@@ -113,7 +119,13 @@ const Reviews = () => {
 
         </div>
       </div>
-      <div className='flex w-full h-screen bg-baseextra4'></div>
+
+      {/*Reviews previewing section*/}
+      <div className='flex w-full h-auto bg-transparent'>
+
+
+
+      </div>
     </div>
   );
 };
