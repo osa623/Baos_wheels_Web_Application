@@ -66,12 +66,12 @@ const Reviewsection = () => {
     <AppContainer>
       <Wrapper>
         <div className='flex flex-col h-auto w-full items-center justify-center  overflow-hidden'>
-          <div className='flex flex-col lg:h-[10vh]  w-[50vw] md:mt-20 items-center justify-center '>
-            <div className='flex h-0.5 w-[20vw] bg-black cursor-default' data-aos='fade-right'></div>
+          <div className='flex flex-col lg:h-[10vh]  w-[50vw] md:mt-10 items-center justify-center '>
+            <div className='flex h-0.5 w-[20vw] sms:w-[50vw] bg-black cursor-default' data-aos='fade-right'></div>
             <h2 className='lg:text-6xl md:text-5xl sms:text-7xl font-russoone text-baseextra1' data-aos='flip-up'>Reviews</h2>
-            <div className='flex h-0.5 w-[20vw] bg-black cursor-default' data-aos='fade-left'></div>
+            <div className='flex h-0.5 w-[20vw] sms:w-[50vw] bg-black cursor-default' data-aos='fade-left'></div>
             </div>  
-            <p className='lg:text-m md:text-sm sms:text-lg sms:p-10  text-baseextra1 font-kanit lg:w-[60vw] h-inherit mb-5 mt-5 text-center md:w-[' data-aos='zoom-in'
+            <p className='lg:text-m md:text-sm sms:text-lg sms:p-10  text-baseextra1 font-kanit  lg:w-[60vw] h-inherit mb-5 mt-5 text-center md:w-[' data-aos='zoom-in'
             style={{
               fontWeight: 500
             }}>Welcome to our Car Reviews section! Here, you'll find detailed and easy-to-understand reviews of various cars. We cover everything from speed and safety to comfort and technology. Whether you're interested in a car that's fast, safe, or packed with the latest features, our reviews will help you make an informed decision. Read insights from our experts and real car owners, and discover the perfect car for you today</p>
@@ -100,7 +100,7 @@ const Reviewsection = () => {
         </Marquee>
 
         {/* screen adjustments for 640px screens */}
-        <div className='hidden:md flex flex-col w-full h-auto items-center justify-center p-5' data-aos='fade-up' data-aos-delay='20'>
+        <div className='sm:hidden flex flex-col w-full h-auto items-center justify-center p-5 pb-20' data-aos='fade-up' data-aos-delay='20'>
               <div className='grid grid-flow-row grid-cols-3 gap-4'>
                 {row1.map((el, index) => (
                       
@@ -118,17 +118,17 @@ const Reviewsection = () => {
               </div>
         </div>
 
-        <div className='flex flex-col w-auto items-center justify-center'>
+        <div className='flex flex-col w-auto items-center justify-center sms:pb-10'>
           <Note data-aos='zoom-out'>Explore by Brand Names</Note>
         </div>
         <div className='flex lg:w-[95vw] lg:h-[30vh] sm:w-[90vw] sm:h-[50vh] items-center justify-center sms:p-2'>
-        <div className='flex flex-wrap lg:w-inherit md:w-[100vw]  lg:gap-5 md:gap-5 sms:gap-3 cursor-pointer justify-center '>
+        <div className='flex flex-wrap lg:w-inherit md:w-[100vw] sms:h-auto overflow-hidden  lg:gap-5 sms:gap-x-4 sms:pt-4 md:gap-5 sms:gap-3 cursor-pointer justify-center '>
           {Autobrands.map((brand, index) => (
             <BrandCard key={index} data-aos='fade-up'>
               <img 
                 src={brand.logo} 
                 alt={brand.name} 
-                className="w-16 h-16" style={{
+                className="w-20 h-20" style={{
                   objectFit:'contain'
                 }} 
               />
@@ -261,7 +261,7 @@ const BrandCard = styled.div`
   }
       @media (max-width: 640px) {
       
-    width: 100px;
+    width: 110px;
     padding: 10px;
     font-size: 14px;
     

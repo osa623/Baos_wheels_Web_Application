@@ -34,7 +34,7 @@ const Newsection = () => {
     <div className='relative h-auto w-auto bg-primary'>
       <div className=' flex flex-col items-center justify-center w-full h-[30vh]  bg-primary top-[5vh]'>
         <div className='lg:flex w-[40vw] h-0.5 md:w-[30vw] bg-secondary items-start justify-start mx-20' data-aos='fade-right'/>
-        <h2 className='lg:text-6xl text-secondary md:text-5xl sms:text-6xl text-center font-russoone' data-aos='flip-up'>What's New</h2>
+        <h2 className='lg:text-6xl text-secondary md:text-5xl sms:text-5xl text-center font-russoone' data-aos='flip-up'>What's New</h2>
         <div className='lg:flex w-[40vw] h-0.5 md:w-[30vw] bg-secondary items-end justify-end mx-20'  data-aos='fade-left'/>
       </div>
       <div className='flex justify-center w-full mt-[-5vh]' data-aos='zoom-in'>
