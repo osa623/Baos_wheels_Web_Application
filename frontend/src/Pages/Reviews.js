@@ -75,20 +75,20 @@ const Reviews = () => {
         <div className='flex flex-col w-full h-auto items-center justify-center'>
           <h2 className='text-2xl font-russoone text-baseextra4 m-2' data-aos='zoom-in'>Explore by Brand Names</h2>
 
-         <div className='flex w-full h-auto items-center justify-center p-2'>
+         <div className='flex w-full h-auto items-center justify-center p-5'>
           <div className='lg:flex flex-row flex-wrap sms:grid grid-cols-3 gap-x-2 lg:w-full h-auto gap-3 cursor-pointer justify-center items-center'>
             {Autobrands.map((brand, index) => (
-              <div className='flex flex-col w-[10vw] sms:w-[25vw] sms:h-[15vh] items-center h-[20vh] justify-center rounded-lg space-y-3 bg-primary p-5 m-2 border-2 hover: scale-120 transition-transform' key={index} data-aos='flip-up'
+              <div className='flex flex-col w-[10vw] sms:w-[25vw] sms:h-[15vh] items-center h-[20vh] justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:border-baseprimary hover:border-1 transition-transform' key={index} data-aos='flip-up'
               style={{
-                transform: 0.5
+                transitionDuration:20
               }}>
                 <img
                   src={brand.logo}
                   alt={brand.name}
-                  className="w-16 h-16 scale-125"
+                  className="w-16 h-16 scale-100 p-1"
                   style={{
                     objectFit: 'contain'}}/>
-                <span className="text-sm sms:text-sm pt-2 font-kanit text-center" style={{
+                <span className="text-sm sms:text-sm pt-2 sms:w-[20vw] font-kanit text-center" style={{
                   
                 }}>{brand.name}</span>
               </div>
