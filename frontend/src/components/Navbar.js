@@ -45,7 +45,7 @@ const Navbar = () => {
         <li className="p-4 hover:text-baseprimary"><a href='/home'>Home</a></li>
         <li className="p-4 hover:text-baseprimary"><a href='/reviews'>Reviews</a></li>
         <li className="p-4 hover:text-baseprimary"><a href='/articles'>Articles</a></li>
-        <li className="p-4 hover:text-baseprimary">About</li>
+        <li className="p-4 hover:text-baseprimary"><a href='/about'>About</a></li>
       </ul>
       <div className="md:hidden transition-transform" onClick={handleNav} style={{
         transitionDuration:'200s'
@@ -67,7 +67,7 @@ const Navbar = () => {
           <li className="p-4 border-b border-gray-600 text-center"><a href='/reviews'>Reviews</a></li>
           <li className="p-4 border-b border-gray-600 text-center"><a href='/articles'>Articles</a></li>
           <li className="p-4 border-b border-gray-600 text-center">Videos</li>
-          <li className="p-4 border-b border-gray-600 text-center">About</li>
+          <li className="p-4 border-b border-gray-600 text-center"><a href='/about'>About</a></li>
         </ul>
         <div className='absolute flex sms:bottom-20 w-full h-auto gap-6 items-center justify-center p-3'>
         <div className='flex h-0.5 w-[80vw] bg-primary mx-1'/>

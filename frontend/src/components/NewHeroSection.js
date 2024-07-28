@@ -38,7 +38,7 @@ const NewHeroSection = () => {
                    
                     
                     <div className='absolute bottom-0 bg-gradient-to-t from-secondary to-transparent sms:h-[50vh] opacity-100 w-full items-center justify-center z-30'/>
-                     <div className='absolute flex-col bottom-0 h-[30vh] w-full bg-transparent items-center justify-center z-20 space-y-2'>
+                     <div className='absolute flex-col bottom-0 h-[30vh] w-full bg-transparent items-center justify-center z-20 space-y-5'>
 
                         <div className='flex h-auto w-auto items-center justify-center mx- space-x-2 mx-3'>
                             <motion.div
@@ -61,8 +61,8 @@ const NewHeroSection = () => {
                         initial={{marginTop:'50px', opacity:'0'}}
                         whileInView={{marginTop:'5px', opacity:'1'}}
                         transition={{duration:'2.0',ease:'easeInOut', delay:'0.4'}}
-                        className='flex h-auto w-full items-center justify-center'>
-                          <p className='flex text-center text-primary font-poppins text-sm w-[80vw] font-semibold'>
+                        className='flex h-[12vh] w-full items-center justify-center'>
+                          <p className='flex text-center text-primary font-russoone text-sm w-[80vw] font-thin'>
                           Baos Wheels is your go-to hub for car reviews, insightful articles, and the latest trends in the automotive world. Discover, explore, and fuel your passion for all things on wheels!
                           </p>
                         </motion.div>

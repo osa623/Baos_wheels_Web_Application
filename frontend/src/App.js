@@ -10,6 +10,7 @@ import Reviews from './Pages/Reviews';
 import Footer from './components/Footer';
 import Articlesec from './Pages/Articlesec';
 import Sample from './Pages/Sample';
+import About from './Pages/About';
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/reviews" element={<Reviews/>}/>
             <Route path="/articles" element={<Articlesec/>}/>
             <Route path="/sample" element={<Sample/>}/>
+            <Route path="/about" element={<About/>}/>
           </Routes>
         </div>
         <div className='relative flex-col'>

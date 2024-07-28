@@ -69,7 +69,7 @@ const Footer = () => {
           <img src={bwlogo} alt="Baos Wheels Logo" className="max-h-full" />
         </div>
 
-      <div className="md:flex sms:flex-col bg-baseextra1 w-full h-[8vh] items-center justify-center sms:pb-10">
+      <div className="md:flex sms:flex-col bg-transparent w-full h-auto items-center justify-center sms:p-10">
         <h2 className="font-kanit md:text-lg sms:text-sm text-primary text-center">Copyright 2024 © Baos Wheels. All Rights Reserved.</h2>
         <h2 className="md:hidden font-kanit  sms:text-sm text-primary text-center" style={{
           fontSize:'10px'
