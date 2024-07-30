@@ -25,8 +25,8 @@ const NewHeroSection = () => {
 
     
     <main className='relative h-auto w-full'>
-              <section className='sm:hidden max-w-sms mx-auto'>
-                <div className='flex h-auto w-full'>
+              <section className='flex max-w-sms mx-auto'>
+                <div className='hidden sms:flex h-auto w-full'>
                   <video src={bgvideo} autoPlay loop muted playsInline/>
 
                   <motion.div 
@@ -81,12 +81,12 @@ const NewHeroSection = () => {
 
 
               <section 
-                className='hidden mds:flex h-[100vh] w-full bg-secondary'
-                style={{ backgroundImage: `url(${wallpaper})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                className='sms:hidden flex flex-col mds:h-auto w-full lgs:h-auto lgs:w-auto bg-secondary'>
                 
-                <div className='absolute top-0 left-0 flex flex-row h-full w-full justify-end items-center '>
+                <img src={wallpaper} alt='' />
+                
 
-                </div>
+                
               </section>
 
     </main>

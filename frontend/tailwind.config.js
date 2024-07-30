@@ -24,8 +24,9 @@ module.exports = {
         kanit: ['Kanit', 'sans-serif'],
       },
       screens: {
-        'sms': { 'max': '640px' },
-        'mds': {'min': '641px', 'max':'1024px'}
+        'sms': { 'min': '10px','max': '640px' }, // screens <= 640px
+        'mds': { 'min': '641px','max': '1023px'}, // screens <= 1023px
+        'lgs': { 'min': '1024px','max': '1536px'} // screen <= 1536px
       },
       inset: {
         '5': '5px',

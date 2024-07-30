@@ -65,19 +65,19 @@ const Reviewsection = () => {
   return (
     <AppContainer>
       <Wrapper>
-        <div className='flex flex-col h-auto w-full items-center justify-center  overflow-hidden'>
-          <div className='flex flex-col lg:h-[10vh]  w-[50vw] md:mt-10 items-center justify-center '>
-            <div className='flex h-0.5 w-[20vw] sms:w-[50vw] bg-black cursor-default' data-aos='fade-right'></div>
-            <h2 className='lg:text-6xl md:text-5xl sms:text-7xl font-russoone text-baseextra1' data-aos='flip-up'>Reviews</h2>
-            <div className='flex h-0.5 w-[20vw] sms:w-[50vw] bg-black cursor-default' data-aos='fade-left'></div>
+        <div className='flex flex-col h-auto w-full items-center justify-center  overflow-hidden sms:space-y-2 lgs:space-y-10'>
+          <div className='flex flex-col w-[50vw] mds:mt-10 sms:mt-10 lgs:mt-5 items-center justify-center'>
+            <div className='flex h-0.5 lgs:w-[30vw] mds:w-[40vw] sms:w-[50vw] bg-black cursor-default' data-aos='fade-right'></div>
+            <h2 className='lgs:text-7xl mds:text-6xl sms:text-5xl font-russoone text-baseextra1' data-aos='flip-up'>Reviews</h2>
+            <div className='flex h-0.5 lgs:w-[30vw] mds:w-[40vw] sms:w-[50vw] bg-black cursor-default' data-aos='fade-left'></div>
             </div>  
-            <p className='lg:text-m md:text-sm sms:text-lg sms:p-10  text-baseextra1 font-kanit  lg:w-[60vw] h-inherit mb-5 mt-5 text-center md:w-[' data-aos='zoom-in'
+            <p className='lgs:text-md mds:text-sm sms:text-sm sms:p-10  text-baseextra1 font-kanit mds:w-[80vw] lgs:w-[70vw] h-inherit mb-5 mt-5 text-center md:w-[' data-aos='zoom-in'
             style={{
-              fontWeight: 500
-            }}>Welcome to our Car Reviews section! Here, you'll find detailed and easy-to-understand reviews of various cars. We cover everything from speed and safety to comfort and technology. Whether you're interested in a car that's fast, safe, or packed with the latest features, our reviews will help you make an informed decision. Read insights from our experts and real car owners, and discover the perfect car for you today</p>
+              
+            }}>{''}<span className='text-5xl font-thin'>W</span>{''}elcome to our Car Reviews section! Here, you'll find detailed and easy-to-understand reviews of various cars. We cover everything from speed and safety to comfort and technology. Whether you're interested in a car that's fast, safe, or packed with the latest features, our reviews will help you make an informed decision. Read insights from our experts and real car owners, and discover the perfect car for you today</p>
 
         </div>
-        <Note data-aos='zoom-in'>Explore by Vehicle Type</Note>
+        <Note className='sms:p-3 mds:p-3 lgs:p-5' data-aos='zoom-in'>Explore by Vehicle Type</Note>
         <Marquee >
           <MarqueeGroup isPaused ={isPaused}>
             {row1.map((el, index) => (
@@ -119,10 +119,10 @@ const Reviewsection = () => {
         </div>
 
         <div className='flex flex-col w-auto items-center justify-center sms:pb-10'>
-          <Note data-aos='zoom-out'>Explore by Brand Names</Note>
+          <Note className='sms:h-autom sms:w-auto text-2xl' data-aos='zoom-out'>Explore by Brand Names</Note>
         </div>
-        <div className='flex lg:w-[95vw] lg:h-[30vh] sm:w-[90vw] sm:h-[50vh] items-center justify-center sms:p-2'>
-        <div className='flex flex-wrap lg:w-inherit md:w-[100vw] sms:h-auto overflow-hidden  lg:gap-5 sms:gap-x-4 sms:pt-4 md:gap-5 sms:gap-3 cursor-pointer justify-center '>
+        <div className='flex lgs:w-[95vw] lgs:h-[50vh] sms:w-[90vw] sms:h-auto items-center justify-center sms:p-2 '>
+        <div className='flex flex-wrap lgs:w-full lgs:h-[25vh] mds:w-[100vw] sms:h-auto overflow-hidden  lgs:gap-5 sms:gap-x-4 sms:pt-4 mds:gap-5 sms:gap-3 cursor-pointer justify-center '>
           {Autobrands.map((brand, index) => (
             <BrandCard key={index} data-aos='fade-up'>
               <img 
@@ -247,7 +247,7 @@ const BrandCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100px;
+  width: 150px;
   padding: 10px;
   text-align: center;
   border-radius: 8px;
