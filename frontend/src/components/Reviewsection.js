@@ -77,7 +77,7 @@ const Reviewsection = () => {
             <p className='lgs:text-md mds:text-sm sms:text-sm sms:p-10  text-baseextra1 font-kanit mds:w-[80vw] lgs:w-[70vw] h-inherit mb-5 mt-5 text-center md:w-[' data-aos='zoom-in'
             style={{
               
-            }}>{''}<span className='text-5xl font-thin'>W</span>{''}elcome to our Car Reviews section! Here, you'll find detailed and easy-to-understand reviews of various cars. We cover everything from speed and safety to comfort and technology. Whether you're interested in a car that's fast, safe, or packed with the latest features, our reviews will help you make an informed decision. Read insights from our experts and real car owners, and discover the perfect car for you today</p>
+            }}>{''}<span className='text-3xl font-thin'>Welcome</span>{' '}to our Car Reviews section! Here, you'll find detailed and easy-to-understand reviews of various cars. We cover everything from speed and safety to comfort and technology. Whether you're interested in a car that's fast, safe, or packed with the latest features, our reviews will help you make an informed decision. Read insights from our experts and real car owners, and discover the perfect car for you today</p>
 
         </div>
         <Note className='sms:p-3 mds:p-3 lgs:p-5' data-aos='zoom-in'>Explore by Vehicle Type</Note>

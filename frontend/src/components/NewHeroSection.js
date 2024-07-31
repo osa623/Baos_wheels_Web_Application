@@ -6,7 +6,9 @@ import { motion } from 'framer-motion';
 
 //import video and image files
 
-import bgvideo from '../assests/Videofiles/final bg hero.mp4'
+//import bgvideo from '../assests/Videofiles/final bg hero.mp4';
+import bgvideo from '../assests/Videofiles/bgvideo.mp4';
+
 
 const NewHeroSection = () => {  
 

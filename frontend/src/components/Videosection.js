@@ -44,18 +44,16 @@ const Videosection = () => {
     
     }}>
 
-    <div className='flex flex-col h-auto items-center justify-center pt-20 sms:pt-10'>
+    <div className='flex flex-col h-auto items-center justify-center pt-20 sms:pt-10 mds:p-10'>
       <div className='flex bg-baseextra3 w-[50vw] h-0.5 mt'data-aos='fade-right'/>
-      <h2 className='lgs:text-6xl sms:text- mds:text-5xl sms:text-center font-extrabold font-russoone text-primary cursor-default hover:text-baseprimary transition duration-2000 ease-in-out p-2' data-aos='flip-up'>High-Octane Showdowns</h2>
+      <h2 className='lgs:text-6xl sms:text-6xl mds:text-7xl mds:w-[75vw] text-center sms:text-center font-extrabold font-russoone text-primary cursor-default hover:text-baseprimary transition duration-2000 ease-in-out p-2' data-aos='flip-up'>High-Octane Showdowns</h2>
       <div className='flex bg-baseextra3 w-[50vw] h-0.5'data-aos='fade-left'/>
 
-      <div class="md:whitespace-nowrap sms:flex sms:flex-col lg:w-[60vw] mx-auto sms:pt-5 lg:pt-5 space-x-2 items-center justify-start text-center sms:w-[90vw]" data-aos="zoom-in">
-              <span class="text-primary lg:text-lg h-auto sms:text-sm sms:w-[75vw] font-kanit lg:pt-5 sms:pt-2 sms:text-center">
-                Some of Our Favourite Automobile Videos from  
-              </span>
-              <span class="text-primary lg:text-lg sms:text-sm font-extrabold font-russoone">
-                Baos Wheels
-              </span>
+      <div class="sms:flex sms:flex-col sms:w-[90vw] lg:w-[60vw] mx-auto sms:p-4  lg:pt-5 space-x-2 items-center justify-start text-center " data-aos="zoom-in">
+              <p class="text-primary lgs:text-lg h-auto sms:text-sm sms:w-[75vw] font-kanit lg:pt-5 sms:pt-2 sms:text-center">
+              {''}<span className='font-thin text-2xl'>Discover</span>{''} our top automobile videos from Baos Wheels on YouTube, featuring car reviews, mechanical insights, and the latest trends. Dive into the automotive world with our curated favorites. 
+              </p>
+             
 </div>
 
     </div>
@@ -81,7 +79,7 @@ const Videosection = () => {
     </div>
 
 
-    <div className='hidden mds:flex  flex-col items-center justify-center  h-auto w-auto pt-5 ' data-aos='zoom-in'>
+    <div className='hidden mds:flex lgs:flex  flex-col items-center justify-center  h-auto w-auto pt-5 ' data-aos='zoom-in'>
       <Marquee style={{
         width:'95%',
         height:'50%',
@@ -90,7 +88,7 @@ const Videosection = () => {
         
 
       }}>
-      <div className='flex flex-col w-auto h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+      <div className='flex flex-col w-auto mds:h-[25vh] lgs:h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
            borderRadius: '20px',
            overflow:'hidden'
       }}>
@@ -104,7 +102,7 @@ const Videosection = () => {
 
       </div>
 
-      <div className='flex flex-col w-auto h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+      <div className='flex flex-col w-auto mds:h-[25vh] lgs:h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
         borderRadius:'20px',
         overflow:'hidden'
       }}>
@@ -118,7 +116,7 @@ const Videosection = () => {
         }}/>
 
       </div>
-      <div className='flex flex-col w-auto h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+      <div className='flex flex-col w-auto mds:h-[25vh] lgs:h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
            borderRadius: '20px',
            overflow:'hidden'
       }}>
@@ -132,7 +130,7 @@ const Videosection = () => {
 
      </div>
 
-     <div className='flex flex-col w-auto h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+     <div className='flex flex-col w-auto mds:h-[25vh] lgs:h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
            borderRadius: '20px',
            overflow:'hidden'
       }}>
@@ -146,7 +144,7 @@ const Videosection = () => {
 
 
     </div>
-      <div className='flex flex-col w-auto h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out'style={{
+      <div className='flex flex-col w-auto mds:h-[25vh] lgs:h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out'style={{
            borderRadius: '20px',
            overflow:'hidden'
       }}>
@@ -174,31 +172,37 @@ const Videosection = () => {
   <div className='absolute w-full bottom-0 h-[20vh] bg-gradient-to-t from-baseprimary to-transparent'/>
 
   <div className='flex flex-col w-full h-auto items-center justify-start p-4 space-y-5 z-30'>
-                <h2 className='text-4xl font-russoone  text-primary mb-4 text-center' data-aos='zoom-out'>
+                <h2 className='text-5xl font-russoone  text-primary mb-4 text-center' data-aos='zoom-out'>
                   Our Tiktok Gallery
                 </h2>
-                <p className='text-sm text-center w-full text-primary font-kanit' data-aos='fade-up' fade-aos-delay='20'>
-               {''}<span className='font-semibold text-baseprimary text-lg pr-1'>Baos Wheels</span> {' '} brings you engaging auto mechanical videos on TikTok. We offer in-depth mechanical explanations, detailed car reviews, insights into the latest inventions, and record-breaking information in the auto industry. Stay informed and entertained with the newest trends and developments in the world of automobiles.
+                <p className='text-md text-center w-[75vw] text-primary font-kanit' data-aos='fade-up' fade-aos-delay='20'>
+               {''}<span className='font-thin text-primary text-2xl pr-1'>Baos Wheels</span> {' '} brings you engaging auto mechanical videos on TikTok. We offer in-depth mechanical explanations, detailed car reviews, insights into the latest inventions, and record-breaking information in the auto industry. Stay informed and entertained with the newest trends and developments in the world of automobiles.
                 </p>
-                <div className='grid grid-cols-2 gap-y-6 gap-x-4 w-auto h-auto items-center justify-center p-2'>
-                      <div className='flex w-[40vw] h-[5vh] bg-primary rounded-full items-center justify-center cursor-pointer shadow-lg shadow-baseprimary' data-aos='flip-right' data-aos-delay='300'>
-                          <h2 className='h-auto w-inherit text-lg text-baseextra4 font-'>Car Tech</h2>
-                      </div>
-                      <div className='flex  w-[40vw] h-[5vh] bg-primary rounded-full cursor-pointer items-center justify-center shadow-lg shadow-baseprimary'data-aos='flip-left' data-aos-delay='350'>
-                      <h2 className='h-auto w-inherit text-lg text-baseextra4 font-'>Strange Cars</h2>
-                    </div>
-                    <div className='flex w-[40vw] h-[5vh] bg-primary rounded-full cursor-pointer items-center justify-center shadow-lg shadow-baseprimary' data-aos='flip-right' data-aos-delay='400'>
-                    <h2 className='h-auto w-inherit text-lg text-baseextra4 font-'>Stories</h2>
-                      </div>
-                      <div className='flex  w-[40vw] h-[5vh] bg-primary  rounded-full cursor-pointer items-center justify-center shadow-lg shadow-baseprimary' data-aos='flip-left' data-aos-delay='450'>
-                      <h2 className='h-auto w-inherit text-lg text-baseextra4 font-'>Engine's Roar</h2>
-                      </div>
-                      <div className='flex w-[40vw] h-[5vh] bg-primary  rounded-full cursor-pointer items-center justify-center shadow-lg shadow-baseprimary' data-aos='flip-right' data-aos-delay='500'>
-                      <h2 className='h-auto w-inherit text-lg text-baseextra4 font-'>Mercedes Benz</h2>
-                      </div>
-                      <div className='flex  w-[40vw] h-[5vh] bg-primary  rounded-full cursor-pointer items-center justify-center shadow-lg shadow-baseprimary'data-aos='flip-left' data-aos-delay='550'>
-                      <h2 className='h-auto w-inherit text-lg text-baseextra4 font-'>Ferarri</h2>
-                      </div>
+                <div className='grid grid-cols-2 gap-y-6 gap-x-8 w-auto h-auto items-center justify-center p-2'>
+                      <button class="group relative h-12 w-30 overflow-hidden rounded-xl bg-white text-lg shadow" data-aos='flip-left' data-aos-delay='100'>
+                          <div class="absolute inset-0 w-3 bg-baseprimary transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                          <span class="relative text-black group-hover:text-white">Car Tech</span>
+                      </button>
+                      <button class="group relative h-12 w-40 overflow-hidden rounded-xl bg-white text-lg shadow" data-aos='flip-left' data-aos-delay='150'>
+                          <div class="absolute inset-0 w-3 bg-baseprimary transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                          <span class="relative text-black group-hover:text-white">Strange Cars</span>
+                      </button>
+                      <button class="group relative h-12 w-30 overflow-hidden rounded-xl bg-white text-lg shadow" data-aos='flip-left' data-aos-delay='200'>
+                          <div class="absolute inset-0 w-3 bg-baseprimary transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                          <span class="relative text-black group-hover:text-white">Stories</span>
+                      </button>
+                      <button class="group relative h-12 w-30 overflow-hidden rounded-xl bg-white text-lg shadow" data-aos='flip-left' data-aos-delay='250'>
+                          <div class="absolute inset-0 w-3 bg-baseprimary transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                          <span class="relative text-black group-hover:text-white">Engine's Roar</span>
+                      </button>
+                      <button class="group relative h-12 w-30 overflow-hidden rounded-xl bg-white text-lg shadow" data-aos='flip-left' data-aos-delay='300'>
+                          <div class="absolute inset-0 w-3 bg-baseprimary transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                          <span class="relative text-black group-hover:text-white">Mercedes Benz</span>
+                      </button>
+                      <button class="group relative h-12 w-30 overflow-hidden rounded-xl bg-white text-lg shadow" data-aos='flip-left' data-aos-delay='350'>
+                          <div class="absolute inset-0 w-3 bg-baseprimary transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                          <span class="relative text-black group-hover:text-white">Ferrari</span>
+                      </button>
 
                 </div>
 </div>
@@ -254,7 +258,10 @@ const Videosection = () => {
     </div>
 
     <div className='flex flex-col items-center justify-center w-full h-auto p-2 z-40'>
-        <button className='flex w-[40vw] h-[5vh] text-xl bg-primary text-baseprimary items-center justify-center font-russoone rounded-full'>Watch more</button>
+    <button class="group relative h-12 w-[50vw] overflow-hidden rounded-xl bg-white text-lg shadow" data-aos='flip-left' data-aos-delay='350'>
+                          <div class="absolute inset-0 w-3 bg-baseprimary transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                          <span class="relative text-black group-hover:text-white">See more</span>
+    </button> 
     </div>
 
 
@@ -265,14 +272,14 @@ const Videosection = () => {
   
 
   {/*max screen size -1024 and min-screen size - 640 : screen configs */}
-  <div className='hidden md:flex flex-grow w-full items-start justify-start'>
-    <div className='flex flex-row w-[60vw]  h-[100vh] justify-start items-start '>
+  <div className='hidden mds:flex lgs:flex flex-grow w-full items-start justify-start'>
+    <div className='flex flex-row w-[60vw]  lgs:h-auto lgs:justify-start lgs:items-start mds:justify-center mds:items-center'>
       
 
       {/* Rendering TikTok videos */}
 
       {/* TikTok embed HTML */}
-      <div className='flex w-[20vw] h-full scale-75 hover:scale-90 transition duration-500'>
+      <div className='mds:hidden flex w-[20vw] h-auto scale-75 hover:scale-90 transition duration-500'>
         <blockquote className="tiktok-embed mx-auto full rounded-2xl" cite="https://www.tiktok.com/@baos_623/video/7382543004868922642" data-aos='zoom-in' data-aos-duration='5000' data-aos-delay='100' data-video-id="7382543004868922642" style={{ maxWidth: '605px', minWidth: '325px' }}>
           <section>
             <a target="_blank" title="@baos_623" href="https://www.tiktok.com/@baos_623?refer=embed">@baos_623</a> Hybrid Technology ගැන කෙටියෙන් 💥⚙️🚗
@@ -318,7 +325,7 @@ const Videosection = () => {
         </blockquote>
       </div>
 
-      <div className='flex w-[20vw] h-full scale-75 hover:scale-90 transition duration-500'>
+      <div className='mds:hidden flex w-[20vw] h-auto scale-75 hover:scale-90 transition duration-500'>
         <blockquote className="tiktok-embed mx-auto rounded-2xl" cite="https://www.tiktok.com/@baos_623/video/7382543004868922642" data-aos='zoom-in' data-aos-duration='8000' data-aos-delay='150' data-video-id="7382543004868922642" style={{ maxWidth: '605px', minWidth: '325px' }}>
           <section>
             <a target="_blank" title="@baos_623" href="https://www.tiktok.com/@baos_623?refer=embed">@baos_623</a> Hybrid Technology ගැන කෙටියෙන් 💥⚙️🚗
@@ -363,7 +370,7 @@ const Videosection = () => {
           </section>
         </blockquote>
       </div>
-      <div className='flex w-[20vw] h-full scale-75 hover:scale-90 transition duration-500' >
+      <div className='flex lgs:w-[20vw] h-auto scale-75 hover:scale-90 transition duration-500' >
         <blockquote className="tiktok-embed mx-auto rounded-2xl" cite="https://www.tiktok.com/@baos_623/video/7382543004868922642" data-video-id="7382543004868922642"  data-aos='zoom-in' data-aos-duration='10000' data-aos-delay='200' style={{ maxWidth: '605px', minWidth: '325px' }}>
           <section>
             <a target="_blank" title="@baos_623" href="https://www.tiktok.com/@baos_623?refer=embed">@baos_623</a> Hybrid Technology ගැන කෙටියෙන් 💥⚙️🚗
@@ -411,32 +418,38 @@ const Videosection = () => {
       <script async src="https://www.tiktok.com/embed.js"></script>
     </div>
 
-    <div className='flex flex-col w-[40vw] h-[100vh] items-center justify-start p-8'>
+    <div className='flex flex-col w-[40vw] lgs:h-auto mds:h-auto items-center justify-start p-8 mds:space-y-5 lgs:space-y-5'>
                 <h2 className='text-5xl font-russoone lg:w-full text-primary mb-4 text-center'>
                   Our Tiktok Gallery
                 </h2>
-                <p className='text-sm text-center w-full lg:w-[30vw] text-primary font-kanit'>
-                  To display the TikTok embed views in a horizontal, categorical layout using Tailwind CSS and React, you can update your layout to make use of flex properties. Here’s how you can modify your code to achieve this:
+                <p className='text-sm text-center w-full lgs:w-[25vw] text-primary font-kanit'>
+                {''}<span className=' text-primary text-lg font-thin pr-1'>Baos Wheels</span> {' '} brings you engaging auto mechanical videos on TikTok. We offer in-depth mechanical explanations, detailed car reviews, insights into the latest inventions, and record-breaking information in the auto industry. Stay informed and entertained with the newest trends and developments in the world of automobiles.
                 </p>
-                <div className='flex flex-col w-full h-auto  mt-4 items-center justify-center space-y-4'>
-                      <div className='flex w-[25vw] h-[5vh] bg-primary rounded-xl items-center justify-center cursor-pointer' data-aos='flip-right' data-aos-delay='300'>
-                          <h2 className='h-auto w-inherit text-xl text-baseextra4 font-kanit'>Car Tech ❤</h2>
-                      </div>
-                      <div className='flex  w-[25vw] h-[5vh] bg-primary rounded-xl cursor-pointer items-center justify-center'data-aos='flip-left' data-aos-delay='350'>
-                      <h2 className='h-auto w-inherit text-xl text-baseextra4 font-kanit'>Strange Cars 💥</h2>
-                    </div>
-                    <div className='flex w-[25vw] h-[5vh] bg-primary rounded-xl cursor-pointer items-center justify-center' data-aos='flip-right' data-aos-delay='400'>
-                    <h2 className='h-auto w-inherit text-xl text-baseextra4 font-kanit'>Interesting Stories</h2>
-                      </div>
-                      <div className='flex  w-[25vw] h-[5vh] bg-primary  rounded-xl cursor-pointer items-center justify-center' data-aos='flip-left' data-aos-delay='450'>
-                      <h2 className='h-auto w-inherit text-xl text-baseextra4 font-kanit'>Engine's Roar</h2>
-                      </div>
-                      <div className='flex w-[25vw] h-[5vh] bg-primary  rounded-xl cursor-pointer items-center justify-center' data-aos='flip-right' data-aos-delay='500'>
-                      <h2 className='h-auto w-inherit text-xl text-baseextra4 font-kanit'>Mercedes Benz</h2>
-                      </div>
-                      <div className='flex  w-[25vw] h-[5vh] bg-primary  rounded-xl cursor-pointer items-center justify-center'data-aos='flip-left' data-aos-delay='550'>
-                      <h2 className='h-auto w-inherit text-xl text-baseextra4 font-kanit'>Ferarri</h2>
-                      </div>
+                <div className='flex flex-col w-full h-auto  mt-4 items-center justify-center space-y-4 lgs:p-4 mds:p-5'>
+                      <button class="group relative h-12 mds:w-48 lgs:w-[20vw] overflow-hidden rounded-xl bg-white text-lg shadow" data-aos='flip-left' data-aos-delay='100'>
+                          <div class="absolute inset-0 w-3 bg-baseprimary transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                          <span class="relative text-black group-hover:text-white">Car Tech</span>
+                      </button>
+                      <button class="group relative h-12 mds:w-48 lgs:w-[20vw] overflow-hidden rounded-xl bg-white text-lg shadow" data-aos='flip-left' data-aos-delay='150'>
+                          <div class="absolute inset-0 w-3 bg-baseprimary transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                          <span class="relative text-black group-hover:text-white">Strange Cars</span>
+                      </button>
+                      <button class="group relative h-12 mds:w-48 lgs:w-[20vw] overflow-hidden rounded-xl bg-white text-lg shadow" data-aos='flip-left' data-aos-delay='200'>
+                          <div class="absolute inset-0 w-3 bg-baseprimary transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                          <span class="relative text-black group-hover:text-white">Stories</span>
+                      </button>
+                      <button class="group relative h-12 mds:w-48 lgs:w-[20vw] overflow-hidden rounded-xl bg-white text-lg shadow" data-aos='flip-left' data-aos-delay='250'>
+                          <div class="absolute inset-0 w-3 bg-baseprimary transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                          <span class="relative text-black group-hover:text-white">Engine's Roar</span>
+                      </button>
+                      <button class="group relative h-12 mds:w-48 lgs:w-[20vw] overflow-hidden rounded-xl bg-white text-lg shadow" data-aos='flip-left' data-aos-delay='300'>
+                          <div class="absolute inset-0 w-3 bg-baseprimary transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                          <span class="relative text-black group-hover:text-white">Mercedes Benz</span>
+                      </button>
+                      <button class="group relative h-12 mds:w-48 lgs:w-[20vw] overflow-hidden rounded-xl bg-white text-lg shadow" data-aos='flip-left' data-aos-delay='350'>
+                          <div class="absolute inset-0 w-3 bg-baseprimary transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                          <span class="relative text-black group-hover:text-white">Ferrari</span>
+                      </button>
 
                 </div>
 </div>
