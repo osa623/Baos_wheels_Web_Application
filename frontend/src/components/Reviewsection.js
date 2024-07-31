@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import styled, { keyframes, css } from "styled-components";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion } from 'framer-motion';
+import {faArrowRightLong} from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -118,11 +121,11 @@ const Reviewsection = () => {
               </div>
         </div>
 
-        <div className='flex flex-col w-auto items-center justify-center sms:pb-10'>
+        <div className='flex flex-col w-auto items-center justify-center sms:p-5 mds:p-3 lgs:p-8'>
           <Note className='sms:h-autom sms:w-auto text-2xl' data-aos='zoom-out'>Explore by Brand Names</Note>
         </div>
-        <div className='flex lgs:w-[95vw] lgs:h-[50vh] sms:w-[90vw] sms:h-auto items-center justify-center sms:p-2 '>
-        <div className='flex flex-wrap lgs:w-full lgs:h-[25vh] mds:w-[100vw] sms:h-auto overflow-hidden  lgs:gap-5 sms:gap-x-4 sms:pt-4 mds:gap-5 sms:gap-3 cursor-pointer justify-center '>
+        <div className='flex lgs:w-[95vw] lgs:h-auto sms:w-[90vw] sms:h-auto items-center justify-center sms:p-2 '>
+        <div className='flex flex-wrap lgs:w-full lgs:h-auto mds:w-[100vw] sms:h-auto overflow-hidden  lgs:gap-5 sms:gap-x-4 sms:pt-4 mds:gap-5 sms:gap-3 cursor-pointer justify-center sms:p-5 mds:p-5 lgs:p-3 '>
           {Autobrands.map((brand, index) => (
             <BrandCard key={index} data-aos='fade-up'>
               <img 
@@ -136,7 +139,19 @@ const Reviewsection = () => {
             </BrandCard>
           ))}
         </div>
+       
         </div>
+        <motion.div
+       initial={{opacity:0,marginLeft:'-100px'}}
+       whileInView={{opacity:1,marginLeft:'0px'}}
+       transition={{duration:'1.5', ease:'easeInOut', delay:'0.4'}}
+       className='flex flex-row items-center justify-center h-[10vh] mt-[-2vh] sms:p-4 mds:p-2 lgs:p-10'>
+
+        <div className='text-2xl text-baseprimary font-semibold font-russoone'> See more</div>
+        <FontAwesomeIcon icon={faArrowRightLong} className='w-10 text-baseprimary'  style={{
+          
+        }}/>
+      </motion.div>
       </Wrapper>
     </AppContainer>
   );

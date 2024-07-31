@@ -46,7 +46,7 @@ const Videosection = () => {
 
     <div className='flex flex-col h-auto items-center justify-center pt-20 sms:pt-10'>
       <div className='flex bg-baseextra3 w-[50vw] h-0.5 mt'data-aos='fade-right'/>
-      <h2 className='lg:text-6xl sms:text-5xl sms:text-center font-extrabold font-russoone text-primary cursor-default hover:text-baseprimary transition duration-2000 ease-in-out p-2' data-aos='flip-up'>High-Octane Showdowns</h2>
+      <h2 className='lgs:text-6xl sms:text- mds:text-5xl sms:text-center font-extrabold font-russoone text-primary cursor-default hover:text-baseprimary transition duration-2000 ease-in-out p-2' data-aos='flip-up'>High-Octane Showdowns</h2>
       <div className='flex bg-baseextra3 w-[50vw] h-0.5'data-aos='fade-left'/>
 
       <div class="md:whitespace-nowrap sms:flex sms:flex-col lg:w-[60vw] mx-auto sms:pt-5 lg:pt-5 space-x-2 items-center justify-start text-center sms:w-[90vw]" data-aos="zoom-in">
@@ -70,7 +70,7 @@ const Videosection = () => {
 
                 <img src={yt.path}
                      alt={yt.name}
-                     className='w-50 h-auto rounded-lg' style={{
+                     className='lgs:w-50 lgs:h-auto mds:w-auto rounded-lg' style={{
                       objectFit:'contain'
                      }}/>
 
@@ -81,7 +81,7 @@ const Videosection = () => {
     </div>
 
 
-    <div className='hidden md:flex flex-col items-center justify-center  h-auto w-auto pt-5 ' data-aos='zoom-in'>
+    <div className='hidden mds:flex  flex-col items-center justify-center  h-auto w-auto pt-5 ' data-aos='zoom-in'>
       <Marquee style={{
         width:'95%',
         height:'50%',
@@ -90,7 +90,7 @@ const Videosection = () => {
         
 
       }}>
-      <div className='flex flex-col w-[25vw] h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+      <div className='flex flex-col w-auto h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
            borderRadius: '20px',
            overflow:'hidden'
       }}>
@@ -104,7 +104,7 @@ const Videosection = () => {
 
       </div>
 
-      <div className='flex flex-col w-[25vw] h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+      <div className='flex flex-col w-auto h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
         borderRadius:'20px',
         overflow:'hidden'
       }}>
@@ -118,7 +118,7 @@ const Videosection = () => {
         }}/>
 
       </div>
-      <div className='flex flex-col w-[25vw] h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+      <div className='flex flex-col w-auto h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
            borderRadius: '20px',
            overflow:'hidden'
       }}>
@@ -132,7 +132,7 @@ const Videosection = () => {
 
      </div>
 
-     <div className='flex flex-col w-[25vw] h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+     <div className='flex flex-col w-auto h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
            borderRadius: '20px',
            overflow:'hidden'
       }}>
@@ -146,7 +146,7 @@ const Videosection = () => {
 
 
     </div>
-      <div className='flex flex-col w-[25vw] h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out'style={{
+      <div className='flex flex-col w-auto h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out'style={{
            borderRadius: '20px',
            overflow:'hidden'
       }}>
