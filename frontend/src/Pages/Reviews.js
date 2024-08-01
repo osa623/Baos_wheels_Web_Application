@@ -46,15 +46,15 @@ const Reviews = () => {
   return (
     <div className='relative w-full h-auto'>
       <div className='flex flex-col w-full h-auto bg-primary items-center justify-start'>
-        <div className='flex md:h-[10vh] sms:h-[10vh] mds:h-[10vh] lgs:h-[10vh] w-full items-center justify-center' />
-        <div className='flex flex-col h-[20vh] w-full items-center justify-center'>
+        <div className='flex md:h-[10vh] sms:h-[10vh] mds:h-[10vh] lgs:h-[20vh] w-full items-center justify-center' />
+        <div className='flex flex-col sms:h-[10vh] w-full items-center justify-center mds:pt-10'>
           <div className='flex w-[30vw] h-0.5 bg-secondary' data-aos='fade-right' />
           <h2 className='flex mds:text-7xl sms:text-6xl lgs:text-7xl  font-russoone text-baseextra4' data-aos='flip-up'>Reviews</h2>
           <div className='flex w-[30vw] h-0.5 bg-secondary' data-aos='fade-left' />
         </div>
 
-        <p className='flex flex-col w-[80vw] sms:w-[90vw] h-auto text-wrap text-base sms:text-sm font-kanit text-secondary text-center sms:m-4 m-2' data-aos='zoom-in'>
-          Explore the world of automobiles with Baos Wheels' comprehensive Review Section. Our mission is to provide you with detailed, impartial, and insightful evaluations of the latest and most sought-after vehicles on the market. We delve deep into every aspect of each car, from performance and features to comfort and reliability, ensuring you have all the information you need to make an informed decision.
+        <p className='w-[80vw] sms:w-[80vw] h-auto text-wrap text-base sms:text-sm font-kanit text-secondary text-center sms:m-4 m-2' data-aos='zoom-in'>
+          {''}<span className='font-thin text-2xl'>Explore</span>{''} the world of automobiles with Baos Wheels' comprehensive Review Section. Our mission is to provide you with detailed, impartial, and insightful evaluations of the latest and most sought-after vehicles on the market. We delve deep into every aspect of each car, from performance and features to comfort and reliability, ensuring you have all the information you need to make an informed decision.
         </p>
 
         <div className='sms:hidden flex sms:h-[5vh] w-full items-center justify-center' />
@@ -63,9 +63,9 @@ const Reviews = () => {
           <h2 className='text-2xl font-russoone text-baseextra4 m-2' data-aos='zoom-in'>Explore by Brand Names</h2>
 
           <div className='flex w-full h-auto items-center justify-center p-5'>
-            <div className='flex flex-wrap gap-4 sms:gap-2 lg:w-[70vw] h-auto cursor-pointer justify-center items-center'>
+            <div className='flex flex-wrap gap-3 sms:gap-2 lgs:w-[70vw] mds:w-[95vw] h-auto cursor-pointer justify-center items-center mds:p-5'>
               {Autobrands.map((brand, index) => (
-                <div className='flex flex-col w-[20vw] sms:w-[30vw] md:w-[15vw] items-center h-auto justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:border-baseprimary transition-transform' key={index} data-aos='flip-up'>
+                <div className='flex flex-col  w-[20vw] sms:w-[30vw] mds:w-[15vw] items-center h-auto justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:border-baseprimary transition-transform' key={index} data-aos='flip-up'>
                   <img
                     src={brand.logo}
                     alt={brand.name}

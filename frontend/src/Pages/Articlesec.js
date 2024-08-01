@@ -1,6 +1,7 @@
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
+import {motion} from 'framer-motion';
 
 const Articlesec = () => {
 useEffect(()=>{
@@ -17,17 +18,18 @@ useEffect(()=>{
   return (
     <div className='relative h-auto w-auto'>
 
-      <div className='flex flex-col w-full h-auto bg-primary items-center justify-start sms:pt-20'>
+      <div className='flex flex-col w-full h-auto bg-primary items-center justify-start sms:pt-20 lgs:space-y-2'>
 
-        
-              <div className='flex flex-col sms:h-[15vh] w-full items-center justify-center'>
-                    <div className='flex md:w-[30vw] sms:w-[50vw] h-0.5 bg-secondary' data-aos='fade-right' />
-                    <h2 className='flex text-6xl sms:text-7xl font-russoone text-baseextra4' data-aos='flip-up'>Articles</h2>
-                    <div className='flex md:w-[30vw] sms:w-[50vw] h-0.5 bg-secondary' data-aos='fade-left' />
+            <div className='hidden mds:flex lgs:flex h-[10vh] bg-primary w-full'/>
+         
+              <div className='flex flex-col sms:h-[15vh] w-full items-center lgs: justify-center sms:pt-10 lgs:pt-5'>
+                    <div className='flex mds:w-[40vw] sms:w-[40vw] lgs:w-[40vw] h-0.5 bg-secondary' data-aos='fade-right' />
+                    <h2 className='flex mds:text-7xl sms:text-7xl lgs:text-8xl font-russoone text-baseextra4' data-aos='flip-up'>Articles</h2>
+                    <div className='flex mds:w-[40vw] sms:w-[40vw] lgs:w-[40vw] h-0.5 bg-secondary' data-aos='fade-left' />
               </div>
 
-              <div className='flex flex-col h-auto w-full items-center justify-center p-5'>
-                    <p className='flex h-auto w-full text-center font-kanit'>Our Articles section is your go-to destination for all things automotive. From insights into mechanical parts and the latest car inventions to coverage of auto companies and industry news, we have it all. I also share my thoughts on the most groundbreaking advancements in the automotive world. Whether you're an enthusiast or curious, this section offers a wealth of knowledge and captivating content.</p>
+              <div className='flex flex-col h-auto w-full items-center justify-center p-5 lgs:p-10' data-aos='zoom-in' data-aos-delay='20'>
+                    <p className='flex h-auto sms:w-[75vw] mds:w-[75vw] lgs:w-[80vw] text-center font-kanit sms:text-md lgs:text-lg'>{''} Our{''} Articles section is your go-to destination for all things automotive. From insights into mechanical parts and the latest car inventions to coverage of auto companies and industry news, we have it all. I also share my thoughts on the most groundbreaking advancements in the automotive world. Whether you're an enthusiast or curious, this section offers a wealth of knowledge and captivating content.</p>
               </div>
 
               <div className='sm:hidden flex h-[20vh] w-full items-center justify-between p-2'>

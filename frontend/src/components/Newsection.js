@@ -47,7 +47,7 @@ const Newsection = () => {
           style={{
             
           }}>
-            {''}<span className='text-5xl font-thin'>N</span>{''}ews Stay Updated with the Latest in the Automotive World. From new model releases and industry trends to expert reviews and technological innovations, our news section has it all. Whether you are a car enthusiast or just curious, explore and stay informed about the future of transportation
+            {''}<span className='text-3xl font-thin'>News</span>{''} Stay Updated with the Latest in the Automotive World. From new model releases and industry trends to expert reviews and technological innovations, our news section has it all. Whether you are a car enthusiast or just curious, explore and stay informed about the future of transportation
           </p>
         </div>
       </div>
