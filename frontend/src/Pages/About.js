@@ -1,7 +1,8 @@
 import Aos from 'aos';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
-import { faQuoteLeft, faQuoteRight} from '@fortawesome/free-solid-svg-icons';
+import emailjs from '@emailjs/browser';
+import { faQuoteLeft, faQuoteRight, faMailForward, faMessage} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -11,10 +12,58 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const About = () => {
 
+     const Scode = process.env.service_Code;
+     const Tcode = process.env.temp_Code;
+     const PCode = process.env.private_Code
+
+
+     const [formSubmit, setFormSubmit] = useState(false);
+     const [formData, setFormData] = useState({
+       user_name: '',
+       user_email: '',
+       message: ''
+     });
+     const [formError, setFormError] = useState('');
+     
+     const handleChange = (e) => {
+       setFormData({
+         ...formData,
+         [e.target.name]: e.target.value
+       });
+     };
+     
+     const handleSubmit = (event) => {
+       event.preventDefault();
+     
+       const { user_name, user_email, message } = formData;
+     
+       // Validate the form fields
+       if (!user_name || !user_email || !message) {
+         setFormError('Please fill in all fields');
+         return;
+       }
+     
+       emailjs.sendForm(Scode, PCode, event.target, Tcode)
+         .then((result) => {
+           console.log(result.text);
+           setFormSubmit(true);
+           setFormError('');
+           setFormData({ user_name: '', user_email: '', message: '' });
+     
+           setTimeout(() => {
+             setFormSubmit(false);
+           }, 3000);
+         }, (error) => {
+           console.log(error.text);
+         });
+     }; 
+
  useEffect(() => {
    Aos.init({duration:1500})
 
  })
+
+
 
 
 
@@ -66,6 +115,104 @@ const About = () => {
                <p className='h-auto sms:w-[80vw] text-center font-kanit sms:text-md text-secondary'  data-aos='fade-right' data-aos-delay='500'>{''}<FontAwesomeIcon icon={faQuoteLeft} className='my-1'/> Baos Wheels is a community for car enthusiasts, offering a space to learn, share, and connect. Whether you're an expert or a newcomer, there's something here for everyone.{' '}<FontAwesomeIcon icon={faQuoteRight} className='my-1'/>{' '}</p>
           </div>
                
+
+          <div className='flex sms:flex-col h-auto w-auto justify-center items-center sms:space-y-5 sms:pb-20'>
+               <h2 className='font-russoone text-3xl text-center text-baseextra4'  data-aos='fade-right' data-aos-delay='300'>Join the Ride</h2>
+               <p className='h-auto sms:w-[80vw] text-center font-kanit sms:text-md text-secondary'  data-aos='fade-right' data-aos-delay='500'>{''}<FontAwesomeIcon icon={faQuoteLeft} className='my-1'/>Join our automotive journey! Subscribe to our YouTube channel, follow us on TikTok and Instagram, and connect with a community that shares a passion for cars..{' '}<FontAwesomeIcon icon={faQuoteRight} className='my-1'/>{' '}</p>
+
+                    <div className='flex h-auto w-auto sms:p-2 sms:justify-center sms:space-x-4 sms:overflow-hidden'>
+
+                                  <button className='bg-transparent border-blue-700 w-10 h-10 rounded-xl items-center justify-between text-primary font-russoone' data-aos='fade-up' data-aos-delay='300'> 
+                                  <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/facebook-new.png" alt="facebook-new" className='hover:scale-125 transition-transform' style={{transitionDuration:'0.5s'}}/>          
+                                  </button>
+                                  <button className='w-10 h-10 text-xl rounded-xl text-center text-primary font-russoone ' data-aos='fade-up' data-aos-delay='300'>
+                                  <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/tiktok--v1.png" alt="tiktok--v1" className='hover:scale-125 transition-transform' style={{transitionDuration:'0.5s'}}/>
+                                  </button>
+                                  <button className='w-10 h-10 text-xl rounded-xl text-center text-primary font-russoone' data-aos='fade-up' data-aos-delay='350'>
+                                  <img width="40" height="40" src="https://img.icons8.com/ios-filled/50/instagram-new--v1.png" alt="instagram-new--v1" className='hover:scale-125 transition-transform' style={{transitionDuration:'0.5s'}}/>
+                                  </button>
+                                  <button className='w-10 h-10 text-xl rounded-xl text-center text-primary font-russoone' data-aos='fade-up' data-aos-delay='400'>
+                                  <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/youtube-play.png" alt="youtube-play" className='hover:scale-125 transition-transform' style={{transitionDuration:'0.5s'}}/>
+                                  </button>
+
+                    </div>
+          
+          
+          </div>     
+          
+          <div className='flex sms:flex-col h-auto w-auto justify-center items-center sms:space-y-5 sms:pb-20'>
+               <h2 className='font-russoone text-3xl text-center text-baseextra4'  data-aos='fade-right' data-aos-delay='300'>Fuel the Ride</h2>
+               <p className='h-auto sms:w-[80vw] text-center font-kanit sms:text-md text-secondary'  data-aos='fade-right' data-aos-delay='500'>{''}<FontAwesomeIcon icon={faQuoteLeft} className='my-1'/> Share your thoughts and connect with fellow car enthusiasts. Your input helps keep the conversation lively and engaging. Join us and be part of the journey!{' '}<FontAwesomeIcon icon={faQuoteRight} className='my-1'/>{' '}</p>
+         
+                    {/* Adding the form */}
+
+                    <div className='flex sms:flex-col w-auto h-auto sms:justify-center items-center sms:p-2'>
+                    <form onSubmit={handleSubmit} className="mx-auto lgs:max-w-xl sms:w-auto sms:mt-10 sms:drop-shadow-md lgs:p-10 sms:p-5 mds:p-12 rounded-2xl bg-fontsecondary bg-opacity-80 z-40 items-center sms:overflow-hidden">
+                                
+                              <div className='flex sms:w-[70vw] sms:h-auto justify-center items-center overflow-hidden'data-aos='fade-right' data-aos-delay='650'>
+                                <h2 className='flex lgs:w-[30vw] sms:w-[70vw] h-auto text-center text-baseextra4 font-russoone mds:text-6xl lgs:text-5xl sms:text-4xl'>Let's Talk{''}<FontAwesomeIcon icon={faMessage} className='sms:mx-4' /></h2>
+                              </div>  
+                                {formError && <p className="text-red-500">{formError}</p>}
+                                
+                                <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 sms:w-[80vw] sms:pt-4 " data-aos='zoom-in' data-aos-delay='500'>
+                                  <div className="sm:col-span-2">
+                                    <label htmlFor="user_name" className="block sms:text-md font-semibold leading-6 text-gray-900">First name</label>
+                                    <div className="mt-2.5">
+                                      <input
+                                        type="text"
+                                        name="user_name"
+                                        value={formData.user_name}
+                                        onChange={handleChange}
+                                        className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        required
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="sm:col-span-2">
+                                    <label htmlFor="user_email" className="block sms:text-md font-semibold leading-6 text-gray-900">Email</label>
+                                    <div className="mt-2.5">
+                                      <input
+                                        type="email"
+                                        name="user_email"
+                                        value={formData.user_email}
+                                        onChange={handleChange}
+                                        className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        required
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="sm:col-span-2">
+                                    <label htmlFor="message" className="block sms:text-md font-semibold leading-6 text-gray-900">Message</label>
+                                    <div className="mt-2.5">
+                                      <textarea
+                                        name="message"
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        rows="4"
+                                        className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        required
+                                      ></textarea>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className='flex w-full h-auto justify-center sms:mt-10 items-center lgs:mt-5 overflow-hidden'>
+                                  <button type='submit' className="group relative sms:w-[60vw] sms:h-auto sms:p-2 lgs:h-12 lgs:w-[15vw] mds:w-[20vw] mds:h-8 overflow-hidden sms:border-2 rounded-xl bg-white lgs:text-lg mds:text-md shadow mds:m-5" data-aos='fade-up' data-aos-delay='700'>
+                                    <div className="absolute inset-0 w-3 bg-baseprimary transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                                    <span className="relative text-secondary text-xl font-kanit group-hover:text-primary transition-all duration-[100ms] hover:ease-out">
+                                      Send Message <FontAwesomeIcon icon={faMailForward} alt=' ' className='relative'/>
+                                    </span>
+                                  </button>
+                                </div>
+                     </form>
+                              {formSubmit && (
+                                <div className='absolute hidden sms:flex-grow mds:flex lgs:flex w-auto h-auto top-10 right-12' style={{ animationDuration:'20s' }}>
+                                  <div className='flex bg-primary lgs:w-[25vw] h-auto justify-center lgs:border-2 border-[#ec3434] rounded-3xl lgs:p-4'>
+                                    <p className='lgs:text-center font-semibold font-dmsans'>Thank you for reaching out to me! I appreciate your message and will get back to you as soon as possible.</p>
+                                  </div>
+                                </div>
+                              )}
+                    </div>
+          </div>
 
 
       </div>
