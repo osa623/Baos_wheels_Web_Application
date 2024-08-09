@@ -1,18 +1,45 @@
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import React, { useEffect } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 //import {motion} from 'framer-motion';
 
 const Articlesec = () => {
+
+const [articles, setArticles] = useState([]);  
+const [loading, setLoading] = useState(true);  
+const [error, setError] = useState(null);
+
+//all the apis
+const fetchAllArticles = process.env.GET_ARTICLES;
+
+const fetchArticles = async () => {
+    try {
+        const response = await axios.get("http://localhost:5000/api/articles/get");
+        setArticles(response.data);
+        
+    } catch (error) {
+        console.error("Error Fetching Articles:", error);        
+    }finally{
+        setLoading(false);
+    }
+};  
+
+
+
+
+
 useEffect(()=>{
+    fetchArticles();
     Aos.init(
         {
             duration:'2000'
         }
     );
 
-    
-}, []);
+
+ 
+},);
 
 
   return (
@@ -56,7 +83,7 @@ useEffect(()=>{
                                   </li>
                                   </ul>
                               </div>
-                              <div class="relative w-full">
+                              <div class="relative sms:w-full">
                                   <input type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Search Mockups, Logos, Design Templates..." required />
                                   <button type="submit" class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-blue-700 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                       <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -69,9 +96,25 @@ useEffect(()=>{
                       </form>
 
               </div>
-              <div className='sm:hidden flex flex-col h-screen w-full bg-baseprimary'>
+              <div className='flex h-auto w-auto justify-center'>
+                <div className='grid sms:grid-cols-2 sms:gap-3 justify-center items-center'>
+                    {articles.map((article) =>(
+                       <div key={article._id} 
+                            className='flex sms:flex-col sms:h-20 w-[20vw] justify-center border-2 rounded-e-xl items-center bg-primary'>
 
+                                <h2 className='font-kanit sms:text-xl text-secondary text-center'>
+                                    {article.title}
+                                </h2>
+                                <p className='flex justify-center font-kanit text-md'>
+                                    {article.description}
+                                </p>
+
+
+                       </div>
+                    ))}
+                </div>
               </div>
+
         </div>
         </div>
   )
