@@ -11,7 +11,7 @@ const [loading, setLoading] = useState(true);
 const [error, setError] = useState(null);
 
 //all the apis
-const fetchAllArticles = process.env.GET_ARTICLES;
+
 
 const fetchArticles = async () => {
     try {
@@ -26,9 +26,6 @@ const fetchArticles = async () => {
 };  
 
 
-
-
-
 useEffect(()=>{
     fetchArticles();
     Aos.init(
@@ -40,7 +37,6 @@ useEffect(()=>{
 
  
 },);
-
 
   return (
     <div className='relative h-auto w-auto'>
@@ -97,22 +93,35 @@ useEffect(()=>{
 
               </div>
               <div className='flex h-auto w-auto justify-center'>
-                <div className='grid sms:grid-cols-2 sms:gap-3 justify-center items-center'>
-                    {articles.map((article) =>(
-                       <div key={article._id} 
-                            className='flex sms:flex-col sms:h-20 w-[20vw] justify-center border-2 rounded-e-xl items-center bg-primary'>
+                <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lg:mt-[5vh] mds:grid-cols-2 gap-3 p-10'>
+                   {articles.map((article) => (
+                     <div key={article._id} className='bg-primary rounded-lg border-2 drop-shadow-sm' data-aos='fade-right'>
+                     <div className='bg-transparent sms:h-auto w-auto mb-10 rounded-t-lg'>
+		
+                                                {article.images.length > 0 && (
+                                                    <img
+                                                    src={article.images[0]}
+                                                    alt={article.title}
+                                                    className="w-full h-[20vh] object-cover"
+/>
+                                                )}
 
-                                <h2 className='font-kanit sms:text-xl text-secondary text-center'>
-                                    {article.title}
-                                </h2>
-                                <p className='flex justify-center font-kanit text-md'>
-                                    {article.description}
-                                </p>
 
 
-                       </div>
-                    ))}
-                </div>
+                      </div>
+
+                      <div className='text-secondary sms:text-md font-russoone sms:mb-2 sms:pl-4'>
+                       {article.category}
+                      </div>
+                    <h3 className=' text-baseextra4 font-semibold text-2xl font-kanit sms:mb-2 sms:pl-4'>
+                       {article.title}
+                    </h3>
+                    <div className='text-gray-400 sms:text-lg mb-2 pl-4'>
+                       <span>{article.date}</span>
+                     </div>
+                     </div>
+            ))}
+         </div>
               </div>
 
         </div>

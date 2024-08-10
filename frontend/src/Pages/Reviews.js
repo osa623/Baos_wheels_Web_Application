@@ -1,5 +1,6 @@
 import Aos from 'aos';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import 'aos/dist/aos.css';
 
 // Brand Logos
@@ -15,11 +16,31 @@ import toyota from '../assests/Brand Logos/toyota.png';
 import mazda from '../assests/Brand Logos/mazda.png';
 
 const Reviews = () => {
+
+const [review, setReview] = useState([]);
+const [loading, setLoading] = useState('');
+
+
+const fetchReviews = async () => {
+   
+  try {
+    
+    const response = await axios.get("http://localhost:5000/api/reviews/get");
+    setReview(response.data);
+  } catch (error) {
+    console.error("Error Fetching Articles:", error);
+
+  }finally{
+    setLoading();
+  }
+};
+
   useEffect(() => {
+    fetchReviews();
     Aos.init({
       duration: 2500,
     });
-  }, []);
+  },);
 
   const Autobrands = [
     { name: 'Audi', logo: audi },
@@ -54,7 +75,7 @@ const Reviews = () => {
         </div>
 
         <p className='w-[80vw] sms:w-[80vw] h-auto text-wrap text-base sms:text-sm font-kanit text-secondary text-center sms:m-4 m-2' data-aos='zoom-in'>
-          {''}<span className='font-thin text-2xl'>Explore</span>{''} the world of automobiles with Baos Wheels' comprehensive Review Section. Our mission is to provide you with detailed, impartial, and insightful evaluations of the latest and most sought-after vehicles on the market. We delve deep into every aspect of each car, from performance and features to comfort and reliability, ensuring you have all the information you need to make an informed decision.
+          {''}Explore the world of automobiles with Baos Wheels' comprehensive Review Section. Our mission is to provide you with detailed, impartial, and insightful evaluations of the latest and most sought-after vehicles on the market. We delve deep into every aspect of each car, from performance and features to comfort and reliability, ensuring you have all the information you need to make an informed decision.
         </p>
 
         <div className='sms:hidden flex sms:h-[5vh] w-full items-center justify-center' />
@@ -95,9 +116,46 @@ const Reviews = () => {
           </div>
         </div>
       </div>
+      <div className='flex flex-col w-auto h-auto sms:p-3'>
+        <div className='flex w-full h-auto justify-center items-center'>
+           <h2 className='text-2xl font-russoone text-baseextra4 m-2' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
+        </div>
+        <div className='flex w-auto h-auto sms:p-5'>
+              <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lg:mt-[5vh] mds:grid-cols-2 gap-3 p-10'>
+                 {review.map((reviews) => (
+                                       <div key={reviews._id} className='bg-primary rounded-lg border-2 drop-shadow-sm' data-aos='fade-right'>
+                                       <div className='bg-transparent sms:h-auto w-auto mb-10 rounded-t-lg'>
+                      
+                                                                  {reviews.images.length > 0 && (
+                                                                      <img
+                                                                      src={reviews.images[0]}
+                                                                      alt={reviews.title}
+                                                                      className="w-full h-[20vh] object-cover"
+                  />
+                                                                  )}
+                  
+                  
+                  
+                                        </div>
+                  
+                                        <div className='text-secondary sms:text-md font-russoone sms:mb-2 sms:pl-4'>
+                                         {reviews.category}
+                                        </div>
+                                      <h3 className=' text-baseextra4 font-semibold text-2xl font-kanit sms:mb-2 sms:pl-4'>
+                                         {reviews.title}
+                                      </h3>
+                                      <div className='text-gray-400 sms:text-lg mb-2 pl-4'>
+                                         <span>{reviews.date}</span>
+                                       </div>
+                                       </div>
+                 ))}
 
-      {/*Reviews previewing section*/}
-      <div className='flex w-full h-auto bg-transparent'></div>
+              </div>
+        </div>
+
+      </div>
+          
+
     </div>
   );
 };
