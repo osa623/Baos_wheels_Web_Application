@@ -47,7 +47,7 @@ useEffect(()=>{
          
               <div className='flex flex-col sms:h-[15vh] w-full items-center lgs: justify-center sms:pt-10 lgs:pt-5'>
                     <div className='flex mds:w-[40vw] sms:w-[40vw] lgs:w-[40vw] h-0.5 bg-secondary' data-aos='fade-right' />
-                    <h2 className='flex mds:text-7xl sms:text-7xl lgs:text-8xl font-russoone text-baseextra4' data-aos='flip-up'>Articles</h2>
+                    <h2 className='flex mds:text-6xl sms:text-xl lgs:text-7xl font-russoone text-baseextra4' data-aos='flip-up'>Articles</h2>
                     <div className='flex mds:w-[40vw] sms:w-[40vw] lgs:w-[40vw] h-0.5 bg-secondary' data-aos='fade-left' />
               </div>
 
