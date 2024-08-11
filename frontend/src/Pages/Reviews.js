@@ -14,11 +14,13 @@ import rangerover from '../assests/Brand Logos/range_rover.png';
 import tesla from '../assests/Brand Logos/tesla.png';
 import toyota from '../assests/Brand Logos/toyota.png';
 import mazda from '../assests/Brand Logos/mazda.png';
+import { useNavigate } from 'react-router-dom';
 
 const Reviews = () => {
 
 const [review, setReview] = useState([]);
-const [loading, setLoading] = useState('');
+const navigate = useNavigate();
+
 
 
 const fetchReviews = async () => {
@@ -31,9 +33,14 @@ const fetchReviews = async () => {
     console.error("Error Fetching Articles:", error);
 
   }finally{
-    setLoading();
+
   }
 };
+
+ const handleReviewClick = (review_id) =>{
+      navigate(`/reviews/${review_id}`)
+
+ };
 
   useEffect(() => {
     fetchReviews();
@@ -124,7 +131,7 @@ const fetchReviews = async () => {
         <div className='flex w-auto h-auto sms:p-5 justify-center'>
               <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lg:mt-[5vh] mds:grid-cols-2 gap-3 p-10'>
                  {review.map((reviews) => (
-                                       <div key={reviews._id} className=' bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer' data-aos='fade-right'>
+                                       <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer' data-aos='fade-right'>
                                        <div className='bg-transparent sms:h-auto w-auto mb-10 rounded-lg'>
                       
                                                                   {reviews.images.length > 0 && (
@@ -142,6 +149,9 @@ const fetchReviews = async () => {
                                         <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm font-russoone sms:mb-2 sms:pl-4 lgs:pl-5'>
                                          {reviews.category}
                                         </div>
+                                        <h2 className=' text-baseextra4 font-semibold  sms:text-3xl font-kanit sms:pl-4 lgs:pl-5'>
+                                         {reviews.brand}
+                                      </h2>
                                       <h3 className=' text-baseextra4 font-semibold  text-xl font-kanit sms:mb-2 sms:pl-4 lgs:pl-5'>
                                          {reviews.title}
                                       </h3>

@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Articlesec from './Pages/Articlesec';
 import Sample from './Pages/Sample';
 import About from './Pages/About';
+import DisplayRev from './Pages/Display_Rev';
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
           <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/reviews" element={<Reviews/>}/>
+            <Route path="/reviews/:id" element={<DisplayRev/>}/>
             <Route path="/articles" element={<Articlesec/>}/>
             <Route path="/sample" element={<Sample/>}/>
             <Route path="/about" element={<About/>}/>
