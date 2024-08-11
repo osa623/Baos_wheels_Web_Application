@@ -124,9 +124,9 @@ const fetchReviews = async () => {
         </div>
       </div>
       <div className='flex flex-col w-auto h-auto lgs:p-10'>
-       <div className='border-2 rounded-xl border-secondary'>
+       <div className='border-2 rounded-t-xl border-secondary'>
         <div className='flex w-full h-auto justify-center items-center lgs:pt-5'>
-           <h2 className='sms:text-2xl lgs:text-4xl font-russoone text-baseextra4 m-2' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
+           <h2 className='sms:text-3xl lgs:text-4xl font-russoone text-baseextra4 m-2 sms:pt-5' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
         </div>
         <div className='flex w-auto h-auto sms:p-5 justify-center'>
               <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lg:mt-[5vh] mds:grid-cols-2 gap-3 p-10'>
@@ -146,7 +146,7 @@ const fetchReviews = async () => {
                   
                                         </div>
                   
-                                        <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm font-russoone sms:mb-2 sms:pl-4 lgs:pl-5'>
+                                        <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm font-russoone sms:pl-4 lgs:pl-5'>
                                          {reviews.category}
                                         </div>
                                         <h2 className=' text-baseextra4 font-semibold  sms:text-3xl font-kanit sms:pl-4 lgs:pl-5'>
