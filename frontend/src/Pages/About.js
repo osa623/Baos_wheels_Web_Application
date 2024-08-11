@@ -4,8 +4,8 @@ import 'aos/dist/aos.css';
 import emailjs from '@emailjs/browser';
 import { faQuoteLeft, faQuoteRight, faMailForward, faMessage} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '@dotlottie/player-component';
-import {motion} from 'framer-motion';
+
+
 
 
 

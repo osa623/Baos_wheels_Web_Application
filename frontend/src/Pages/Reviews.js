@@ -68,13 +68,13 @@ const fetchReviews = async () => {
     <div className='relative w-full h-auto'>
       <div className='flex flex-col w-full h-auto bg-primary items-center justify-start'>
         <div className='flex md:h-[10vh] sms:h-[10vh] mds:h-[10vh] lgs:h-[20vh] w-full items-center justify-center' />
-        <div className='flex flex-col sms:h-[10vh] w-full items-center justify-center mds:pt-10'>
+        <div className='flex flex-col sms:h-[10vh] w-full items-center justify-center mds:pt-10 lgs:pb-5'>
           <div className='flex w-[30vw] h-0.5 bg-secondary' data-aos='fade-right' />
           <h2 className='flex mds:text-7xl sms:text-6xl lgs:text-7xl  font-russoone text-baseextra4' data-aos='flip-up'>Reviews</h2>
           <div className='flex w-[30vw] h-0.5 bg-secondary' data-aos='fade-left' />
         </div>
 
-        <p className='w-[80vw] sms:w-[80vw] h-auto text-wrap text-base sms:text-sm font-kanit text-secondary text-center sms:m-4 m-2' data-aos='zoom-in'>
+        <p className='lgs:w-[70vw] sms:w-[80vw] h-auto text-wrap text-base sms:text-sm lgs:text-lg font-kanit text-secondary text-center sms:m-4 m-2 lgs:p-5' data-aos='zoom-in'>
           {''}Explore the world of automobiles with Baos Wheels' comprehensive Review Section. Our mission is to provide you with detailed, impartial, and insightful evaluations of the latest and most sought-after vehicles on the market. We delve deep into every aspect of each car, from performance and features to comfort and reliability, ensuring you have all the information you need to make an informed decision.
         </p>
 
@@ -86,11 +86,11 @@ const fetchReviews = async () => {
           <div className='flex w-full h-auto items-center justify-center p-5'>
             <div className='flex flex-wrap gap-3 sms:gap-2 lgs:w-[70vw] mds:w-[95vw] h-auto cursor-pointer justify-center items-center mds:p-5'>
               {Autobrands.map((brand, index) => (
-                <div className='flex flex-col  w-[20vw] sms:w-[30vw] mds:w-[15vw] items-center h-auto justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:border-baseprimary transition-transform' key={index} data-aos='flip-up'>
+                <div className='flex flex-col  w-[20vw] sms:w-[30vw] mds:w-[15vw] items-center h-auto justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:drop-shadow-md  transition-transform' key={index} data-aos='flip-up'>
                   <img
                     src={brand.logo}
                     alt={brand.name}
-                    className="w-16 h-16 p-1"
+                    className="w-16 h-16 lgs:w-20 lgs:h-20 lgs:hover:scale-125 transform transition-transform duration-300 ease-in-out p-1"
                     style={{ objectFit: 'contain' }}
                   />
                   <span className="text-sm sms:text-xs md:text-sm pt-2 font-kanit text-center">{brand.name}</span>
@@ -116,21 +116,22 @@ const fetchReviews = async () => {
           </div>
         </div>
       </div>
-      <div className='flex flex-col w-auto h-auto sms:p-3'>
-        <div className='flex w-full h-auto justify-center items-center'>
-           <h2 className='text-2xl font-russoone text-baseextra4 m-2' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
+      <div className='flex flex-col w-auto h-auto lgs:p-10'>
+       <div className='border-2 rounded-xl border-secondary'>
+        <div className='flex w-full h-auto justify-center items-center lgs:pt-5'>
+           <h2 className='sms:text-2xl lgs:text-4xl font-russoone text-baseextra4 m-2' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
         </div>
-        <div className='flex w-auto h-auto sms:p-5'>
+        <div className='flex w-auto h-auto sms:p-5 justify-center'>
               <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lg:mt-[5vh] mds:grid-cols-2 gap-3 p-10'>
                  {review.map((reviews) => (
-                                       <div key={reviews._id} className='bg-primary rounded-lg border-2 drop-shadow-sm' data-aos='fade-right'>
-                                       <div className='bg-transparent sms:h-auto w-auto mb-10 rounded-t-lg'>
+                                       <div key={reviews._id} className=' bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer' data-aos='fade-right'>
+                                       <div className='bg-transparent sms:h-auto w-auto mb-10 rounded-lg'>
                       
                                                                   {reviews.images.length > 0 && (
                                                                       <img
                                                                       src={reviews.images[0]}
                                                                       alt={reviews.title}
-                                                                      className="w-full h-[20vh] object-cover"
+                                                                      className="w-full h-[20vh] object-cover rounded-t-lg"
                   />
                                                                   )}
                   
@@ -138,10 +139,10 @@ const fetchReviews = async () => {
                   
                                         </div>
                   
-                                        <div className='text-secondary sms:text-md font-russoone sms:mb-2 sms:pl-4'>
+                                        <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm font-russoone sms:mb-2 sms:pl-4 lgs:pl-5'>
                                          {reviews.category}
                                         </div>
-                                      <h3 className=' text-baseextra4 font-semibold text-2xl font-kanit sms:mb-2 sms:pl-4'>
+                                      <h3 className=' text-baseextra4 font-semibold  text-xl font-kanit sms:mb-2 sms:pl-4 lgs:pl-5'>
                                          {reviews.title}
                                       </h3>
                                       <div className='text-gray-400 sms:text-lg mb-2 pl-4'>
@@ -157,6 +158,7 @@ const fetchReviews = async () => {
           
 
     </div>
+    </div> 
   );
 };
 
