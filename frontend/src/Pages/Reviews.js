@@ -2,6 +2,7 @@ import Aos from 'aos';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'aos/dist/aos.css';
+import { useNavigate } from 'react-router-dom';
 
 // Brand Logos
 import mercedesbenz from '../assests/Brand Logos/Mercedes_benz.png';
@@ -14,7 +15,7 @@ import rangerover from '../assests/Brand Logos/range_rover.png';
 import tesla from '../assests/Brand Logos/tesla.png';
 import toyota from '../assests/Brand Logos/toyota.png';
 import mazda from '../assests/Brand Logos/mazda.png';
-import { useNavigate } from 'react-router-dom';
+
 
 const Reviews = () => {
 
@@ -124,9 +125,9 @@ const fetchReviews = async () => {
         </div>
       </div>
       <div className='flex flex-col w-auto h-auto lgs:p-10'>
-       <div className='border-2 rounded-t-xl border-secondary'>
+       <div className='border-2 rounded-t-xl border-secondary bg-secondary'>
         <div className='flex w-full h-auto justify-center items-center lgs:pt-5'>
-           <h2 className='sms:text-3xl lgs:text-4xl font-russoone text-baseextra4 m-2 sms:pt-5' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
+           <h2 className='sms:text-3xl lgs:text-4xl font-russoone text-primary m-2 sms:pt-5' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
         </div>
         <div className='flex w-auto h-auto sms:p-5 justify-center'>
               <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lg:mt-[5vh] mds:grid-cols-2 gap-3 p-10'>

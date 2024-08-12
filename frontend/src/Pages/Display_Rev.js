@@ -1,31 +1,63 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import axios from 'axios';
+import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Display_Rev = () => {
   const { id } = useParams(); 
   const [review, setReview] = useState(null);
+  const [relatedReviews, setRelatedReviews] = useState([]);
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const fetchReview = async () => {
       try {
         const response = await axios.get(`http://localhost:5000/api/reviews/get/${id}`);
         setReview(response.data);
+
+        const relatedreviews = await axios.get(`http://localhost:5000/api/reviews/brand/${response.data.brand}`);
+        setRelatedReviews(relatedreviews.data)
+
       } catch (error) {
         console.error("Error Fetching Review:", error);
       }
-    };
 
+
+
+    };
+  
+    
     fetchReview();
-  }, [id]);
+  }, 
+
+  
+
+
+  [id]);
+
+  const handleClickReview = (review_id) =>{
+    navigate(`/reviews/${review_id}`)
+  } 
 
   if (!review) {
     return <div>Loading...</div>;
   }
 
   return (
-    <div className='relative w-full min-h-screen sms:p-2'>
-        <div className='flex sms:flex-col h-auto w-full justify-center items-center sms:pt-20 sms:p-10 rounded-xl border-2'>
+     <div className='relative w-full min-h-screen'>
+                   <div className='flex sms:flex-row w-full h-auto items-center justify-between sms:pt-20 sms:mb-5'>
+                    <Link to={`/reviews`}>
+                      <button className='flex sms:flex-row justify-center drop-shadow-xl border-2 items-center sms:w-[25vw] sms:ml-2 sms:p-2  sms:h-auto sms:rounded-2xl'>
+                        {''}<FontAwesomeIcon icon={faAngleDoubleLeft}/>{''}<span className='sms:mx-2'>Back</span>
+                      </button>
+                      </Link>
+                   </div>
+
+        <div className='flex sms:flex-col h-auto w-full justify-center items-center sms:pt-10 sms:p-10 rounded-xl border-2'>
+
             <h2 className='font-russoone sms:text-5xl text-center text-baseextra4'>
                 {review.brand}
             </h2>
@@ -96,6 +128,55 @@ const Display_Rev = () => {
             </div>
 
 
+        </div>
+
+        <div className='flex sms:flex-col w-auto h-auto sms:p-5 justify-center'>
+
+              <div className='flex sms:flex-col w-full h-auto sms:justify-start'>
+                <h2 className='font-russoone text-xl text-baseextra4  text-start'>
+                  More Reviews of : 
+                </h2>
+                <h2 className='font-russoone text-3xl text-secondary  text-start'>
+                  {review.brand} 
+                </h2>
+
+              </div>
+              
+
+
+              <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lg:mt-[5vh] mds:grid-cols-2 gap-3 p-10'>
+                 {relatedReviews.map((reviews) => (
+                                       <div key={reviews._id} onClick={() => handleClickReview(reviews._id)} className=' bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer' data-aos='fade-right'>
+                                       <div className='bg-transparent sms:h-auto w-auto mb-10 rounded-lg'>
+                      
+                                                                  {reviews.images.length > 0 && (
+                                                                      <img
+                                                                      src={reviews.images[0]}
+                                                                      alt={reviews.title}
+                                                                      className="w-full h-[20vh] object-cover rounded-t-lg"
+                  />
+                                                                  )}
+                  
+                  
+                  
+                                        </div>
+                  
+                                        <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm font-russoone sms:pl-4 lgs:pl-5'>
+                                         {reviews.category}
+                                        </div>
+                                        <h2 className=' text-baseextra4 font-semibold  sms:text-3xl font-kanit sms:pl-4 lgs:pl-5'>
+                                         {reviews.brand}
+                                      </h2>
+                                      <h3 className=' text-baseextra4 font-semibold  text-xl font-kanit sms:mb-2 sms:pl-4 lgs:pl-5'>
+                                         {reviews.title}
+                                      </h3>
+                                      <div className='text-gray-400 sms:text-lg mb-2 pl-4'>
+                                         <span>{reviews.date}</span>
+                                       </div>
+                                       </div>
+                 ))}
+
+              </div>
         </div>
 
     </div>
