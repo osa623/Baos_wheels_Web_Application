@@ -131,8 +131,8 @@ const fetchReviews = async () => {
         </div>
         <div className='flex w-auto h-auto sms:p-5 justify-center'>
               <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lg:mt-[5vh] mds:grid-cols-2 gap-3 p-10'>
-                 {review.map((reviews) => (
-                                       <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' bg-primary rounded-lg border-2 cursor-pointer' data-aos='fade-right'>
+                 {review.slice(0,8).map((reviews) => (
+                                       <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' bg-primary rounded-lg border-2 cursor-pointer' data-aos='fade-up'>
                                        <div className='bg-transparent sms:h-auto w-auto mb-10 rounded-lg'>
                       
                                                                   {reviews.images.length > 0 && (

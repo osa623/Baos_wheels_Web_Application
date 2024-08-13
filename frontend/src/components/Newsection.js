@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Aos from 'aos';
 import { motion } from 'framer-motion';
 import 'aos/dist/aos.css';
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faArrowRightLong} from '@fortawesome/free-solid-svg-icons';
 
@@ -70,7 +71,8 @@ const Newsection = () => {
        transition={{duration:'1.5', ease:'easeInOut', delay:'0.4'}}
        className='flex flex-row items-center justify-center h-[10vh] mt-[-2vh]'>
 
-        <div className='text-2xl text-baseprimary font-semibold font-russoone'> See more</div>
+        <div className='text-2xl text-baseprimary font-semibold cursor-pointer font-russoone'>{''}
+          <Link to={`/articles`}>See more</Link></div>
         <FontAwesomeIcon icon={faArrowRightLong} className='w-10 text-baseprimary'  style={{
           
         }}/>
