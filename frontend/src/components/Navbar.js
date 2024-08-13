@@ -15,7 +15,7 @@ const Navbar = () => {
         <img src={bwlogo} alt="bwlogo" className="h-12 w-auto m-4 mds:h-8 mds:m-2 lgs:h-12 sms:h-8" />
       </div>
       <ul className="hidden md:flex items-center font-russoone text-primary text-xl cursor-pointer">
-        <li className="p-4 hover:text-baseprimary"><a href='/home'>Home</a></li>
+        <li className="p-4 hover:text-baseprimary"><a href='/'>Home</a></li>
         <li className="p-4 hover:text-baseprimary"><a href='/reviews'>Reviews</a></li>
         <li className="p-4 hover:text-baseprimary"><a href='/articles'>Articles</a></li>
         <li className="p-4 hover:text-baseprimary"><a href='/about'>About</a></li>
@@ -30,7 +30,7 @@ const Navbar = () => {
           <div className="flex items-center justify-center">
             <img src={bwlogo} alt="bwlogo" className="h-8 w-auto m-4" />
           </div>
-          <li className="p-4 border-b border-gray-600 text-center"><a href='/home'>Home</a></li>
+          <li className="p-4 border-b border-gray-600 text-center"><a href='/'>Home</a></li>
           <li className="p-4 border-b border-gray-600 text-center"><a href='/reviews'>Reviews</a></li>
           <li className="p-4 border-b border-gray-600 text-center"><a href='/articles'>Articles</a></li>
           <li className="p-4 border-b border-gray-600 text-center"><a href='/about'>About</a></li>

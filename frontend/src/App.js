@@ -1,40 +1,59 @@
-// src/App.js
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-//nav-bar
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+// Navbar and Footer components
 import Navbar from './components/Navbar';
-
-//routes
+import Footer from './components/Footer';
+// Pages
 import Home from './Pages/Home';
 import Reviews from './Pages/Reviews';
-import Footer from './components/Footer';
 import Articlesec from './Pages/Articlesec';
 import Sample from './Pages/Sample';
 import About from './Pages/About';
 import DisplayRev from './Pages/Display_Rev';
+import Loading from './oth/Loading';
+// Loading component
 
 
-const App = () => {
+const AppContent = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsLoading(true);
+
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [location]);
+
   return (
-    <BrowserRouter>
-      <div className='relative flex-col min-h-screen overflow-hidden'>
-        <Navbar />
-        <div className='flex-grow'>
+    <div className="relative flex-col min-h-screen overflow-hidden">
+      <Navbar />
+      <div className="flex-grow">
+        {isLoading ? (
+         <Loading/>
+        ) : (
           <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route path="/reviews" element={<Reviews/>}/>
-            <Route path="/reviews/:id" element={<DisplayRev/>}/>
-            <Route path="/articles" element={<Articlesec/>}/>
-            <Route path="/sample" element={<Sample/>}/>
-            <Route path="/about" element={<About/>}/>
+            <Route path="/" element={<Home />} />
+            <Route path="/reviews" element={<Reviews />} />
+            <Route path="/reviews/:id" element={<DisplayRev />} />
+            <Route path="/articles" element={<Articlesec />} />
+            <Route path="/sample" element={<Sample />} />
+            <Route path="/about" element={<About />} />
           </Routes>
-        </div>
-        <div className='relative flex-col'>
-        <Footer/>
-        </div>
+        )}
       </div>
-    </BrowserRouter>
+      <Footer />
+    </div>
   );
 };
+
+const App = () => (
+  <BrowserRouter>
+    <AppContent />
+  </BrowserRouter>
+);
 
 export default App;

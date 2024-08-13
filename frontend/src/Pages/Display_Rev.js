@@ -56,30 +56,47 @@ const Display_Rev = () => {
                       </Link>
                    </div>
 
-        <div className='flex sms:flex-col h-auto w-full justify-center items-center sms:pt-10 sms:p-10 rounded-xl border-2'>
+        <div className='flex flex-col h-auto w-auto justify-center items-center sms:pt-10 p-10 lgs:pt-20 rounded-xl border-2'>
 
-            <h2 className='font-russoone sms:text-5xl text-center text-baseextra4'>
-                {review.brand}
-            </h2>
-            <h2 className='font-russoone text-2xl text-center text-baseextra4'>
-                {review.title}
-            </h2>
+        <div className='flex flex-col h-auto w-full lgs:justify-between lgs:items-start lgs:p-5'>
+          
+          <div className='flex lgs:flex-row justify-center items-center w-auto h-auto lgs:space-x-2 lgs:ml-10'>
+
+                  <div className='hidden lgs:flex h-[15vh] w-3 bg-secondary'/>
+                  <div className='flex flex-col h-auto w-auto'>
+                        <h2 className='w-full font-russoone sms:text-5xl lgs:text-7xl text-center lgs:text-start text-baseextra4'>
+                            {review.brand}
+                        </h2>
+                        <h2 className='w-full font-russoone sms:text-2xl lgs:text-4xl text-center   lgs:text-start text-baseextra4'>
+                            {review.title}
+                        </h2>
+                  </div>  
+          </div>
+      </div>              
             <div className='flex h-auto w-auto justify-center items-center sms:pt-5'>
               {review.images.length > 0 && (
-               <img src={review.images[0]} alt={review.title} className="w-full h-auto object-cover rounded-lg" />
+               <img src={review.images[0]} alt={review.title} className="sms:w-full lgs:scale-90 h-auto object-cover rounded-lg" />
               )}
             </div>
-            <div className='flex sms:flex-col h-auto w-full sms:pt-20'>
-               <div className='flex sms:flex-col w-full h-auto sms:justify-start sms:items-start sms:space-y-5'>
-                  <h2 className='font-russoone text-2xl text-baseextra4 text-start'>
+            <div className='flex flex-col h-auto w-full sms:pt-20 lgs:p-10'>
+
+              <div className='gird sms:grid-cols-2 gap-2 h-auto w-auto'>#
+                 <div className=''>
+                  
+                 </div>
+              </div>
+
+
+               <div className='flex flex-col w-full h-auto sms:justify-start sms:items-start sms:space-y-5 lgs:space-y-3'>
+                  <h2 className='font-russoone sms:text-2xl lgs:text-4xl text-baseextra4 text-start'>
                   Highlight Breakdown:
                   </h2>
-                  <p className='font-kanit sms:w-[75vw] text-lg text-secondary text-start'>
+                  <p className='font-kanit sms:w-[75vw] lgs:w-[50vw] text-lg lgs:text-xl text-secondary text-start'>
                     {review.overview}
                   </p>
                </div>
-               <div className='flex sms:flex-col w-full h-auto sms:justify-start sms:pt-10 sms:items-start sms:space-y-5'>
-                  <h2 className='font-russoone text-2xl text-baseextra4 text-start'>
+               <div className='flex flex-col w-full h-auto sms:justify-start sms:pt-10 lgs:pt-16 sms:items-start sms:space-y-5'>
+                  <h2 className='font-russoone sms:text-2xl lgs:text-4xl text-baseextra4 text-start'>
                   Design and Road Presence:
                   </h2>
                   <p className='font-kanit sms:w-[75vw] text-lg text-secondary text-start'>
