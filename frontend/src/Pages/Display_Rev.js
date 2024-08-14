@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDoubleLeft , faAngleDoubleUp} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Loading2 from '../oth/Loading2';
 
 const Display_Rev = () => {
   const { id } = useParams(); 
   const [review, setReview] = useState(null);
   const [relatedReviews, setRelatedReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
 
@@ -19,7 +21,10 @@ const Display_Rev = () => {
         setReview(response.data);
 
         const relatedreviews = await axios.get(`http://localhost:5000/api/reviews/brand/${response.data.brand}`);
-        setRelatedReviews(relatedreviews.data)
+        setRelatedReviews(relatedreviews.data);
+
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        setIsLoading(false);
 
       } catch (error) {
         console.error("Error Fetching Review:", error);
@@ -41,13 +46,16 @@ const Display_Rev = () => {
   const handleClickReview = (review_id) =>{
     navigate(`/reviews/${review_id}`)
   } 
-
-  if (!review) {
-    return <div>Loading...</div>;
+ //Loading screen 
+  if (isLoading) {
+    return <Loading2 />;
   }
+
+
 
   return (
      <div className='relative w-full min-h-screen'>
+       <div id='main' className='relative w-auto h-auto z-30'>
                    <div className='hidden sms:flex mds:flex flex-row w-full h-auto items-center justify-between sms:pt-20 mds:pt-20 sms:mb-5'>
                     <Link to={`/reviews`}>
                       <button className='flex sms:flex-row justify-center drop-shadow-xl border-2 items-center sms:w-[25vw] mds:w-[25vw] mds:mb-5 sms:ml-2 mds:ml-5 sms:p-2 mds:p-3  sms:h-auto rounded-2xl'>
@@ -55,6 +63,8 @@ const Display_Rev = () => {
                       </button>
                       </Link>
                    </div>
+
+                   
 
         <div className='flex flex-col h-auto w-auto justify-center items-center sms:pt-10 p-10 lgs:pt-20 rounded-xl border-2'>
 
@@ -73,7 +83,7 @@ const Display_Rev = () => {
                   </div>  
           </div>
       </div>              
-            <div className='flex h-auto w-auto justify-center items-center sms:pt-5'>
+            <div className='flex h-auto w-auto justify-center items-center sms:pt-5 mds:p-10'>
               {review.images.length > 0 && (
                <img src={review.images[0]} alt={review.title} className="sms:w-full lgs:scale-90 h-auto object-cover rounded-lg" />
               )}
@@ -203,47 +213,52 @@ const Display_Rev = () => {
                         </h2>
 
                       </div>
-                      
 
+                      <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 mds:grid-cols-2 gap-3 p-10'>
+            {isLoading ? (
+              <Loading2/>
+            ) : (
+              relatedReviews.length > 0 ? (
+                relatedReviews.map((reviews) => (
+                  <div key={reviews._id} onClick={() => handleClickReview(reviews._id)} className='bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer'>
+                    {reviews.images && reviews.images.length > 0 && (
+                      <img src={reviews.images[0]} alt={reviews.title} className="w-full h-[20vh] object-cover rounded-t-lg" />
+                    )}
+                    <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm mds:text-md font-russoone sms:pl-4 pl-5'>
+                      {reviews.category}
+                    </div>
+                    <h2 className='text-baseextra4 font-semibold sms:text-3xl mds:text-xl font-kanit sms:pl-4 pl-5'>
+                      {reviews.brand}
+                    </h2>
+                    <h3 className='text-baseextra4 font-semibold text-xl mds:text-2xl font-kanit sms:mb-2 sms:pl-4 pl-5'>
+                      {reviews.title}
+                    </h3>
+                    <div className='text-gray-400 sms:text-lg mb-2 pl-4'>
+                      <span>{reviews.date}</span>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <p className=''>No related reviews found.</p>
+              )
+            )}
+          </div>
 
-                        <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 mds:grid-cols-2 gap-3 p-10'>
-                          {relatedReviews.map((reviews) => (
-                                                <div key={reviews._id} onClick={() => handleClickReview(reviews._id)} className=' bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer'>
-                                                <div className='bg-transparent sms:h-auto w-auto mb-10 rounded-lg'>
-                                
-                                                                            {reviews.images.length > 0 && (
-                                                                                <img
-                                                                                src={reviews.images[0]}
-                                                                                alt={reviews.title}
-                                                                                className="w-full h-[20vh] object-cover rounded-t-lg"
-                            />
-                                                                            )}
-                            
-                            
-                            
-                                                  </div>
-                            
-                                                  <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm mds:text-md font-russoone sms:pl-4 pl-5'>
-                                                  {reviews.category}
-                                                  </div>
-                                                  <h2 className=' text-baseextra4 font-semibold  sms:text-3xl mds:text-xl font-kanit sms:pl-4 pl-5'>
-                                                  {reviews.brand}
-                                                </h2>
-                                                <h3 className=' text-baseextra4 font-semibold  text-xl mds:text-2xl font-kanit sms:mb-2 sms:pl-4 pl-5'>
-                                                  {reviews.title}
-                                                </h3>
-                                                <div className='text-gray-400 sms:text-lg mb-2 pl-4'>
-                                                  <span>{reviews.date}</span>
-                                                </div>
-                                                </div>
-                          ))}
-
-                        </div>
+                        
               </div>           
                        
         </div>
 
-    </div>
+       </div>
+       <div className='hidden sms:flex mds:flex fixed h-auto w-auto bg-transparent bottom-20 right-8 z-40 justify-center items-center'>
+            <a href='#main'>
+              <div className='flex h-20 w-20 bg-primary rounded-full items-center justify-center drop-shadow-2xl'>
+                <FontAwesomeIcon icon={faAngleDoubleUp} className='sms:h-6'/>
+              </div>
+           </a>    
+       </div>
+       
+  </div>   
   );
 };
 

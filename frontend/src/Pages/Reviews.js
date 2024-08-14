@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'aos/dist/aos.css';
 import { useNavigate } from 'react-router-dom';
+import { faSearch} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Brand Logos
 import mercedesbenz from '../assests/Brand Logos/Mercedes_benz.png';
@@ -15,11 +17,14 @@ import rangerover from '../assests/Brand Logos/range_rover.png';
 import tesla from '../assests/Brand Logos/tesla.png';
 import toyota from '../assests/Brand Logos/toyota.png';
 import mazda from '../assests/Brand Logos/mazda.png';
+import Loading2 from '../oth/Loading2';
 
 
 const Reviews = () => {
 
 const [review, setReview] = useState([]);
+const [isLoading, setIsLoading] = useState(true);
+const [isFocused, setIsFocused] = useState(false);
 const navigate = useNavigate();
 
 
@@ -30,6 +35,11 @@ const fetchReviews = async () => {
     
     const response = await axios.get("http://localhost:5000/api/reviews/get");
     setReview(response.data);
+
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    setIsLoading(false);
+
+
   } catch (error) {
     console.error("Error Fetching Articles:", error);
 
@@ -126,12 +136,32 @@ const fetchReviews = async () => {
       </div>
       <div className='flex flex-col w-auto h-auto lgs:p-10'>
        <div className='border-2 rounded-t-xl border-secondary bg-secondary'>
-        <div className='flex w-full h-auto justify-center items-center lgs:pt-5'>
-           <h2 className='sms:text-3xl text-4xl font-russoone text-primary m-2 mds:pt-10 sms:pt-5' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
+
+        <div className='flex w-full h-auto justify-center items-center lgs:pt-8'>
+           <h2 className='sms:text-3xl mds:text-4xl lgs:text-5xl font-russoone text-primary m-2 mds:pt-10 sms:pt-5' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
         </div>
+
+       <div className='flex  h-[10vh] w-full justify-between'>
+       <div className="relative w-full lgs:p-5 items-center justify-center">
+      <input
+        type="text"
+        className={`transition-all duration-300 ease-in-out items-center ${
+          isFocused ? 'lgs:w-[80vw] lgs:ml-20 lgs:mr-5' : 'lgs:w-[20vw] lgs:ml-5 lgs:mr-5'
+        } px-4 py-2 border-2 border-gray-300 rounded-full outline-none`}
+        placeholder="Search..."
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
+      /><FontAwesomeIcon icon={faSearch} className='text-primary lgs:h-6 cursor-pointer hover:scale-125'/>
+    </div>
+        
+       </div>
+
         <div className='flex w-auto h-auto sms:p-5 justify-center overflow-hidden'>
-              <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lg:mt-[5vh] mds:grid-cols-2 gap-3 p-10'>
-                 {review.slice(0,8).map((reviews) => (
+              <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lg:mt-[2vh] mds:grid-cols-2 gap-3 p-10'>
+                  {isLoading ? (
+                    <Loading2/>
+                  ) : (
+                                    review.slice(0,8).map((reviews) => (
                                        <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' bg-primary rounded-lg border-2 cursor-pointer' data-aos='fade-up'>
                                        <div className='bg-transparent sms:h-auto w-auto mb-10 rounded-lg'>
                       
@@ -160,7 +190,8 @@ const fetchReviews = async () => {
                                          <span>{reviews.date}</span>
                                        </div>
                                        </div>
-                 ))}
+                 ))
+                  )}
 
               </div>
         </div>
