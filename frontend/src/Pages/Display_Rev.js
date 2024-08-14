@@ -48,10 +48,10 @@ const Display_Rev = () => {
 
   return (
      <div className='relative w-full min-h-screen'>
-                   <div className='flex sms:flex-row w-full h-auto items-center justify-between sms:pt-20 sms:mb-5'>
+                   <div className='hidden sms:flex mds:flex flex-row w-full h-auto items-center justify-between sms:pt-20 mds:pt-20 sms:mb-5'>
                     <Link to={`/reviews`}>
-                      <button className='flex sms:flex-row justify-center drop-shadow-xl border-2 items-center sms:w-[25vw] sms:ml-2 sms:p-2  sms:h-auto sms:rounded-2xl'>
-                        {''}<FontAwesomeIcon icon={faAngleDoubleLeft}/>{''}<span className='sms:mx-2'>Back</span>
+                      <button className='flex sms:flex-row justify-center drop-shadow-xl border-2 items-center sms:w-[25vw] mds:w-[25vw] mds:mb-5 sms:ml-2 mds:ml-5 sms:p-2 mds:p-3  sms:h-auto rounded-2xl'>
+                        {''}<FontAwesomeIcon icon={faAngleDoubleLeft}/>{''}<span className='mx-2 mds:text-xl'>Back</span>
                       </button>
                       </Link>
                    </div>
@@ -64,10 +64,10 @@ const Display_Rev = () => {
 
                   <div className='hidden lgs:flex h-[15vh] w-3 bg-secondary'/>
                   <div className='flex flex-col h-auto w-auto'>
-                        <h2 className='w-full font-russoone sms:text-5xl lgs:text-7xl text-center lgs:text-start text-baseextra4'>
+                        <h2 className='w-full font-russoone sms:text-5xl lgs:text-7xl mds:text-6xl text-center lgs:text-start text-baseextra4'>
                             {review.brand}
                         </h2>
-                        <h2 className='w-full font-russoone sms:text-2xl lgs:text-4xl text-center   lgs:text-start text-baseextra4'>
+                        <h2 className='w-full font-russoone sms:text-2xl lgs:text-4xl mds:text-3xl text-center   lgs:text-start text-baseextra4'>
                             {review.title}
                         </h2>
                   </div>  
@@ -78,106 +78,111 @@ const Display_Rev = () => {
                <img src={review.images[0]} alt={review.title} className="sms:w-full lgs:scale-90 h-auto object-cover rounded-lg" />
               )}
             </div>
-            <div className='flex flex-col h-auto w-full sms:pt-10 lgs:pl-10 lgs:items-center'>
+            <div className='flex flex-col h-auto w-full sms:pt-10 mds:pt-10 lgs:pl-10 lgs:items-center'>
 
-              <div className='flex flex-col h-auto lgs:w-[60vw] items-center drop-shadow-xl sms:space-y-4 bg-gray-300 rounded-xl border-2 sms:p-5 lgs:p-6'>
+              <div className='flex flex-col h-auto lgs:w-[60vw] items-center drop-shadow-xl sms:space-y-4 bg-gray-300 rounded-xl border-2 sms:p-5 mds:p-5 lgs:p-6'>
 
-                <h2 className='font-russoone sms:text-3xl lgs:text-5xl text-baseextra4'>
+                <h2 className='font-russoone sms:text-3xl mds:text-5xl lgs:text-5xl text-baseextra4'>
                   Specifications
                 </h2>
 
 
-                    <div className='grid sms:grid-cols-2 lgs:grid-cols-2 sms:w-auto lgs:w-[60vw] h-auto lgs:pt-10 sms:gap-5 lgs:gap-6 '>
+                    <div className='grid sms:grid-cols-2 mds:grid-cols-2 lgs:grid-cols-2 sms:w-auto lgs:w-[60vw] h-auto lgs:pt-10 mds:pt-10 sms:gap-5 mds:gap-5 lgs:gap-6 '>
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start   items-center'>
-                                <h2 className='font-russoone sms:text-lg lgs:text-2xl text-baseextra4'>Engine:</h2>
-                                <h2 className='font-kanit text-md text-baseextra4'>{review.engine}</h2>
+                                <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Engine:</h2>
+                                <h2 className='font-kanit text-md mds:text-lg text-baseextra4'>{review.engine}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
-                                <h2 className='font-russoone sms:text-lg lgs:text-2xl text-baseextra4'>Drivetrain:</h2>
-                                <h2 className='font-kanit text-md text-baseextra4'>{review.drivetrain}</h2>
+                                <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Drivetrain:</h2>
+                                <h2 className='font-kanit text-md mds:text-lg text-baseextra4'>{review.drivetrain}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
-                                <h2 className='font-russoone sms:text-lg lgs:text-2xl text-baseextra4'>Transmission:</h2>
-                                <h2 className='font-kanit text-md  text-baseextra4'>{review.transmission}</h2>
+                                <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Transmission:</h2>
+                                <h2 className='font-kanit text-md mds:text-lg  text-baseextra4'>{review.transmission}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
-                                <h2 className='font-russoone sms:text-lg lgs:text-2xl text-baseextra4'>Fuel Economy:</h2>
-                                <h2 className='font-kanit text-md text-baseextra4'>{review.fuelEconomy}</h2>
+                                <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Fuel Economy:</h2>
+                                <h2 className='font-kanit text-md mds:text-lg text-baseextra4'>{review.fuelEconomy}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
-                                <h2 className='font-russoone sms:text-lg lgs:text-2xl text-baseextra4'>Capacity:</h2>
-                                <h2 className='font-kanit text-md text-baseextra4'>{review.seatingCapacity}</h2>
+                                <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Capacity:</h2>
+                                <h2 className='font-kanit text-md mds:text-lg text-baseextra4'>{review.seatingCapacity}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
-                                <h2 className='font-russoone sms:text-lg lgs:text-2xl text-baseextra4'>Price:</h2>
-                                <h2 className='font-kanit text-md text-baseextra4'>{review.singleprice}</h2>
+                                <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Price:</h2>
+                                <h2 className='font-kanit text-md mds:text-lg text-baseextra4'>{review.singleprice}</h2>
                             </div>
                     </div>         
               
               </div>
             
             <div className='flex h-auto w-full'>
-                  <div className='flex flex-col h-auto lgs:w-[75vw]'>
-                  <div className='flex flex-col w-full h-auto justify-start sms:pt-10 lgs:pt-10 items-start sms:space-y-5 lgs:space-y-3'>
-                      <h2 className='font-russoone sms:text-2xl lgs:text-4xl text-baseextra4 text-start'>
+                  <div className='flex flex-col h-auto lgs:w-[60vw]'>
+                  <div className='flex flex-col w-full h-auto justify-start pt-10  items-start space-y-5 lgs:space-y-3'>
+                      <h2 className='font-russoone sms:text-2xl text-4xl text-baseextra4 text-start'>
                       Highlight Breakdown:
                       </h2>
-                      <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] text-lg lgs:text-lg text-secondary text-start'>
+                      <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] sms:text-lg mds:text-xl lgs:text-lg text-secondary text-start'>
                         {review.overview}
                       </p>
                   </div>
-                  <div className='flex flex-col w-full h-auto sms:justify-start sms:pt-10 lgs:pt-16 sms:items-start sms:space-y-5 lgs:space-y-3'>
-                      <h2 className='font-russoone sms:text-2xl lgs:text-4xl text-baseextra4 text-start'>
+                  <div className='flex flex-col w-full h-auto sms:justify-start sms:pt-10 pt-16 sms:items-start space-y-5 lgs:space-y-3'>
+                      <h2 className='font-russoone sms:text-2xl text-4xl text-baseextra4 text-start'>
                       Design and Road Presence:
                       </h2>
-                      <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] text-lg lgs:text-lg text-secondary text-start'>
+                      <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] sms:text-lg mds:text-xl lgs:text-lg text-secondary text-start'>
                         {review.exterior}
                       </p>
                   </div>
-                  <div className='flex sms:flex-col w-full h-auto sms:justify-center sms:pt-10 lgs:pt-20'>
+                  <div className='flex sms:flex-col w-full h-auto sms:justify-center pt-10 lgs:pt-20'>
                         <img src ={review.images[2]} alt={review.title} className="w-full h-auto object-cover rounded-lg"/>
                   </div>
-                  <div className='flex flex-col w-full h-auto sms:justify-start sms:pt-10 lgs:pt-16 sms:items-start sms:space-y-5 lgs:space-y-3'>
-                      <h2 className='font-russoone sms:text-2xl lgs:text-4xl text-baseextra4 text-start'>
+                  <div className='flex flex-col w-full h-auto sms:justify-start sms:pt-10 pt-16 sms:items-start space-y-5 lgs:space-y-3'>
+                      <h2 className='font-russoone sms:text-2xl text-4xl text-baseextra4 text-start'>
                       Inside the Cabin:
                       </h2>
-                      <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] text-lg lgs:text-lg text-secondary text-start'>
+                      <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] sms:text-lg mds:text-xl lgs:text-lg text-secondary text-start'>
                         {review.interior}
                       </p>
                   </div>
-                  <div className='flex flex-col w-full h-auto sms:justify-start sms:pt-10 lgs:pt-16 sms:items-start sms:space-y-5 lgs:space-y-3'>
-                      <h2 className='font-russoone sms:text-2xl lgs:text-4xl text-baseextra4 text-start'>
+                  <div className='flex flex-col w-full h-auto sms:justify-start sms:pt-10 pt-16 sms:items-start space-y-5 lgs:space-y-3'>
+                      <h2 className='font-russoone sms:text-2xl text-4xl text-baseextra4 text-start'>
                       Power and Driving Dynamics:
                       </h2>
-                      <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] text-lg lgs:text-lg text-secondary text-start'>
+                      <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] text-lg mds:text-xl text-secondary text-start'>
                         {review.performance}
                       </p>
                   </div>
-                  <div className='flex sms:flex-col w-full h-auto sms:justify-center sms:pt-10 lgs:pt-20'>
+                  <div className='flex sms:flex-col w-full h-auto sms:justify-center pt-10 lgs:pt-20'>
                         <img src ={review.images[1]} alt={review.title} className="w-full h-auto object-cover rounded-lg"/>
                   </div>
-                  <div className='flex flex-col w-full h-auto sms:justify-start sms:pt-10 lgs:pt-16 sms:items-start sms:space-y-5 lgs:space-y-3'>
-                      <h2 className='font-russoone sms:text-2xl lgs:text-4xl text-baseextra4 text-start'>
+                  <div className='flex flex-col w-full h-auto sms:justify-start sms:pt-10 pt-16 sms:items-start space-y-5 lgs:space-y-3'>
+                      <h2 className='font-russoone sms:text-2xl text-4xl text-baseextra4 text-start'>
                       Security and Driver Assistance:
                       </h2>
-                      <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] text-lg lgs:text-lg text-secondary text-start'>
+                      <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] text-lg mds:text-xl text-secondary text-start'>
                         {review.safety}
                       </p>
                   </div>
-                  <div className='flex flex-col w-full h-auto sms:justify-start sms:pt-10 lgs:pt-16 sms:items-start sms:space-y-5 lgs:space-y-3'>
-                      <h2 className='font-russoone sms:text-2xl lgs:text-4xl text-baseextra4 text-start'>
+                  <div className='flex flex-col w-full h-auto sms:justify-start sms:pt-10 pt-16 sms:items-start space-y-5 lgs:space-y-3'>
+                      <h2 className='font-russoone sms:text-2xl text-4xl text-baseextra4 text-start'>
                       Cost and Value:
                       </h2>
-                      <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] text-lg lgs:text-lg text-secondary text-start'>
+                      <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] text-lg mds:text-xl text-secondary text-start'>
                         {review.price}
                       </p>
                   </div>
                   </div> 
+                  <div className='hidden lgs:flex flex-col h-auto lgs:p-10 w-[40vw]'>
+                    <div className='flex flex-col h-[200vh] bg-gray-300 rounded-2xl'>
+
+                    </div>
+                  </div>
             </div>   
 
             </div>
@@ -190,10 +195,10 @@ const Display_Rev = () => {
 
               <div className='flex flex-col h-auto w-full bg-secondary rounded-t-3xl'>
                       <div className='flex flex-col w-full h-auto sms:justify-start p-10'>
-                        <h2 className='font-russoone sms:text-xl lgs:text-2xl text-primary  text-start'>
+                        <h2 className='font-russoone sms:text-xl lgs:text-2xl mds:text-3xl text-primary  text-start'>
                           More Reviews of : 
                         </h2>
-                        <h2 className='font-russoone sms:text-4xl lgs:text-5xl text-baseprimary text-start'>
+                        <h2 className='font-russoone sms:text-4xl text-5xl text-baseprimary text-start'>
                           {review.brand} 
                         </h2>
 
@@ -218,13 +223,13 @@ const Display_Rev = () => {
                             
                                                   </div>
                             
-                                                  <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm font-russoone sms:pl-4 lgs:pl-5'>
+                                                  <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm mds:text-md font-russoone sms:pl-4 pl-5'>
                                                   {reviews.category}
                                                   </div>
-                                                  <h2 className=' text-baseextra4 font-semibold  sms:text-3xl font-kanit sms:pl-4 lgs:pl-5'>
+                                                  <h2 className=' text-baseextra4 font-semibold  sms:text-3xl mds:text-xl font-kanit sms:pl-4 pl-5'>
                                                   {reviews.brand}
                                                 </h2>
-                                                <h3 className=' text-baseextra4 font-semibold  text-xl font-kanit sms:mb-2 sms:pl-4 lgs:pl-5'>
+                                                <h3 className=' text-baseextra4 font-semibold  text-xl mds:text-2xl font-kanit sms:mb-2 sms:pl-4 pl-5'>
                                                   {reviews.title}
                                                 </h3>
                                                 <div className='text-gray-400 sms:text-lg mb-2 pl-4'>

@@ -48,7 +48,7 @@ useEffect(()=>{
               </div>
 
               <div className='flex flex-col h-auto w-full items-center justify-center p-5 lgs:p-10' data-aos='zoom-in' data-aos-delay='20'>
-                    <p className='flex h-auto sms:w-[75vw] mds:w-[75vw] lgs:w-[80vw] text-center font-kanit sms:text-md lgs:text-lg'>{''} Our{''} Articles section is your go-to destination for all things automotive. From insights into mechanical parts and the latest car inventions to coverage of auto companies and industry news, we have it all. I also share my thoughts on the most groundbreaking advancements in the automotive world. Whether you're an enthusiast or curious, this section offers a wealth of knowledge and captivating content.</p>
+                    <p className='flex h-auto sms:w-[75vw] mds:w-[75vw] lgs:w-[80vw] text-center font-kanit sms:text-md mds:text-xl lgs:text-lg'>{''} Our{''} Articles section is your go-to destination for all things automotive. From insights into mechanical parts and the latest car inventions to coverage of auto companies and industry news, we have it all. I also share my thoughts on the most groundbreaking advancements in the automotive world. Whether you're an enthusiast or curious, this section offers a wealth of knowledge and captivating content.</p>
               </div>
 
               <div className='sm:hidden flex h-[20vh] w-full items-center justify-between p-2'>
@@ -88,8 +88,8 @@ useEffect(()=>{
                       </form>
 
               </div>
-              <div className='flex h-auto w-auto justify-center'>
-                <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lg:mt-[5vh] mds:grid-cols-2 gap-3 p-10'>
+              <div className='flex min-h-auto w-full justify-center bg-secondary rounded-t-2xl'>
+                <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 h-auto w-auto lg:mt-[5vh] mds:grid-cols-2 gap-3 p-10'>
                    {articles.map((article) => (
                      <div key={article._id} className='bg-primary rounded-lg border-2 drop-shadow-sm' data-aos='fade-right'>
                      <div className='bg-transparent sms:h-auto w-auto mb-10 rounded-t-lg'>
