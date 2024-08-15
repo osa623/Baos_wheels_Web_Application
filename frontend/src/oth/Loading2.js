@@ -3,7 +3,7 @@ import '../oth/loader2.css';
 
 const Loading2 = () => {
   return (
-    <div className='relative lgs:h-[25vh] items-center justify-center w-auto'>
+    <div className='relative lgs:min-h-screen items-center justify-center w-auto'>
     <div class="loader">
     <div class="inner one"></div>
     <div class="inner two"></div>
