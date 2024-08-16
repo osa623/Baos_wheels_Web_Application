@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import styled, { keyframes, css } from "styled-components";
+import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {faArrowRightLong} from '@fortawesome/free-solid-svg-icons';
 
 
@@ -20,6 +21,7 @@ import rangerover from '../assests/Brand Logos/range_rover.png';
 import tesla from '../assests/Brand Logos/tesla.png'
 import toyota from '../assests/Brand Logos/toyota.png';
 import mazda from '../assests/Brand Logos/mazda.png';
+import Loading2 from '../oth/Loading2';
 
 
 //Car Type Images
@@ -28,6 +30,41 @@ import mazda from '../assests/Brand Logos/mazda.png';
 const Reviewsection = () => {
 
   const [isPaused, setIsPaused] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [review, setReview] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+
+    const fetchReviews = async () => {
+
+      try {
+    
+        const response = await axios.get("http://localhost:5000/api/reviews/get");
+        setReview(response.data);
+    
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        setIsLoading(false);
+    
+    
+      } catch (error) {
+        console.error("Error Fetching Articles:", error);
+    
+      }finally{
+    
+      }
+
+    };
+
+    fetchReviews();
+
+
+  });
+
+  const handleReviewClick = (review_id) =>{
+    navigate(`/reviews/${review_id}`)
+
+};
 
   const handleMouseEnter =() =>{
       setIsPaused(true);
@@ -154,6 +191,62 @@ const Reviewsection = () => {
           
         }}/>
       </motion.div>
+
+          <div className='flex flex-col w-auto h-auto lgs:p-10'>
+       <div className='border-2 rounded-t-xl border-secondary bg-secondary'>
+
+        <div className='flex w-full h-auto justify-center items-center lgs:pt-8'>
+           <h2 className='sms:text-3xl mds:text-4xl lgs:text-5xl font-russoone text-primary m-2 mds:pt-10 sms:pt-5' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
+        </div>
+
+        <div className='flex w-auto h-auto sms:p-5 justify-center overflow-hidden'>
+              <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lg:mt-[2vh] mds:grid-cols-2 gap-3 p-10'>
+                  {isLoading ? (
+                    <Loading2/>
+                  ) : (
+                                    review
+                                    .sort((b,a) => new Date(a.date) - new Date(b.date))
+                                    .slice(0,4).map((reviews) => (
+                                       <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' bg-primary rounded-lg border-2 cursor-pointer overflow-hidden transition-transform duration-1000 ease-in-out transform hover:scale-105' data-aos='fade-up'>
+                                       <div className='bg-transparent sms:h-auto w-auto mb-10 rounded-lg overflow-hidden'>
+                      
+                                                                  {reviews.images.length > 0 && (
+                                                                      <img
+                                                                      src={reviews.images[0]}
+                                                                      alt={reviews.title}
+                                                                      className="w-full h-[20vh] object-cover rounded-t-lg hover:scale-125"
+                  />
+                                                                  )}
+                  
+                  
+                  
+                                        </div>
+                  
+                                        <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm font-russoone sms:pl-4 pl-5'>
+                                         {reviews.category}
+                                        </div>
+                                        <h2 className=' text-baseextra4 font-semibold  sms:text-3xl mds:text-2xl font-kanit sms:pl-4 pl-5'>
+                                         {reviews.brand}
+                                      </h2>
+                                      <h3 className=' text-baseextra4 text-xl mds:text-xl font-kanit sms:mb-2 sms:pl-4 pl-5'>
+                                         {reviews.title}
+                                      </h3>
+                                      <div className='text-gray-400 sms:text-lg mb-2 pl-5'>
+                                         <span>{reviews.date}</span>
+                                       </div>
+                                       </div>
+                 ))
+                  )}
+
+              </div>
+        </div>
+
+      </div>
+          
+
+    </div>
+
+
       </Wrapper>
     </AppContainer>
   );

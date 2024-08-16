@@ -2,14 +2,14 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-//import {motion} from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const Articlesec = () => {
 
 const [articles, setArticles] = useState([]);  
+const navigate = useNavigate();
 
 //all the apis
-
 
 const fetchArticles = async () => {
     try {
@@ -21,6 +21,10 @@ const fetchArticles = async () => {
     }
 };  
 
+
+const handleSubmitArticle = (article_id) =>{
+  navigate(`/articles/${article_id}`)
+}
 
 useEffect(()=>{
     fetchArticles();
@@ -63,28 +67,24 @@ useEffect(()=>{
 
                 <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 h-auto w-auto lg:mt-[5vh] mds:grid-cols-2 gap-3 p-10'>
                    {articles.map((article) => (
-                     <div key={article._id} className='bg-primary rounded-lg border-2 drop-shadow-sm' data-aos='fade-right'>
+                     <div key={article._id} onClick={() => handleSubmitArticle(article._id)} className='bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer' data-aos='fade-right'>
                      <div className='bg-transparent sms:h-auto w-auto mb-10 rounded-t-lg'>
 		
                                                 {article.images.length > 0 && (
                                                     <img
                                                     src={article.images[0]}
                                                     alt={article.title}
-                                                    className="w-full h-[20vh] object-cover"
+                                                    className="w-full h-[20vh] object-cover rounded-t-lg"
 />
                                                 )}
 
 
 
                       </div>
-
-                      <div className='text-secondary sms:text-md font-russoone sms:mb-2 sms:pl-4'>
-                       {article.category}
-                      </div>
-                    <h3 className=' text-baseextra4 font-semibold text-2xl font-kanit sms:mb-2 sms:pl-4'>
+                    <h3 className=' text-baseextra4 font-semibold lgs:text-center lgs:text-xl  font-kanit sms:mb-2 sms:pl-4'>
                        {article.title}
                     </h3>
-                    <div className='text-gray-400 sms:text-lg mb-2 pl-4'>
+                    <div className='text-gray-400 sms:text-lg lgs:text-2xl  mb-2 pl-4'>
                        <span>{article.date}</span>
                      </div>
                      </div>
@@ -97,4 +97,4 @@ useEffect(()=>{
   )
 }
 
-export default Articlesec
+export default Articlesec;

@@ -11,6 +11,7 @@ import Sample from './Pages/Sample';
 import About from './Pages/About';
 import DisplayRev from './Pages/Display_Rev';
 import Loading from './oth/Loading';
+import DisplayArc from './Pages/Display_Arc';
 // Loading component
 
 
@@ -40,6 +41,7 @@ const AppContent = () => {
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/reviews/:id" element={<DisplayRev />} />
             <Route path="/articles" element={<Articlesec />} />
+            <Route path="/articles/:id" element={<DisplayArc />} />
             <Route path="/sample" element={<Sample />} />
             <Route path="/about" element={<About />} />
           </Routes>
