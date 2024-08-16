@@ -3,26 +3,32 @@ import React, { useEffect, useState } from 'react';
 import Aos from 'aos';
 import { motion } from 'framer-motion';
 import 'aos/dist/aos.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faArrowRightLong} from '@fortawesome/free-solid-svg-icons';
+import {faAngleDoubleRight} from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 
-// Mock data for demonstration. Replace this with your data fetching logic.
-const articles = [
-  { id: 1, title: 'wrvsrsers', author: 'baos_623', date: 'Jan 8, 2024', category: 'Uncategorized', content: 'revtsesetdsbdfxdbfxdf' },
-  { id: 2, title: 'ersefsedf', author: 'author2', date: 'Jan 8, 2024', category: '', content: '' },
-  { id: 3, title: 'rgdgfsdxz', author: '', date: 'Jan 8, 2024', category: '', content: '' },
-  { id: 4, title: 'rfrfgsfs', author: '', date: 'Jan 8, 2024', category: '', content: '' },
-  { id: 5, title: 'older article', author: '', date: 'Jan 7, 2024', category: '', content: '' },
-];
+
 
 const Newsection = () => {
-  const [latestArticles, setLatestArticles] = useState([]);
+  const [Articles, setArticles] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const sortedArticles = articles.sort((a, b) => new Date(b.date) - new Date(a.date));
-    setLatestArticles(sortedArticles.slice(0, 4));
+
+      const fetchArticles = async () => {
+          
+        try {
+          
+          const response = await axios.get("http://localhost:5000/api/articles/get");
+          setArticles(response.data);
+
+        } catch (error) {
+          console.log("Data fetching is not working properly");
+        }
+
+      };
 
     // Initialize AOS
     Aos.init({
@@ -33,7 +39,14 @@ const Newsection = () => {
 
     // Refresh AOS on component mount and update
     Aos.refresh();
+
+  fetchArticles();
+
   }, []);
+
+  const handleViewArticle = (article_id) => {
+      navigate(`/articles/${article_id}`)
+  }
 
   return (
     <div className='relative h-auto w-auto bg-primary'>
@@ -52,16 +65,18 @@ const Newsection = () => {
           </p>
         </div>
       </div>
-      <div className='grid lg:grid-cols-4 lgs:gap-4 lg:p-10 lg:mt-[5vh] md:grid-cols-2 gap-3 p-10'>
-        {latestArticles.map((article) => (
-          <div key={article.id} className='bg-basesecondary rounded-xl p-0' data-aos='fade-right'>
-            <div className='bg-gray-700 h-40 w-auto mb-10 rounded-t-lg'></div> {/* Placeholder for image */}
-            <div className='text-secondary text-sm mb-2 pl-4'>{article.category}</div>
-            <h3 className='text-white text-xl mb-2 pl-4'>{article.title}</h3>
-            <div className='text-gray-400 text-sm mb-2 pl-4'>
-              <span>{article.author}</span> <span>{article.date}</span>
+      <div className='grid lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lgs:mt-[5vh] mds:grid-cols-2 mds:gap-3 p-10'>
+        {Articles.map((article) => (
+          <div key={article.id} onClick={(() => handleViewArticle(article._id))} className='flex flex-col h-auto items-center cursor-pointer w-auto drop-shadow-xl bg-basesecondary rounded-xl p-0' data-aos='fade-right'>
+            <div className='bg-gray-700 lgs:h-auto w-auto rounded-xl overflow-hidden'>
+              <img src={article.images[0]} alt={article.title} className='rounded-t-xl transition-transform duration-300 ease-in-out hover:scale-110'/>
             </div>
-            <p className='text-gray-300 pl-4 mb-2'>{article.content}</p>
+            <div className='flex h-auto lgs:w-auto lgs:mt-2'>
+            <h3 className=' text-secondary font-russoone lgs:text-xl pl-4'>{article.title}</h3>
+            </div>
+            <div className='flex h-auto lgs:w-[20vw] lgs:p-2'>
+            <p className=' text-secondary text-center font-poppins lgs:text-sm mb-2 pl-4'>{article.summary}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -71,11 +86,13 @@ const Newsection = () => {
        transition={{duration:'1.5', ease:'easeInOut', delay:'0.4'}}
        className='flex flex-row items-center justify-center h-[10vh] mt-[-2vh]'>
 
-        <div className='text-2xl text-baseprimary font-semibold cursor-pointer font-russoone'>{''}
+       <div className='flex w-auto h-auto items-center cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110'>
+        <div className='text-2xl text-baseprimary font-semibold font-russoone'>{''}
           <Link to={`/articles`}>See more</Link></div>
-        <FontAwesomeIcon icon={faArrowRightLong} className='w-10 text-baseprimary'  style={{
+        <FontAwesomeIcon icon={faAngleDoubleRight} className='w-10 text-baseprimary'  style={{
           
         }}/>
+      </div>   
       </motion.div>
     </div>
   );

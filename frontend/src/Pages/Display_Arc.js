@@ -57,9 +57,10 @@ if (!article) {
 
                <div className='hidden lgs:flex h-[15vh] w-3 bg-secondary'/>
                <div className='flex flex-col h-auto w-auto'>
-                     <h2 className='w-full font-russoone sms:text-2xl lgs:text-7xl mds:text-3xl text-center   lgs:text-start text-baseextra4'>
+                     <h2 className='w-full font-russoone sms:text-2xl lgs:text-8xl mds:text-3xl text-center lgs:text-start text-baseextra4'>
                           {article.title}
                      </h2>
+                     
                </div>  
        </div>
    </div>              
@@ -69,21 +70,19 @@ if (!article) {
               )}
            
          </div>
-         <div className='flex flex-col h-auto w-full sms:pt-10 mds:pt-10 lgs:pl-10 lgs:items-center'>
-
-            
-
-
+         <div className='flex flex-col h-auto w-full mds:pt-10 lgs:pl-10 lgs:items-center'>
          <div className='flex h-auto w-full'>
          <div className='flex flex-col h-auto lgs:w-[60vw]'>
                             {article.subtitle.map((subtitle, index) => (
-                                <div key={index} className='flex flex-col w-full h-auto sms:justify-start sms:pt-10 pt-16 sms:items-start space-y-5 lgs:space-y-3'>
-                                    <h2 className='font-russoone sms:text-2xl text-4xl text-baseextra4 text-start'>
+                                <div key={index} className='flex flex-col w-full h-auto sms:justify-start sms:pt-10 lgs:pt-20 sms:items-start space-y-5 lgs:space-y-3'>
+                                    <h2 className='font-russoone sms:text-2xl lgs:text-4xl text-baseextra4 text-start'>
                                         {subtitle}
                                     </h2>
-                                    <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] sms:text-lg mds:text-xl lgs:text-lg text-secondary text-start'>
+                                    <p className='font-kanit sms:w-[75vw] lgs:w-[50vw] sms:text-xl lgs:pt-10 mds:text-xl lgs:text-lg text-secondary text-start'>
                                         {article.description[index]}
                                     </p>
+
+                                    
                                 </div>
                             ))}
                         </div> 

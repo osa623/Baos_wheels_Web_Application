@@ -6,7 +6,7 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from "react-router-dom";
-import {faArrowRightLong} from '@fortawesome/free-solid-svg-icons';
+import {faAngleDoubleRight} from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -187,12 +187,12 @@ const Reviewsection = () => {
 
         <div className='text-2xl text-baseprimary font-semibold cursor-pointer font-russoone'>
           <Link to={`/reviews`}>See more</Link></div>
-        <FontAwesomeIcon icon={faArrowRightLong} className='w-10 text-baseprimary'  style={{
+        <FontAwesomeIcon icon={faAngleDoubleRight} className='w-10 text-baseprimary'  style={{
           
         }}/>
       </motion.div>
 
-          <div className='flex flex-col w-auto h-auto lgs:p-10'>
+          <div className='flex flex-col w-full h-auto lgs:p-10'>
        <div className='border-2 rounded-t-xl border-secondary bg-secondary'>
 
         <div className='flex w-full h-auto justify-center items-center lgs:pt-8'>
@@ -214,7 +214,7 @@ const Reviewsection = () => {
                                                                       <img
                                                                       src={reviews.images[0]}
                                                                       alt={reviews.title}
-                                                                      className="w-full h-[20vh] object-cover rounded-t-lg hover:scale-125"
+                                                                      className="w-full h-[20vh] object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
                   />
                                                                   )}
                   
@@ -240,6 +240,20 @@ const Reviewsection = () => {
 
               </div>
         </div>
+
+        <motion.div
+       initial={{opacity:0,marginLeft:'-100px'}}
+       whileInView={{opacity:1,marginLeft:'0px'}}
+       transition={{duration:'1.5', ease:'easeInOut', delay:'0.4'}}
+       className='flex flex-row items-center justify-center h-[10vh] mt-[-2vh] sms:p-4 mds:p-2 lgs:p-10 transition-transform duration-300 ease-in-out hover:scale-110'>
+
+        <div className='text-2xl text-baseprimary font-semibold cursor-pointer font-russoone '>
+          <Link to={`/reviews`}>See more</Link></div>
+        <FontAwesomeIcon icon={faAngleDoubleRight} className='w-10 text-baseprimary'  style={{
+          
+        }}/>
+      </motion.div>
+
 
       </div>
           

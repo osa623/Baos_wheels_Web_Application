@@ -164,14 +164,14 @@ const fetchReviews = async () => {
                                     review
                                     .sort((b,a) => new Date(a.date) - new Date(b.date))
                                     .slice(0,8).map((reviews) => (
-                                       <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' bg-primary rounded-lg border-2 cursor-pointer hover:scale-105 overflow-hidden hover:transform transition-transform duration-5000 ease-in-out' data-aos='fade-up'>
+                                       <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' bg-primary rounded-lg overflow-hidden  border-2 cursor-pointer' data-aos='fade-up'>
                                        <div className='bg-transparent sms:h-auto w-auto mb-10 rounded-lg overflow-hidden'>
                       
                                                                   {reviews.images.length > 0 && (
                                                                       <img
                                                                       src={reviews.images[0]}
                                                                       alt={reviews.title}
-                                                                      className="w-full h-[20vh] object-cover rounded-t-lg hover:scale-125"
+                                                                      className="w-full h-[20vh] object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
                   />
                                                                   )}
                   

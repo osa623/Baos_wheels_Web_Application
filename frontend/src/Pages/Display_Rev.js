@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import { faAngleDoubleLeft , faAngleDoubleUp} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Loading2 from '../oth/Loading2';
@@ -10,6 +12,8 @@ const Display_Rev = () => {
   const { id } = useParams(); 
   const [review, setReview] = useState(null);
   const [relatedReviews, setRelatedReviews] = useState([]);
+  const [openReviewId, setOpenReviewId] = useState(null);
+  const [reviewsByCategory, setReviewsByCategory] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
@@ -23,6 +27,9 @@ const Display_Rev = () => {
         const relatedreviews = await axios.get(`http://localhost:5000/api/reviews/brand/${response.data.brand}`);
         setRelatedReviews(relatedreviews.data);
 
+        const reviewsByCategory = await axios.get(`http://localhost:5000/api/reviews/category/${response.data.category}`);
+        setReviewsByCategory(reviewsByCategory.data);
+
         await new Promise(resolve => setTimeout(resolve, 2000));
         setIsLoading(false);
 
@@ -33,6 +40,10 @@ const Display_Rev = () => {
 
 
     };
+
+    Aos.init({
+      duration: 2500,
+    });
   
     
     fetchReview();
@@ -43,8 +54,10 @@ const Display_Rev = () => {
 
   [id]);
 
+
   const handleClickReview = (review_id) =>{
-    navigate(`/reviews/${review_id}`)
+    navigate(`/reviews/${review_id}`);
+    setOpenReviewId(review_id);
   } 
  //Loading screen 
   if (isLoading) {
@@ -100,32 +113,32 @@ const Display_Rev = () => {
                     <div className='grid sms:grid-cols-2 mds:grid-cols-2 lgs:grid-cols-2 sms:w-auto lgs:w-[60vw] h-auto lgs:pt-10 mds:pt-10 sms:gap-5 mds:gap-5 lgs:gap-6 '>
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start   items-center'>
                                 <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Engine:</h2>
-                                <h2 className='font-kanit text-md mds:text-lg text-baseextra4'>{review.engine}</h2>
+                                <h2 className='font-kanit text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.engine}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
                                 <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Drivetrain:</h2>
-                                <h2 className='font-kanit text-md mds:text-lg text-baseextra4'>{review.drivetrain}</h2>
+                                <h2 className='font-kanit text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.drivetrain}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
                                 <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Transmission:</h2>
-                                <h2 className='font-kanit text-md mds:text-lg  text-baseextra4'>{review.transmission}</h2>
+                                <h2 className='font-kanit text-md lgs:w-[20vw] text-center mds:text-lg  text-baseextra4'>{review.transmission}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
                                 <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Fuel Economy:</h2>
-                                <h2 className='font-kanit text-md mds:text-lg text-baseextra4'>{review.fuelEconomy}</h2>
+                                <h2 className='font-kanit text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.fuelEconomy}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
                                 <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Capacity:</h2>
-                                <h2 className='font-kanit text-md mds:text-lg text-baseextra4'>{review.seatingCapacity}</h2>
+                                <h2 className='font-kanit text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.seatingCapacity}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
                                 <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Price:</h2>
-                                <h2 className='font-kanit text-md mds:text-lg text-baseextra4'>{review.singleprice}</h2>
+                                <h2 className='font-kanit text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.singleprice}</h2>
                             </div>
                     </div>         
               
@@ -189,7 +202,50 @@ const Display_Rev = () => {
                   </div>
                   </div> 
                   <div className='hidden lgs:flex flex-col h-auto lgs:p-10 w-[40vw]'>
-                    <div className='flex flex-col h-[200vh] bg-gray-300 rounded-2xl'>
+                    <div className='flex flex-col h-[200vh] bg-secondary rounded-2xl lgs:p-5'>
+                      <div className='flex flex-col w-auto h-auto'>
+                        <h2 className='font-russoone sms:text-xl lgs:text-2xl mds:text-3xl text-primary  text-start'>
+                          Looking for : 
+                        </h2>
+                        <h2 className='font-russoone sms:text-4xl text-5xl font-bold text-baseprimary text-start'>
+                          {review.category} 
+                        </h2>
+                        <p className='font-kanit lgs:text-xl text-primary text-start'>
+                           Explore our latest in-depth reviews of the newest {''}<span className=''>{review.category}</span>s on the market
+                        </p>
+                    </div>  
+                    <div className='grid sms:grid-rows-1 lgs:grid-rows-4 lgs:gap-4 lgs:p-10 mds:grid-rows-2 gap-3 p-10'>
+                                      {isLoading ? (
+                                <Loading2/>
+                              ) : (
+                                reviewsByCategory.length > 0 ? (
+                                  reviewsByCategory
+                                  .filter(review => review._id!==openReviewId)
+                                  .map((reviews) => (
+                                    <div key={reviews._id} onClick={() => handleClickReview(reviews._id)} className='bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer' data-aos='fade-left' data-aos-delay='100'>
+                                      {reviews.images && reviews.images.length > 0 && (
+                                        <img src={reviews.images[0]} alt={reviews.title} className="w-full h-[20vh] object-cover rounded-t-lg" />
+                                      )}
+                                      <div className='text-secondary sms:text-md lgs:w-[20vw] lgs:text-sm mds:text-md font-russoone sms:pl-4 pl-5'>
+                                        {reviews.category}
+                                      </div>
+                                      <h2 className='text-baseextra4 font-semibold sms:text-3xl mds:text-xl font-kanit sms:pl-4 pl-5'>
+                                        {reviews.brand}
+                                      </h2>
+                                      <h3 className='text-baseextra4 font-semibold text-xl mds:text-2xl font-kanit sms:mb-2 sms:pl-4 pl-5'>
+                                        {reviews.title}
+                                      </h3>
+                                      <div className='text-gray-400 sms:text-lg mb-2 pl-4'>
+                                        <span>{reviews.date}</span>
+                                      </div>
+                                    </div>
+                                  ))
+                                ) : (
+                                  <p className=''>No related reviews found.</p>
+                                )
+                              )}
+                    </div>
+
 
                     </div>
                   </div>
@@ -215,33 +271,33 @@ const Display_Rev = () => {
                       </div>
 
                       <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 mds:grid-cols-2 gap-3 p-10'>
-            {isLoading ? (
-              <Loading2/>
-            ) : (
-              relatedReviews.length > 0 ? (
-                relatedReviews.map((reviews) => (
-                  <div key={reviews._id} onClick={() => handleClickReview(reviews._id)} className='bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer'>
-                    {reviews.images && reviews.images.length > 0 && (
-                      <img src={reviews.images[0]} alt={reviews.title} className="w-full h-[20vh] object-cover rounded-t-lg" />
-                    )}
-                    <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm mds:text-md font-russoone sms:pl-4 pl-5'>
-                      {reviews.category}
-                    </div>
-                    <h2 className='text-baseextra4 font-semibold sms:text-3xl mds:text-xl font-kanit sms:pl-4 pl-5'>
-                      {reviews.brand}
-                    </h2>
-                    <h3 className='text-baseextra4 font-semibold text-xl mds:text-2xl font-kanit sms:mb-2 sms:pl-4 pl-5'>
-                      {reviews.title}
-                    </h3>
-                    <div className='text-gray-400 sms:text-lg mb-2 pl-4'>
-                      <span>{reviews.date}</span>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <p className=''>No related reviews found.</p>
-              )
-            )}
+                                  {isLoading ? (
+                                    <Loading2/>
+                                  ) : (
+                                    relatedReviews.length > 0 ? (
+                                      relatedReviews.map((reviews) => (
+                                        <div key={reviews._id} onClick={() => handleClickReview(reviews._id)} className='bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer'>
+                                          {reviews.images && reviews.images.length > 0 && (
+                                            <img src={reviews.images[0]} alt={reviews.title} className="w-full h-[20vh] object-cover rounded-t-lg" />
+                                          )}
+                                          <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm mds:text-md font-russoone sms:pl-4 pl-5'>
+                                            {reviews.category}
+                                          </div>
+                                          <h2 className='text-baseextra4 font-semibold sms:text-3xl mds:text-xl font-kanit sms:pl-4 pl-5'>
+                                            {reviews.brand}
+                                          </h2>
+                                          <h3 className='text-baseextra4 font-semibold text-xl mds:text-2xl font-kanit sms:mb-2 sms:pl-4 pl-5'>
+                                            {reviews.title}
+                                          </h3>
+                                          <div className='text-gray-400 sms:text-lg mb-2 pl-4'>
+                                            <span>{reviews.date}</span>
+                                          </div>
+                                        </div>
+                                      ))
+                                    ) : (
+                                      <p className=''>No related reviews found.</p>
+                                    )
+                                  )}
           </div>
 
                         
