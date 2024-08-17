@@ -1,13 +1,16 @@
 import React, {useEffect} from 'react';
-import wallpaper from '../assests/HeroWallpaper1.png';
+import wallpaper from '../assests/HeroWallpaper.png';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import '../oth/shape.css';
 import { motion } from 'framer-motion';
 
 //import video and image files
 
 //import bgvideo from '../assests/Videofiles/final bg hero.mp4';
 import bgvideo from '../assests/Videofiles/bgvideo.mp4';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuoteLeftAlt, faQuoteRightAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 const NewHeroSection = () => {  
@@ -83,9 +86,39 @@ const NewHeroSection = () => {
 
 
               <section 
-                className='sms:hidden flex flex-col mds:h-auto w-full lgs:h-auto lgs:w-auto bg-secondary'>
+                className='hidden mds:flex lgs:flex flex-col mds:h-auto w-full lgs:h-auto lgs:w-auto bg-secondary'>
+
+              <div className='flex w-full h-auto lgs:pt-10'>  
+                <img src={wallpaper} alt=''/>
+                <div className='absolute w-auto h-auto lgs:bottom-96 lgs:right-24'>
+                <div className='flex flex-col w-auto h-auto'>
+
+                      <h2 className='flex font-russoone text-8xl'>
+                        Drive The {''}<span className='text-baseprimary'>{'\u00A0'}Future</span>
+                      </h2>
+
+                  </div> 
+              </div>   
+              <div className='absolute w-auto h-auto lgs:bottom-52 lgs:right-36 overflow-hidden'>
+                <div className='flex flex-col w-auto h-auto'>
+                          <p className='flex text-end text-secondary font-ibmplexsans text-lg lgs:w-[40vw]' data-aos='fade-left'>
+                          Baos Wheels is where car enthusiasts gather for detailed reviews, insightful articles, and the latest trends in the automotive world. Whether you're diving into cutting-edge technology, staying updated on industry developments, or fueling your passion for cars, Baos Wheels has everything you need to stay informed and inspired. Explore the thrill of the automotive world with us!
+                          </p>
+
+                  </div> 
+              </div>      
+              <div className='absolute flex lgs:w-[30vw] h-auto lgs:bottom-40 lgs:right-36 overflow-hidden'>
+                    <div className='lgs:w-[10vw] bg-baseprimary h-2'/>
+                    <div className='lgs:w-[10vw] bg-primary h-2'/>
+                    <div className='lgs:w-[10vw] bg-secondary h-2'/>
+              </div>     
+
+              </div>    
+                <div class="curved">
+
+                  
+                </div>
                 
-                <img src={wallpaper} alt='' />
                 
 
                 

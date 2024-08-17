@@ -32,6 +32,7 @@ const Reviewsection = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [review, setReview] = useState([]);
+  const [brand, setBrand] = useState('');
   const navigate = useNavigate();
 
   useEffect(()=>{
@@ -90,7 +91,7 @@ const Reviewsection = () => {
     { name: 'Honda', logo: honda },
     { name: 'Mazda', logo: mazda },
     { name: 'Mercedes Benz', logo: mercedesbenz },
-    { name: 'mitsubhishi', logo: mitsubhishi },
+    { name: 'Mitsubhishi', logo: mitsubhishi },
     { name: 'Nissan', logo: nissan },
     { name: 'Range Rover', logo: rangerover },
     { name: 'Tesla', logo: tesla },
@@ -101,24 +102,31 @@ const Reviewsection = () => {
     AOS.init({ duration: 2000 });
   }, []);
 
+  const handleBrandClick = (brandName) => {
+    setBrand(brandName);
+    navigate(`/reviews/brand/${brandName}`);
+  };
+
 
 
   return (
     <AppContainer>
       <Wrapper>
-        <div className='flex flex-col h-auto w-full items-center justify-center  overflow-hidden sms:space-y-2 lgs:space-y-10'>
-          <div className='flex flex-col w-[50vw] mds:mt-10 sms:mt-10 lgs:mt-5 items-center justify-center'>
+        <div className='flex flex-col h-auto w-full items-center justify-center  overflow-hidden sms:space-y-2 lgs:space-y-10 lgs:mt-2'>
+          <div className='flex flex-col w-[50vw] mds:mt-10 sms:mt-10 items-center justify-center'>
             <div className='flex h-0.5 lgs:w-[30vw] mds:w-[40vw] sms:w-[50vw] bg-black cursor-default' data-aos='fade-right'></div>
-            <h2 className='lgs:text-7xl mds:text-6xl sms:text-5xl font-russoone text-baseextra1' data-aos='flip-up'>Reviews</h2>
+            <h2 className='lgs:text-7xl mds:text-6xl sms:text-6xl font-russoone text-baseextra4' data-aos='flip-up'>Reviews</h2>
             <div className='flex h-0.5 lgs:w-[30vw] mds:w-[40vw] sms:w-[50vw] bg-black cursor-default' data-aos='fade-left'></div>
             </div>  
-            <p className='lgs:text-md mds:text-sm sms:text-sm sms:p-10  text-baseextra1 font-kanit mds:w-[80vw] lgs:w-[70vw] h-inherit mb-5 mt-5 text-center md:w-[' data-aos='zoom-in'
+            <p className='lgs:text-md mds:text-sm sms:text-sm sms:p-10  text-baseextra1 font-ibmplexsans mds:w-[80vw] lgs:w-[60vw] lgs:p-10 lgs:text-lg h-inherit mb-5 mt-5 text-center' data-aos='zoom-in'
             style={{
               
-            }}>{''}<span className='text-3xl font-thin'>Welcome</span>{' '}to our Car Reviews section! Here, you'll find detailed and easy-to-understand reviews of various cars. We cover everything from speed and safety to comfort and technology. Whether you're interested in a car that's fast, safe, or packed with the latest features, our reviews will help you make an informed decision. Read insights from our experts and real car owners, and discover the perfect car for you today</p>
+            }}>{''}Welcome to our Car Reviews section! Here, you'll find detailed and easy-to-understand reviews of various cars. We cover everything from speed and safety to comfort and technology. Whether you're interested in a car that's fast, safe, or packed with the latest features, our reviews will help you make an informed decision. Read insights from our experts and real car owners, and discover the perfect car for you today</p>
 
         </div>
+        <div className='flex flex-col w-auto h-auto'>
         <Note className='sms:p-3 mds:p-3 lgs:p-5' data-aos='zoom-in'>Explore by Vehicle Type</Note>
+        </div>
         <Marquee >
           <MarqueeGroup isPaused ={isPaused}>
             {row1.map((el, index) => (
@@ -141,7 +149,7 @@ const Reviewsection = () => {
         </Marquee>
 
         {/* screen adjustments for 640px screens */}
-        <div className='sm:hidden flex flex-col w-full h-auto items-center justify-center p-5 pb-20' data-aos='fade-up' data-aos-delay='20'>
+        <div className='hidden sms:flex flex-col w-full h-auto items-center justify-center p-5 pb-20' data-aos='fade-up' data-aos-delay='20'>
               <div className='grid grid-flow-row grid-cols-3 gap-4'>
                 {row1.map((el, index) => (
                       
@@ -164,16 +172,19 @@ const Reviewsection = () => {
         </div>
         <div className='flex lgs:w-[95vw] lgs:h-auto sms:w-[90vw] sms:h-auto items-center justify-center sms:p-2 '>
         <div className='flex flex-wrap lgs:w-full lgs:h-auto mds:w-[100vw] sms:h-auto overflow-hidden  lgs:gap-5 sms:gap-x-4 sms:pt-4 mds:gap-5 sms:gap-3 cursor-pointer justify-center sms:p-5 mds:p-5 lgs:p-3 '>
-          {Autobrands.map((brand, index) => (
+          {Autobrands.map((brandItem, index) => (
             <BrandCard key={index} data-aos='fade-up'>
+
               <img 
-                src={brand.logo} 
-                alt={brand.name} 
+                src={brandItem.logo} 
+                alt={brandItem.name} 
+                onClick={()=> handleBrandClick(brandItem.name)}
                 className="w-20 h-20" style={{
                   objectFit:'contain'
                 }} 
               />
-              <span className="text-sm pt-2 font-poppins">{brand.name}</span>
+
+              <span className="text-sm pt-2 font-poppins">{brandItem.name}</span>
             </BrandCard>
           ))}
         </div>
@@ -280,11 +291,7 @@ const AppContainer = styled.div`
   justify-content: center;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.4s ease;
-  padding-top: 10%;
-
-  &:hover {
-    box-shadow: 0 0 30px 20px rgba(0, 0, 0, 0.5);
-  }
+  padding-top: 5%;
 `;
 
 const Wrapper = styled.div`
@@ -310,6 +317,7 @@ const Note = styled.div`
 const Marquee = styled.div`
   display: flex;
   width: 1200px;
+  padding: 20px;
   overflow: hidden;
   user-select: none;
 
@@ -335,10 +343,15 @@ const common = css`
   align-items: center;
   justify-content: space-around;
   white-space: nowrap;
-  width: 100%;
+  width: 150%;
   height: relative;
   animation: ${scrollX} 50s linear infinite;
   animation-play-state: ${({ isPaused }) => (isPaused ? 'paused' : 'running')};
+
+    @media (min-width: 641px) and (max-width: 1024px) {
+    width: 100%;
+    
+  }
 `;
 
 const MarqueeGroup = styled.div`
@@ -363,7 +376,7 @@ const Image = styled.img`
   transition: transform 0.4s ease;
 
   &:hover {
-    transform: scale(1.4);
+    transform: scale(1.2);
   }
 `;
 

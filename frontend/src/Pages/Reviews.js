@@ -20,11 +20,13 @@ import mazda from '../assests/Brand Logos/mazda.png';
 import Loading2 from '../oth/Loading2';
 
 
+
 const Reviews = () => {
 
 const [review, setReview] = useState([]);
 const [isLoading, setIsLoading] = useState(true);
-const [isFocused, setIsFocused] = useState(false);
+const [brand, setBrand] = useState('');
+const [searchQuery, setSearchQuery] = useState('');
 const navigate = useNavigate();
 
 
@@ -60,12 +62,25 @@ const fetchReviews = async () => {
     });
   },);
 
+
+  const filteredReviews = review.filter(reviews => 
+    reviews.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    reviews.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    reviews.category.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+
+  const handleBrandClick = (brandName) => {
+    setBrand(brandName);
+    navigate(`/reviews/brand/${brandName}`);
+  };
+
   const Autobrands = [
     { name: 'Audi', logo: audi },
     { name: 'BMW', logo: bmw },
     { name: 'Honda', logo: honda },
     { name: 'Mazda', logo: mazda },
-    { name: 'Mercedes', logo: mercedesbenz },
+    { name: 'Mercedes Benz', logo: mercedesbenz },
     { name: 'Mitsubishi', logo: mitsubishi },
     { name: 'Nissan', logo: nissan },
     { name: 'Range Rover', logo: rangerover },
@@ -82,6 +97,8 @@ const fetchReviews = async () => {
     { name: 'Mini', logo: mitsubishi },
   ];
 
+
+
   return (
     <div className='relative w-full h-auto'>
       <div className='flex flex-col w-full h-auto bg-primary items-center justify-start'>
@@ -92,7 +109,7 @@ const fetchReviews = async () => {
           <div className='flex w-[30vw] sms:w-[60vw] h-0.5 bg-secondary' data-aos='fade-left' />
         </div>
 
-        <p className='lgs:w-[70vw] w-[80vw] h-auto text-wrap  sms:text-md text-lg font-kanit text-secondary text-center mds:pt-5 sms:m-4 m-2 lgs:p-5' data-aos='zoom-in'>
+        <p className='lgs:w-[60vw] w-[80vw] h-auto text-wrap  sms:text-md text-lg font-ibmplexsans text-secondary text-center mds:pt-5 sms:m-4 m-2 lgs:p-5' data-aos='zoom-in'>
           {''}Explore the world of automobiles with Baos Wheels' comprehensive Review Section. Our mission is to provide you with detailed, impartial, and insightful evaluations of the latest and most sought-after vehicles on the market. We delve deep into every aspect of each car, from performance and features to comfort and reliability, ensuring you have all the information you need to make an informed decision.
         </p>
 
@@ -104,14 +121,14 @@ const fetchReviews = async () => {
           <div className='flex w-full h-auto items-center justify-center p-5'>
             <div className='flex flex-wrap gap-3 sms:gap-2 lgs:w-[70vw] mds:w-[95vw] h-auto cursor-pointer justify-center items-center mds:p-5'>
               {Autobrands.slice(0,9).map((brand, index) => (
-                <div className='flex flex-col  w-[20vw] sms:w-[30vw] mds:w-[25vw] items-center h-auto drop-shadow-lg justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:drop-shadow-md  transition-transform' key={index} data-aos='flip-up'>
+                <div key={index} onClick={()=> {handleBrandClick(brand.name)}} className='flex flex-col  w-[20vw] sms:w-[30vw] mds:w-[25vw] items-center h-auto drop-shadow-lg justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:drop-shadow-md  transition-transform' data-aos='flip-up'>
                   <img
                     src={brand.logo}
                     alt={brand.name}
                     className="sms:w-20 sms:h-20 w-20 h-20 lgs:w-20 lgs:h-20 lgs:hover:scale-125 transform transition-transform duration-300 ease-in-out p-1"
                     style={{ objectFit: 'contain' }}
                   />
-                  <span className="text-sm sms:text-md md:text-sm pt-2 font-kanit text-center">{brand.name}</span>
+                  <span className="text-sm sms:text-md mds:text-sm lgs:text-lg pt-2 font-russoone text-center">{brand.name}</span>
                 </div>
               ))}
             </div>
@@ -141,18 +158,17 @@ const fetchReviews = async () => {
            <h2 className='sms:text-3xl mds:text-4xl lgs:text-5xl font-russoone text-primary m-2 mds:pt-10 sms:pt-5' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
         </div>
 
-       <div className='flex  h-[10vh] w-full justify-between'>
-       <div className="relative w-full lgs:p-5 items-center justify-center">
-      <input
-        type="text"
-        className={`transition-all duration-300 ease-in-out items-center ${
-          isFocused ? 'lgs:w-[80vw] lgs:ml-20 lgs:mr-5' : 'lgs:w-[20vw] lgs:ml-5 lgs:mr-5'
-        } px-4 py-2 border-2 border-gray-300 rounded-full outline-none`}
-        placeholder="Search..."
-        onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
-      /><FontAwesomeIcon icon={faSearch} className='text-primary lgs:h-6 cursor-pointer hover:scale-125'/>
-    </div>
+       <div className='flex  h-[10vh] w-full justify-between overflow-hidden'>
+              <div className="relative w-full lgs:p-5 items-center justify-center" data-aos='fade-up' data-aos-delay='300'>
+              <input
+                type="text"
+                className="transition-all duration-300 ease-in-out items-center $
+                lgs:w-[50vw] sms:w-[60vw] lgs:ml-10 sms:ml-5 lgs:mr-5 px-4 py-2 border-2 border-gray-300 rounded-full outline-none"
+                placeholder="Search by Brand, Body Type"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              /><FontAwesomeIcon icon={faSearch} className='text-primary lgs:h-6 cursor-pointer hover:scale-125'/>
+            </div>
         
        </div>
 
@@ -161,7 +177,7 @@ const fetchReviews = async () => {
                   {isLoading ? (
                     <Loading2/>
                   ) : (
-                                    review
+                                    filteredReviews
                                     .sort((b,a) => new Date(a.date) - new Date(b.date))
                                     .slice(0,8).map((reviews) => (
                                        <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' bg-primary rounded-lg overflow-hidden  border-2 cursor-pointer' data-aos='fade-up'>

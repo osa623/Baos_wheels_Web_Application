@@ -78,12 +78,11 @@ if (!article) {
                                     <h2 className='font-russoone sms:text-2xl lgs:text-4xl text-baseextra4 text-start'>
                                         {subtitle}
                                     </h2>
-                                    <p className='font-kanit sms:w-[75vw] lgs:w-[50vw] sms:text-xl lgs:pt-10 mds:text-xl lgs:text-lg text-secondary text-start'>
+                                    <p className='font-ibmplexsans sms:w-[75vw] lgs:w-[50vw] sms:text-xl lgs:pt-10 mds:text-xl lgs:text-lg text-secondary text-start'>
                                         {article.description[index]}
-                                    </p>
-
-                                    
+                                    </p>    
                                 </div>
+                                
                             ))}
                         </div> 
                <div className='hidden lgs:flex flex-col h-auto lgs:p-10 w-[40vw]'>
@@ -98,23 +97,6 @@ if (!article) {
 
      </div>
 
-     <div className='flex sms:flex-col w-auto h-auto sms:p-5 justify-center lgs:p-10'>
-
-
-           <div className='flex flex-col h-auto w-full bg-secondary rounded-t-3xl'>
-                   <div className='flex flex-col w-full h-auto sms:justify-start p-10'>
-                     <h2 className='font-russoone sms:text-xl lgs:text-2xl mds:text-3xl text-primary  text-start'>
-                       More Reviews of : 
-                     </h2>
-
-                   </div>
-
-
-
-                     
-           </div>           
-                    
-     </div>
 
     </div>
     <div className='hidden sms:flex mds:flex fixed h-auto w-auto bg-transparent bottom-20 right-8 z-40 justify-center items-center'>

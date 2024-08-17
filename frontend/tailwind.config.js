@@ -22,6 +22,7 @@ module.exports = {
         bebasneue: ['Bebas Neue', 'sans-serif'],
         bricolagegrotesque: ['Bricolage Grotesque', 'sans-serif'],
         kanit: ['Kanit', 'sans-serif'],
+        ibmplexsans: ['IBM Plex Sans', 'sans-serif'],
       },
       screens: {
         'sms': { 'min': '10px','max': '640px' }, // screens <= 640px

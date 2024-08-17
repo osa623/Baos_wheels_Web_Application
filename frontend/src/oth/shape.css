@@ -1,0 +1,20 @@
+.curved {
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    height: 20%;
+  }
+
+  .curved1 {
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #92005c;
+    height: 25%;
+  }
+  

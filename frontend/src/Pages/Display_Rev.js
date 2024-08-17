@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import axios from 'axios';
@@ -12,6 +12,8 @@ const Display_Rev = () => {
   const { id } = useParams(); 
   const [review, setReview] = useState(null);
   const [relatedReviews, setRelatedReviews] = useState([]);
+  const lastSectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(true);
   const [openReviewId, setOpenReviewId] = useState(null);
   const [reviewsByCategory, setReviewsByCategory] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -32,6 +34,32 @@ const Display_Rev = () => {
 
         await new Promise(resolve => setTimeout(resolve, 2000));
         setIsLoading(false);
+
+        const observer = new IntersectionObserver(
+
+          (entries) => {
+            const entry = entries[0];
+            setIsVisible(!entry.isIntersecting);
+        },
+        {
+            root: null,
+            threshold: 0.1,
+        }
+
+        );
+
+
+        if (lastSectionRef.current) {
+          observer.observe(lastSectionRef.current);
+      }
+
+      
+      return () => {
+          if (lastSectionRef.current) {
+              observer.unobserve(lastSectionRef.current);
+          }
+      };
+
 
       } catch (error) {
         console.error("Error Fetching Review:", error);
@@ -59,7 +87,7 @@ const Display_Rev = () => {
     navigate(`/reviews/${review_id}`);
     setOpenReviewId(review_id);
   } 
- //Loading screen 
+  
   if (isLoading) {
     return <Loading2 />;
   }
@@ -113,32 +141,32 @@ const Display_Rev = () => {
                     <div className='grid sms:grid-cols-2 mds:grid-cols-2 lgs:grid-cols-2 sms:w-auto lgs:w-[60vw] h-auto lgs:pt-10 mds:pt-10 sms:gap-5 mds:gap-5 lgs:gap-6 '>
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start   items-center'>
                                 <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Engine:</h2>
-                                <h2 className='font-kanit text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.engine}</h2>
+                                <h2 className='font-ibmplexsans text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.engine}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
                                 <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Drivetrain:</h2>
-                                <h2 className='font-kanit text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.drivetrain}</h2>
+                                <h2 className='font-ibmplexsans text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.drivetrain}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
                                 <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Transmission:</h2>
-                                <h2 className='font-kanit text-md lgs:w-[20vw] text-center mds:text-lg  text-baseextra4'>{review.transmission}</h2>
+                                <h2 className='font-ibmplexsans text-md lgs:w-[20vw] text-center mds:text-lg  text-baseextra4'>{review.transmission}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
                                 <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Fuel Economy:</h2>
-                                <h2 className='font-kanit text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.fuelEconomy}</h2>
+                                <h2 className='font-ibmplexsans text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.fuelEconomy}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
                                 <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Capacity:</h2>
-                                <h2 className='font-kanit text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.seatingCapacity}</h2>
+                                <h2 className='font-ibmplexsans text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.seatingCapacity}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
                                 <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Price:</h2>
-                                <h2 className='font-kanit text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.singleprice}</h2>
+                                <h2 className='font-ibmplexsans text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.singleprice}</h2>
                             </div>
                     </div>         
               
@@ -150,7 +178,7 @@ const Display_Rev = () => {
                       <h2 className='font-russoone sms:text-2xl text-4xl text-baseextra4 text-start'>
                       Highlight Breakdown:
                       </h2>
-                      <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] sms:text-lg mds:text-xl lgs:text-lg text-secondary text-start'>
+                      <p className='font-ibmplexsans sms:w-[75vw] lgs:w-[60vw] sms:text-lg mds:text-xl lgs:text-lg text-secondary text-start'>
                         {review.overview}
                       </p>
                   </div>
@@ -158,7 +186,7 @@ const Display_Rev = () => {
                       <h2 className='font-russoone sms:text-2xl text-4xl text-baseextra4 text-start'>
                       Design and Road Presence:
                       </h2>
-                      <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] sms:text-lg mds:text-xl lgs:text-lg text-secondary text-start'>
+                      <p className='font-ibmplexsans sms:w-[75vw] lgs:w-[60vw] sms:text-lg mds:text-xl lgs:text-lg text-secondary text-start'>
                         {review.exterior}
                       </p>
                   </div>
@@ -169,7 +197,7 @@ const Display_Rev = () => {
                       <h2 className='font-russoone sms:text-2xl text-4xl text-baseextra4 text-start'>
                       Inside the Cabin:
                       </h2>
-                      <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] sms:text-lg mds:text-xl lgs:text-lg text-secondary text-start'>
+                      <p className='font-ibmplexsans sms:w-[75vw] lgs:w-[60vw] sms:text-lg mds:text-xl lgs:text-lg text-secondary text-start'>
                         {review.interior}
                       </p>
                   </div>
@@ -177,7 +205,7 @@ const Display_Rev = () => {
                       <h2 className='font-russoone sms:text-2xl text-4xl text-baseextra4 text-start'>
                       Power and Driving Dynamics:
                       </h2>
-                      <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] text-lg mds:text-xl text-secondary text-start'>
+                      <p className='font-ibmplexsans sms:w-[75vw] lgs:w-[60vw] text-lg mds:text-xl text-secondary text-start'>
                         {review.performance}
                       </p>
                   </div>
@@ -188,7 +216,7 @@ const Display_Rev = () => {
                       <h2 className='font-russoone sms:text-2xl text-4xl text-baseextra4 text-start'>
                       Security and Driver Assistance:
                       </h2>
-                      <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] text-lg mds:text-xl text-secondary text-start'>
+                      <p className='font-ibmplexsans sms:w-[75vw] lgs:w-[60vw] text-lg mds:text-xl text-secondary text-start'>
                         {review.safety}
                       </p>
                   </div>
@@ -196,13 +224,13 @@ const Display_Rev = () => {
                       <h2 className='font-russoone sms:text-2xl text-4xl text-baseextra4 text-start'>
                       Cost and Value:
                       </h2>
-                      <p className='font-kanit sms:w-[75vw] lgs:w-[60vw] text-lg mds:text-xl text-secondary text-start'>
+                      <p className='font-ibmplexsans sms:w-[75vw] lgs:w-[60vw] text-lg mds:text-xl text-secondary text-start'>
                         {review.price}
                       </p>
                   </div>
                   </div> 
                   <div className='hidden lgs:flex flex-col h-auto lgs:p-10 w-[40vw]'>
-                    <div className='flex flex-col h-[200vh] bg-secondary rounded-2xl lgs:p-5'>
+                    <div className='flex flex-col h-auto bg-secondary rounded-2xl lgs:p-5'>
                       <div className='flex flex-col w-auto h-auto'>
                         <h2 className='font-russoone sms:text-xl lgs:text-2xl mds:text-3xl text-primary  text-start'>
                           Looking for : 
@@ -210,7 +238,7 @@ const Display_Rev = () => {
                         <h2 className='font-russoone sms:text-4xl text-5xl font-bold text-baseprimary text-start'>
                           {review.category} 
                         </h2>
-                        <p className='font-kanit lgs:text-xl text-primary text-start'>
+                        <p className='font-ibmplexsans lgs:text-xl text-primary text-start'>
                            Explore our latest in-depth reviews of the newest {''}<span className=''>{review.category}</span>s on the market
                         </p>
                     </div>  
@@ -277,9 +305,12 @@ const Display_Rev = () => {
                                     relatedReviews.length > 0 ? (
                                       relatedReviews.map((reviews) => (
                                         <div key={reviews._id} onClick={() => handleClickReview(reviews._id)} className='bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer'>
+                                          
+                                      <div className='bg-transparent sms:h-auto w-auto mb-10 rounded-lg overflow-hidden'>    
                                           {reviews.images && reviews.images.length > 0 && (
-                                            <img src={reviews.images[0]} alt={reviews.title} className="w-full h-[20vh] object-cover rounded-t-lg" />
+                                            <img src={reviews.images[0]} alt={reviews.title} className="w-full h-[20vh] object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125" />
                                           )}
+                                     </div>     
                                           <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm mds:text-md font-russoone sms:pl-4 pl-5'>
                                             {reviews.category}
                                           </div>
@@ -289,7 +320,7 @@ const Display_Rev = () => {
                                           <h3 className='text-baseextra4 font-semibold text-xl mds:text-2xl font-kanit sms:mb-2 sms:pl-4 pl-5'>
                                             {reviews.title}
                                           </h3>
-                                          <div className='text-gray-400 sms:text-lg mb-2 pl-4'>
+                                          <div id="last-section" ref={lastSectionRef} className='text-gray-400 sms:text-lg mb-2 pl-4'>
                                             <span>{reviews.date}</span>
                                           </div>
                                         </div>
@@ -306,13 +337,20 @@ const Display_Rev = () => {
         </div>
 
        </div>
-       <div className='hidden sms:flex mds:flex fixed h-auto w-auto bg-transparent bottom-20 right-8 z-40 justify-center items-center'>
-            <a href='#main'>
-              <div className='flex h-20 w-20 bg-primary rounded-full items-center justify-center drop-shadow-2xl'>
-                <FontAwesomeIcon icon={faAngleDoubleUp} className='sms:h-6'/>
-              </div>
-           </a>    
-       </div>
+
+       {isVisible && (
+
+          <div className='hidden sms:flex mds:flex fixed h-auto w-auto bg-transparent bottom-20 right-8 z-40 justify-center items-center'>
+          <a href='#main'>
+            <div className='flex h-20 w-20 bg-primary rounded-full items-center justify-center drop-shadow-2xl'>
+              <FontAwesomeIcon icon={faAngleDoubleUp} className='sms:h-6'/>
+            </div>
+          </a>    
+          </div>
+
+
+       )};
+
        
   </div>   
   );
