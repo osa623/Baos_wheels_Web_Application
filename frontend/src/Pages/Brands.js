@@ -38,7 +38,7 @@ const Brands = () => {
   return (
     <div className='relative w-full h-auto lgs:p-2'>
         
-          <div className='flex flex-row lgs:w-full h-auto justify-center items-center sms:pt-24 lgs:pt-32 mds:pt-24 lgs:p-10'>
+          <div className='flex flex-row lgs:w-full h-auto justify-center items-center sms:pt-24 lgs:pt-32 mds:pt-24 p-10'>
             <h1 className='text-4xl font-russoone'>
                 Reviews Of:{' '}<span className='text-6xl font-russoone text-baseextra4'>{brandname}</span>
                 <div className='hidden lgs:flex h-0.5 lgs:w-120 bg-secondary text-center'></div>
@@ -48,7 +48,7 @@ const Brands = () => {
         <Loading2/>
       ) : (
        
-        <div className='flex sms:flex-row flex-col w-auto min-h-screen bg-secondary rounded-t-2xl p-5'>
+        <div className='flex sms:flex-row flex-col w-auto h-auto bg-secondary rounded-t-2xl p-5'>
         <div className='grid sms:grid-rows-2 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 mds:grid-cols-2 gap-3 p-10'>
         {isLoading ? (
                     <Loading2/>

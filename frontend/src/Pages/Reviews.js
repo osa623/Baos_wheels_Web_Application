@@ -163,7 +163,7 @@ const fetchReviews = async () => {
               <input
                 type="text"
                 className="transition-all duration-300 ease-in-out items-center $
-                lgs:w-[50vw] sms:w-[60vw] lgs:ml-10 sms:ml-5 lgs:mr-5 px-4 py-2 border-2 border-gray-300 rounded-full outline-none"
+                lgs:w-[50vw] sms:w-[60vw] mds:w-[60vw] mds:mt-5 ml-10 sms:ml-5 mr-5 px-4 py-2 border-2 border-gray-300 rounded-full outline-none"
                 placeholder="Search by Brand, Body Type"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}

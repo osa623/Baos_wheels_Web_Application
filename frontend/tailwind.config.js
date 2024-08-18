@@ -27,7 +27,7 @@ module.exports = {
       screens: {
         'sms': { 'min': '10px','max': '640px' }, // screens <= 640px
         'mds': { 'min': '641px','max': '1023px'}, // screens <= 1023px
-        'lgs': { 'min': '1024px','max': '1536px'} // screen <= 1536px
+        'lgs': { 'min': '1024px','max': '5000px'} // screen <= 1536px
       },
       inset: {
         '5': '5px',

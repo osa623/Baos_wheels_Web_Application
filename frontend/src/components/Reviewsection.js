@@ -121,7 +121,7 @@ const Reviewsection = () => {
             <p className='lgs:text-md mds:text-sm sms:text-sm sms:p-10  text-baseextra1 font-ibmplexsans mds:w-[80vw] lgs:w-[60vw] lgs:p-10 lgs:text-lg h-inherit mb-5 mt-5 text-center' data-aos='zoom-in'
             style={{
               
-            }}>{''}Welcome to our Car Reviews section! Here, you'll find detailed and easy-to-understand reviews of various cars. We cover everything from speed and safety to comfort and technology. Whether you're interested in a car that's fast, safe, or packed with the latest features, our reviews will help you make an informed decision. Read insights from our experts and real car owners, and discover the perfect car for you today</p>
+            }}>{''}In our Car Reviews section, you'll find comprehensive and easy-to-digest evaluations of a variety of vehicles. We delve into every detail, from performance and safety to comfort and technology. Whether you're after speed, security, or the latest features, our reviews are here to help you make an informed choice. Get insights from our experts and real car owners, and discover the ideal car for you today.</p>
 
         </div>
         <div className='flex flex-col w-auto h-auto'>

@@ -35,8 +35,8 @@ const NewHeroSection = () => {
                   <video src={bgvideo} autoPlay loop muted playsInline/>
 
                   <motion.div 
-                  initial={{height:'100vh'}}
-                  whileInView={{height:'100vh'}}
+                  initial={{height:'200vh'}}
+                  whileInView={{height:'200vh'}}
                   transition={{duration:'2.0', ease:'easeInOut', delay:'0.3'}}
                   
                   className='absolute flex-col bottom-0 w-full  bg-secondary opacity-20 z-40'/>
@@ -67,7 +67,7 @@ const NewHeroSection = () => {
                         whileInView={{marginTop:'5px', opacity:'1'}}
                         transition={{duration:'2.0',ease:'easeInOut', delay:'0.4'}}
                         className='flex h-[12vh] w-full items-center justify-center'>
-                          <p className='flex text-center text-primary font-russoone text-sm w-[80vw] font-thin'>
+                          <p className='flex text-center text-primary font-semibold font-ibmplexsans text-sm w-[80vw]'>
                           Baos Wheels is your go-to hub for car reviews, insightful articles, and the latest trends in the automotive world. Discover, explore, and fuel your passion for all things on wheels!
                           </p>
                         </motion.div>
@@ -88,30 +88,40 @@ const NewHeroSection = () => {
               <section 
                 className='hidden mds:flex lgs:flex flex-col mds:h-auto w-full lgs:h-auto lgs:w-auto bg-secondary'>
 
-              <div className='flex w-full h-auto lgs:pt-10'>  
-                <img src={wallpaper} alt=''/>
-                <div className='absolute w-auto h-auto lgs:bottom-96 lgs:right-24'>
-                <div className='flex flex-col w-auto h-auto'>
+              <div className='flex lgs:w-full lgs:h-[80vh] mds:w-[100vw] mds:h-[50vh]' style={{
+                  backgroundImage: `url(${wallpaper})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundAttachment:'scroll'
+              }}>  
 
-                      <h2 className='flex font-russoone text-8xl'>
-                        Drive The {''}<span className='text-baseprimary'>{'\u00A0'}Future</span>
-                      </h2>
+                        <div className='absolute flex flex-col w-auto lgs:h-[50vh] mds:h-[30vh] bottom-10 right-20 items-end justify-start lgs:space-y-2 mds:space-y-5 '>
+                              <div className='flex flx-col w-auto h-auto'>
+                              <div className='flex flex-col w-auto h-auto'>
 
-                  </div> 
-              </div>   
-              <div className='absolute w-auto h-auto lgs:bottom-52 lgs:right-36 overflow-hidden'>
-                <div className='flex flex-col w-auto h-auto'>
-                          <p className='flex text-end text-secondary font-ibmplexsans text-lg lgs:w-[40vw]' data-aos='fade-left'>
-                          Baos Wheels is where car enthusiasts gather for detailed reviews, insightful articles, and the latest trends in the automotive world. Whether you're diving into cutting-edge technology, staying updated on industry developments, or fueling your passion for cars, Baos Wheels has everything you need to stay informed and inspired. Explore the thrill of the automotive world with us!
-                          </p>
+                                    <h2 className='flex font-russoone lgs:text-8xl mds:text-7xl'>
+                                      Drive The {''}<span className='text-baseprimary'>{'\u00A0'}Future</span>
+                                    </h2>
 
-                  </div> 
-              </div>      
-              <div className='absolute flex lgs:w-[30vw] h-auto lgs:bottom-40 lgs:right-36 overflow-hidden'>
-                    <div className='lgs:w-[10vw] bg-baseprimary h-2'/>
-                    <div className='lgs:w-[10vw] bg-primary h-2'/>
-                    <div className='lgs:w-[10vw] bg-secondary h-2'/>
-              </div>     
+                                </div> 
+                            </div>   
+                            <div className='flex flex-col w-auto h-auto  overflow-hidden'>
+                              <div className='flex flex-col w-auto h-auto'>
+                                        <p className='flex text-end text-secondary font-ibmplexsans lgs:text-lg mds:text-xs lgs:w-[40vw] mds:w-[50vw]' data-aos='fade-left'>
+                                        Baos Wheels is where car enthusiasts gather for detailed reviews, insightful articles, and the latest trends in the automotive world. Whether you're diving into cutting-edge technology, staying updated on industry developments, or fueling your passion for cars, Baos Wheels has everything you need to stay informed and inspired. Explore the thrill of the automotive world with us!
+                                        </p>
+
+                                </div> 
+                            </div>  
+                          <div className='flex flex-col w-full h-auto items-end justify-end lgs:pt-10 lgs:pr-10'>     
+                            <div className='flex lgs:w-[30vw] mds:w-[45vw] h-auto lgs:bottom-40 lgs:right-36 overflow-hidden'>
+                                  <div className='lgs:w-[10vw] mds:w-[45vw]  bg-baseprimary h-2'/>
+                                  <div className='lgs:w-[10vw] mds:w-[45vw]  bg-primary h-2'/>
+                                  <div className='lgs:w-[10vw] mds:w-[45vw]  bg-secondary h-2'/>
+                            </div> 
+                        </div>        
+                     </div>             
 
               </div>    
                 <div class="curved">

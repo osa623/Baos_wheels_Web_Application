@@ -50,17 +50,17 @@ const Newsection = () => {
 
   return (
     <div className='relative h-auto w-auto bg-primary'>
-      <div className=' flex flex-col items-center justify-center w-full lgs:h-[20vh] sms:h-[20vh]  bg-primary mds:top-[10vh]  sms:space-y-2 mds:p-6 mds:space-y-1 lgs:space-y-1'>
-        <div className='flex lgs:w-[30vw] h-0.5 mds:w-[40vw] sms:w-[50vw] bg-secondary items-start justify-start mx-20' data-aos='fade-right'/>
-        <h2 className='lgs:text-7xl text-baseextra4 mds:text-6xl sms:text-5xl text-center font-russoone' data-aos='flip-up'>What's New</h2>
-        <div className='flex lgs:w-[30vw] h-0.5 mds:w-[40vw]  sms:w-[50vw] bg-secondary items-end justify-end mx-20'  data-aos='fade-left'/>
+      <div className=' flex flex-col items-center justify-center w-full lgs:h-[20vh] lgs:mb-5 sms:h-[20vh]  bg-primary mds:top-[10vh]  sms:space-y-2 mds:p-6 mds:space-y-1 lgs:space-y-1'>
+        <div className='flex lgs:w-[30vw] h-0.5 mds:w-[40vw] sms:w-[50vw] bg-secondary items-start justify-start mx-20'/>
+        <h2 className='lgs:text-7xl text-baseextra4 mds:text-6xl sms:text-5xl text-center font-russoone'>Auto Insights</h2>
+        <div className='flex lgs:w-[30vw] h-0.5 mds:w-[40vw]  sms:w-[50vw] bg-secondary items-end justify-end mx-20'/>
       </div>
-      <div className='flex justify-center w-full ' data-aos='zoom-in'>
+      <div className='flex justify-center w-full'>
         <div className='flex flex-col items-center justify-center lgs:w-[75vw]'>
           <p className='lgs:text-lg font-ibmplexsans lgs:h-auto lgs:w-[50vw] sms:w-[80vw] mds:w-[75vw] sms:text-md text-center justify-center align-middle'
           style={{
             
-          }} data-aos='zoom-in' data-aos-delay='300'>
+          }} >
             {''}News Stay Updated with the Latest in the Automotive World. From new model releases and industry trends to expert reviews and technological innovations, our news section has it all. Whether you are a car enthusiast or just curious, explore and stay informed about the future of transportation
           </p>
         </div>
