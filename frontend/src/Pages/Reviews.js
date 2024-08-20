@@ -155,7 +155,7 @@ const fetchReviews = async () => {
        <div className='border-2 rounded-t-xl border-secondary bg-secondary'>
 
         <div className='flex w-full h-auto justify-center items-center lgs:pt-8'>
-           <h2 className='sms:text-3xl mds:text-4xl lgs:text-5xl font-russoone text-primary m-2 mds:pt-10 sms:pt-5' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
+           <h2 className='sms:text-3xl mds:text-4xl lgs:text-5xl font-russoone text-primary m-2 mds:pt-10 sms:pt-5 cursor-pointer hover:text-baseprimary' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
         </div>
 
        <div className='flex  h-[10vh] w-full justify-between overflow-hidden'>

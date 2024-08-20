@@ -36,7 +36,9 @@ const AppContent = () => {
       <Navbar />
       <div className="flex-grow">
         {isLoading ? (
+
          <Loading/>
+
         ) : (
           <Routes>
             <Route path="/" element={<Home />} />

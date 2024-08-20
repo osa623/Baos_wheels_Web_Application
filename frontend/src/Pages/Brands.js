@@ -4,13 +4,13 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Loading2 from '../oth/Loading2';
 
 const Brands = () => {
-  const { brandname } = useParams(); // Ensure this matches the route parameter name
+  const { brandname } = useParams();
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("Brand name from URL:", brandname); // Debug log
+    console.log("Brand name from URL:", brandname);
 
     const fetchReviews = async () => {
       try {

@@ -96,12 +96,12 @@ const NewHeroSection = () => {
                   backgroundAttachment:'scroll'
               }}>  
 
-                        <div className='absolute flex flex-col w-auto lgs:h-[50vh] mds:h-[30vh] bottom-10 right-20 items-end justify-start lgs:space-y-2 mds:space-y-5 '>
+                        <div className='absolute flex flex-col w-auto lgs:h-[50vh] mds:h-[30vh] bottom-10 right-20 items-end justify-start lgs:space-y-2 mds:space-y-5 overflow-hidden '>
                               <div className='flex flx-col w-auto h-auto'>
                               <div className='flex flex-col w-auto h-auto'>
 
-                                    <h2 className='flex font-russoone lgs:text-8xl mds:text-7xl'>
-                                      Drive The {''}<span className='text-baseprimary'>{'\u00A0'}Future</span>
+                                    <h2 className='flex font-russoone lgs:text-8xl mds:text-7xl' data-aos='fade-down' data-aos-delay='300'>
+                                      Drive The {''}<span className='text-baseprimary' data-aos='fade-up' data-aos-delay='500'>{'\u00A0'}Future</span>
                                     </h2>
 
                                 </div> 

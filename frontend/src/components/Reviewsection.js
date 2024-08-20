@@ -258,7 +258,7 @@ const Reviewsection = () => {
        transition={{duration:'1.5', ease:'easeInOut', delay:'0.4'}}
        className='flex flex-row items-center justify-center h-[10vh] mt-[-2vh] sms:p-4 mds:p-2 lgs:p-10 transition-transform duration-300 ease-in-out hover:scale-110'>
 
-        <div className='text-2xl text-baseprimary font-semibold cursor-pointer font-russoone '>
+        <div className='text-2xl text-baseprimary font-semibold cursor-pointer font-russoone transition-transform duration-300 ease-in-out hover:scale-110'>
           <Link to={`/reviews`}>See more</Link></div>
         <FontAwesomeIcon icon={faAngleDoubleRight} className='w-10 text-baseprimary'  style={{
           
