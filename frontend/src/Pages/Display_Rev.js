@@ -138,35 +138,35 @@ const Display_Rev = () => {
                 </h2>
 
 
-                    <div className='grid sms:grid-cols-2 mds:grid-cols-2 lgs:grid-cols-2 sms:w-auto lgs:w-[60vw] h-auto lgs:pt-10 mds:pt-10 sms:gap-5 mds:gap-5 lgs:gap-6 '>
-                            <div className='flex flex-col h-auto w-auto justify-center sms:items-start   items-center'>
+                    <div className='grid sms:grid-cols-2 mds:grid-cols-2 lgs:grid-cols-2 sms:w-auto lgs:w-[60vw] h-auto lgs:pt-10 mds:pt-10 sms:p-1 sms:gap-5 mds:gap-5 lgs:gap-6 '>
+                            <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
                                 <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Engine:</h2>
-                                <h2 className='font-ibmplexsans text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.engine}</h2>
+                                <h2 className='font-ibmplexsans text-md lgs:w-[20vw] text-center  sms:text-start mds:text-lg text-baseextra4'>{review.engine}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
                                 <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Drivetrain:</h2>
-                                <h2 className='font-ibmplexsans text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.drivetrain}</h2>
+                                <h2 className='font-ibmplexsans text-md lgs:w-[20vw] text-center  sms:text-start mds:text-lg text-baseextra4'>{review.drivetrain}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
                                 <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Transmission:</h2>
-                                <h2 className='font-ibmplexsans text-md lgs:w-[20vw] text-center mds:text-lg  text-baseextra4'>{review.transmission}</h2>
+                                <h2 className='font-ibmplexsans text-md lgs:w-[20vw] text-center sms:text-start mds:text-lg  text-baseextra4'>{review.transmission}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
                                 <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Fuel Economy:</h2>
-                                <h2 className='font-ibmplexsans text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.fuelEconomy}</h2>
+                                <h2 className='font-ibmplexsans text-md lgs:w-[20vw] text-center sms:text-start mds:text-lg text-baseextra4'>{review.fuelEconomy}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
                                 <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Capacity:</h2>
-                                <h2 className='font-ibmplexsans text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.seatingCapacity}</h2>
+                                <h2 className='font-ibmplexsans text-md lgs:w-[20vw] text-center sms:text-start mds:text-lg text-baseextra4'>{review.seatingCapacity}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center sms:items-start items-center'>
                                 <h2 className='font-russoone sms:text-lg mds:text-xl lgs:text-2xl text-baseextra4'>Price:</h2>
-                                <h2 className='font-ibmplexsans text-md lgs:w-[20vw] text-center mds:text-lg text-baseextra4'>{review.singleprice}</h2>
+                                <h2 className='font-ibmplexsans text-md lgs:w-[20vw] text-center sms:text-start mds:text-lg text-baseextra4'>{review.singleprice}</h2>
                             </div>
                     </div>         
               
@@ -242,7 +242,7 @@ const Display_Rev = () => {
                            Explore our latest in-depth reviews of the newest {''}<span className=''>{review.category}</span>s on the market
                         </p>
                     </div>  
-                    <div className='grid sms:grid-rows-1 lgs:grid-rows-4 lgs:gap-4 lgs:p-10 mds:grid-rows-2 gap-3 p-10'>
+                    <div className='grid sms:grid-rows-1 lgs:grid-rows-4 lgs:gap-4 lgs:p-10 mds:grid-rows-2 gap-3 p-10 overflow-hidden'>
                                       {isLoading ? (
                                 <Loading2/>
                               ) : (
@@ -254,18 +254,15 @@ const Display_Rev = () => {
                                       {reviews.images && reviews.images.length > 0 && (
                                         <img src={reviews.images[0]} alt={reviews.title} className="w-full h-[20vh] object-cover rounded-t-lg" />
                                       )}
-                                      <div className='text-secondary sms:text-md lgs:w-[20vw] lgs:text-sm mds:text-md font-russoone sms:pl-4 pl-5'>
+                                      <div className='text-secondary sms:text-md lgs:pt-5 lgs:w-[20vw] lgs:text-md mds:text-md font-russoone sms:pl-4 pl-5'>
                                         {reviews.category}
                                       </div>
-                                      <h2 className='text-baseextra4 font-semibold sms:text-3xl mds:text-xl font-kanit sms:pl-4 pl-5'>
+                                      <h2 className='text-baseextra4 font-semibold sms:text-3xl mds:text-xl lgs:text-2xl font-ibmplexsans sms:pl-4 pl-5'>
                                         {reviews.brand}
                                       </h2>
-                                      <h3 className='text-baseextra4 font-semibold text-xl mds:text-2xl font-kanit sms:mb-2 sms:pl-4 pl-5'>
+                                      <h3 className='text-baseextra4 font-semibold lgs:pb-5 text-xl mds:text-2xl font-ibmplexsans sms:mb-2 sms:pl-4 pl-5'>
                                         {reviews.title}
                                       </h3>
-                                      <div className='text-gray-400 sms:text-lg mb-2 pl-4'>
-                                        <span>{reviews.date}</span>
-                                      </div>
                                     </div>
                                   ))
                                 ) : (
@@ -306,7 +303,7 @@ const Display_Rev = () => {
                                       relatedReviews.map((reviews) => (
                                         <div key={reviews._id} onClick={() => handleClickReview(reviews._id)} className='bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer'>
                                           
-                                      <div className='bg-transparent sms:h-auto w-auto mb-10 rounded-lg overflow-hidden'>    
+                                      <div className='bg-transparent sms:h-auto w-auto sms:mb-5 mb-10 rounded-lg overflow-hidden'>    
                                           {reviews.images && reviews.images.length > 0 && (
                                             <img src={reviews.images[0]} alt={reviews.title} className="w-full h-[20vh] object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125" />
                                           )}
@@ -314,15 +311,12 @@ const Display_Rev = () => {
                                           <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm mds:text-md font-russoone sms:pl-4 pl-5'>
                                             {reviews.category}
                                           </div>
-                                          <h2 className='text-baseextra4 font-semibold sms:text-3xl mds:text-xl font-kanit sms:pl-4 pl-5'>
+                                          <h2 className='text-baseextra4 font-semibold sms:text-3xl mds:text-xl lgs:text-2xl font-kanit sms:pl-4 pl-5'>
                                             {reviews.brand}
                                           </h2>
-                                          <h3 className='text-baseextra4 font-semibold text-xl mds:text-2xl font-kanit sms:mb-2 sms:pl-4 pl-5'>
+                                          <h3 className='text-baseextra4 font-semibold lgs:text-lg  mds:text-2xl font-kanit mb-2 sms:pl-4 pl-5'>
                                             {reviews.title}
                                           </h3>
-                                          <div id="last-section" ref={lastSectionRef} className='text-gray-400 sms:text-lg mb-2 pl-4'>
-                                            <span>{reviews.date}</span>
-                                          </div>
                                         </div>
                                       ))
                                     ) : (

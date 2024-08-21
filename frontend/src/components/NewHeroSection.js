@@ -9,8 +9,6 @@ import { motion } from 'framer-motion';
 
 //import bgvideo from '../assests/Videofiles/final bg hero.mp4';
 import bgvideo from '../assests/Videofiles/bgvideo.mp4';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuoteLeftAlt, faQuoteRightAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 const NewHeroSection = () => {  
@@ -29,9 +27,9 @@ const NewHeroSection = () => {
   return (
 
     
-    <main className='relative h-auto w-full'>
-              <section className='flex max-w-sms mx-auto'>
-                <div className='hidden sms:flex h-auto w-full'>
+    <main className='relative h-auto w-full overflow-hidden'>
+              <section className='flex flex-col max-w-sms mx-auto'>
+                <div className='hidden sms:flex h-auto w-full overflow-hidden'>
                   <video src={bgvideo} autoPlay loop muted playsInline/>
 
                   <motion.div 
@@ -39,13 +37,13 @@ const NewHeroSection = () => {
                   whileInView={{height:'200vh'}}
                   transition={{duration:'2.0', ease:'easeInOut', delay:'0.3'}}
                   
-                  className='absolute flex-col bottom-0 w-full  bg-secondary opacity-20 z-40'/>
+                  className='absolute flex-col bottom-0 w-full bg-transparent opacity-20 z-40'/>
                    
                     
-                    <div className='absolute bottom-0 bg-gradient-to-t from-secondary to-transparent sms:h-[50vh] opacity-100 w-full items-center justify-center z-30'/>
-                     <div className='absolute flex-col bottom-0 h-[30vh] w-full bg-transparent items-center justify-center z-20 space-y-5'>
+                    <div className='absolute bottom-0 bg-gradient-to-t from-secondary to-transparent sms:h-[50vh] opacity-100 w-full items-center justify-center'/>
+                     <div className='absolute flex-col bottom-0 h-[30vh] w-full bg-transparent items-center justify-center z-20 space-y-5 overflow-hidden'>
 
-                        <div className='flex h-auto w-auto items-center justify-center mx- space-x-2 mx-3'>
+                        <div className='flex h-auto w-auto items-center justify-center mx- space-x-2 mx-3 opacity-50 overflow-hidden'>
                             <motion.div
                             initial={{width:'0vw'}} 
                             whileInView={{width:'20vw'}}
@@ -67,17 +65,16 @@ const NewHeroSection = () => {
                         whileInView={{marginTop:'5px', opacity:'1'}}
                         transition={{duration:'2.0',ease:'easeInOut', delay:'0.4'}}
                         className='flex h-[12vh] w-full items-center justify-center'>
-                          <p className='flex text-center text-primary font-semibold font-ibmplexsans text-sm w-[80vw]'>
+                          <p className='flex text-center text-primary font-semibold font-ibmplexsans text-sm w-[80vw] opacity-50'>
                           Baos Wheels is your go-to hub for car reviews, insightful articles, and the latest trends in the automotive world. Discover, explore, and fuel your passion for all things on wheels!
                           </p>
                         </motion.div>
 
                      </div>
-                          
                   
+                </div>
 
-
-                  
+                <div class="curved">
 
                   
                 </div>

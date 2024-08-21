@@ -59,10 +59,10 @@ const filteredReviews = articles.filter(articles =>
 
             <div className='hidden mds:flex lgs:flex h-[10vh] bg-primary w-full'/>
          
-              <div className='flex flex-col sms:h-[15vh] w-full items-center lgs: justify-center sms:pt-10 lgs:pt-5'>
-                    <div className='flex mds:w-[40vw] sms:w-[40vw] lgs:w-[30vw] h-0.5 bg-secondary' data-aos='fade-right' />
-                    <h2 className='flex mds:text-6xl sms:text-6xl lgs:text-7xl font-russoone text-baseextra4' data-aos='flip-up'>Auto Insights</h2>
-                    <div className='flex mds:w-[40vw] sms:w-[40vw] lgs:w-[30vw] h-0.5 bg-secondary' data-aos='fade-left' />
+              <div className='flex flex-col sms:h-[15vh] w-full items-center justify-center sms:pt-10 lgs:pt-5'>
+                    <div className='flex mds:w-[40vw] sms:w-[70vw] lgs:w-[30vw] h-0.5 bg-secondary' data-aos='fade-right' />
+                    <h2 className='flex mds:text-6xl sms:text-5xl lgs:text-7xl font-russoone sms:p-2 text-baseextra4' data-aos='flip-up'>Auto Insights</h2>
+                    <div className='flex mds:w-[40vw] sms:w-[70vw] lgs:w-[30vw] h-0.5 bg-secondary' data-aos='fade-left' />
               </div>
 
               <div className='flex flex-col h-auto w-full items-center justify-center p-5 lgs:p-10 mds:pt-10' data-aos='zoom-in' data-aos-delay='20'>
@@ -70,14 +70,14 @@ const filteredReviews = articles.filter(articles =>
               </div>
 
 
-              <div className='flex flex-col min-h-auto w-full justify-center bg-secondary rounded-t-2xl lgs:p-10 mds:mt-10'>
+              <div className='flex flex-col min-h-auto w-full justify-center bg-secondary rounded-t-2xl lgs:p-10  mds:mt-10 sms:mt-10'>
 
-                <h2 className='font-russoone lgs:text-5xl mds:text-4xl mds:pt-10 text-center text-primary' data-aos='zoom-in' data-aos-delay='200'>
+                <h2 className='font-russoone lgs:text-5xl sms:text-4xl mds:text-4xl mds:pt-10 sms:pt-5 text-center text-primary' data-aos='zoom-in' data-aos-delay='200'>
                     Our Latest Articles
                 </h2>
 
 
-                <div className='flex  lgs:h-[10vh] w-full justify-between overflow-hidden lgs:mt-5'>
+                <div className='flex  lgs:h-[10vh] w-full justify-between overflow-hidden lgs:mt-5 sms:pt-10'>
                       <div className="relative w-full lgs:p-5 items-center justify-center" data-aos='fade-up' data-aos-delay='300'>
                       <input
                         type="text"
@@ -93,31 +93,21 @@ const filteredReviews = articles.filter(articles =>
 
                 
          <div className='flex w-auto h-auto sms:p-5 justify-center overflow-hidden'>
-                <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 h-auto w-auto lg:mt-[5vh] mds:grid-cols-2 gap-3 p-10'>
+                <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 h-auto w-auto lg:mt-[5vh] mds:grid-cols-2 gap-3 mds:p-10 sms:p-5'>
 
                   {isLoading ? (
                     <Loading2/> 
                   ):(
 
                     filteredReviews.map((article) => (
-                      <div key={article._id} onClick={() => handleSubmitArticle(article._id)} className='flex flex-col bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer' data-aos='fade-right'>
-                      <div className='bg-transparent sms:h-auto w-auto mb-10 rounded-t-lg'>
-     
-                                                 {article.images.length > 0 && (
-                                                     <img
-                                                     src={article.images[0]}
-                                                     alt={article.title}
-                                                     className="w-full lgs:h-30 object-cover rounded-t-lg"
- />
-                                                 )}
- 
- 
- 
-                       </div>
-                     <h3 className=' text-baseextra4 font-semibold lgs:text-center lgs:text-2xl lgs:mb-5  font-kanit sms:mb-2 sms:pl-4'>
-                        {article.title}
-                     </h3>
+                      <div key={article.id} onClick={(() => handleSubmitArticle(article._id))} className='hidden sms:flex h-auto items-center border-2 cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-xl p-0' data-aos='fade-right'>
+                      <div className='bg-primary w-auto rounded-xl border-4 overflow-hidden p-5'>
+                        <img src={article.images[0]} alt={article.title} className='rounded-xl  transition-transform duration-300 ease-in-out hover:scale-110'/>
                       </div>
+                      <div className='flex h-auto lgs:w-auto mb-2rounded-b-x bg-primary p-2'>
+                      <h3 className='text-baseextra4 text-center p-2 font-ibmplexsans font-semibold sms:text-xl'>{article.title}</h3>
+                      </div>
+                    </div>
              ))
 
                   )}

@@ -168,10 +168,10 @@ const Reviewsection = () => {
         </div>
 
         <div className='flex flex-col w-auto items-center justify-center sms:p-5 mds:p-3 lgs:p-8'>
-          <Note className='sms:h-autom sms:w-auto text-2xl' data-aos='zoom-out'>Explore by Brand Names</Note>
+          <Note className='sms:h-auto sms:w-auto text-2xl' data-aos='zoom-out'>Explore by Brand Names</Note>
         </div>
         <div className='flex lgs:w-[95vw] lgs:h-auto sms:w-[90vw] sms:h-auto items-center justify-center sms:p-2 '>
-        <div className='flex flex-wrap lgs:w-full lgs:h-auto mds:w-[100vw] sms:h-auto overflow-hidden  lgs:gap-5 sms:gap-x-4 sms:pt-4 mds:gap-5 sms:gap-3 cursor-pointer justify-center sms:p-5 mds:p-5 lgs:p-3 '>
+        <div className='flex flex-wrap lgs:w-full lgs:h-auto mds:w-[100vw] sms:h-auto overflow-hidden  lgs:gap-5 sms:gap-x-10 sms:pt-4 mds:gap-5 sms:gap-5 cursor-pointer justify-center sms:p-5 mds:p-5 lgs:p-3 '>
           {Autobrands.map((brandItem, index) => (
             <BrandCard key={index} data-aos='fade-up'>
 

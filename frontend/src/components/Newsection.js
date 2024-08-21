@@ -1,4 +1,6 @@
 // src/components/Newsection.js
+
+
 import React, { useEffect, useState } from 'react';
 import Aos from 'aos';
 import { motion } from 'framer-motion';
@@ -65,9 +67,9 @@ const Newsection = () => {
           </p>
         </div>
       </div>
-      <div className='grid lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lgs:mt-[5vh] mds:grid-cols-2 mds:gap-3 p-10'>
+      <div className='grid lgs:grid-cols-4 sms:grid-cols-1 lgs:gap-4 lgs:p-10 lgs:mt-[5vh] mds:grid-cols-2 mds:gap-3 p-10'>
         {Articles.map((article) => (
-          <div key={article.id} onClick={(() => handleViewArticle(article._id))} className='flex flex-col h-auto items-center border-2 cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-xl p-0' data-aos='fade-right'>
+          <div key={article.id} onClick={(() => handleViewArticle(article._id))} className='hidden mds:flex lgs:flex flex-col h-auto items-center border-2 cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-xl p-0' data-aos='fade-right'>
             <div className='bg-gray-700 lgs:h-auto w-auto rounded-xl overflow-hidden'>
               <img src={article.images[0]} alt={article.title} className='rounded-t-xl transition-transform duration-300 ease-in-out hover:scale-110'/>
             </div>
@@ -76,6 +78,17 @@ const Newsection = () => {
             </div>
             <div className='flex h-auto lgs:w-[20vw] lgs:p-2 rounded-t-xl bg-baseextra4'>
             <p className=' text-primary text-center font-thin font-kanit lgs:text-sm mb-2'>{article.summary}</p>
+            </div>
+          </div>
+        ))}
+
+        {Articles.map((article) => (
+          <div key={article.id} onClick={(() => handleViewArticle(article._id))} className='hidden sms:flex h-auto items-center border-2 cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-xl p-0' data-aos='fade-right'>
+            <div className='bg-primary w-auto rounded-xl border-4 overflow-hidden p-5'>
+              <img src={article.images[0]} alt={article.title} className='rounded-xl  transition-transform duration-300 ease-in-out hover:scale-110'/>
+            </div>
+            <div className='flex h-auto lgs:w-auto mb-2rounded-b-x bg-primary p-2'>
+            <h3 className='text-baseextra4 text-center p-2 font-ibmplexsans font-semibold sms:text-xl'>{article.title}</h3>
             </div>
           </div>
         ))}

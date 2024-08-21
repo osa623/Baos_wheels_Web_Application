@@ -136,7 +136,7 @@ const fetchReviews = async () => {
 
           <h2 className='text-2xl mds:text-3xl font-russoone text-baseextra4 m-6' data-aos='zoom-out'>Explore by Body Styles</h2>
 
-          <div className='flex flex-wrap w-full h-auto gap-4 justify-center items-center cursor-pointer mds:p-10'>
+          <div className='flex flex-wrap w-full h-auto gap-4 justify-center items-center cursor-pointer mds:p-10 sms:p-10'>
             {bodystyle.map((bstyle, index) => (
               <div className='flex flex-col  w-[20vw] sms:w-[30vw] mds:w-[25vw] items-center h-auto drop-shadow-lg justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:drop-shadow-md transition-transform' key={index} data-aos='flip-right'>
                 <img
@@ -158,7 +158,7 @@ const fetchReviews = async () => {
            <h2 className='sms:text-3xl mds:text-4xl lgs:text-5xl font-russoone text-primary m-2 mds:pt-10 sms:pt-5 cursor-pointer hover:text-baseprimary' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
         </div>
 
-       <div className='flex  h-[10vh] w-full justify-between overflow-hidden'>
+       <div className='flex  h-[10vh] w-full justify-between overflow-hidden sms:pt-5'>
               <div className="relative w-full lgs:p-5 items-center justify-center" data-aos='fade-up' data-aos-delay='300'>
               <input
                 type="text"
@@ -172,8 +172,8 @@ const fetchReviews = async () => {
         
        </div>
 
-        <div className='flex w-auto h-auto sms:p-5 justify-center overflow-hidden'>
-              <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lg:mt-[2vh] mds:grid-cols-2 gap-3 p-10'>
+        <div className='flex w-auto h-auto justify-center overflow-hidden'>
+              <div className='hidden mds:grid lgs:grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lg:mt-[2vh] mds:grid-cols-2 gap-3 p-10'>
                   {isLoading ? (
                     <Loading2/>
                   ) : (
@@ -207,6 +207,43 @@ const fetchReviews = async () => {
                                       <div className='text-gray-400 sms:text-lg mb-2 pl-5'>
                                          <span>{reviews.date}</span>
                                        </div>
+                                       </div>
+                 ))
+                  )}
+
+              </div>
+              <div className='hidden sms:grid  sms:grid-cols-1  gap-3 p-10'>
+                  {isLoading ? (
+                    <Loading2/>
+                  ) : (
+                                    filteredReviews
+                                    .sort((b,a) => new Date(a.date) - new Date(b.date))
+                                    .map((reviews) => (
+                                       <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' flex h-auto w-full bg-primary rounded-lg overflow-hidden  border-2 cursor-pointer' data-aos='fade-up'>
+                                       <div className='bg-transparent h-auto w-40 rounded-lg overflow-hidden'>
+                      
+                                                                  {reviews.images.length > 0 && (
+                                                                      <img
+                                                                      src={reviews.images[0]}
+                                                                      alt={reviews.title}
+                                                                      className="w-full h-40  object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
+                  />
+                                                                  )}
+                  
+                  
+                  
+                                        </div>
+                                     <div className='flex flex-col w-60 h-auto items-start justify-center p-2'>                          
+                                              <div className='text-secondary text-md font-russoone  pl-5'>
+                                              {reviews.category}
+                                              </div>
+                                              <h2 className=' text-baseextra4 text-xl font-semibold  font-ibmplexsans  pl-5'>
+                                              {reviews.brand}
+                                            </h2>
+                                            <h3 className=' text-baseextra4 text-md mds:text-xl font-kanit pl-5'>
+                                              {reviews.title}
+                                            </h3>
+                                     </div>              
                                        </div>
                  ))
                   )}
