@@ -128,7 +128,7 @@ const fetchReviews = async () => {
                     className="sms:w-20 sms:h-20 w-20 h-20 lgs:w-20 lgs:h-20 lgs:hover:scale-125 transform transition-transform duration-300 ease-in-out p-1"
                     style={{ objectFit: 'contain' }}
                   />
-                  <span className="text-sm sms:text-md mds:text-sm lgs:text-lg pt-2 font-russoone text-center">{brand.name}</span>
+                  <span className="text-sm sms:text-md mds:text-sm lgs:text-lg pt-2 font-ibmplexsans text-center">{brand.name}</span>
                 </div>
               ))}
             </div>

@@ -204,14 +204,14 @@ const Reviewsection = () => {
       </motion.div>
 
           <div className='flex flex-col w-full h-auto lgs:p-10'>
-       <div className='border-2 rounded-t-xl border-secondary bg-secondary'>
+       <div className='border-2 rounded-xl border-secondary bg-secondary'>
 
         <div className='flex w-full h-auto justify-center items-center lgs:pt-8'>
            <h2 className='sms:text-3xl mds:text-4xl lgs:text-5xl font-russoone text-primary m-2 mds:pt-10 sms:pt-5' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
         </div>
 
         <div className='flex w-auto h-auto sms:p-5 justify-center overflow-hidden'>
-              <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lg:mt-[2vh] mds:grid-cols-2 gap-3 p-10'>
+              <div className='hidden lgs:grid mds:grid lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lg:mt-[2vh] mds:grid-cols-2 gap-3 p-10'>
                   {isLoading ? (
                     <Loading2/>
                   ) : (
@@ -239,17 +239,54 @@ const Reviewsection = () => {
                                         <h2 className=' text-baseextra4 font-semibold  sms:text-3xl mds:text-2xl font-kanit sms:pl-4 pl-5'>
                                          {reviews.brand}
                                       </h2>
-                                      <h3 className=' text-baseextra4 text-xl mds:text-xl font-kanit sms:mb-2 sms:pl-4 pl-5'>
+                                      <h3 className=' text-baseextra4 text-xl mds:text-xl  mds:mb-10 font-kanit sms:mb-2 sms:pl-4 pl-5'>
                                          {reviews.title}
                                       </h3>
-                                      <div className='text-gray-400 sms:text-lg mb-2 pl-5'>
-                                         <span>{reviews.date}</span>
-                                       </div>
                                        </div>
                  ))
                   )}
 
               </div>
+              <div className='hidden sms:grid  sms:grid-cols-1  gap-3 p-5'>
+                  {isLoading ? (
+                    <Loading2/>
+                  ) : (
+                                     review
+                                    .slice(0,4)
+                                    .sort((b,a) => new Date(a.date) - new Date(b.date))
+                                    .map((reviews) => (
+                                       <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' flex h-auto w-full bg-primary rounded-lg overflow-hidden  border-2 cursor-pointer' data-aos='fade-up'>
+                                       <div className='bg-transparent h-auto w-40 rounded-lg overflow-hidden'>
+                      
+                                                                  {reviews.images.length > 0 && (
+                                                                      <img
+                                                                      src={reviews.images[0]}
+                                                                      alt={reviews.title}
+                                                                      className="w-full h-40  object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
+                  />
+                                                                  )}
+                  
+                  
+                  
+                                        </div>
+                                     <div className='flex flex-col w-60 h-auto items-start justify-center p-2'>                          
+                                              <div className='text-secondary text-md font-russoone  pl-5'>
+                                              {reviews.category}
+                                              </div>
+                                              <h2 className=' text-baseextra4 text-xl font-semibold  font-ibmplexsans  pl-5'>
+                                              {reviews.brand}
+                                            </h2>
+                                            <h3 className=' text-baseextra4 text-md mds:text-xl font-kanit pl-5'>
+                                              {reviews.title}
+                                            </h3>
+                                     </div>              
+                                       </div>
+                 ))
+                  )}
+
+              </div>
+
+
         </div>
 
         <motion.div

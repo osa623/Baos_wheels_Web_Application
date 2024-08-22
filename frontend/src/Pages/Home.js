@@ -16,7 +16,7 @@ const Home = () => {
       < div className='h screen'>
       <Reviewsection/>
       </div>
-      < div>
+      < div className='sms:pt-10 mds:pt-10'>
       <Videosection/>
       </div>
     </div>

@@ -295,7 +295,7 @@ const Display_Rev = () => {
 
                       </div>
 
-                      <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 mds:grid-cols-2 gap-3 p-10'>
+                      <div className='hidden lgs:grid mds:grid lgs:grid-cols-4 lgs:gap-4 lgs:p-10 mds:grid-cols-2 gap-3 p-10 overflow-hidden'>
                                   {isLoading ? (
                                     <Loading2/>
                                   ) : (
@@ -323,24 +323,66 @@ const Display_Rev = () => {
                                       <p className=''>No related reviews found.</p>
                                     )
                                   )}
-          </div>
+                      </div>
 
+                      
+                      <div className='hidden sms:grid grid-cols-1 gap-3 p-10 overflow-hidden'>
+                                  {isLoading ? (
+                                    <Loading2/>
+                                  ) : (
+                                    relatedReviews
+                                    .sort((b,a) => new Date(a.date) - new Date(b.date))
+                                    .map((reviews) => (
+                                       <div key={reviews._id} onClick={() => handleClickReview(reviews._id)} className=' flex h-auto w-full bg-primary rounded-lg overflow-hidden  border-2 cursor-pointer' data-aos='fade-up'>
+                                       <div className='bg-transparent h-auto w-40 rounded-lg overflow-hidden'>
+                      
+                                                                  {reviews.images.length > 0 && (
+                                                                      <img
+                                                                      src={reviews.images[0]}
+                                                                      alt={reviews.title}
+                                                                      className="w-full h-40  object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
+                  />
+                                                                  )}
+                  
+                  
+                  
+                                        </div>
+                                     <div className='flex flex-col w-60 h-auto items-start justify-center p-2'>                          
+                                              <div className='text-secondary text-md font-russoone  pl-5'>
+                                              {reviews.category}
+                                              </div>
+                                              <h2 className=' text-baseextra4 text-xl font-semibold  font-ibmplexsans  pl-5'>
+                                              {reviews.brand}
+                                            </h2>
+                                            <h3 className=' text-baseextra4 text-md mds:text-xl font-kanit pl-5'>
+                                              {reviews.title}
+                                            </h3>
+                                     </div>              
+                                       </div>
+                 ))
+                  )}
+                      </div>
+                      
                         
               </div>           
                        
         </div>
+        <div ref={lastSectionRef} className='hidden sms:flex w-full h-1 bg-transparent'/>
+
 
        </div>
 
        {isVisible && (
 
-          <div className='hidden sms:flex mds:flex fixed h-auto w-auto bg-transparent bottom-20 right-8 z-40 justify-center items-center'>
-          <a href='#main'>
-            <div className='flex h-20 w-20 bg-primary rounded-full items-center justify-center drop-shadow-2xl'>
-              <FontAwesomeIcon icon={faAngleDoubleUp} className='sms:h-6'/>
-            </div>
-          </a>    
-          </div>
+<div
+className={`hidden sms:flex mds:flex fixed h-auto w-auto bg-transparent bottom-20 right-8 z-40 justify-center items-center transition-opacity duration-1000 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+<a href='#main'>
+  <div className='flex h-20 w-20 bg-primary rounded-full items-center justify-center drop-shadow-2xl transition-transform duration-300 ease-in-out'>
+    <FontAwesomeIcon icon={faAngleDoubleUp} className='sms:h-6'/>
+  </div>
+</a>    
+</div>
+
 
 
        )};

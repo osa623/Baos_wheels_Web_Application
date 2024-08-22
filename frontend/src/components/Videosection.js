@@ -40,13 +40,13 @@ const Videosection = () => {
 
 
   return (
-    <div className='relative flex-grow w-full  bg-baseextra1 rounded-t-md  hover:transition duration-1000 ease-in-out' style={{
+    <div className='relative flex-grow w-full  bg-baseextra1 rounded-t-2xl  hover:transition duration-1000 ease-in-out' style={{
     
     }}>
 
     <div className='flex flex-col h-auto items-center justify-center pt-20 sms:pt-10 mds:p-10'>
       <div className='flex bg-baseextra3 w-[50vw] h-0.5 mt'data-aos='fade-right'/>
-      <h2 className='lgs:text-6xl sms:text-6xl mds:text-7xl mds:w-[75vw] text-center sms:text-center font-extrabold font-russoone text-primary cursor-default hover:text-baseprimary transition duration-2000 ease-in-out p-2' data-aos='flip-up'>High-Octane Showdowns</h2>
+      <h2 className='lgs:text-6xl sms:text-5xl mds:text-7xl mds:w-[75vw] text-center sms:text-center font-extrabold font-russoone text-primary cursor-default hover:text-baseprimary transition duration-2000 ease-in-out p-2' data-aos='flip-up'>High-Octane Showdowns</h2>
       <div className='flex bg-baseextra3 w-[50vw] h-0.5'data-aos='fade-left'/>
 
       <div class="sms:flex sms:flex-col sms:w-[90vw] lg:w-[60vw] mx-auto sms:p-4  lg:pt-5 space-x-2 items-center justify-start text-center " data-aos="zoom-in">
