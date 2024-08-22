@@ -5,20 +5,20 @@ import Loading2 from '../oth/Loading2';
 import { faSearch} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Brands = () => {
-  const { brandname } = useParams();
+const BodyStyle = () => {
+  const { category } = useParams();
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("Brand name from URL:", brandname);
+    console.log("Body Style from URL:", category);
 
     const fetchReviews = async () => {
       try {
 
-        const response = await axios.get(`http://localhost:5000/api/reviews/brand/${brandname}`);
+        const response = await axios.get(`http://localhost:5000/api/reviews/category/${category}`);
         setReviews(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -28,10 +28,10 @@ const Brands = () => {
 
 
 
-    if (brandname) {
+    if (category) {
       fetchReviews();
     }
-  }, [brandname]);
+  }, [category]);
 
   const filteredReviews = reviews.filter(reviews => 
 
@@ -51,7 +51,7 @@ const Brands = () => {
         
           <div className='flex sms:flex-col lgs:w-full h-auto justify-between items-start sms:items-center sms:pt-24 lgs:pt-32 mds:pt-24 p-10'>
             <h1 className='flex flex-col  text-4xl font-russoone sms:text-2xl'>
-                Reviews Of:{' '}<span className='text-6xl sms:text-4xl font-russoone text-baseextra4'>{brandname}</span>
+                Reviews Of:{' '}<span className='text-6xl sms:text-4xl font-russoone text-baseextra4'>{category}</span>
             </h1>
 
             <div className='hidden lgs:flex h-auto w-[40vw]  overflow-hidden'>
@@ -74,7 +74,7 @@ const Brands = () => {
        
         <div className='flex sms:flex-row flex-col w-auto h-auto bg-secondary rounded-t-2xl p-5'>
 
-        <div className='hidden lgs:grid mds:grid lgs:grid-cols-4 lgs:gap-4 lgs:p-10 mds:grid-cols-2 gap-3 p-10'>
+        <div className='grid sms:grid-rows-2 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 mds:grid-cols-2 gap-3 p-10'>
         {isLoading ? (
                     <Loading2/>
                                     ) : (
@@ -102,51 +102,12 @@ const Brands = () => {
                                         <p className=''>No related reviews found.</p>
                                     )
                         )}
-         </div>
-
-         <div className='hidden sms:grid  sms:grid-cols-1  gap-3 p-10'>
-                  {isLoading ? (
-                    <Loading2/>
-                  ) : (
-                                 filteredReviews
-                                    .sort((b,a) => new Date(a.date) - new Date(b.date))
-                                    .map((reviews) => (
-                                       <div key={reviews._id} onClick={() => handleOpenReview(reviews._id)} className=' flex h-auto w-full bg-primary rounded-lg overflow-hidden  border-2 cursor-pointer' data-aos='fade-up'>
-                                       <div className='bg-transparent h-auto w-40 rounded-lg overflow-hidden'>
-                      
-                                                                  {reviews.images.length > 0 && (
-                                                                      <img
-                                                                      src={reviews.images[0]}
-                                                                      alt={reviews.title}
-                                                                      className="w-full h-40  object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
-                  />
-                                                                  )}
-                  
-                  
-                  
-                                        </div>
-                                     <div className='flex flex-col w-60 h-auto items-start justify-center p-2'>                          
-                                              <div className='text-secondary text-md font-russoone  pl-5'>
-                                              {reviews.category}
-                                              </div>
-                                              <h2 className=' text-baseextra4 text-xl font-semibold  font-ibmplexsans  pl-5'>
-                                              {reviews.brand}
-                                            </h2>
-                                            <h3 className=' text-baseextra4 text-md mds:text-xl font-kanit pl-5'>
-                                              {reviews.title}
-                                            </h3>
-                                     </div>              
-                                       </div>
-                 ))
-                  )}
-
-              </div>                  
-
-        </div>
+                        </div>
+                        </div>
 
       )}
     </div>
   );
 }
 
-export default Brands;
+export default BodyStyle;

@@ -26,6 +26,7 @@ const Reviews = () => {
 const [review, setReview] = useState([]);
 const [isLoading, setIsLoading] = useState(true);
 const [brand, setBrand] = useState('');
+const [bodyStyle, setBodyStyle] = useState('');
 const [searchQuery, setSearchQuery] = useState('');
 const navigate = useNavigate();
 
@@ -75,6 +76,11 @@ const fetchReviews = async () => {
     navigate(`/reviews/brand/${brandName}`);
   };
 
+  const handleStyleClick = (bodyStyle) => {
+    setBodyStyle(bodyStyle);
+    navigate(`/reviews/bodystyle/${bodyStyle}`);
+  };
+
   const Autobrands = [
     { name: 'Audi', logo: audi },
     { name: 'BMW', logo: bmw },
@@ -102,7 +108,7 @@ const fetchReviews = async () => {
   return (
     <div className='relative w-full h-auto'>
       <div className='flex flex-col w-full h-auto bg-primary items-center justify-start'>
-        <div className='flex md:h-[10vh] sms:h-[10vh] mds:h-[10vh] lgs:h-[20vh] w-full items-center justify-center' />
+        <div className='flex md:h-[10vh] sms:h-[10vh] mds:h-[10vh] lgs:h-[10rem] w-full items-center justify-center' />
         <div className='flex flex-col sms:h-[10vh] w-full items-center justify-center mds:pt-10 lgs:pb-5'>
           <div className='flex w-[30vw] sms:w-[60vw] h-0.5 bg-secondary' data-aos='fade-right' />
           <h2 className='flex mds:text-7xl sms:text-6xl lgs:text-7xl  font-russoone text-baseextra4' data-aos='flip-up'>Reviews</h2>
@@ -138,7 +144,7 @@ const fetchReviews = async () => {
 
           <div className='flex flex-wrap w-full h-auto gap-4 justify-center items-center cursor-pointer mds:p-10 sms:p-10'>
             {bodystyle.map((bstyle, index) => (
-              <div className='flex flex-col  w-[20vw] sms:w-[30vw] mds:w-[25vw] items-center h-auto drop-shadow-lg justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:drop-shadow-md transition-transform' key={index} data-aos='flip-right'>
+              <div key={index} onClick={()=> handleStyleClick(bstyle.name)} className='flex flex-col  w-[20vw] sms:w-[30vw] mds:w-[25vw] items-center h-auto drop-shadow-lg justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:drop-shadow-md transition-transform' data-aos='flip-right'>
                 <img
                   src={bstyle.logo}
                   alt={bstyle.name}
@@ -195,18 +201,15 @@ const fetchReviews = async () => {
                   
                                         </div>
                   
-                                        <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm font-russoone sms:pl-4 pl-5'>
+                                        <div className='text-secondary lgs:w-[50vw] lgs:text-sm font-russoone sms:pl-4 pl-5'>
                                          {reviews.category}
                                         </div>
-                                        <h2 className=' text-baseextra4 font-semibold  sms:text-3xl mds:text-2xl font-kanit sms:pl-4 pl-5'>
+                                        <h2 className=' text-baseextra4 font-semibold lgs:text-3xl  mds:text-2xl font-kanit  pl-5'>
                                          {reviews.brand}
                                       </h2>
-                                      <h3 className=' text-baseextra4 text-xl mds:text-xl font-kanit sms:mb-2 sms:pl-4 pl-5'>
+                                      <h3 className=' text-baseextra4 text-xl mds:text-xl lgs:mb-5 font-kanit pl-5'>
                                          {reviews.title}
                                       </h3>
-                                      <div className='text-gray-400 sms:text-lg mb-2 pl-5'>
-                                         <span>{reviews.date}</span>
-                                       </div>
                                        </div>
                  ))
                   )}

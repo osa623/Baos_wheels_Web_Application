@@ -57,7 +57,7 @@ const filteredReviews = articles.filter(articles =>
 
       <div className='flex flex-col w-full h-auto bg-primary items-center justify-start sms:pt-20 lgs:space-y-2'>
 
-            <div className='hidden mds:flex lgs:flex h-[10vh] bg-primary w-full'/>
+            <div className='hidden mds:flex lgs:flex h-[10rem] bg-primary w-full'/>
          
               <div className='flex flex-col sms:h-[15vh] w-full items-center justify-center sms:pt-10 lgs:pt-5'>
                     <div className='flex mds:w-[40vw] sms:w-[70vw] lgs:w-[30vw] h-0.5 bg-secondary' data-aos='fade-right' />
@@ -70,7 +70,7 @@ const filteredReviews = articles.filter(articles =>
               </div>
 
 
-              <div className='flex flex-col min-h-auto w-full justify-center bg-secondary rounded-t-2xl lgs:p-10  mds:mt-10 sms:mt-10'>
+              <div className='flex flex-col min-h-auto w-full justify-center bg-secondary rounded-t-2xl lgs:p-10 mds:p-5  mds:mt-10 sms:mt-10'>
 
                 <h2 className='font-russoone lgs:text-5xl sms:text-4xl mds:text-4xl mds:pt-10 sms:pt-5 text-center text-primary' data-aos='zoom-in' data-aos-delay='200'>
                     Our Latest Articles
@@ -100,12 +100,12 @@ const filteredReviews = articles.filter(articles =>
                   ):(
 
                     filteredReviews.map((article) => (
-                      <div key={article.id} onClick={(() => handleSubmitArticle(article._id))} className='hidden sms:flex h-auto items-center border-2 cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-xl p-0' data-aos='fade-right'>
-                      <div className='bg-primary w-auto rounded-xl border-4 overflow-hidden p-5'>
+                      <div key={article.id} onClick={(() => handleSubmitArticle(article._id))} className='flex sms:flex-row flex-col h-auto items-center border-2 cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-xl p-0' data-aos='fade-right'>
+                      <div className='bg-primary w-auto rounded-xl border-2 overflow-hidden p-5'>
                         <img src={article.images[0]} alt={article.title} className='rounded-xl  transition-transform duration-300 ease-in-out hover:scale-110'/>
                       </div>
-                      <div className='flex h-auto lgs:w-auto mb-2rounded-b-x bg-primary p-2'>
-                      <h3 className='text-baseextra4 text-center p-2 font-ibmplexsans font-semibold sms:text-xl'>{article.title}</h3>
+                      <div className='flex h-auto lgs:w-auto mb-2 rounded-b-x bg-primary p-2'>
+                      <h3 className='text-baseextra4 text-center p-2 font-russoone sms:text-xl lgs:text-xl'>{article.title}</h3>
                       </div>
                     </div>
              ))

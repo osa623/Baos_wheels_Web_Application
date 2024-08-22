@@ -115,10 +115,10 @@ const Reviewsection = () => {
         <div className='flex flex-col h-auto w-full items-center justify-center  overflow-hidden sms:space-y-2 lgs:space-y-10 lgs:mt-2'>
           <div className='flex flex-col w-[50vw] mds:mt-10 sms:mt-10 items-center justify-center'>
             <div className='flex h-0.5 lgs:w-[30vw] mds:w-[40vw] sms:w-[50vw] bg-black cursor-default' data-aos='fade-right'></div>
-            <h2 className='lgs:text-7xl mds:text-6xl sms:text-6xl font-russoone text-baseextra4' data-aos='flip-up'>Reviews</h2>
+            <h2 className='lgs:text-7xl mds:text-6xl sms:text-7xl font-russoone text-baseextra4' data-aos='flip-up'>Reviews</h2>
             <div className='flex h-0.5 lgs:w-[30vw] mds:w-[40vw] sms:w-[50vw] bg-black cursor-default' data-aos='fade-left'></div>
             </div>  
-            <p className='lgs:text-md mds:text-sm sms:text-sm sms:p-10  text-baseextra1 font-ibmplexsans mds:w-[80vw] lgs:w-[60vw] lgs:p-10 lgs:text-lg h-inherit mb-5 mt-5 text-center' data-aos='zoom-in'
+            <p className='lgs:text-md mds:text-sm sms:text-md sms:p-10  text-baseextra1 font-ibmplexsans mds:w-[80vw] lgs:w-[60vw] lgs:p-10 lgs:text-lg h-inherit mb-5 mt-5 text-center' data-aos='zoom-in'
             style={{
               
             }}>{''}In our Car Reviews section, you'll find comprehensive and easy-to-digest evaluations of a variety of vehicles. We delve into every detail, from performance and safety to comfort and technology. Whether you're after speed, security, or the latest features, our reviews are here to help you make an informed choice. Get insights from our experts and real car owners, and discover the ideal car for you today.</p>
@@ -194,7 +194,7 @@ const Reviewsection = () => {
        initial={{opacity:0,marginLeft:'-100px'}}
        whileInView={{opacity:1,marginLeft:'0px'}}
        transition={{duration:'1.5', ease:'easeInOut', delay:'0.4'}}
-       className='flex flex-row items-center justify-center h-[10vh] mt-[-2vh] sms:p-4 mds:p-2 lgs:p-10'>
+       className='flex flex-row items-center justify-center h-[10vh] mt-[-2vh] lgs:mt-2 sms:p-4 mds:p-2 lgs:p-10  transition-transform duration-300 ease-in-out hover:scale-110'>
 
         <div className='text-2xl text-baseprimary font-semibold cursor-pointer font-russoone'>
           <Link to={`/reviews`}>See more</Link></div>
@@ -207,7 +207,7 @@ const Reviewsection = () => {
        <div className='border-2 rounded-xl border-secondary bg-secondary'>
 
         <div className='flex w-full h-auto justify-center items-center lgs:pt-8'>
-           <h2 className='sms:text-3xl mds:text-4xl lgs:text-5xl font-russoone text-primary m-2 mds:pt-10 sms:pt-5' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
+           <h2 className='sms:text-3xl mds:text-4xl lgs:text-5xl font-russoone text-primary m-2 mds:pt-10 sms:pt-5 cursor-default transition-transform duration-300 ease-in-out hover:text-baseprimary' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
         </div>
 
         <div className='flex w-auto h-auto sms:p-5 justify-center overflow-hidden'>
@@ -236,10 +236,10 @@ const Reviewsection = () => {
                                         <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm font-russoone sms:pl-4 pl-5'>
                                          {reviews.category}
                                         </div>
-                                        <h2 className=' text-baseextra4 font-semibold  sms:text-3xl mds:text-2xl font-kanit sms:pl-4 pl-5'>
+                                        <h2 className=' text-baseextra4 font-semibold lgs:text-3xl mds:text-2xl font-kanit  sms:pl-4 pl-5'>
                                          {reviews.brand}
                                       </h2>
-                                      <h3 className=' text-baseextra4 text-xl mds:text-xl  mds:mb-10 font-kanit sms:mb-2 sms:pl-4 pl-5'>
+                                      <h3 className=' text-baseextra4 text-xl mds:text-xl  mds:mb-10 font-kanit lgs:mb-5 sms:pl-4 pl-5'>
                                          {reviews.title}
                                       </h3>
                                        </div>
@@ -276,7 +276,7 @@ const Reviewsection = () => {
                                               <h2 className=' text-baseextra4 text-xl font-semibold  font-ibmplexsans  pl-5'>
                                               {reviews.brand}
                                             </h2>
-                                            <h3 className=' text-baseextra4 text-md mds:text-xl font-kanit pl-5'>
+                                            <h3 className=' text-baseextra4 text-md mds:text-xl  font-kanit pl-5'>
                                               {reviews.title}
                                             </h3>
                                      </div>              
@@ -293,7 +293,7 @@ const Reviewsection = () => {
        initial={{opacity:0,marginLeft:'-100px'}}
        whileInView={{opacity:1,marginLeft:'0px'}}
        transition={{duration:'1.5', ease:'easeInOut', delay:'0.4'}}
-       className='flex flex-row items-center justify-center h-[10vh] mt-[-2vh] sms:p-4 mds:p-2 lgs:p-10 transition-transform duration-300 ease-in-out hover:scale-110'>
+       className='flex flex-row items-center justify-center h-[10vh] mt-[-2vh] lgs:mt-10 sms:p-4 mds:p-2 lgs:p-10 transition-transform duration-300 ease-in-out hover:scale-110'>
 
         <div className='text-2xl text-baseprimary font-semibold cursor-pointer font-russoone transition-transform duration-300 ease-in-out hover:scale-110'>
           <Link to={`/reviews`}>See more</Link></div>

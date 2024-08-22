@@ -41,6 +41,7 @@ const NewHeroSection = () => {
                    
                     
                     <div className='absolute bottom-0 bg-gradient-to-t from-secondary to-transparent sms:h-[50vh] opacity-100 w-full items-center justify-center'/>
+                    <div className='absolute bottom-0 bg-gradient-to-t from-secondary to-transparent sms:h-[50vh] opacity-50 w-full items-center justify-center z-40'/>
                      <div className='absolute flex-col bottom-0 h-[30vh] w-full bg-transparent items-center justify-center z-20 space-y-5 overflow-hidden'>
 
                         <div className='flex h-auto w-auto items-center justify-center mx- space-x-2 mx-3 opacity-50 overflow-hidden'>
@@ -74,10 +75,7 @@ const NewHeroSection = () => {
                   
                 </div>
 
-                <div class="curved">
 
-                  
-                </div>
 
               </section>
 
@@ -85,7 +83,7 @@ const NewHeroSection = () => {
               <section 
                 className='hidden mds:flex lgs:flex flex-col mds:h-auto w-full lgs:h-auto lgs:w-auto bg-secondary'>
 
-              <div className='flex lgs:w-full lgs:h-[80vh] mds:w-[100vw] mds:h-[50vh]' style={{
+              <div className='flex lgs:w-full lgs:h-[80vh] mds:w-[100vw] mds:h-[25rem]' style={{
                   backgroundImage: `url(${wallpaper})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
@@ -93,7 +91,7 @@ const NewHeroSection = () => {
                   backgroundAttachment:'scroll'
               }}>  
 
-                        <div className='absolute flex flex-col w-auto lgs:h-[50vh] mds:h-[30vh] bottom-10 right-20 items-end justify-start lgs:space-y-2 mds:space-y-5 overflow-hidden '>
+                        <div className='absolute flex flex-col w-auto lgs:h-[50vh] mds:h-[15rem] bottom-10 right-20 items-end justify-start lgs:space-y-2 mds:space-y-5 overflow-hidden '>
                               <div className='flex flx-col w-auto h-auto'>
                               <div className='flex flex-col w-auto h-auto'>
 

@@ -155,17 +155,17 @@ if (!article) {
                                     articlesByCategory.map((articles)=> (
                                       <div key={articles._id} onClick={() => handleClickArticle(articles._id)} className='bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer overflow-hidden' data-aos='fade-left' data-aos-delay='100'>
                                       {articles.images && articles.images.length > 0 && (
+                                        
+                                        <div className='flex w-auto h-auto items-center overflow-hidden '>
                                         <img src={articles.images[0]} alt={articles.title} className="w-full h-[20vh] object-cover rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-125" />
+                                        </div>   
                                       )}
-                                      <div className='text-secondary sms:text-md lgs:w-[20vw] lgs:text-xl mds:text-md font-russoone sms:pl-4 pl-5'>
+                                      <div className='text-secondary lgs:w-[20vw] lgs:text-xl lgs:pt-5 mds:text-md font-russoone sms:pl-4 pl-5'>
                                         {articles.category}
                                       </div>
-                                      <h3 className='text-baseextra4 font-semibold text-xl mds:text-2xl lgs:text-3xl font-ibmplexsans sms:mb-2 sms:pl-4 pl-5'>
+                                      <h3 className='text-baseextra4 text-xl lgs:pb-5 mds:text-2xl lgs:text-2xl font-ibmplexsans pl-5'>
                                         {articles.title}
                                       </h3>
-                                      <div className='text-gray-400 sms:text-lg mb-2 pl-4'>
-                                        <span>{articles.date}</span>
-                                      </div>
                                     </div>
 
                                     ))
@@ -203,7 +203,7 @@ if (!article) {
 
                           articlesByCategory.map((article) => (
                             <div key={article.id} onClick={(() => handleClickArticle(article._id))} className='hidden sms:flex h-auto items-center border-2 cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-xl p-0' data-aos='fade-right'>
-                            <div className='bg-primary w-full rounded-xl border-4 overflow-hidden p-5'>
+                            <div className='bg-primary w-full rounded-xl border-4 p-5'>
                               <img src={article.images[0]} alt={article.title} className='rounded-xl transition-transform duration-300 ease-in-out hover:scale-110'/>
                             </div>
                             <div className='flex h-auto lgs:w-auto mb-2rounded-b-x bg-primary p-2'>

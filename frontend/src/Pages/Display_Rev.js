@@ -85,7 +85,6 @@ const Display_Rev = () => {
 
   const handleClickReview = (review_id) =>{
     navigate(`/reviews/${review_id}`);
-    setOpenReviewId(review_id);
   } 
   
   if (isLoading) {
@@ -248,7 +247,6 @@ const Display_Rev = () => {
                               ) : (
                                 reviewsByCategory.length > 0 ? (
                                   reviewsByCategory
-                                  .filter(review => review._id!==openReviewId)
                                   .map((reviews) => (
                                     <div key={reviews._id} onClick={() => handleClickReview(reviews._id)} className='bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer' data-aos='fade-left' data-aos-delay='100'>
                                       {reviews.images && reviews.images.length > 0 && (
@@ -303,18 +301,19 @@ const Display_Rev = () => {
                                       relatedReviews.map((reviews) => (
                                         <div key={reviews._id} onClick={() => handleClickReview(reviews._id)} className='bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer'>
                                           
-                                      <div className='bg-transparent sms:h-auto w-auto sms:mb-5 mb-10 rounded-lg overflow-hidden'>    
+                                      <div className='bg-transparent h-auto w-auto mb-10 rounded-lg overflow-hidden'>    
                                           {reviews.images && reviews.images.length > 0 && (
-                                            <img src={reviews.images[0]} alt={reviews.title} className="w-full h-[20vh] object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125" />
+                                            <img src={reviews.images[0]} alt={reviews.title} className="w-full h-[10rem] object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125" />
                                           )}
                                      </div>     
-                                          <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm mds:text-md font-russoone sms:pl-4 pl-5'>
+                                       
+                                          <div className='text-secondary  lgs:w-[50vw] lgs:text-sm mds:text-md font-russoone  pl-5'>
                                             {reviews.category}
                                           </div>
-                                          <h2 className='text-baseextra4 font-semibold sms:text-3xl mds:text-xl lgs:text-2xl font-kanit sms:pl-4 pl-5'>
+                                          <h2 className='text-baseextra4 font-semibold mds:text-xl lgs:text-2xl font-kanit  pl-5'>
                                             {reviews.brand}
                                           </h2>
-                                          <h3 className='text-baseextra4 font-semibold lgs:text-lg  mds:text-2xl font-kanit mb-2 sms:pl-4 pl-5'>
+                                          <h3 className='text-baseextra4 font-semibold lgs:text-lg  mds:text-2xl font-kanit mb-2 pl-5'>
                                             {reviews.title}
                                           </h3>
                                         </div>

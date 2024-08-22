@@ -63,7 +63,7 @@ const Newsection = () => {
           style={{
             
           }} >
-            {''}News Stay Updated with the Latest in the Automotive World. From new model releases and industry trends to expert reviews and technological innovations, our news section has it all. Whether you are a car enthusiast or just curious, explore and stay informed about the future of transportation
+            {''}Stay Updated with the Latest in the Automotive World. From new model releases and industry trends to expert reviews and technological innovations. Whether you are a car enthusiast or just curious, explore and stay informed about the future of transportation
           </p>
         </div>
       </div>
@@ -73,11 +73,11 @@ const Newsection = () => {
             <div className='bg-gray-700 lgs:h-auto w-auto rounded-xl overflow-hidden'>
               <img src={article.images[0]} alt={article.title} className='rounded-t-xl transition-transform duration-300 ease-in-out hover:scale-110'/>
             </div>
-            <div className='flex h-auto lgs:w-auto mb-2 p-2 rounded-b-xl bg-basesecondary'>
+            <div className='flex h-auto lgs:w-auto mt-2  p-2 rounded-t-xl bg-basesecondary'>
             <h3 className='text-secondary font-thin font-russoone sms:text-lg lgs:text-xl'>{article.title}</h3>
             </div>
             <div className='flex h-auto lgs:w-[20vw] lgs:p-2 rounded-t-xl bg-baseextra4'>
-            <p className=' text-primary text-center font-thin font-kanit lgs:text-sm mb-2'>{article.summary}</p>
+            <p className=' text-primary text-center font-thin font-ibmplexsans lgs:text-sm mb-2'>{article.summary}</p>
             </div>
           </div>
         ))}
@@ -88,7 +88,7 @@ const Newsection = () => {
               <img src={article.images[0]} alt={article.title} className='rounded-xl  transition-transform duration-300 ease-in-out hover:scale-110'/>
             </div>
             <div className='flex h-auto lgs:w-auto mb-2rounded-b-x bg-primary p-2'>
-            <h3 className='text-baseextra4 text-center p-2 font-ibmplexsans font-semibold sms:text-xl'>{article.title}</h3>
+            <h3 className='text-baseextra4 text-start p-2 font-ibmplexsans sms:text-xl'>{article.title}</h3>
             </div>
           </div>
         ))}
