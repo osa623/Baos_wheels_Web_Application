@@ -164,19 +164,20 @@ const fetchReviews = async () => {
            <h2 className='sms:text-3xl mds:text-4xl lgs:text-5xl font-russoone text-primary m-2 mds:pt-10 sms:pt-5 cursor-pointer hover:text-baseprimary' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
         </div>
 
-       <div className='flex  h-[10vh] w-full justify-between overflow-hidden sms:pt-5'>
-              <div className="relative w-full lgs:p-5 items-center justify-center" data-aos='fade-up' data-aos-delay='300'>
-              <input
-                type="text"
-                className="transition-all duration-300 ease-in-out items-center $
-                lgs:w-[50vw] sms:w-[60vw] mds:w-[60vw] mds:mt-5 ml-10 sms:ml-5 mr-5 px-4 py-2 border-2 border-gray-300 rounded-full outline-none"
-                placeholder="Search by Brand, Body Type"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              /><FontAwesomeIcon icon={faSearch} className='text-primary lgs:h-6 cursor-pointer hover:scale-125'/>
-            </div>
         
-       </div>
+              <div className='flex  h-[10vh] w-full justify-between overflow-hidden sms:pt-5'>
+                      <div className="relative w-full lgs:p-5 items-center justify-center" data-aos='fade-up' data-aos-delay='300'>
+                      <input
+                        type="text"
+                        className="transition-all duration-300 ease-in-out items-center $
+                        lgs:w-[60vw] sms:w-[75vw] mds:w-[60vw] mds:mt-5 ml-10 sms:ml-5 mr-5 px-4 py-2 border-2 border-gray-300 rounded-full outline-none"
+                        placeholder="Search by Brand, Body Type"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                      /><FontAwesomeIcon icon={faSearch} className='text-primary lgs:h-6 cursor-pointer hover:scale-125'/>
+                    </div>
+                
+             </div>
 
         <div className='flex w-auto h-auto justify-center overflow-hidden'>
               <div className='hidden mds:grid lgs:grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lg:mt-[2vh] mds:grid-cols-2 gap-3 p-10'>

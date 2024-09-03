@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+
 // Navbar and Footer components
+
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+
 // Pages
+
 import Home from './Pages/Home';
 import Reviews from './Pages/Reviews';
 import Articlesec from './Pages/Articlesec';
@@ -16,7 +20,6 @@ import Brands from './Pages/Brands';
 import BodyStyle from './Pages/BodyStyle';
 
 // Loading component
-
 
 const AppContent = () => {
   const [isLoading, setIsLoading] = useState(false);

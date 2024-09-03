@@ -76,13 +76,13 @@ const Reviewsection = () => {
 }
 
   const row1 = [
-    { url: "https://example.com/page1", src: mercedesbenz, name: 'Mercedes Benz' },
-    { url: "https://example.com/page2", src: mercedesbenz },
-    { url: "https://example.com/page3", src: "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/3b7d9f4b073deb6a9b74.png" },
-    { url: "https://example.com/page4", src: "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/3cd767dea94a85078ca4.png" },
-    { url: "https://example.com/page5", src: "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/a2b3c3709ffedce2a22a.png" },
-    { url: "https://example.com/page6", src: "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/a2b3c3709ffedce2a22a.png" },
-    { url: "https://example.com/page7", src: "https://assets.algoexpert.io/spas/main/prod/g523bdeb478-prod/dist/images/3b7d9f4b073deb6a9b74.png" },
+    { src: mercedesbenz, name: 'Mercedes Benz' },
+    { src: mercedesbenz , name: 'Mercedes Benz' },
+    { src: mercedesbenz , name: 'Mercedes Benz' },
+    { src: mercedesbenz , name: 'Mercedes Benz' },
+    { src: mercedesbenz , name: 'Mercedes Benz' },
+    { src: mercedesbenz , name: 'Mercedes Benz' },
+    { src: mercedesbenz , name: 'Mercedes Benz' },
   ];
 
   const Autobrands = [
@@ -96,6 +96,11 @@ const Reviewsection = () => {
     { name: 'Range Rover', logo: rangerover },
     { name: 'Tesla', logo: tesla },
     { name: 'Toyota', logo: toyota },
+    { name: 'Mitsubhishi', logo: mitsubhishi },
+    { name: 'Nissan', logo: nissan },
+    { name: 'Range Rover', logo: rangerover },
+    { name: 'Tesla', logo: tesla },
+    { name: 'Toyota', logo: toyota }
   ];
 
   useEffect(() => {
@@ -143,6 +148,7 @@ const Reviewsection = () => {
                 <a href={el.url} target="_blank" rel="noopener noreferrer">
                   <Image src={el.src} />
                 </a>
+                
               </ImageGroup>
             ))}
           </MarqueeGroup>
@@ -170,8 +176,8 @@ const Reviewsection = () => {
         <div className='flex flex-col w-auto items-center justify-center sms:p-5 mds:p-3 lgs:p-8'>
           <Note className='sms:h-auto sms:w-auto text-2xl' data-aos='zoom-out'>Explore by Brand Names</Note>
         </div>
-        <div className='flex lgs:w-[95vw] lgs:h-auto sms:w-[90vw] sms:h-auto items-center justify-center sms:p-2 '>
-        <div className='flex flex-wrap lgs:w-full lgs:h-auto mds:w-[100vw] sms:h-auto overflow-hidden  lgs:gap-5 sms:gap-x-10 sms:pt-4 mds:gap-5 sms:gap-5 cursor-pointer justify-center sms:p-5 mds:p-5 lgs:p-3 '>
+        <div className='flex lgs:w-[75vw] lgs:h-auto sms:w-[90vw] sms:h-auto items-center justify-center sms:p-2 '>
+        <div className='flex flex-wrap lgs:w-full lgs:h-auto mds:w-[100vw] sms:h-auto overflow-hidden  lgs:gap-10 sms:gap-x-10 sms:pt-4 mds:gap-5 sms:gap-5 cursor-pointer justify-center sms:p-5 mds:p-5 lgs:p-3 '>
           {Autobrands.map((brandItem, index) => (
             <BrandCard key={index} data-aos='fade-up'>
 

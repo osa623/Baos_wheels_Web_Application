@@ -66,7 +66,7 @@ const Brands = () => {
               /><FontAwesomeIcon icon={faSearch} className='text-secondary lgs:h-6 cursor-pointer hover:scale-125'/>
             </div>
         
-       </div>
+           </div>
           </div>   
       {isLoading ? (
         <Loading2/>
@@ -104,7 +104,7 @@ const Brands = () => {
                         )}
          </div>
 
-         <div className='hidden sms:grid  sms:grid-cols-1  gap-3 p-10'>
+              <div className='hidden sms:grid  sms:grid-cols-1  gap-3 p-10'>
                   {isLoading ? (
                     <Loading2/>
                   ) : (
