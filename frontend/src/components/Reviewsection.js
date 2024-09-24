@@ -21,11 +21,12 @@ import rangerover from '../assests/Brand Logos/range_rover.png';
 import tesla from '../assests/Brand Logos/tesla.png'
 import toyota from '../assests/Brand Logos/toyota.png';
 import mazda from '../assests/Brand Logos/mazda.png';
+
 import Loading2 from '../oth/Loading2';
 
 
 //Car Type Images
-
+import sedan from '../assests/sedan.png';
 
 const Reviewsection = () => {
 
@@ -76,13 +77,13 @@ const Reviewsection = () => {
 }
 
   const row1 = [
-    { src: mercedesbenz, name: 'Mercedes Benz' },
-    { src: mercedesbenz , name: 'Mercedes Benz' },
-    { src: mercedesbenz , name: 'Mercedes Benz' },
-    { src: mercedesbenz , name: 'Mercedes Benz' },
-    { src: mercedesbenz , name: 'Mercedes Benz' },
-    { src: mercedesbenz , name: 'Mercedes Benz' },
-    { src: mercedesbenz , name: 'Mercedes Benz' },
+    { src: sedan, name: 'Mercedes Benz' },
+    { src: sedan , name: 'Mercedes Benz' },
+    { src: sedan , name: 'Mercedes Benz' },
+    { src: sedan , name: 'Mercedes Benz' },
+    { src: sedan , name: 'Mercedes Benz' },
+    { src: sedan , name: 'Mercedes Benz' },
+    { src: sedan , name: 'Mercedes Benz' },
   ];
 
   const Autobrands = [
@@ -135,7 +136,7 @@ const Reviewsection = () => {
         <Marquee >
           <MarqueeGroup isPaused ={isPaused}>
             {row1.map((el, index) => (
-              <ImageGroup key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+              <ImageGroup key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='cursor-pointer'>
                 <a href={el.url} target="_blank" rel="noopener noreferrer">
                   <Image src={el.src} />
                 </a>
@@ -159,7 +160,7 @@ const Reviewsection = () => {
               <div className='grid grid-flow-row grid-cols-3 gap-4'>
                 {row1.map((el, index) => (
                       
-                        <div className='flex flex-col border-2 p-3 rounded-lg items-center' key={index}>
+                        <div className='flex flex-col border-2 p-3 rounded-lg items-center cursor-pointer' key={index}>
                           <img src={el.src}
                                 alt={el.url}
                                 className='w-20 h-20' style={{
