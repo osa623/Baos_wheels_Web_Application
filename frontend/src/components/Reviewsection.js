@@ -26,7 +26,14 @@ import Loading2 from '../oth/Loading2';
 
 
 //Car Type Images
-import sedan from '../assests/sedan.png';
+import coupe from '../assests/vehicle_styels/coupe.png';
+import crossover from '../assests/vehicle_styels/crossover.png';
+import hatchback from '../assests/vehicle_styels/hetchback.png';
+import  mpv from '../assests/vehicle_styels/mpv.png';
+import sedan from '../assests/vehicle_styels/sedan.png';
+import sport from '../assests/vehicle_styels/sport.png';
+import suv from '../assests/vehicle_styels/SUV.png';
+import  wagon from '../assests/vehicle_styels/wagon.png';
 
 const Reviewsection = () => {
 
@@ -77,13 +84,14 @@ const Reviewsection = () => {
 }
 
   const row1 = [
-    { src: sedan, name: 'Mercedes Benz' },
-    { src: sedan , name: 'Mercedes Benz' },
-    { src: sedan , name: 'Mercedes Benz' },
-    { src: sedan , name: 'Mercedes Benz' },
-    { src: sedan , name: 'Mercedes Benz' },
-    { src: sedan , name: 'Mercedes Benz' },
-    { src: sedan , name: 'Mercedes Benz' },
+    { src: sedan, name: 'Sedan' },
+    { src: coupe , name: 'Coupe' },
+    { src: crossover , name: 'Crossover' },
+    { src: hatchback , name: 'Hatchback' },
+    { src: mpv , name: 'MPV' },
+    { src: sport , name: 'Sport' },
+    { src: suv , name: 'SUV' },
+    { src: wagon , name: 'Wagon' }
   ];
 
   const Autobrands = [
