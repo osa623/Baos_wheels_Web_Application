@@ -25,9 +25,9 @@ module.exports = {
         ibmplexsans: ['IBM Plex Sans', 'sans-serif'],
       },
       screens: {
-        'sms': { 'min': '10px','max': '640px' }, // screens <= 640px
-        'mds': { 'min': '641px','max': '1023px'}, // screens <= 1023px
-        'lgs': { 'min': '1024px','max': '100000px'} // screen <= 1536px
+        'sms': { 'min': '10px','max': '639px' }, // screens <= 640px
+        'mds': { 'min': '639px','max': '1023px'}, // screens <= 1023px
+        'lgs': { 'min': '1023px','max': '100000px'} // screen <= 1536px
       },
       inset: {
         '5': '5px',

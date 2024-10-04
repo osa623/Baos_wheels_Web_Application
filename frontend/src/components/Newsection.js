@@ -1,6 +1,4 @@
 // src/components/Newsection.js
-
-
 import React, { useEffect, useState } from 'react';
 import Aos from 'aos';
 import { motion } from 'framer-motion';
@@ -52,32 +50,37 @@ const Newsection = () => {
 
   return (
     <div className='relative h-auto w-auto bg-primary'>
-      <div className=' flex flex-col items-center justify-center w-full lgs:h-[20vh] lgs:mb-5 sms:h-[20vh]  bg-primary mds:top-[10vh]  sms:space-y-2 mds:p-6 mds:space-y-1 lgs:space-y-1'>
-        <div className='flex lgs:w-[30vw] h-0.5 mds:w-[40vw] sms:w-[50vw] bg-secondary items-start justify-start mx-20'/>
-        <h2 className='lgs:text-7xl text-baseextra4 mds:text-6xl sms:text-5xl text-center font-russoone'>Auto Insights</h2>
-        <div className='flex lgs:w-[30vw] h-0.5 mds:w-[40vw]  sms:w-[50vw] bg-secondary items-end justify-end mx-20'/>
+      <div className=' flex flex-col items-center justify-center w-full lgs:h-[20vh] lgs:mb-5 sms:h-[20vh]  bg-primary mds:top-[10vh]  sms:space-y-2 mds:p-6 mds:space-y-1 lgs:space-y-1' data-aos='fade-left'>
+        <h2 className='flex flex-col lgs:text-7xl text-baseextra4 mds:text-6xl sms:text-5xl text-center font-russoone overflow-hidden'>Auto Insights
+          {''}<div className='flex bg-secondary will-change-auto h-[0.15rem] mt-1' data-aos="fade-left"/>
+        </h2>
       </div>
       <div className='flex justify-center w-full'>
         <div className='flex flex-col items-center justify-center lgs:w-[75vw]'>
-          <p className='lgs:text-lg font-ibmplexsans lgs:h-auto lgs:w-[50vw] sms:w-[80vw] mds:w-[75vw] sms:text-md text-center justify-center align-middle'
+          <p className='lgs:text-lg font-ibmplexsans lgs:h-auto lgs:w-[50vw] sms:w-[80vw] mds:w-[75vw] sms:text-md mds:text-sm text-center justify-center align-middle'
           style={{
-            
-          }} >
-            {''}Stay Updated with the Latest in the Automotive World. From new model releases and industry trends to expert reviews and technological innovations. Whether you are a car enthusiast or just curious, explore and stay informed about the future of transportation
+             fontWeight:'300'
+          }} data-aos='zoom-in'>
+            Stay Updated with the Latest in the Automotive World. From new model releases and industry trends to expert reviews and technological innovations. Whether you are a car enthusiast or just curious, explore and stay informed about the future of transportation
           </p>
         </div>
       </div>
       <div className='grid lgs:grid-cols-4 sms:grid-cols-1 lgs:gap-4 lgs:p-10 lgs:mt-[5vh] mds:grid-cols-2 mds:gap-3 p-10'>
-        {Articles.map((article) => (
-          <div key={article.id} onClick={(() => handleViewArticle(article._id))} className='hidden mds:flex lgs:flex flex-col h-auto items-center border-2 cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-xl p-0' data-aos='fade-right'>
-            <div className='bg-gray-700 lgs:h-auto w-auto rounded-xl overflow-hidden'>
-              <img src={article.images[0]} alt={article.title} className='rounded-t-xl transition-transform duration-300 ease-in-out hover:scale-110'/>
+        {Articles.slice(0,4).map((article) => (
+          <div key={article.id} onClick={(() => handleViewArticle(article._id))} className='hidden mds:flex lgs:flex flex-col lgs:h-[20rem] mds:h-[16rem] items-center border-2 border-gray-200 cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-2xl p-0' data-aos='fade-right'>
+            <div className='bg-gray-700 lgs:h-[12rem] mds:h-[10rem] w-auto rounded-xl overflow-hidden'>
+              <img src={article.images[1]} alt={article.title} className='rounded-t-xl transition-transform ease-in-out hover:scale-110'/>
             </div>
-            <div className='flex h-auto lgs:w-auto mt-2  p-2 rounded-t-xl bg-basesecondary'>
-            <h3 className='text-secondary font-thin font-russoone sms:text-lg lgs:text-xl'>{article.title}</h3>
-            </div>
-            <div className='flex h-auto lgs:w-[20vw] lgs:p-2 rounded-t-xl bg-baseextra4'>
-            <p className=' text-primary text-center font-thin font-ibmplexsans lgs:text-sm mb-2'>{article.summary}</p>
+            <div className='flex flex-col items-start justify-start p-2 bg-transparent space-y-2 '>
+                <div className='flex h-auto lgs:w-auto mt-2 items-start bg-transparent'>
+                <h3 className='text-secondary font-ibmplexsans text-start mds:text-lg lgs:text-xl' style={{fontWeight:'500'}}>{article.title}</h3>
+                </div>
+                <div className='flex flex-col overflow-hidden'>
+                  <div className='flex bg-baseprimary h-[0.15rem] lgs:w-[8rem] mds:w-[10rem] transition-transform rounded-full duration-1000 ease-in-out' data-aos= "fade-right"/>
+                </div>
+                <div className='flex h-auto lgs:w-[20vw] bg-transparent'>
+                <p className=' text-secondary text-start font-normal font-ibmplexsans text-xs mb-2'>{article.summary}</p>
+                </div>
             </div>
           </div>
         ))}
@@ -101,7 +104,7 @@ const Newsection = () => {
 
        <div className='flex w-auto h-auto items-center cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110'>
         <div className='text-2xl text-baseprimary font-semibold font-russoone'>{''}
-          <Link to={`/articles`}>See more</Link></div>
+          <Link to={`/articles`} className='font-thin'>See more</Link></div>
         <FontAwesomeIcon icon={faAngleDoubleRight} className='w-10 text-baseprimary'  style={{
           
         }}/>

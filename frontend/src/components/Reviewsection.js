@@ -126,20 +126,20 @@ const Reviewsection = () => {
   return (
     <AppContainer>
       <Wrapper>
-        <div className='flex flex-col h-auto w-full items-center justify-center  overflow-hidden sms:space-y-2 lgs:space-y-10 lgs:mt-2'>
-          <div className='flex flex-col w-[50vw] mds:mt-10 sms:mt-10 items-center justify-center'>
-            <div className='flex h-0.5 lgs:w-[30vw] mds:w-[40vw] sms:w-[50vw] bg-black cursor-default' data-aos='fade-right'></div>
-            <h2 className='lgs:text-7xl mds:text-6xl sms:text-7xl font-russoone text-baseextra4' data-aos='flip-up'>Reviews</h2>
-            <div className='flex h-0.5 lgs:w-[30vw] mds:w-[40vw] sms:w-[50vw] bg-black cursor-default' data-aos='fade-left'></div>
+        <div className='flex flex-col h-auto w-full items-center justify-center  overflow-hidden sms:space-y-2 lgs:space-y-5 lgs:mt-2'>
+          <div className='flex flex-col w-auto mds:mt-10 sms:mt-10 items-center justify-center'>
+            <h2 className='flex flex-col lgs:text-7xl mds:text-6xl sms:text-7xl font-russoone text-baseextra4 overflow-hidden' data-aos='fade-right'>Reviews
+              {''}<div className='flex  h-[0.15rem] bg-secondary' data-aos="fade-left"/>
+            </h2>
             </div>  
-            <p className='lgs:text-md mds:text-sm sms:text-md sms:p-10  text-baseextra1 font-ibmplexsans mds:w-[80vw] lgs:w-[60vw] lgs:p-10 lgs:text-lg h-inherit mb-5 mt-5 text-center' data-aos='zoom-in'
+            <p className='mds:text-sm sms:text-md sms:p-10  text-baseextra1 font-ibmplexsans mds:w-[80vw] lgs:w-[60vw] lgs:p-10 lgs:text-lg h-inherit mb-5 mt-5 text-center' data-aos='zoom-in'
             style={{
-              
+              fontWeight:'300'
             }}>{''}In our Car Reviews section, you'll find comprehensive and easy-to-digest evaluations of a variety of vehicles. We delve into every detail, from performance and safety to comfort and technology. Whether you're after speed, security, or the latest features, our reviews are here to help you make an informed choice. Get insights from our experts and real car owners, and discover the ideal car for you today.</p>
 
         </div>
         <div className='flex flex-col w-auto h-auto'>
-        <Note className='sms:p-3 mds:p-3 lgs:p-5' data-aos='zoom-in'>Explore by Vehicle Type</Note>
+        <Note className='sms:p-3 mds:p-3 lgs:p-5 ' data-aos='zoom-in'>Explore by Vehicle Type</Note>
         </div>
         <Marquee >
           <MarqueeGroup isPaused ={isPaused}>
@@ -148,6 +148,14 @@ const Reviewsection = () => {
                 <a href={el.url} target="_blank" rel="noopener noreferrer">
                   <Image src={el.src} />
                 </a>
+                <div className='flex flex-col overflow-hidden'>
+
+                  <h2 className='flex flex-col font-ibmplexsans mt-2 text-lg text-secondary overflow-hidden' style={{fontWeight:'300'}} data-aos='fade-up'>{el.name}
+                    {''}<div className='flex bg-baseprimary h-[0.1rem] will-change-contents' data-aos='fade-right' data-aos-delay='400'/>
+                  </h2>
+
+                </div>
+
               </ImageGroup>
             ))}
           </MarqueeGroup>
@@ -157,7 +165,13 @@ const Reviewsection = () => {
                 <a href={el.url} target="_blank" rel="noopener noreferrer">
                   <Image src={el.src} />
                 </a>
-                
+                <div className='flex flex-col overflow-hidden'>
+
+                  <h2 className='flex flex-col font-ibmplexsans mt-2 text-lg text-secondary overflow-hidden' style={{fontWeight:'300'}} data-aos='fade-up'>{el.name}
+                    {''}<div className='flex bg-baseprimary h-[0.1rem] will-change-contents' data-aos='fade-right' data-aos-delay='400'/>
+                  </h2>
+
+                </div>
               </ImageGroup>
             ))}
           </MarqueeGroup>
@@ -182,47 +196,51 @@ const Reviewsection = () => {
               </div>
         </div>
 
-        <div className='flex flex-col w-auto items-center justify-center sms:p-5 mds:p-3 lgs:p-8'>
-          <Note className='sms:h-auto sms:w-auto text-2xl' data-aos='zoom-out'>Explore by Brand Names</Note>
-        </div>
-        <div className='flex lgs:w-[75vw] lgs:h-auto sms:w-[90vw] sms:h-auto items-center justify-center sms:p-2 '>
-        <div className='flex flex-wrap lgs:w-full lgs:h-auto mds:w-[100vw] sms:h-auto overflow-hidden  lgs:gap-10 sms:gap-x-10 sms:pt-4 mds:gap-5 sms:gap-5 cursor-pointer justify-center sms:p-5 mds:p-5 lgs:p-3 '>
-          {Autobrands.map((brandItem, index) => (
-            <BrandCard key={index} data-aos='fade-up'>
+        <div className='flex flex-col h-auto w-auto space-y-4'>
+              <div className='flex flex-col w-auto items-center justify-center sms:p-5 mds:p-3 lgs:p-8'>
+                <Note className='sms:h-auto sms:w-auto text-2xl' data-aos='zoom-out'>Explore by Brand Names</Note>
+              </div>
+              <div className='flex lgs:w-[75vw] lgs:h-auto sms:w-[90vw] sms:h-auto items-center justify-center sms:p-2 '>
+              <div className='grid lgs:grid-cols-5 mds:grid-cols-5 sms:h-auto overflow-hidden  lgs:gap-10 sms:gap-x-10 sms:pt-4 mds:gap-5 sms:gap-5 cursor-pointer justify-center sms:p-5 mds:p-5 lgs:p-3 '>
+                {Autobrands.slice(0,10).map((brandItem, index) => (
+                  <BrandCard key={index} data-aos='fade-up'>
 
-              <img 
-                src={brandItem.logo} 
-                alt={brandItem.name} 
-                onClick={()=> handleBrandClick(brandItem.name)}
-                className="w-20 h-20" style={{
-                  objectFit:'contain'
-                }} 
-              />
+                    <img 
+                      src={brandItem.logo} 
+                      alt={brandItem.name} 
+                      onClick={()=> handleBrandClick(brandItem.name)}
+                      className="w-20 h-20" style={{
+                        objectFit:'contain'
+                      }} 
+                    />
 
-              <span className="text-sm pt-2 font-poppins">{brandItem.name}</span>
-            </BrandCard>
-          ))}
-        </div>
-       
-        </div>
-        <motion.div
-       initial={{opacity:0,marginLeft:'-100px'}}
-       whileInView={{opacity:1,marginLeft:'0px'}}
-       transition={{duration:'1.5', ease:'easeInOut', delay:'0.4'}}
-       className='flex flex-row items-center justify-center h-[10vh] mt-[-2vh] lgs:mt-2 sms:p-4 mds:p-2 lgs:p-10  transition-transform duration-300 ease-in-out hover:scale-110'>
+                    <span className="text-sm pt-2 font-poppins">{brandItem.name}</span>
+                  </BrandCard>
+                ))}
+              </div>
+            
+              </div>
+              <motion.div
+            initial={{opacity:0,marginLeft:'-100px'}}
+            whileInView={{opacity:1,marginLeft:'0px'}}
+            transition={{duration:'1.5', ease:'easeInOut', delay:'0.4'}}
+            className='flex flex-row items-center justify-center h-[10vh] mt-[-2vh] lgs:mt-2 sms:p-4 mds:p-2 lgs:p-10  transition-transform duration-300 ease-in-out hover:scale-110'>
 
-        <div className='text-2xl text-baseprimary font-semibold cursor-pointer font-russoone'>
-          <Link to={`/reviews`}>See more</Link></div>
-        <FontAwesomeIcon icon={faAngleDoubleRight} className='w-10 text-baseprimary'  style={{
-          
-        }}/>
-      </motion.div>
+              <div className='text-2xl text-baseprimary font-semibold cursor-pointer font-russoone'>
+                <Link className='mt-2' to={`/reviews`} style={{fontWeight:'100'}}>See more</Link></div>
+              <FontAwesomeIcon icon={faAngleDoubleRight} className='w-10 text-baseprimary'  style={{
+                
+              }}/>
+            </motion.div>
+        </div>        
 
           <div className='flex flex-col w-full h-auto lgs:p-10'>
        <div className='border-2 rounded-xl border-secondary bg-secondary'>
 
         <div className='flex w-full h-auto justify-center items-center lgs:pt-8'>
-           <h2 className='sms:text-3xl mds:text-4xl lgs:text-5xl font-russoone text-primary m-2 mds:pt-10 sms:pt-5 cursor-default transition-transform duration-300 ease-in-out hover:text-baseprimary' data-aos='zoom-in' data-aos-delay='350'>Our Latest Reviews</h2>
+           <h2 className='flex flex-col sms:text-3xl mds:text-4xl lgs:text-5xl font-russoone text-primary overflow-hidden m-2 mds:pt-10 sms:pt-5 cursor-default transition-transform duration-300 ease-in-out hover:text-baseprimary' data-aos='zoom-in' data-aos-delay='200'>Our Latest Reviews
+            {''}<div className='bg-baseprimary w-auto h-[0.15rem]' data-aos='fade-right' data-aos-delay='700'/>
+           </h2>
         </div>
 
         <div className='flex w-auto h-auto sms:p-5 justify-center overflow-hidden'>
@@ -233,14 +251,14 @@ const Reviewsection = () => {
                                     review
                                     .sort((b,a) => new Date(a.date) - new Date(b.date))
                                     .slice(0,4).map((reviews) => (
-                                       <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' bg-primary rounded-lg border-2 cursor-pointer overflow-hidden transition-transform duration-1000 ease-in-out transform hover:scale-105' data-aos='fade-up'>
-                                       <div className='bg-transparent sms:h-auto w-auto mb-10 rounded-lg overflow-hidden'>
+                                       <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' bg-primary rounded-lg border-2 lgs:scale-125 cursor-pointer overflow-hidden transition-transform duration-1000 ease-in-out transform hover:scale-105' data-aos='fade-up'>
+                                       <div className='bg-transparent lgs:h-[8rem] w-auto mb-2 rounded-lg overflow-hidden'>
                       
                                                                   {reviews.images.length > 0 && (
                                                                       <img
                                                                       src={reviews.images[0]}
                                                                       alt={reviews.title}
-                                                                      className="w-full h-[20vh] object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
+                                                                      className="w-full lgs:h-[8rem] object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
                   />
                                                                   )}
                   
@@ -248,13 +266,18 @@ const Reviewsection = () => {
                   
                                         </div>
                   
-                                        <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm font-russoone sms:pl-4 pl-5'>
+                                        <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm font-ibmplexsans sms:pl-4 pl-5'>
                                          {reviews.category}
+                                        </div>
+                                        <div className='flex lgs:w-[6rem] h-auto lgs:pl-5 overflow-hidden mt-1'>
+                                          <div className='bg-baseprimary w-[5rem] h-[0.15rem] rounded-full' data-aos='fade-left'/>
                                         </div>
                                         <h2 className=' text-baseextra4 font-semibold lgs:text-3xl mds:text-2xl font-kanit  sms:pl-4 pl-5'>
                                          {reviews.brand}
                                       </h2>
-                                      <h3 className=' text-baseextra4 text-xl mds:text-xl  mds:mb-10 font-kanit lgs:mb-5 sms:pl-4 pl-5'>
+                                      <h3 className=' text-baseextra4 lg:text-md mds:text-xl  mds:mb-10 font-kanit lgs:mb-5 sms:pl-4 pl-5' style={{
+                                        fontWeight:'300'
+                                      }}>
                                          {reviews.title}
                                       </h3>
                                        </div>
@@ -308,10 +331,10 @@ const Reviewsection = () => {
        initial={{opacity:0,marginLeft:'-100px'}}
        whileInView={{opacity:1,marginLeft:'0px'}}
        transition={{duration:'1.5', ease:'easeInOut', delay:'0.4'}}
-       className='flex flex-row items-center justify-center h-[10vh] mt-[-2vh] lgs:mt-10 sms:p-4 mds:p-2 lgs:p-10 transition-transform duration-300 ease-in-out hover:scale-110'>
+       className='flex flex-row items-center justify-center h-[10vh] sms:p-4 mds:p-2 lgs:p-10'>
 
         <div className='text-2xl text-baseprimary font-semibold cursor-pointer font-russoone transition-transform duration-300 ease-in-out hover:scale-110'>
-          <Link to={`/reviews`}>See more</Link></div>
+          <Link style={{fontWeight:'300'}} to={`/reviews`}>See more</Link></div>
         <FontAwesomeIcon icon={faAngleDoubleRight} className='w-10 text-baseprimary'  style={{
           
         }}/>
@@ -368,7 +391,7 @@ const Note = styled.div`
 
 const Marquee = styled.div`
   display: flex;
-  width: 1200px;
+  width: 1300px;
   padding: 20px;
   overflow: hidden;
   user-select: none;
@@ -378,6 +401,7 @@ const Marquee = styled.div`
     display: none;
   
   }
+  
 `;
 
 const scrollX = keyframes`
@@ -401,7 +425,7 @@ const common = css`
   animation-play-state: ${({ isPaused }) => (isPaused ? 'paused' : 'running')};
 
     @media (min-width: 641px) and (max-width: 1024px) {
-    width: 100%;
+    width: 150%;
     
   }
 `;

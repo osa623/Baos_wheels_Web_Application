@@ -66,9 +66,22 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="w-full bg-transparent text-center py-4">
-        <h2 className="font-kanit text-primary text-sm md:text-base">Copyright 2024 © Baos Wheels. All Rights Reserved.</h2>
-        <h2 className="text-primary text-xs md:hidden">Design By Graficore</h2>
+
+      <div className="flex lgs:w-[100vw] bg-transparent justify-between text-center py-4">
+
+        <div className='flex lgs:w-[20vw] bg-transparent items-center justify-center'>
+          <h2 className="text-primary font-ibmplexsans text-sm">Privacy Policy</h2>
+        </div>
+
+        <div className='flex flex-col lgs:w-[60vw] bg-transparent items-center justify-center'>
+           <h2 className="text-primary font-ibmplexsans text-xs">Copyright 2024 © Baos Wheels. All Rights Reserved.</h2>
+          <h2 className="text-primary font-ibmplexsans text-xs">Design By {''}<span className='text-cyan-500'><a href='https://github.com/osa623'>Osa_6twent3</a></span></h2>
+        </div>
+
+        <div className='flex lgs:w-[20vw] bg-transparent items-center justify-center'>
+          <h2 className="text-primary font-ibmplexsans text-sm">Terms and Condtions</h2>
+        </div>
+
       </div>
     </footer>
   );
