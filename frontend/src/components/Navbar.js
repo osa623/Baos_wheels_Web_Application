@@ -15,8 +15,8 @@ const Navbar = () => {
         <img src={bwlogo} alt="bwlogo" className="h-12 w-auto m-4 mds:h-8 mds:m-2 lgs:h-12 sms:h-8" />
       </div>
       <ul className="hidden md:flex items-center font-russoone text-primary text-xl cursor-pointer">
-        <li className="p-4 hover:text-baseprimary"><a href='/'>Home</a></li>
-        <li className="p-4 hover:text-baseprimary"><a href='/reviews'>Reviews</a></li>
+        <li className="p-4 hover:text-baseprimary focus:text-baseprimary"><a href='/'>Home</a></li>
+        <li className="p-4 hover:text-baseprimary focus:text-baseprimary"><a href='/reviews'>Reviews</a></li>
         <li className="p-4 hover:text-baseprimary"><a href='/articles'>Articles</a></li>
         <li className="p-4 hover:text-baseprimary"><a href='/about'>About</a></li>
       </ul>

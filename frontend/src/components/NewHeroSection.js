@@ -109,11 +109,11 @@ const NewHeroSection = () => {
 
                                 </div> 
                             </div>  
-                          <div className='flex flex-col w-full h-auto items-end justify-end lgs:pt-10 lgs:pr-10'>     
+                          <div className='flex flex-col w-full h-auto items-end justify-center lgs:pt-5 lgs:pr-10'>     
                             <div className='flex lgs:w-[30vw] mds:w-[45vw] h-auto lgs:bottom-40 lgs:right-36 overflow-hidden'>
-                                  <div className='lgs:w-[10vw] mds:w-[45vw]  bg-baseprimary h-2'/>
-                                  <div className='lgs:w-[10vw] mds:w-[45vw]  bg-primary h-2'/>
-                                  <div className='lgs:w-[10vw] mds:w-[45vw]  bg-secondary h-2'/>
+                                  <div className='lgs:w-[10vw] mds:w-[45vw] h-[0.4rem]  bg-baseprimary'/>
+                                  <div className='lgs:w-[10vw] mds:w-[45vw] h-[0.4rem] bg-primary '/>
+                                  <div className='lgs:w-[10vw] mds:w-[45vw] h-[0.4rem] bg-secondary '/>
                             </div> 
                         </div>        
                      </div>             
