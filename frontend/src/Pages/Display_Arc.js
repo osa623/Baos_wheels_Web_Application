@@ -118,7 +118,7 @@ if (!article) {
             </div>              
             <div className='flex h-auto w-auto justify-center items-center sms:pt-5 mds:p-10'>
             {article.images.length > 0 && (
-                  <img src={article.images[0]} alt={article.title} className="sms:w-full lgs:scale-90 h-auto object-cover rounded-lg" />
+                  <img src={article.images[0]} alt={article.title} className="sms:w-full lgs:w-[50vw] h-auto object-cover rounded-lg" />
                   )}
               
             </div>

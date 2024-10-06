@@ -158,7 +158,7 @@ const Display_Rev = () => {
 
               <div className='hidden lgs:flex mds:flex h-auto w-auto items-start justify-center lgs:space-x-5'>
 
-                <div className='flex flex-col items-start justify-center bg-transparent w-auto h-auto lgs:mr-8'>
+                {/*<div className='flex flex-col items-start justify-center bg-transparent w-auto h-auto lgs:mr-8'>
                       <h2 className='flex flex-col font-ibmplexsans text-md text-secondary overflow-hidden' style={{fontWeight:'300'}}>Brand{''}
                         <div className='bg-baseprimary h-[0.15rem] will-change-auto' data-aos='fade-right'/>
                       </h2>
@@ -189,9 +189,9 @@ const Display_Rev = () => {
                         }</div>
 
 
-                </div>
+                </div>*/}
 
-                <div className='flex flex-col items-start justify-center bg-transparent w-auto h-auto lgs:mr-12'>
+                <div className='flex flex-col items-start justify-center bg-transparent w-auto h-auto lgs:mr-24'>
                       <h2 className='flex flex-col font-ibmplexsans text-md text-secondary overflow-hidden' style={{fontWeight:'300'}}>Body Style
                         {''}<div className='bg-baseprimary h-[0.15rem] will-change-auto' data-aos='fade-right'/>
                       </h2>
@@ -241,9 +241,9 @@ const Display_Rev = () => {
 
                 <div className='flex lgs:w-full items-center justify-center'>
 
-                <div className='grid sms:grid-cols-2 mds:grid-cols-2 lgs:grid-cols-6 sms:w-auto lgs:w-auto h-auto mds:pt-10 sms:p-1 sms:gap-5 mds:gap-5 lgs:gap-6 '>
+                <div className='grid sms:grid-cols-2 mds:grid-cols-2 lgs:grid-cols-6 sms:w-auto lgs:w-auto h-auto mds:pt-10 sms:p-1 sms:gap-5 mds:gap-5 lgs:gap-12'>
                             <div className='flex flex-col h-auto w-auto justify-center lgs:justify-start sms:items-start items-center'>
-                                <h2 className='flex flex-col font-russoone sms:text-lg mds:text-xl lgs:text-2xl overflow-hidden  text-baseextra4'>Engine
+                                <h2 className='flex flex-col font-russoone sms:text-lg mds:text-xl lgs:text-xl overflow-hidden  text-baseextra4'>Engine
                                   {''}<div className='bg-baseprimary h-[0.15rem] will-change-auto' data-aos='fade-right'/>
                                 </h2>
                                 <h2 className='font-ibmplexsans text-sm lgs:w-auto text-center lgs:mt-2  sms:text-start mds:text-lg text-baseextra4'>{review.engine}</h2>
@@ -298,7 +298,7 @@ const Display_Rev = () => {
               
               </div>
             
-
+              {/*Detail section */}
             <div className='flex h-auto w-full lgs:mt-2'>
 
                   <div className='flex flex-col h-auto lgs:w-[60vw]'>
@@ -306,7 +306,8 @@ const Display_Rev = () => {
                       <h2 className='flex flex-col font-russoone sms:text-2xl text-4xl text-baseextra4 text-start overflow-hidden'>
                       Highlight Breakdown{''}<div className='bg-baseprimary lgs:mt-2 h-[0.15rem] w-auto' data-aos='fade-right'/>
                       </h2>
-                      <p className='font-ibmplexsans sms:w-[75vw] lgs:w-[60vw] sms:text-lg mds:text-xl lgs:text-lg text-secondary text-start'>
+                      <p className='font-ibmplexsans ms:w-[75vw] lgs:w-[60vw] sms:text-lg mds:text-xl lgs:text-lg text-secondary text-start'
+                      style={{fontweight:'500'}}>
                         {review.overview}
                       </p>
                   </div>
@@ -363,48 +364,7 @@ const Display_Rev = () => {
                   </div>
                   </div> 
                   <div className='hidden lgs:flex flex-col h-auto lgs:p-10 w-[40vw]'>
-                    <div className='flex flex-col h-auto bg-secondary rounded-2xl lgs:p-5'>
-                      <div className='flex flex-col w-auto h-auto'>
-                        <h2 className='font-russoone sms:text-xl lgs:text-2xl mds:text-3xl text-primary  text-start'>
-                          Looking for : 
-                        </h2>
-                        <h2 className='font-russoone sms:text-4xl text-5xl font-bold text-baseprimary text-start'>
-                          {review.category} 
-                        </h2>
-                        <p className='font-ibmplexsans lgs:text-xl text-primary text-start'>
-                           Explore our latest in-depth reviews of the newest {''}<span className=''>{review.category}</span>s on the market
-                        </p>
-                    </div>  
-                    <div className='grid sms:grid-rows-1 lgs:grid-rows-4 lgs:gap-4 lgs:p-10 mds:grid-rows-2 gap-3 p-10 overflow-hidden'>
-                                      {isLoading ? (
-                                <Loading2/>
-                              ) : (
-                                reviewsByCategory.length > 0 ? (
-                                  reviewsByCategory
-                                  .map((reviews) => (
-                                    <div key={reviews._id} onClick={() => handleClickReview(reviews._id)} className='bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer' data-aos='fade-left' data-aos-delay='100'>
-                                      {reviews.images && reviews.images.length > 0 && (
-                                        <img src={reviews.images[0]} alt={reviews.title} className="w-full h-[20vh] object-cover rounded-t-lg" />
-                                      )}
-                                      <div className='text-secondary sms:text-md lgs:pt-5 lgs:w-[20vw] lgs:text-md mds:text-md font-russoone sms:pl-4 pl-5'>
-                                        {reviews.category}
-                                      </div>
-                                      <h2 className='text-baseextra4 font-semibold sms:text-3xl mds:text-xl lgs:text-2xl font-ibmplexsans sms:pl-4 pl-5'>
-                                        {reviews.brand}
-                                      </h2>
-                                      <h3 className='text-baseextra4 font-semibold lgs:pb-5 text-xl mds:text-2xl font-ibmplexsans sms:mb-2 sms:pl-4 pl-5'>
-                                        {reviews.title}
-                                      </h3>
-                                    </div>
-                                  ))
-                                ) : (
-                                  <p className=''>No related reviews found.</p>
-                                )
-                              )}
-                    </div>
 
-
-                    </div>
                   </div>
             </div>   
 
@@ -417,9 +377,9 @@ const Display_Rev = () => {
 
 
               <div className='flex flex-col h-auto w-full bg-secondary rounded-t-3xl'>
-                      <div className='flex flex-col w-full h-auto sms:justify-start p-10'>
-                        <h2 className='font-russoone sms:text-xl lgs:text-2xl mds:text-3xl text-primary  text-start'>
-                          More Reviews of : 
+                      <div className='flex flex-col w-auto h-auto items-center justify-center p-10'>
+                        <h2 className='flex flex-col overflow-hidden font-russoone sms:text-xl lgs:text-2xl mds:text-3xl text-primary  text-start'>
+                          More Reviews of{''}<div className='bg-primary h-[0.15rem] w-auto lgs:mt-2' data-aos=''fade-right/>
                         </h2>
                         <h2 className='font-russoone sms:text-4xl text-5xl text-baseprimary text-start'>
                           {review.brand} 
@@ -433,24 +393,36 @@ const Display_Rev = () => {
                                   ) : (
                                     relatedReviews.length > 0 ? (
                                       relatedReviews.map((reviews) => (
-                                        <div key={reviews._id} onClick={() => handleClickReview(reviews._id)} className='bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer'>
-                                          
-                                      <div className='bg-transparent h-auto w-auto mb-10 rounded-lg overflow-hidden'>    
-                                          {reviews.images && reviews.images.length > 0 && (
-                                            <img src={reviews.images[0]} alt={reviews.title} className="w-full h-[10rem] object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125" />
+                                      <div key={reviews._id} onClick={() => handleClickReview(reviews._id)} className=' bg-primary rounded-lg border-2 lgs:scale-125 cursor-pointer overflow-hidden transition-transform duration-1000 ease-in-out transform hover:scale-105' data-aos='fade-up'>
+                                      <div className='bg-transparent lgs:h-[8rem] w-auto mb-2 rounded-lg overflow-hidden'>
+                     
+                                         {reviews.images.length > 0 && (
+                                              <img
+                                              src={reviews.images[1]}
+                                              alt={reviews.title}
+                                              className="w-full lgs:h-[8rem] object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
+                 />
                                           )}
-                                     </div>     
-                                       
-                                          <div className='text-secondary  lgs:w-[50vw] lgs:text-sm mds:text-md font-russoone  pl-5'>
-                                            {reviews.category}
-                                          </div>
-                                          <h2 className='text-baseextra4 font-semibold mds:text-xl lgs:text-2xl font-kanit  pl-5'>
-                                            {reviews.brand}
-                                          </h2>
-                                          <h3 className='text-baseextra4 font-semibold lgs:text-lg  mds:text-2xl font-kanit mb-2 pl-5'>
-                                            {reviews.title}
-                                          </h3>
-                                        </div>
+                 
+                 
+                 
+                                       </div>
+                 
+                                       <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm font-ibmplexsans sms:pl-4 pl-5'>
+                                        {reviews.category}
+                                       </div>
+                                       <div className='flex lgs:w-[6rem] h-auto lgs:pl-5 overflow-hidden mt-1'>
+                                         <div className='bg-baseprimary w-[5rem] h-[0.15rem] rounded-full' data-aos='fade-left'/>
+                                       </div>
+                                       <h2 className=' text-baseextra4 font-semibold lgs:text-3xl mds:text-2xl font-kanit  sms:pl-4 pl-5'>
+                                        {reviews.brand}
+                                     </h2>
+                                     <h3 className=' text-baseextra4 lg:text-md mds:text-xl  mds:mb-10 font-kanit lgs:mb-5 sms:pl-4 pl-5' style={{
+                                       fontWeight:'300'
+                                     }}>
+                                        {reviews.title}
+                                     </h3>
+                                      </div>
                                       ))
                                     ) : (
                                       <p className=''>No related reviews found.</p>
