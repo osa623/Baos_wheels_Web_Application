@@ -201,7 +201,7 @@ const Reviewsection = () => {
                 <Note className='sms:h-auto sms:w-auto text-2xl' data-aos='zoom-out'>Explore by Brand Names</Note>
               </div>
               <div className='flex lgs:w-[75vw] lgs:h-auto sms:w-[90vw] sms:h-auto items-center justify-center sms:p-2 '>
-              <div className='grid lgs:grid-cols-5 mds:grid-cols-5 sms:h-auto overflow-hidden  lgs:gap-10 sms:gap-x-10 sms:pt-4 mds:gap-5 sms:gap-5 cursor-pointer justify-center sms:p-5 mds:p-5 lgs:p-3 '>
+              <div className='grid lgs:grid-cols-5 mds:grid-cols-5 sms:grid-cols-3 sms:h-auto overflow-hidden  lgs:gap-10  sms:pt-4 mds:gap-5 sms:gap-5 cursor-pointer justify-center mds:p-5 lgs:p-3 '>
                 {Autobrands.slice(0,10).map((brandItem, index) => (
                   <BrandCard key={index} data-aos='fade-up'>
 
