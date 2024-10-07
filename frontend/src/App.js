@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 // Navbar and Footer components
 
@@ -40,16 +40,14 @@ const AppContent = () => {
       <Navbar />
       <div className="flex-grow">
         {isLoading ? (
-
-         <Loading/>
-
+          <Loading />
         ) : (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/reviews/:id" element={<DisplayRev />} />
-            <Route path = "/reviews/brand/:brandname" element={<Brands/>}/>
-            <Route path = "/reviews/bodystyle/:category" element={<BodyStyle/>}/>
+            <Route path="/reviews/brand/:brandname" element={<Brands />} />
+            <Route path="/reviews/bodystyle/:category" element={<BodyStyle />} />
             <Route path="/articles" element={<Articlesec />} />
             <Route path="/articles/:id" element={<DisplayArc />} />
             <Route path="/sample" element={<Sample />} />
@@ -63,9 +61,9 @@ const AppContent = () => {
 };
 
 const App = () => (
-  <BrowserRouter>
+  <HashRouter>
     <AppContent />
-  </BrowserRouter>
+  </HashRouter>
 );
 
 export default App;
