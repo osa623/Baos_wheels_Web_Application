@@ -26,7 +26,7 @@
     "static/media/audi.png": "../static/media/audi.1af740f5c655612bb5e7.png",
     "static/media/range_rover.png": "../static/media/range_rover.ff17cae6ad1691d05b6e.png",
     "static/media/toyota.png": "../static/media/toyota.545cb9b1631bac053c99.png",
-    "static/media/baoswheelslogo.png": "../static/media/baoswheelslogo.aee94016a535217aeca3.png",
+    "static/media/baoswheelslogo.png": "./static/media/baoswheelslogo.aee94016a535217aeca3.png",
     "static/media/tesla.png": "../static/media/tesla.e158d5938dcd705cbfe5.png",
     "static/media/mitsubhishi.png": "../static/media/mitsubhishi.2ce990001ca34cecf027.png",
     "index.html": "./index.html",
