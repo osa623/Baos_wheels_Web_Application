@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "../static/css/main.db571f97.css",
-    "main.js": "../static/js/main.bf4851cc.js",
+    "main.css": "./static/css/main.db571f97.css",
+    "main.js": "./static/js/main.bf4851cc.js",
     "static/js/453.8ab44547.chunk.js": "../static/js/453.8ab44547.chunk.js",
     "static/media/bgvideo.mp4": "../static/media/bgvideo.3f605177dbaac2b6ba14.mp4",
     "static/media/HeroWallpaper.png": "../static/media/HeroWallpaper.710433221a941c82caba.png",
