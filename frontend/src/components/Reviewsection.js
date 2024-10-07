@@ -209,12 +209,12 @@ const Reviewsection = () => {
                       src={brandItem.logo} 
                       alt={brandItem.name} 
                       onClick={()=> handleBrandClick(brandItem.name)}
-                      className="w-20 h-20" style={{
+                      className="w-12 h-12" style={{
                         objectFit:'contain'
                       }} 
                     />
 
-                    <span className="text-sm pt-2 font-poppins">{brandItem.name}</span>
+                    <span className="text-sm sms:text-xs pt-2 font-poppins">{brandItem.name}</span>
                   </BrandCard>
                 ))}
               </div>
