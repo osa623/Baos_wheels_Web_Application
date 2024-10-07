@@ -29,7 +29,7 @@
     "static/media/baoswheelslogo.png": "../static/media/baoswheelslogo.aee94016a535217aeca3.png",
     "static/media/tesla.png": "../static/media/tesla.e158d5938dcd705cbfe5.png",
     "static/media/mitsubhishi.png": "../static/media/mitsubhishi.2ce990001ca34cecf027.png",
-    "index.html": "../index.html",
+    "index.html": "./index.html",
     "main.db571f97.css.map": "../static/css/main.db571f97.css.map",
     "main.bf4851cc.js.map": "../static/js/main.bf4851cc.js.map",
     "453.8ab44547.chunk.js.map": "../static/js/453.8ab44547.chunk.js.map"
