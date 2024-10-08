@@ -128,7 +128,7 @@ const Reviewsection = () => {
       <Wrapper>
         <div className='flex flex-col h-auto w-full items-center justify-center  overflow-hidden sms:space-y-2 lgs:space-y-5 lgs:mt-2'>
           <div className='flex flex-col w-auto mds:mt-10 sms:mt-10 items-center justify-center'>
-            <h2 className='flex flex-col lgs:text-7xl mds:text-6xl sms:text-7xl font-russoone text-baseextra4 overflow-hidden' data-aos='fade-right'>Reviews
+            <h2 className='flex flex-col lgs:text-7xl mds:text-6xl sms:text-5xl font-russoone text-baseextra4 overflow-hidden' data-aos='fade-right'>Reviews
               {''}<div className='flex  h-[0.15rem] bg-secondary' data-aos="fade-left"/>
             </h2>
             </div>  
@@ -178,18 +178,20 @@ const Reviewsection = () => {
         </Marquee>
 
         {/* screen adjustments for 640px screens */}
-        <div className='hidden sms:flex flex-col w-full h-auto items-center justify-center p-5 pb-20' data-aos='fade-up' data-aos-delay='20'>
-              <div className='grid grid-flow-row grid-cols-3 gap-4'>
+        <div className='hidden sms:flex flex-col w-full h-auto items-center justify-center pb-10' data-aos='fade-up' data-aos-delay='20'>
+              <div className='grid grid-flow-row grid-cols-2 gap-4'>
                 {row1.map((el, index) => (
                       
-                        <div className='flex flex-col border-2 p-3 rounded-lg items-center cursor-pointer' key={index}>
+                        <div className='flex flex-col h-[8rem] w-[10rem] p-3 rounded-lg items-center cursor-pointer' style={{
+                          boxShadow:'inset 0 4px 5px rgba(0,0,0,0.2)'
+                        }} key={index}>
                           <img src={el.src}
                                 alt={el.url}
-                                className='w-20 h-20' style={{
+                                className='w-40 h-20' style={{
                                   objectFit:'contain'
                                 }}/>
 
-                                <span className='text-sm font-russoone text-secondary text-center'>{el.name}</span>
+                                <span className='text-sm font-ibmplexsans text-secondary text-center' style={{fontWeight:'300'}}>{el.name}</span>
                         </div>
 
                 ))}
@@ -201,7 +203,7 @@ const Reviewsection = () => {
                 <Note className='sms:h-auto sms:w-auto text-2xl' data-aos='zoom-out'>Explore by Brand Names</Note>
               </div>
               <div className='flex lgs:w-[75vw] lgs:h-auto sms:w-[90vw] sms:h-auto items-center justify-center sms:p-2 '>
-              <div className='grid lgs:grid-cols-5 mds:grid-cols-5 sms:grid-cols-3 sms:h-auto overflow-hidden  lgs:gap-10  sms:pt-4 mds:gap-5 sms:gap-5 cursor-pointer justify-center mds:p-5 lgs:p-3 '>
+              <div className='grid lgs:grid-cols-5 mds:grid-cols-5 sms:grid-cols-2 sms:h-auto overflow-hidden  lgs:gap-10  sms:pt-4 mds:gap-5 sms:gap-5 cursor-pointer justify-center mds:p-5 lgs:p-3 '>
                 {Autobrands.slice(0,10).map((brandItem, index) => (
                   <BrandCard key={index} data-aos='fade-up'>
 
@@ -214,7 +216,9 @@ const Reviewsection = () => {
                       }} 
                     />
 
-                    <span className="text-sm sms:text-xs pt-2 font-poppins">{brandItem.name}</span>
+                    <span className="text-sm sms:text-xs pt-2 font-ibmplexsans" style={{
+                      fontWeight:'300'
+                    }}>{brandItem.name}</span>
                   </BrandCard>
                 ))}
               </div>
@@ -474,7 +478,7 @@ const BrandCard = styled.div`
   }
       @media (max-width: 640px) {
       
-    width: 110px;
+    width: 140px;
     padding: 10px;
     font-size: 14px;
     

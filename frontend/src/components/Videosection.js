@@ -46,7 +46,7 @@ const Videosection = () => {
 
     <div className='flex flex-col h-auto items-center justify-center pt-20 sms:pt-10 mds:p-10'>
       <h2 className='flex flex-col lgs:text-6xl sms:text-5xl mds:text-7xl mds:w-[75vw] text-center overflow-hidden sms:text-center font-extrabold font-russoone text-primary cursor-default hover:text-baseprimary transition duration-2000 ease-in-out p-2' data-aos='zoom-out'>{''}
-      High-Octane Showdowns{''}<div className='bg-baseprimary mt-2 will-change-auto h-[0.15rem]' data-aos='fade-right' data-aos-delay='400'/></h2>
+      Rev Reels{''}<div className='bg-baseprimary mt-2 will-change-auto h-[0.15rem]' data-aos='fade-right' data-aos-delay='400'/></h2>
     
       <div class="sms:flex sms:flex-col sms:w-[90vw] lg:w-[60vw] mx-auto sms:p-4  lg:pt-5 space-x-2 items-center justify-start text-center " data-aos="zoom-in">
               <p class="text-primary lgs:text-lg h-auto sms:text-md sms:w-[75vw] font-ibmplexsans lg:pt-3 sms:pt-2 sms:text-center" style={{
@@ -60,11 +60,82 @@ const Videosection = () => {
     </div>
 
     {/*mobile responsive configs for this section */}
+    <div className='hidden sms:flex flex-col items-center justify-center  h-auto w-auto pt-5 ' data-aos='zoom-in'>
+
+        
+
+     
+      <div className='flex flex-col w-auto h-auto items-center justify-center bg-transparent m-2  hover:scale-110 transition duration-1000 ease-in-out' style={{
+           borderRadius: '20px',
+           overflow:'hidden'
+      }}>
+        <img src={supra_img} alt="supta" style={{
+          width:'90%',
+          height: 'auto',
+          objectFit: 'Fill',
+          borderRadius: 'inherit'
+        }}/>
+
+      </div>
+
+      <div className='flex flex-col w-auto h-auto items-center justify-center bg-transparent m-2  hover:scale-110 transition duration-1000 ease-in-out' style={{
+           borderRadius: '20px',
+           overflow:'hidden'
+      }}>
+        <img src={gtr_img} alt="supta" style={{
+          width:'90%',
+          height: 'auto',
+          objectFit: 'Fill',
+          borderRadius: 'inherit'
+        }}/>
+
+      </div>
+      <div className='flex flex-col w-auto h-auto items-center justify-center bg-transparent m-2  hover:scale-110 transition duration-1000 ease-in-out' style={{
+           borderRadius: '20px',
+           overflow:'hidden'
+      }}>
+        <img src={panda_img} alt="supta" style={{
+          width:'90%',
+          height: 'auto',
+          objectFit: 'Fill',
+          borderRadius: 'inherit'
+        }}/>
+
+      </div>
+      <div className='flex flex-col w-auto h-auto items-center justify-center bg-transparent m-2  hover:scale-110 transition duration-1000 ease-in-out' style={{
+           borderRadius: '20px',
+           overflow:'hidden'
+      }}>
+        <img src={yaris_img} alt="supta" style={{
+          width:'90%',
+          height: 'auto',
+          objectFit: 'Fill',
+          borderRadius: 'inherit'
+        }}/>
+
+      </div>
+
+      <div className='flex flex-col w-auto h-auto items-center justify-center bg-transparent m-2  hover:scale-110 transition duration-1000 ease-in-out' style={{
+           borderRadius: '20px',
+           overflow:'hidden'
+      }}>
+        <img src={charger_img} alt="supta" style={{
+          width:'90%',
+          height: 'auto',
+          objectFit: 'Fill',
+          borderRadius: 'inherit'
+        }}/>
+
+      </div>
+
+
+      </div> 
+    
 
 
 
-
-    <div className='hidden mds:flex lgs:flex  flex-col items-center justify-center  h-auto w-auto pt-5 ' data-aos='zoom-in'>
+    {/*larger responsive configs for this section */}
+      <div className='hidden mds:flex lgs:flex  flex-col items-center justify-center  h-auto w-auto pt-5 ' data-aos='zoom-in'>
       <Marquee style={{
         width:'95%',
         height:'50%',
@@ -151,13 +222,13 @@ const Videosection = () => {
 
   {/* max-screen size - 640 : screen configs */}
 
-  <div className='sm:hidden flex flex-col w-full items-center justify-center'>
+  <div className='sm:hidden flex flex-col w-full items-center justify-center sms:mt-5'>
 
   <div className='absolute w-full bottom-0 h-[20vh] bg-gradient-to-t from-baseprimary to-transparent'/>
 
   <div className='flex flex-col w-full h-auto items-center justify-start p-4 space-y-5 z-30'>
-                <h2 className='text-5xl font-russoone  text-primary mb-4 text-center' data-aos='zoom-out'>
-                  Our Tiktok Gallery
+                <h2 className='flex flex-col text-5xl font-russoone  text-primary mb-4 text-center overflow-hidden' data-aos='zoom-out'>
+                  Tiktok Reels{''}<div className='bg-baseprimary h-[0.15rem] will-change-auto' data-aos='fade-right' data-aos-delay='700'/>
                 </h2>
                 <p className='text-md text-center w-[75vw] text-primary font-ibmplexsans' data-aos='fade-up' fade-aos-delay='20'>
                {''}Baos Wheels brings you engaging auto mechanical videos on TikTok. We offer in-depth mechanical explanations, detailed car reviews, insights into the latest inventions, and record-breaking information in the auto industry. Stay informed and entertained with the newest trends and developments in the world of automobiles.

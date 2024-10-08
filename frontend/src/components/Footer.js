@@ -67,9 +67,9 @@ const Footer = () => {
 
       {/* Copyright */}
 
-      <div className="flex lgs:w-[100vw] bg-transparent justify-between text-center py-4">
+      <div className="flex lgs:w-[100vw] sms:w-[100vw] bg-transparent justify-between sms:justify-center sms:items-center text-center py-4">
 
-        <div className='flex lgs:w-[20vw] bg-transparent items-center justify-center'>
+        <div className='hidden lgs:flex lgs:w-[20vw] bg-transparent items-center justify-center'>
           <h2 className="text-primary font-ibmplexsans text-sm">Privacy Policy</h2>
         </div>
 
@@ -78,7 +78,7 @@ const Footer = () => {
           <h2 className="text-primary font-ibmplexsans text-xs">Design By {''}<span className='text-cyan-500'><a href='https://github.com/osa623'>Osa_6twent3</a></span></h2>
         </div>
 
-        <div className='flex lgs:w-[20vw] bg-transparent items-center justify-center'>
+        <div className='hidden lgs:flex lgs:w-[20vw] bg-transparent items-center justify-center'>
           <h2 className="text-primary font-ibmplexsans text-sm">Terms and Condtions</h2>
         </div>
 
