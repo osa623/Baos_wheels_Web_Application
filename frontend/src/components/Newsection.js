@@ -51,7 +51,7 @@ const Newsection = () => {
   return (
     <div className='relative h-auto w-auto bg-primary'>
       <div className=' flex flex-col items-center justify-center w-full lgs:h-[20vh] lgs:mb-5 sms:h-[20vh]  bg-primary mds:top-[10vh]  sms:space-y-2 mds:p-6 mds:space-y-1 lgs:space-y-1' data-aos='fade-left'>
-        <h2 className='flex flex-col lgs:text-7xl text-baseextra4 mds:text-6xl sms:text-5xl text-center font-russoone overflow-hidden'>Auto Insights
+        <h2 className='flex flex-col lgs:text-7xl text-baseextra4 mds:text-6xl sms:text-5xl w-auto font-extrabold p-1 text-center font-russoone overflow-hidden'>Auto Insights
           {''}<div className='flex bg-secondary will-change-auto h-[0.15rem] mt-1' data-aos="fade-left"/>
         </h2>
       </div>
@@ -65,7 +65,7 @@ const Newsection = () => {
           </p>
         </div>
       </div>
-      <div className='grid lgs:grid-cols-4 sms:grid-cols-1 lgs:gap-4 lgs:p-10 lgs:mt-[5vh] mds:grid-cols-2 mds:gap-3 p-10'>
+      <div className='grid lgs:grid-cols-4 sms:grid-cols-2 lgs:gap-4 lgs:p-10 lgs:mt-[5vh] mds:grid-cols-2 mds:gap-3 p-10'>
         {Articles.slice(0,4).map((article) => (
           <div key={article.id} onClick={(() => handleViewArticle(article._id))} className='hidden mds:flex lgs:flex flex-col lgs:h-[20rem] mds:h-[16rem] items-center border-2 border-gray-200 cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-2xl p-0' data-aos='fade-right'>
             <div className='bg-gray-700 lgs:h-[12rem] mds:h-[10rem] w-auto rounded-xl overflow-hidden'>
@@ -86,12 +86,17 @@ const Newsection = () => {
         ))}
 
         {Articles.map((article) => (
-          <div key={article.id} onClick={(() => handleViewArticle(article._id))} className='hidden sms:flex h-auto items-center border-2 cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-xl p-0' data-aos='fade-right'>
-            <div className='bg-primary w-auto rounded-xl border-4 overflow-hidden p-5'>
-              <img src={article.images[0]} alt={article.title} className='rounded-xl  transition-transform duration-300 ease-in-out hover:scale-110'/>
+          <div key={article.id} onClick={(() => handleViewArticle(article._id))} className='hidden sms:flex flex-col overflow-hidden h-[10rem] items-center cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-xl p-0' data-aos='fade-right'>
+            <div className='bg-primary w-auto  overflow-hidden'>
+              <img src={article.images[1]} alt={article.title} className='rounded-xl scale-125  transition-transform duration-300 ease-in-out hover:scale-110'/>
             </div>
-            <div className='flex h-auto lgs:w-auto mb-2rounded-b-x bg-primary p-2'>
-            <h3 className='text-baseextra4 text-start p-2 font-ibmplexsans sms:text-xl'>{article.title}</h3>
+
+
+            <div className='flex flex-col justify-start w-full items-start h-auto'>
+                <h3 className='flex flex-col text-baseextra4 sms:pl-1 sms:pt-1 overflow-hidden text-start w-auto font-ibmplexsans ' style={{fontSize:'0.6rem'}}>{article.category}
+                  <div className='bg-baseprimary h-[0.10rem] will-change-auto'/>
+                </h3>
+                <h3 className='text-baseextra4 sms:pl-1 text-start w-full font-ibmplexsans  'style={{fontSize:'0.78rem' ,fontWeight:'500'}}>{article.title}</h3>
             </div>
           </div>
         ))}

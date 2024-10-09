@@ -128,7 +128,7 @@ const Reviewsection = () => {
       <Wrapper>
         <div className='flex flex-col h-auto w-full items-center justify-center  overflow-hidden sms:space-y-2 lgs:space-y-5 lgs:mt-2'>
           <div className='flex flex-col w-auto mds:mt-10 sms:mt-10 items-center justify-center'>
-            <h2 className='flex flex-col lgs:text-7xl mds:text-6xl sms:text-5xl font-russoone text-baseextra4 overflow-hidden' data-aos='fade-right'>Reviews
+            <h2 className='flex flex-col lgs:text-7xl mds:text-6xl sms:text-5xl font-russoone font-extrabold text-baseextra4 overflow-hidden' data-aos='fade-right'>Reviews
               {''}<div className='flex  h-[0.15rem] bg-secondary' data-aos="fade-left"/>
             </h2>
             </div>  
@@ -203,7 +203,7 @@ const Reviewsection = () => {
                 <Note className='sms:h-auto sms:w-auto text-2xl' data-aos='zoom-out'>Explore by Brand Names</Note>
               </div>
               <div className='flex lgs:w-[75vw] lgs:h-auto sms:w-[90vw] sms:h-auto items-center justify-center sms:p-2 '>
-              <div className='grid lgs:grid-cols-5 mds:grid-cols-5 sms:grid-cols-2 sms:h-auto overflow-hidden  lgs:gap-10  sms:pt-4 mds:gap-5 sms:gap-5 cursor-pointer justify-center mds:p-5 lgs:p-3 '>
+              <div className='grid lgs:grid-cols-5 mds:grid-cols-5 sms:grid-cols-2 sms:h-auto overflow-hidden lgs:scale-110  lgs:gap-10  sms:pt-4 mds:gap-5 sms:gap-5 cursor-pointer justify-center mds:p-5 lgs:p-3 '>
                 {Autobrands.slice(0,10).map((brandItem, index) => (
                   <BrandCard key={index} data-aos='fade-up'>
 
@@ -216,7 +216,7 @@ const Reviewsection = () => {
                       }} 
                     />
 
-                    <span className="text-sm sms:text-xs pt-2 font-ibmplexsans" style={{
+                    <span className="flex flex-col text-sm sms:text-xs pt-2 font-ibmplexsans" style={{
                       fontWeight:'300'
                     }}>{brandItem.name}</span>
                   </BrandCard>
@@ -312,13 +312,13 @@ const Reviewsection = () => {
                   
                                         </div>
                                      <div className='flex flex-col w-60 h-auto items-start justify-center p-2'>                          
-                                              <div className='text-secondary text-md font-russoone  pl-5'>
-                                              {reviews.category}
+                                              <div className='flex flex-col text-secondary text-md font-russoone overflow-hidden ml-5'>
+                                              {reviews.category}<div className='bg-baseprimary w-auto h-[0.1rem]' data-aos='fade-right'/>
                                               </div>
-                                              <h2 className=' text-baseextra4 text-xl font-semibold  font-ibmplexsans  pl-5'>
+                                              <h2 className=' text-baseextra4 text-xl font-semibold  font-ibmplexsans  ml-5'>
                                               {reviews.brand}
                                             </h2>
-                                            <h3 className=' text-baseextra4 text-md mds:text-xl  font-kanit pl-5'>
+                                            <h3 className=' text-baseextra4 text-md mds:text-xl  font-kanit ml-5'>
                                               {reviews.title}
                                             </h3>
                                      </div>              

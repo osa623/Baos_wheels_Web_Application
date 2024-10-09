@@ -66,7 +66,9 @@ const NewHeroSection = () => {
                         whileInView={{marginTop:'5px', opacity:'1'}}
                         transition={{duration:'2.0',ease:'easeInOut', delay:'0.4'}}
                         className='flex h-[12vh] w-full items-center justify-center'>
-                          <p className='flex text-center text-primary font-semibold font-ibmplexsans text-sm w-[80vw] opacity-50'>
+                          <p className='flex text-center text-primary font-ibmplexsans text-sm w-[80vw] opacity-50' style={{
+                            fontWeight:'300'
+                          }}>
                           Baos Wheels is your go-to hub for car reviews, insightful articles, and the latest trends in the automotive world. Discover, explore, and fuel your passion for all things on wheels!
                           </p>
                         </motion.div>

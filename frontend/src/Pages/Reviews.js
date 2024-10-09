@@ -119,7 +119,7 @@ const fetchReviews = async () => {
           
         </div>
 
-        <p className='lgs:w-[60vw] w-[80vw] h-auto text-wrap  sms:text-md text-lg font-ibmplexsans text-secondary text-center mds:pt-5 sms:m-4 m-2 lgs:p-5' data-aos='zoom-in'
+        <p className='lgs:w-[60vw] w-[80vw] h-auto text-wrap  sms:text-md mds:text-lg lgs:text-lg font-ibmplexsans text-secondary text-center mds:pt-5 sms:m-4 m-2 lgs:p-5' data-aos='zoom-in'
         style={{fontWeight:'300'}}>
           {''}Explore the world of automobiles with Baos Wheels' comprehensive Review Section. Our mission is to provide you with detailed, impartial, and insightful evaluations of the latest and most sought-after vehicles on the market. We delve deep into every aspect of each car, from performance and features to comfort and reliability, ensuring you have all the information you need to make an informed decision.
         </p>
@@ -130,9 +130,9 @@ const fetchReviews = async () => {
           <h2 className='text-2xl mds:text-3xl font-russoone text-baseextra4 m-2' data-aos='zoom-in'>Explore by Brand Names</h2>
 
           <div className='flex w-full h-auto items-center justify-center p-5'>
-            <div className='grid lgs:grid-cols-4 gap-3 sms:gap-2 lgs:w-auto mds:w-[95vw] h-auto cursor-pointer justify-center items-center mds:p-5'>
+            <div className='grid lgs:grid-cols-4 sms:grid-cols-2 gap-3 sms:gap-2 lgs:w-auto mds:w-[95vw] h-auto cursor-pointer justify-center items-center mds:p-5'>
               {Autobrands.slice(0,9).map((brand, index) => (
-                <div key={index} onClick={()=> {handleBrandClick(brand.name)}} className='flex flex-col  w-[16rem] sms:w-[30vw] mds:w-[25vw] items-center h-auto drop-shadow-lg justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:drop-shadow-md  transition-transform' data-aos='flip-up'>
+                <div key={index} onClick={()=> {handleBrandClick(brand.name)}} className='flex flex-col  w-[16rem] sms:h-[10rem] sms:w-auto mds:w-[25vw] items-center h-auto drop-shadow-lg justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:drop-shadow-md  transition-transform' data-aos='flip-up'>
                   <img
                     src={brand.logo}
                     alt={brand.name}
@@ -159,13 +159,13 @@ const fetchReviews = async () => {
 
           <h2 className='text-2xl mds:text-3xl font-russoone text-baseextra4 m-6' data-aos='zoom-out'>Explore by Body Styles</h2>
 
-          <div className='grid lgs:grid-cols-4 w-[90vw] h-auto gap-4 justify-center items-center cursor-pointer mds:p-10 sms:p-10'>
+          <div className='grid lgs:grid-cols-4 sms:grid-cols-2 w-[90vw] h-auto gap-4 justify-center items-center cursor-pointer mds:p-10 sms:p-10'>
             {bodystyle.map((bstyle, index) => (
-              <div key={index} onClick={()=> handleStyleClick(bstyle.name)} className='flex flex-col  w-[20vw] sms:w-[30vw] mds:w-[25vw] items-center lgs:h-[12rem] drop-shadow-lg justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:drop-shadow-md transition-transform' data-aos='flip-right'>
+              <div key={index} onClick={()=> handleStyleClick(bstyle.name)} className='flex flex-col  w-[20vw] sms:h-[8rem] sms:w-auto mds:w-[25vw] items-center lgs:h-[12rem] drop-shadow-lg justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:drop-shadow-md transition-transform' data-aos='flip-right'>
                 <img
                   src={bstyle.src}
                   alt={bstyle.name}
-                  className="sms:w-20 sms:h-20 w-20 h-20 lgs:w-52 lgs:h-auto lgs:hover:scale-125 transform transition-transform duration-300 ease-in-out p-1"
+                  className="sms:w-20 sms:h-20 sms:scale-125 w-20 h-20 lgs:w-52 lgs:h-auto lgs:hover:scale-125 transform transition-transform duration-300 ease-in-out p-1"
                   style={{ objectFit: 'contain' }}
                 />
                     <span className="flex flex-col text-sm sms:text-md mds:text-sm lgs:text-lg pt-2 font-ibmplexsans text-center group">
@@ -191,7 +191,7 @@ const fetchReviews = async () => {
 
 
 
-      <div className='flex flex-col w-auto h-auto lgs:p-10'>
+      <div className='flex flex-col w-auto h-auto lgs:p-10 sms:pt-5'>
        <div className='border-2 rounded-t-xl border-secondary bg-secondary'>
 
         <div className='flex w-full h-auto justify-center items-center lgs:pt-8'>
