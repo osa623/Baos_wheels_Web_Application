@@ -77,53 +77,75 @@ const About = () => {
     {/* About section title segment*/}
         <div className='flex sms:h-[10vh] mds:h-[10vh] lgs:h-[20vh] w-full items-center justify-center' />
         <div className='flex flex-col sms:h-[10vh] mds:h-auto w-full items-center justify-center mds:pt-10 lgs:p-5'>
-          <div className='flex sms:w-[60vw] mds:w-[30vw] lgs:w-[30vw] h-0.5 bg-secondary' data-aos='fade-right' />
-          <h2 className='flex mds:text-7xl sms:text-6xl lgs:text-7xl  font-russoone text-baseextra4' data-aos='flip-up'>About Us</h2>
-          <div className='flex sms:w-[60vw] mds:w-[30vw] lgs:w-[30vw] h-0.5 bg-secondary' data-aos='fade-left' />
+            <h2 className='flex flex-col mds:text-7xl sms:text-6xl overflow-hidden lgs:text-7xl  font-russoone text-baseextra4' data-aos='flip-up'>About Us
+              {''}<div className='bg-secondary w-autp h-[0.15rem]' data-aos='fade-right' data-aos-delay='400'/>
+            </h2>
         </div>
 
         {/* content*/}
 
-          <div className='flex flex-col h-auto w-auto justify-center items-center sms:space-y-5 lgs:space-y-4 sms:pb-10 sms:pt-10 mds:pt-10 lgs:pt-5 mds:space-y-5'>
-               <h2 className='font-russoone text-3xl text-center text-baseextra4' data-aos='fade-right' data-aos-delay='200'>Driven by Passion</h2>
-               <p className='h-auto sms:w-[80vw] mds:w-[75vw] lgs:w-[70vw] text-center font-kanit lgs:text-lg sms:text-md text-secondary'  data-aos='fade-right' data-aos-delay='400'>{''}<FontAwesomeIcon icon={faQuoteLeft} className='my-1'/>{' '}<span className='text-xl text-baseprimary'>Baos Wheels</span> isn't just a platform—it's a journey fueled by a deep love for automobiles. Our passion drives us to create content that resonates with enthusiasts and curious minds alike. We showcase the latest models and tell the stories behind the machines, innovations, and people shaping the automotive world{' '}<FontAwesomeIcon icon={faQuoteRight} className='my-1'/>{' '}</p>
+          <div className='flex flex-col h-auto w-auto justify-center items-center sms:space-y-5 lgs:space-y-4 sms:pb-10 sms:pt-10 mds:pt-15 lgs:pt-12 mds:pt-12 mds:space-y-5'>
+               <h2 className='flex flex-col font-russoone text-3xl text-center overflow-hidden text-baseextra4' data-aos='fade-right' data-aos-delay='200'>Driven by Passion
+                {''}<div className='bg-baseprimary h-[0.15rem] w-auto' data-aos='fade-left' data-aos-delay='450'/>
+               </h2>
+               <p className='h-auto sms:w-[80vw] mds:w-[75vw] lgs:w-[60vw] text-center font-ibmplexsans lgs:text-lg sms:text-md text-secondary' style={{fontWeight:'400'}}  data-aos='fade-right' data-aos-delay='400'>{''}<FontAwesomeIcon icon={faQuoteLeft} className='my-1'/>{' '}<span className='text-xl text-baseprimary'>Baos Wheels</span> isn't just a platform—it's a journey fueled by a deep love for automobiles. Our passion drives us to create content that resonates with enthusiasts and curious minds alike. We showcase the latest models and tell the stories behind the machines, innovations, and people shaping the automotive world{' '}<FontAwesomeIcon icon={faQuoteRight} className='my-1'/>{' '}</p>
           </div>
 
 
           <div className='flex flex-col h-auto w-auto justify-center items-center sms:space-y-5 sms:pb-20 mds:p-10 lgs:pt-20 lgs:space-y-4 mds:space-y-5'>
-               <h2 className='font-russoone text-3xl text-center text-baseextra4' data-aos='fade-left' data-aos-delay='200'>Meet the Gearheads</h2>
-               <p className='h-auto sms:w-[80vw] mds:w-[75vw] lgs:w-[50vw] text-center font-kanit sms:text-md lgs:text-lg text-secondary'  data-aos='fade-left' data-aos-delay='400'>{''}<FontAwesomeIcon icon={faQuoteLeft} className='my-1'/> Our team of car enthusiasts and experts brings diverse perspectives, from classic muscle cars to the latest electric vehicles, providing insights and explanations that make complex concepts accessible.{' '}<FontAwesomeIcon icon={faQuoteRight} className='my-1'/>{' '}</p>
+               <h2 className='flex flex-col font-russoone text-3xl text-center overflow-hidden text-baseextra4' data-aos='fade-left' data-aos-delay='200'>Meet the Gearheads
+                {''}<div className='bg-baseprimary h-[0.15rem] w-auto' data-aos='fade-right' data-aos-delay='500'/>
+               </h2>
+               <p className='h-auto sms:w-[80vw] mds:w-[75vw] lgs:w-[50vw] text-center font-ibmplexsans sms:text-md lgs:text-lg text-secondary' style={{fontWeight:'400'}}  data-aos='fade-left' data-aos-delay='400'>{''}<FontAwesomeIcon icon={faQuoteLeft} className='my-1'/> Our team of car enthusiasts and experts brings diverse perspectives, from classic muscle cars to the latest electric vehicles, providing insights and explanations that make complex concepts accessible.{' '}<FontAwesomeIcon icon={faQuoteRight} className='my-1'/>{' '}</p>
           </div>
 
 
           
           <div className='flex flex-col h-auto w-auto justify-center items-center sms:space-y-5 sms:pb-10 lgs:space-y-5 mds:pt-10 lgs:pt-20 mds:space-y-5'>
-               <h2 className='font-russoone text-3xl text-center text-baseextra4'  data-aos='zoom-in' data-aos-delay='300'>What We Bring</h2>
-               <p className='h-auto sms:w-[80vw] text-center font-kanit sms:text-md lgs:text-lg text-secondary'  data-aos='zoom-in' data-aos-delay='500'>{''}<FontAwesomeIcon icon={faQuoteLeft} className='my-1'/> At Baos Wheels, we go beyond the surface to bring you,</p>
+               <h2 className='flex flex-col font-russoone text-3xl text-center overflow-hidden text-baseextra4'  data-aos='zoom-in' data-aos-delay='300'>What We Bring
+                {''}<div className='bg-baseprimary h-[0.15rem] w-auto' data-aos='fade-right' data-aos-delay='550'/>
+               </h2>
+               <p className='h-auto sms:w-[80vw] text-center font-ibmplexsans sms:text-md lgs:text-lg text-secondary'  data-aos='zoom-in' data-aos-delay='500'>{''}<FontAwesomeIcon icon={faQuoteLeft} className='my-1'/> At Baos Wheels, we go beyond the surface to bring you,</p>
 
-               <ul
-               className='flex sms:flex-col lgs:grid mds:grid mds:grid-cols-2 lgs:grid-cols-2 mds:gap-10 cursor-default lgs:gap-10 sms:w-[80vw] lgs:w-[75vw] h-auto justify-center font-kanit sms:text-sm text-secondary sms:divide-dashed sms:divide-y-4 sms:p-5 sms:space-y-3'>
-                    <li className='flex flex-col  text-center lgs:rounded-xl lgs:shadow-md lgs:shadow-baseprimary lgs:p-5 mds:rounded-xl mds:shadow-md mds:shadow-baseprimary mds:p-3 '  data-aos='fade-right' data-aos-delay='300'>{''}<span className='sms:text-xl mds:text-xl lgs:text-2xl font-russoone text-baseextra4'>Unfiltered Car Reviews:</span>{''}<span className='mds:text-sm'>Honest, in-depth reviews.</span></li>
-                    <li className='flex flex-col text-center sms:pt-2 lgs:rounded-xl lgs:shadow-lg lgs:p-5 lgs:shadow-baseprimary mds:rounded-xl mds:shadow-md mds:shadow-baseprimary mds:p-3'  data-aos='fade-left' data-aos-delay='400'>{''}<span className='sms:text-xl mds:text-xl lgs:text-2xl font-russoone  text-baseextra4'>Tech Insights:</span>{''}<span className='mds:text-sm'> Deep dives into vehicle mechanics and technology.</span></li>
-                    <li className='flex flex-col text-center  sms:pt-2 lgs:rounded-xl lgs:shadow-lg lgs:p-5 lgs:shadow-baseprimary mds:rounded-xl mds:shadow-md mds:shadow-baseprimary mds:p-3 '  data-aos='fade-right' data-aos-delay='500'>{''}<span className='sms:text-xl mds:text-xl lgs:text-2xl font-russoone  text-baseextra4'>Behind-the-Scenes:</span>{''} <span className='mds:text-sm'>Exclusive industry stories and interviews.</span></li>
-                    <li className='flex flex-col text-center  sms:pt-2 lgs:rounded-xl lgs:shadow-lg lgs:p-5 lgs:shadow-baseprimary mds:rounded-xl mds:shadow-md mds:shadow-baseprimary mds:p-3'  data-aos='fade-left' data-aos-delay='600'>{''}<span className='sms:text-xl mds:text-xl lgs:text-2xl font-russoone  text-baseextra4'>Visual Storytelling:</span>{''} <span className='mds:text-sm'>Engaging videos on YouTube, TikTok, and Instagram.</span></li>
+              <div className='flex h-auto lgs:w-[100vw] mds:w-[100vw]  items-center justify-center overflow-hidden'>
+              <ul
+               className='flex sms:flex-col mds:grid mds:grid-cols-4  lgs:grid-cols-4 lgs:p-2 mds:gap-10 cursor-default lgs:gap-10 sms:w-[80vw] lgs:w-[80vw] h-auto justify-center items-center font-kanit sms:text-sm text-secondary sms:p-5 sms:space-y-8'>
+                    <li className='flex flex-col lgs:w-[15rem] lgs:h-[15rem] mds:w-[10rem] mds:h-[10rem] sms:w-[15rem] justify-evenly items-center  text-center lgs:rounded-xl lgs:shadow-md  lgs:p-5 rounded-xl  p-3 ' style={{
+                      boxShadow:'inset 0 5px 10px rgba(0,0,0,0.4)'
+                    }}  data-aos='zoom-in' data-aos-delay='300'>{''}<span className='sms:text-md mds:text-md lgs:text-2xl font-russoone text-baseextra4'>Unfiltered Car Reviews:</span>{''}<span className='mds:text-sm sms:text-xs font-ibmplexsans lgs:w-[10vw]'>Honest, in-depth reviews.</span></li>
+                    <li className='flex flex-col lgs:w-[15rem] mds:w-[10rem] mds:h-[10rem]  lgs:h-[15rem] sms:w-[15rem] justify-evenly items-center  text-center sms:pt-2 lgs:rounded-xl lgs:shadow-lg lgs:p-5  rounded-xl p-3' style={{
+                      boxShadow:'inset 0 5px 10px rgba(0,0,0,0.4)'
+                    }}  data-aos='zoom-out' data-aos-delay='400'>{''}<span className='sms:text-md mds:text-md lgs:text-2xl font-russoone  text-baseextra4'>Tech Insights:</span>{''}<span className='mds:text-sm sms:text-xs font-ibmplexsans lgs:w-[10vw]'> Deep dives into vehicle mechanics and technology.</span></li>
+                    <li className='flex flex-col lgs:w-[15rem] mds:w-[10rem] mds:h-[10rem]  lgs:h-[15rem] sms:w-[15rem] justify-evenly items-center  text-center  sms:pt-2 lgs:rounded-xl lgs:shadow-lg lgs:p-5  rounded-xl  p-3 ' style={{
+                      boxShadow:'inset 0 5px 10px rgba(0,0,0,0.4)'
+                    }}  data-aos='zoom-in' data-aos-delay='500'>{''}<span className='sms:text-md mds:text-md lgs:text-2xl font-russoone  text-baseextra4'>Behind-the-Scenes:</span>{''} <span className='mds:text-sm sms:text-xs font-ibmplexsans lgs:w-[10vw]'>Exclusive industry stories and interviews.</span></li>
+                    <li className='flex flex-col lgs:w-[15rem] mds:w-[10rem] mds:h-[10rem]  lgs:h-[15rem] sms:w-[15rem] justify-evenly items-center text-center  sms:pt-2 lgs:rounded-xl lgs:shadow-lg lgs:p-5 rounded-xl  p-3' style={{
+                      boxShadow:'inset 0 5px 10px rgba(0,0,0,0.4)'
+                    }}  data-aos='zoom-out' data-aos-delay='600'>{''}<span className='sms:text-md mds:text-md lgs:text-2xl font-russoone  text-baseextra4'>Visual Storytelling:</span>{''} <span className='mds:text-sm sms:text-xs font-ibmplexsans lgs:w-[10vw]'>Engaging videos on YouTube, TikTok, and Instagram.</span></li>
 
                </ul>
+
+              </div>
+
           </div>
 
 
 
           <div className='flex flex-col h-auto w-auto justify-center items-center sms:space-y-5 sms:pb-20 lgs:pt-20 mds:pt-10 lgs:space-y-5 mds:space-y-5'>
-               <h2 className='font-russoone text-3xl text-center text-baseextra4'  data-aos='fade-right' data-aos-delay='300'>Beyond the Screens</h2>
-               <p className='h-auto sms:w-[80vw] mds:w-[70vw] lgs:w-[50vw] text-center font-kanit sms:text-md lgs:text-lg text-secondary'  data-aos='fade-right' data-aos-delay='500'>{''}<FontAwesomeIcon icon={faQuoteLeft} className='my-1'/> Baos Wheels is a community for car enthusiasts, offering a space to learn, share, and connect. Whether you're an expert or a newcomer, there's something here for everyone.{' '}<FontAwesomeIcon icon={faQuoteRight} className='my-1'/>{' '}</p>
+               <h2 className='flex flex-col font-russoone text-3xl overflow-hidden text-center text-baseextra4'  data-aos='fade-right' data-aos-delay='300'>Beyond the Screens
+                {''}<div className='bg-baseprimary h-[0.15rem] w-auto' data-aos='fade-right' data-aos-delay='400'/>
+               </h2>
+               <p className='h-auto sms:w-[80vw] mds:w-[70vw] lgs:w-[50vw] text-center font-ibmplexsans sms:text-md lgs:text-lg text-secondary'  data-aos='fade-right' data-aos-delay='500'>{''}<FontAwesomeIcon icon={faQuoteLeft} className='my-1'/> Baos Wheels is a community for car enthusiasts, offering a space to learn, share, and connect. Whether you're an expert or a newcomer, there's something here for everyone.{' '}<FontAwesomeIcon icon={faQuoteRight} className='my-1'/>{' '}</p>
           </div>
                
 
           <div className='flex flex-col h-auto w-auto justify-center items-center sms:space-y-5 sms:pb-20 lgs:pt-20 lgs:space-y-5 mds:pt-20 mds:space-y-5'>
-               <h2 className='font-russoone text-3xl text-center text-baseextra4'  data-aos='fade-right' data-aos-delay='300'>Join the Ride</h2>
-               <p className='h-auto sms:w-[80vw] mds:w-[70vw] lgs:w-[40vw] text-center font-kanit sms:text-md lgs:text-lg text-secondary'  data-aos='fade-right' data-aos-delay='500'>{''}<FontAwesomeIcon icon={faQuoteLeft} className='my-1'/>Join our automotive journey! Subscribe to our YouTube channel, follow us on TikTok and Instagram, and connect with a community that shares a passion for cars..{' '}<FontAwesomeIcon icon={faQuoteRight} className='my-1'/>{' '}</p>
+               <h2 className='flex flex-col font-russoone text-3xl overflow-hidden text-center text-baseextra4'  data-aos='fade-right' data-aos-delay='300'>Join the Ride
+                {''}<div className='bg-baseprimary h-[0.15rem] w-auto' data-aos='fade-right' data-aos-delay='400'/>
+               </h2>
+               <p className='h-auto sms:w-[80vw] mds:w-[70vw] lgs:w-[40vw] text-center font-ibmplexsans sms:text-md lgs:text-lg text-secondary'  data-aos='fade-right' data-aos-delay='500'>{''}<FontAwesomeIcon icon={faQuoteLeft} className='my-1'/>Join our automotive journey! Subscribe to our YouTube channel, follow us on TikTok and Instagram, and connect with a community that shares a passion for cars..{' '}<FontAwesomeIcon icon={faQuoteRight} className='my-1'/>{' '}</p>
 
-                    <div className='flex h-auto w-auto sms:p-2 sms:justify-center sms:space-x-4 overflow-hidden lgs:space-x-5 mds:space-x-5'>
+                    <div className='flex h-auto w-auto sms:p-2 sms:justify-center sms:space-x-4 lgs:p-5 overflow-hidden lgs:space-x-5 mds:space-x-5'>
 
                                   <button className='bg-transparent border-blue-700 w-10 h-10 rounded-xl items-center justify-between text-primary font-russoone' data-aos='fade-up' data-aos-delay='300'> 
                                   <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/facebook-new.png" alt="facebook-new" className='hover:scale-125 transition-transform' style={{transitionDuration:'0.5s'}}/>          

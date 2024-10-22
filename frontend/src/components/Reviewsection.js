@@ -248,7 +248,7 @@ const Reviewsection = () => {
         </div>
 
         <div className='flex w-auto h-auto sms:p-5 justify-center overflow-hidden'>
-              <div className='hidden lgs:grid mds:grid lgs:grid-cols-4 lgs:gap-4 lgs:p-10 lg:mt-[2vh] mds:grid-cols-2 gap-3 p-10'>
+              <div className='hidden lgs:grid mds:grid lgs:grid-cols-4 lgs:gap-4 lgs:p-10 mds:grid-cols-2 gap-3 p-10'>
                   {isLoading ? (
                     <Loading2/>
                   ) : (
@@ -256,13 +256,13 @@ const Reviewsection = () => {
                                     .sort((b,a) => new Date(a.date) - new Date(b.date))
                                     .slice(0,4).map((reviews) => (
                                        <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' bg-primary rounded-lg border-2 lgs:scale-125 cursor-pointer overflow-hidden transition-transform duration-1000 ease-in-out transform hover:scale-105' data-aos='fade-up'>
-                                       <div className='bg-transparent lgs:h-[8rem] w-auto mb-2 rounded-lg overflow-hidden'>
+                                       <div className='bg-transparent lgs:h-[8rem] mds:h-[8rem] w-auto mb-2 rounded-lg overflow-hidden'>
                       
                                                                   {reviews.images.length > 0 && (
                                                                       <img
                                                                       src={reviews.images[0]}
                                                                       alt={reviews.title}
-                                                                      className="w-full lgs:h-[8rem] object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
+                                                                      className="w-full lgs:h-[8rem] mds:h-[8rem] mds:w-[20rem] object-cover rounded-t-lg  transition-transform duration-300 ease-in-out  hover:scale-125"
                   />
                                                                   )}
                   
@@ -270,21 +270,22 @@ const Reviewsection = () => {
                   
                                         </div>
                   
-                                        <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm font-ibmplexsans sms:pl-4 pl-5'>
-                                         {reviews.category}
+                                  <div className='flex flex-col h-auto mds:w-auto lgs:w-[100vw] justify-start items-start '>
+                                        <div className='flex flex-col overflow-hidden text-secondary sms:text-md lgs:text-sm font-ibmplexsans sms:pl-4 pl-5'>
+                                         {reviews.category}{''}<div className='bg-baseprimary h-[0.15rem] w-auto' data-aos='fade-left' data-aos-delay='400'/>
                                         </div>
-                                        <div className='flex lgs:w-[6rem] h-auto lgs:pl-5 overflow-hidden mt-1'>
-                                          <div className='bg-baseprimary w-[5rem] h-[0.15rem] rounded-full' data-aos='fade-left'/>
-                                        </div>
-                                        <h2 className=' text-baseextra4 font-semibold lgs:text-3xl mds:text-2xl font-kanit  sms:pl-4 pl-5'>
+
+                                        <h2 className=' text-baseextra4 font-semibold lgs:text-3xl mds:text-2xl font-kanit  pl-5'>
                                          {reviews.brand}
                                       </h2>
-                                      <h3 className=' text-baseextra4 lg:text-md mds:text-xl  mds:mb-10 font-kanit lgs:mb-5 sms:pl-4 pl-5' style={{
+                                      <h3 className=' text-baseextra4 lg:text-md mds:text-xl  mds:mb-5 font-kanit lgs:mb-5  pl-5' style={{
                                         fontWeight:'300'
                                       }}>
                                          {reviews.title}
                                       </h3>
+
                                        </div>
+                                  </div>     
                  ))
                   )}
 

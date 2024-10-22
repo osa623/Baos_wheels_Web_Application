@@ -242,11 +242,11 @@ const Display_Rev = () => {
                 <div className='flex lgs:w-full items-center justify-center'>
 
                 <div className='grid sms:grid-cols-2 mds:grid-cols-2 lgs:grid-cols-6 sms:w-auto lgs:w-auto h-auto mds:pt-10 sms:p-1 sms:gap-5 mds:gap-5 lgs:gap-12'>
-                            <div className='flex flex-col h-auto w-auto justify-center lgs:justify-start sms:items-start items-center'>
-                                <h2 className='flex flex-col font-russoone sms:text-lg mds:text-xl lgs:text-xl overflow-hidden  text-baseextra4'>Engine
+                          <div className='flex flex-col h-auto w-auto justify-center lgs:justify-start sms:items-start items-center'>
+                                <h2 className='flex flex-col font-russoone sms:text-lg mds:text-xl lgs:text-xl  overflow-hidden text-baseextra4'>Engine
                                   {''}<div className='bg-baseprimary h-[0.15rem] will-change-auto' data-aos='fade-right'/>
                                 </h2>
-                                <h2 className='font-ibmplexsans text-sm lgs:w-auto text-center lgs:mt-2  sms:text-start mds:text-lg text-baseextra4'>{review.engine}</h2>
+                                <h2 className='font-ibmplexsans text-sm lgs:w-auto text-center lgs:mt-4 sms:text-start mds:text-lg  text-baseextra4'>{review.engine}</h2>
                             </div>
 
                             <div className='flex flex-col h-auto w-auto justify-center lgs:justify-start sms:items-start items-center'>

@@ -45,11 +45,11 @@ const Videosection = () => {
     }}>
 
     <div className='flex flex-col h-auto items-center justify-center pt-20 sms:pt-10 mds:p-10'>
-      <h2 className='flex flex-col lgs:text-6xl sms:text-5xl mds:text-7xl mds:w-[75vw] text-center overflow-hidden sms:text-center font-extrabold font-russoone text-primary cursor-default hover:text-baseprimary transition duration-2000 ease-in-out p-2' data-aos='zoom-out'>{''}
+      <h2 className='flex flex-col lgs:text-6xl sms:text-5xl mds:text-7xl  text-center overflow-hidden sms:text-center font-extrabold font-russoone text-primary cursor-default hover:text-baseprimary transition duration-2000 ease-in-out p-2' data-aos='zoom-out'>{''}
       Rev Reels{''}<div className='bg-baseprimary mt-2 will-change-auto h-[0.15rem]' data-aos='fade-right' data-aos-delay='400'/></h2>
     
       <div class="sms:flex sms:flex-col sms:w-[90vw] lg:w-[60vw] mx-auto sms:p-4  lg:pt-5 space-x-2 items-center justify-start text-center " data-aos="zoom-in">
-              <p class="text-primary lgs:text-lg h-auto sms:text-md sms:w-[75vw] font-ibmplexsans lg:pt-3 sms:pt-2 sms:text-center" style={{
+              <p class="text-primary lgs:text-lg h-auto sms:text-md sms:w-[75vw] mds:w-[75vw] mds:mt-5 font-ibmplexsans lg:pt-3 sms:pt-2 sms:text-center" style={{
                 fontWeight:'300'
               }}>
               {''}Discover our top automobile videos from Baos Wheels on YouTube, featuring car reviews, mechanical insights, and the latest trends. Dive into the automotive world with our curated favorites. 
