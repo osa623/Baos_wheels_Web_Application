@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Baos_wheels_Web_Application/static/css/main.98c395e3.css",
-    "main.js": "/Baos_wheels_Web_Application/static/js/main.f76ef75a.js",
+    "main.css": "/Baos_wheels_Web_Application/static/css/main.6fddc181.css",
+    "main.js": "/Baos_wheels_Web_Application/static/js/main.a68ffd6b.js",
     "static/js/453.8ab44547.chunk.js": "/Baos_wheels_Web_Application/static/js/453.8ab44547.chunk.js",
     "static/media/bgvideo.mp4": "/Baos_wheels_Web_Application/static/media/bgvideo.3f605177dbaac2b6ba14.mp4",
     "static/media/HeroWallpaper.png": "/Baos_wheels_Web_Application/static/media/HeroWallpaper.710433221a941c82caba.png",
@@ -30,12 +30,12 @@
     "static/media/tesla.png": "/Baos_wheels_Web_Application/static/media/tesla.e158d5938dcd705cbfe5.png",
     "static/media/mitsubhishi.png": "/Baos_wheels_Web_Application/static/media/mitsubhishi.2ce990001ca34cecf027.png",
     "index.html": "/Baos_wheels_Web_Application/index.html",
-    "main.98c395e3.css.map": "/Baos_wheels_Web_Application/static/css/main.98c395e3.css.map",
-    "main.f76ef75a.js.map": "/Baos_wheels_Web_Application/static/js/main.f76ef75a.js.map",
+    "main.6fddc181.css.map": "/Baos_wheels_Web_Application/static/css/main.6fddc181.css.map",
+    "main.a68ffd6b.js.map": "/Baos_wheels_Web_Application/static/js/main.a68ffd6b.js.map",
     "453.8ab44547.chunk.js.map": "/Baos_wheels_Web_Application/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.98c395e3.css",
-    "static/js/main.f76ef75a.js"
+    "static/css/main.6fddc181.css",
+    "static/js/main.a68ffd6b.js"
   ]
 }
