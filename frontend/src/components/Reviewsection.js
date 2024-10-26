@@ -178,7 +178,7 @@ const Reviewsection = () => {
         </Marquee>
 
         {/* screen adjustments for 640px screens */}
-        <div className='hidden sms:flex flex-col w-full h-auto items-center justify-center pb-10' data-aos='fade-up' data-aos-delay='20'>
+        <div className='hidden sms:flex flex-col w-full h-auto items-center pt-10 justify-center pb-10' data-aos='fade-up' data-aos-delay='20'>
               <div className='grid grid-flow-row grid-cols-2 gap-4'>
                 {row1.map((el, index) => (
                       
@@ -230,8 +230,8 @@ const Reviewsection = () => {
             transition={{duration:'1.5', ease:'easeInOut', delay:'0.4'}}
             className='flex flex-row items-center justify-center h-[10vh] mt-[-2vh] lgs:mt-2 sms:p-4 mds:p-2 lgs:p-10  transition-transform duration-300 ease-in-out hover:scale-110'>
 
-              <div className='text-2xl text-baseprimary font-semibold cursor-pointer font-russoone'>
-                <Link className='mt-2' to={`/reviews`} style={{fontWeight:'100'}}>See more</Link></div>
+              <div className='text-2xl text-baseprimary font-semibold cursor-pointer font-ibmplexsans sms:text-xl'>
+                <Link className='mt-2 font-normal' to={`/reviews`}>See more</Link></div>
               <FontAwesomeIcon icon={faAngleDoubleRight} className='w-10 text-baseprimary'  style={{
                 
               }}/>

@@ -108,8 +108,8 @@ const Newsection = () => {
        className='flex flex-row items-center justify-center h-[10vh]'>
 
        <div className='flex w-auto h-auto items-center cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110'>
-        <div className='text-2xl text-baseprimary font-semibold font-russoone'>{''}
-          <Link to={`/articles`} className='font-thin'>See more</Link></div>
+        <div className='text-2xl text-baseprimary font-semibold font-ibmplexsans sms:text-xl'>{''}
+          <Link to={`/articles`} className='font-normal'>See more</Link></div>
         <FontAwesomeIcon icon={faAngleDoubleRight} className='w-10 text-baseprimary'  style={{
           
         }}/>
