@@ -16,18 +16,18 @@ const Navbar = () => {
       <div className="flex items-center">
         <img src={bwlogo} alt="bwlogo" className="h-12 w-auto m-4 mds:h-8 mds:m-2 lgs:h-12 sms:h-6" />
       </div>
-      <ul className="hidden md:flex items-center font-russoone text-primary text-xl cursor-pointer">
+      <ul className="hidden md:flex lgs:flex  items-center font-russoone text-primary text-xl cursor-pointer">
         {/* Use Link component for routing */}
-        <li className="p-4 hover:text-baseprimary focus:text-baseprimary">
-          <Link to="/">Home</Link>
+        <li className="p-4 hover:text-baseprimary mds:text-sm focus:text-baseprimary">
+          <Link to="/" className=''>Home</Link>
         </li>
-        <li className="p-4 hover:text-baseprimary focus:text-baseprimary">
+        <li className="p-4 hover:text-baseprimary mds:text-sm focus:text-baseprimary">
           <Link to="/reviews">Reviews</Link>
         </li>
-        <li className="p-4 hover:text-baseprimary">
+        <li className="p-4 hover:text-baseprimary mds:text-sm">
           <Link to="/articles">Articles</Link>
         </li>
-        <li className="p-4 hover:text-baseprimary">
+        <li className="p-4 hover:text-baseprimary mds:text-sm">
           <Link to="/about">About</Link>
         </li>
       </ul>

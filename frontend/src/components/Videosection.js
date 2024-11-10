@@ -315,12 +315,7 @@ const Videosection = () => {
       <script async src="https://www.tiktok.com/embed.js"></script>
     </div>
 
-    <div className='flex flex-col items-center justify-center w-full h-auto p-2 z-40'>
-    <button class="group relative h-12 w-[50vw] overflow-hidden rounded-xl bg-white text-lg shadow" data-aos='flip-left' data-aos-delay='350'>
-                          <div class="absolute inset-0 w-3 bg-baseprimary transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-                          <span class="relative text-black group-hover:text-white">See more</span>
-    </button> 
-    </div>
+
 
 
   </div>

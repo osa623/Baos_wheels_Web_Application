@@ -73,7 +73,7 @@ const Brands = () => {
     <div className='relative w-full h-auto lgs:p-2'>
         
           <div className='flex sms:flex-col lgs:w-full mds:w-[100vw] h-auto justify-between items-start sms:items-center sms:pt-24 lgs:pt-32 mds:pt-24 p-10'>
-            <div className='flex h-auto w-[50vw] justify-between items-start'>
+            <div className='flex h-auto mds:w-[100vw] sms:w-[80vw] justify-between items-start'>
 
             <div className='flex flex-col h-auto w-auto items-start'>
                   <h1 className='flex flex-col w-auto lgs:text-2xl mds:text-md overflow-hidden font-ibmplexsans  sms:text-md' style={{
@@ -89,7 +89,7 @@ const Brands = () => {
 
               </div>
 
-              <div className='hidden sms:flex flex-col h-auto w-auto'>
+              <div className='hidden sms:flex mds:flex flex-col h-auto w-auto'>
                 <div className='flex flex-col items-start justify-center bg-transparent w-auto h-auto lgs:mr-8'>
                       <h2 className='flex flex-col font-ibmplexsans text-md text-secondary overflow-hidden' style={{fontWeight:'300'}}>Brand{''}
                         <div className='bg-baseprimary h-[0.15rem] will-change-auto' data-aos='fade-right'/>
@@ -129,12 +129,12 @@ const Brands = () => {
             </div>
 
 
-            <div className='hidden lgs:flex mds:flex h-auto w-[50vw] items-center justify-center  overflow-hidden'>
+            <div className='hidden lgs:flex h-auto w-[50vw] items-center justify-center  overflow-hidden'>
               <div className="flex w-[40vw] lgs:p-5 items-center justify-center drop-shadow-lg">
               <input
                 type="text"
                 className="transition-all duration-300 ease-in-out items-center $
-                lgs:w-[50vw] sms:w-[60vw] mds:w-[60vw] mds:mt-5 ml-10 sms:ml-5 mr-5 px-4 py-2 border-2 border-gray-300 rounded-full outline-none"
+                lgs:w-[50vw] sms:w-[60vw] mds:w-vw] mds:mt-5 ml-10 sms:ml-5 mr-5 px-4 py-2 border-2 border-gray-300 rounded-full outline-none"
                 placeholder="Search by Brand, Body Type"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -154,68 +154,67 @@ const Brands = () => {
        
         <div className='flex flex-col w-auto h-auto bg-secondary items-center justify-center rounded-t-2xl p-5 '>
 
-             <div className="hidden sms:flex flex-col w-[100vw] lgs:p-6 items-center justify-center">
-              <div className="flex items-center">
-                <input
-                  type="text"
-                  className="transition-all duration-300 ease-in-out items-center 
-                   sms:w-[80vw]  sms:ml-5 mr-5 px-4 py-2 border-2 border-gray-300 focus:border-baseprimary focus:border-2 rounded-full outline-none"
-                  placeholder="Search by Brand, Body Type"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-              </div>
-              <button
-                  onClick={handleSearch}
-                  className="flex flex-col lgs:w-[8rem] sms:w-[80vw] sms:mt-2 items-center justify-center lgs:h-[2.5rem] sms:h-[2.5rem] bg-baseprimary text-white rounded-full transition-all duration-300 ease-in-out"
-                >
-                  Search{''}<div className='bg-baseprimary h-[0.15rem] will-change-auto transition-all duration-300 ease-in-out transform scale-x-0 group-hover:scale-x-100'/>
-                </button>
+             <div className="hidden sms:flex mds:flex flex-col w-[100vw] mds:h-[10rem] lgs:p-6 items-center justify-center">
+                  <div className="flex w-auto items-center justify-center">
+                    <input
+                      type="text"
+                      className="transition-all duration-300 ease-in-out items-center justify-center 
+                      sms:w-[80vw] mds:w-[80vw]  sms:ml-5  px-4 py-2 border-2 border-gray-300 focus:border-baseprimary focus:border-2 rounded-full outline-none"
+                      placeholder="Search by Brand, Body Type"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                  </div>
+                  <button
+                      onClick={handleSearch}
+                      className="flex flex-col lgs:w-[8rem] sms:w-[80vw] mds:w-[80vw] mt-2 items-center justify-center h-[2.5rem] bg-baseprimary text-white rounded-full transition-all duration-300 ease-in-out"
+                    >
+                      Search{''}<div className='bg-baseprimary h-[0.15rem] will-change-auto transition-all duration-300 ease-in-out transform scale-x-0 group-hover:scale-x-100'/>
+                    </button>
             </div>
 
-        <div className='hidden lgs:grid mds:grid lgs:grid-cols-4 lgs:gap-4 lgs:p-10 mds:grid-cols-2 gap-3  p-10'>
-        {isLoading ? (
+            <div className='hidden lgs:grid mds:grid lgs:grid-cols-4 lgs:gap-4 lgs:p-10 mds:grid-cols-2 gap-3 p-10'>
+                  {isLoading ? (
                     <Loading2/>
-                                    ) : (
-                                        reviews.length > 0 ? (
-                                          (isFiltered ? filteredItems : reviews)
-                                        .map((reviews) => (
-                                          <div key={reviews._id} onClick={() => handleOpenreviews(reviews._id)} className=' bg-primary rounded-lg border-2 lgs:scale-125 cursor-pointer overflow-hidden transition-transform duration-1000 ease-in-out transform hover:scale-105' data-aos='fade-up'>
-                                          <div className='bg-transparent lgs:h-[8rem] w-auto mb-2 rounded-lg overflow-hidden'>
-                         
-                                                                     {reviews.images.length > 0 && (
-                                                                         <img
-                                                                         src={reviews.images[1]}
-                                                                         alt={reviews.title}
-                                                                         className="w-full lgs:h-[8rem] object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
-                     />
-                                                                     )}
-                     
-                     
-                     
-                                           </div>
-                     
-                                           <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm font-ibmplexsans sms:pl-4 pl-5'>
-                                            {reviews.category}
-                                           </div>
-                                           <div className='flex lgs:w-[6rem] h-auto lgs:pl-5 overflow-hidden mt-1'>
-                                             <div className='bg-baseprimary w-[5rem] h-[0.15rem] rounded-full' data-aos='fade-left'/>
-                                           </div>
-                                           <h2 className=' text-baseextra4 font-semibold lgs:text-3xl mds:text-2xl font-kanit  sms:pl-4 pl-5'>
-                                            {reviews.brand}
-                                         </h2>
-                                         <h3 className=' text-baseextra4 lg:text-md mds:text-xl  mds:mb-10 font-kanit lgs:mb-5 sms:pl-4 pl-5' style={{
-                                           fontWeight:'300'
-                                         }}>
-                                            {reviews.title}
-                                         </h3>
-                                          </div>
-                                        ))
-                                    ) : (
-                                        <p className=''>No related reviews found.</p>
-                                    )
-                        )}
-         </div>
+                  ) : (
+                                   (isFiltered ? filteredItems : reviews)
+                                    .sort((b,a) => new Date(a.date) - new Date(b.date))
+                                    .slice(0,4).map((reviews) => (
+                                       <div key={reviews._id} onClick={() => handleOpenreviews(reviews._id)} className=' bg-primary rounded-lg border-2 lgs:scale-125 cursor-pointer overflow-hidden transition-transform duration-1000 ease-in-out transform hover:scale-105' data-aos='fade-up'>
+                                       <div className='bg-transparent lgs:h-[8rem] mds:h-[8rem] w-auto mb-2 rounded-lg overflow-hidden'>
+                      
+                                                                  {reviews.images.length > 0 && (
+                                                                      <img
+                                                                      src={reviews.images[0]}
+                                                                      alt={reviews.title}
+                                                                      className="w-full lgs:h-[8rem] mds:h-[8rem] mds:w-[20rem] object-cover rounded-t-lg  transition-transform duration-300 ease-in-out  hover:scale-125"
+                  />
+                                                                  )}
+                  
+                  
+                  
+                                        </div>
+                  
+                                  <div className='flex flex-col h-auto mds:w-auto lgs:w-[100vw] justify-start items-start '>
+                                        <div className='flex flex-col overflow-hidden text-secondary sms:text-md lgs:text-sm font-ibmplexsans sms:pl-4 pl-5'>
+                                         {reviews.category}{''}<div className='bg-baseprimary h-[0.15rem] w-auto' data-aos='fade-left' data-aos-delay='400'/>
+                                        </div>
+
+                                        <h2 className=' text-baseextra4 font-semibold lgs:text-3xl mds:text-2xl font-kanit  pl-5'>
+                                         {reviews.brand}
+                                      </h2>
+                                      <h3 className=' text-baseextra4 lg:text-md mds:text-xl  mds:mb-5 font-kanit lgs:mb-5  pl-5' style={{
+                                        fontWeight:'300'
+                                      }}>
+                                         {reviews.title}
+                                      </h3>
+
+                                       </div>
+                                  </div>     
+                 ))
+                  )}
+
+              </div>
 
               <div className='hidden sms:grid  sms:grid-cols-1  gap-3 p-5 mt-5 overflow-hidden'>
                   {isLoading ? (
