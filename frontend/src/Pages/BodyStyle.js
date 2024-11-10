@@ -2,13 +2,25 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import Loading2 from '../oth/Loading2';
-import { faSearch} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
+//adding car body styles
+import coupe from '../assests/vehicle_styels/coupe.png';
+import crossover from '../assests/vehicle_styels/crossover.png';
+import hatchback from '../assests/vehicle_styels/hetchback.png';
+import  mpv from '../assests/vehicle_styels/mpv.png';
+import sedan from '../assests/vehicle_styels/sedan.png';
+import sport from '../assests/vehicle_styels/sport.png';
+import suv from '../assests/vehicle_styels/SUV.png';
+import  wagon from '../assests/vehicle_styels/wagon.png';
 
 const BodyStyle = () => {
   const { category } = useParams();
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [filteredItems, setFilteredItems] = useState([]);
+  const [isFiltered, setIsFiltered] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
@@ -32,14 +44,23 @@ const BodyStyle = () => {
       fetchReviews();
     }
   }, [category]);
+  
+  const handleSearch = () => {
+    if (searchQuery.trim() === '') {
+      setIsFiltered(false); // If search is empty, reset to show all items
+      setFilteredItems([]);
+      return;
+    }
 
-  const filteredReviews = reviews.filter(reviews => 
+    const filtered = reviews.filter((item) =>
+      item.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.category.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
-    reviews.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    reviews.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    reviews.category.toLowerCase().includes(searchQuery.toLowerCase())
-
-  )
+    setFilteredItems(filtered);
+    setIsFiltered(filtered.length > 0);
+  };
 
   
   const handleOpenReview = (review_id) =>{
@@ -49,13 +70,54 @@ const BodyStyle = () => {
   return (
     <div className='relative w-full h-auto lgs:p-2'>
         
-          <div className='flex sms:flex-col lgs:w-full h-auto justify-between items-start sms:items-center sms:pt-24 lgs:pt-32 mds:pt-24 p-10'>
-            <h1 className='flex flex-col  text-4xl font-russoone sms:text-2xl'>
-                Reviews Of:{' '}<span className='text-6xl sms:text-5xl font-russoone text-baseextra4'>{category}</span>
-            </h1>
+          <div className='flex sms:flex-row lgs:w-full h-auto justify-between items-start sms:items-center sms:pt-24 lgs:pt-32 mds:pt-24 p-10'>
+          <div className='flex flex-col h-auto w-auto items-start'>
+                  <h1 className='flex flex-col w-auto lgs:text-2xl overflow-hidden font-ibmplexsans  sms:text-md' style={{
+                      fontWeight:'300'
+                    }}>
+                        Reviews{' '}<div className='h-[0.1rem] w-auto bg-baseprimary' data-aos='fade-right' data-aos-delay='400'/>
+                    </h1>
+                    <h1 className='flex flex-col  lgs:text-5xl font-russoone sms:text-3xl' style={{
+                      fontWeight:'300'
+                    }}>
+                        {category}
+                    </h1>
+
+              </div>
+
+            <div className='flex flex-col items-start justify-center bg-transparent w-auto h-auto lgs:mr-24'>
+                      <h2 className='flex flex-col font-ibmplexsans text-md text-secondary overflow-hidden' style={{fontWeight:'300'}}>Body Style
+                        {''}<div className='bg-baseprimary h-[0.1rem] will-change-auto' data-aos='fade-right'/>
+                      </h2>
+                      <div className='flex flex-col lgs:h-[6rem] overflow-hidden'>
+                      {((category === 'SUV' || category === 'suv') && (
+                          <img src={suv} alt='SUV' style={{width:'150px', marginTop:'10px'}}/>
+                        )) || ((category === 'Sedan' || category === 'sedan') && (
+                          <img src={sedan} alt='Sedan' style={{width:'150px', marginTop:'10px'}}/>
+                        )) || ((reviews.category === 'Crossover' || reviews.category === 'crossover') && (
+                          <img src={crossover} alt='Sedan' style={{width:'150px', marginTop:'10px'}}/>   
+                        )) || ((reviews.category === 'Hatchback' || reviews.category === 'hatchback') && (
+                          <img src={hatchback} alt='Sedan' style={{width:'150px', marginTop:'10px'}}/>
+                        )) || ((reviews.category === 'Coupe' || reviews.category === 'coupe') && (
+                          <img src={coupe} alt='Sedan' style={{width:'150px', marginTop:'10px'}}/>   
+                        )) || ((reviews.category === 'MPV' || reviews.category === 'mpv') && (
+                          <img src={mpv} alt='Sedan' style={{width:'150px', marginTop:'10px'}}/>   
+                        )) || ((reviews.category === 'Sport' || reviews.category === 'sport') && (
+                          <img src={sport} alt='Sedan' style={{width:'150px', marginTop:'10px'}}/>
+                        )) || ((reviews.category === 'Wagon' || reviews.category === 'wagon') && (
+                          <img src={wagon} alt='Sedan' style={{width:'150px', marginTop:'10px'}}/>   
+                        ))
+                        
+                        
+                        }</div>
+
+
+                </div>
+
+
 
             <div className='hidden lgs:flex h-auto w-[40vw]  overflow-hidden'>
-              <div className="flex w-[40vw] lgs:p-5 items-center justify-center drop-shadow-lg" data-aos='fade-left' data-aos-delay='300'>
+              <div className="flex w-[40vw] lgs:p-5 items-center justify-center drop-shadow-lg">
               <input
                 type="text"
                 className="transition-all duration-300 ease-in-out items-center $
@@ -63,28 +125,38 @@ const BodyStyle = () => {
                 placeholder="Search by Brand, Body Type"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-              /><FontAwesomeIcon icon={faSearch} className='text-secondary lgs:h-6 cursor-pointer hover:scale-125'/>
+              />              <button
+              onClick={handleSearch}
+              className="flex flex-col lgs:w-[16rem] sms:w-[80vw] sms:mt-2 items-center justify-center lgs:h-[2.5rem] sms:h-[2.5rem] bg-baseprimary text-white rounded-full hover:bg-primary hover:text-baseprimary transition-all duration-300 ease-in-out"
+            >
+              Search{''}<div className='bg-baseprimary h-[0.15rem] will-change-auto transition-all duration-300 ease-in-out transform scale-x-0 group-hover:scale-x-100'/>
+            </button>
             </div>
         
-       </div>
+           </div>
           </div>   
       {isLoading ? (
         <Loading2/>
       ) : (
        
-        <div className='flex sms:flex-col flex-col w-auto h-auto bg-secondary rounded-t-2xl p-5'>
+        <div className='flex sms:flex-col flex-col w-auto h-auto bg-secondary rounded-t-3xl p-5'>
           
           
-       <div className='hidden sms:flex mds:flex  h-[10vh] w-full justify-between overflow-hidden sms:pt-5'>
-              <div className="relative w-full lgs:p-5 items-center justify-center" data-aos='fade-up' data-aos-delay='300'>
+       <div className='hidden sms:flex  h-[20vh] w-full justify-center overflow-hidden sms:pt-5'>
+              <div className="flex flex-col w-full lgs:p-5 items-center justify-center">
               <input
                 type="text"
                 className="transition-all duration-300 ease-in-out items-center $
-                lgs:w-[50vw] w-[75vw] mds:mt-5 ml-10 sms:ml-5 mr-5 px-4 py-2 border-2 border-gray-300 rounded-full outline-none"
+                 w-[75vw] mds:mt-5 ml-10 sms:ml-5 mr-5 px-4 py-2 border-2 border-gray-300 rounded-full outline-none"
                 placeholder="Search by Brand, Body Type"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-              /><FontAwesomeIcon icon={faSearch} className='text-primary lgs:h-6 cursor-pointer hover:scale-125'/>
+              /><button
+              onClick={handleSearch}
+              className="flex flex-col lgs:w-[16rem] sms:w-[75vw] sms:mt-2 items-center justify-center lgs:h-[2.5rem] sms:h-[2.5rem] bg-baseprimary text-white rounded-full hover:bg-primary hover:text-baseprimary transition-all duration-300 ease-in-out"
+            >
+              Search{''}<div className='bg-baseprimary h-[0.15rem] will-change-auto transition-all duration-300 ease-in-out transform scale-x-0 group-hover:scale-x-100'/>
+            </button>
             </div>
       </div>      
 
@@ -93,24 +165,38 @@ const BodyStyle = () => {
                     <Loading2/>
                                     ) : (
                                         reviews.length > 0 ? (
-                                        filteredReviews
+                                          (isFiltered ? filteredItems : reviews)
                                         .map((reviews) => (
-                                        <div key={reviews._id} onClick={()=> handleOpenReview(reviews._id)} className='bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer ' data-aos='fade-left' data-aos-delay='100'>
-                                          <div className='bg-transparent  w-auto mb-10 rounded-lg overflow-hidden'>
-                                            {reviews.images && reviews.images.length > 0 && (
-                                            <img src={reviews.images[0]} alt={reviews.title} className="w-full h-[20vh] object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125" />
-                                            )}
-                                         </div>   
-                                            <div className='text-secondary lgs:w-[20vw] lgs:text-sm mds:text-md font-russoone pl-5'>
+                                          <div key={reviews._id} onClick={() => handleOpenReview(reviews._id)} className=' bg-primary rounded-lg border-2 lgs:scale-125 cursor-pointer overflow-hidden transition-transform duration-1000 ease-in-out transform hover:scale-105' data-aos='fade-up'>
+                                          <div className='bg-transparent lgs:h-[8rem] w-auto mb-2 rounded-lg overflow-hidden'>
+                         
+                                                                     {reviews.images.length > 0 && (
+                                                                         <img
+                                                                         src={reviews.images[1]}
+                                                                         alt={reviews.title}
+                                                                         className="w-full lgs:h-[8rem] object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
+                     />
+                                                                     )}
+                     
+                     
+                     
+                                           </div>
+                     
+                                           <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm font-ibmplexsans sms:pl-4 pl-5'>
                                             {reviews.category}
-                                            </div>
-                                            <h2 className='text-baseextra4 font-semibold  lgs:text-3xl mds:text-2xl font-kanit pl-5'>
+                                           </div>
+                                           <div className='flex lgs:w-[6rem] h-auto lgs:pl-5 overflow-hidden mt-1'>
+                                             <div className='bg-baseprimary w-[5rem] h-[0.15rem] rounded-full' data-aos='fade-left'/>
+                                           </div>
+                                           <h2 className=' text-baseextra4 font-semibold lgs:text-3xl mds:text-2xl font-kanit  sms:pl-4 pl-5'>
                                             {reviews.brand}
-                                            </h2>
-                                            <h3 className='text-baseextra4 text-xl mds:text-xl lgs:mb-5 mds:mb-2 font-kanit pl-5'>
+                                         </h2>
+                                         <h3 className=' text-baseextra4 lg:text-md mds:text-xl  mds:mb-10 font-kanit lgs:mb-5 sms:pl-4 pl-5' style={{
+                                           fontWeight:'300'
+                                         }}>
                                             {reviews.title}
-                                            </h3>
-                                        </div>
+                                         </h3>
+                                          </div>
                                         ))
                                     ) : (
                                         <p className=''>No related reviews found.</p>
@@ -118,11 +204,11 @@ const BodyStyle = () => {
                         )}
         </div>
 
-        <div className='hidden sms:grid  sms:grid-cols-1  gap-3 p-10'>
+        <div className='hidden sms:grid  sms:grid-cols-1  gap-3 p-5 overflow-hidden'>
                   {isLoading ? (
                     <Loading2/>
                   ) : (
-                                 filteredReviews
+                                    (isFiltered ? filteredItems : reviews)
                                     .sort((b,a) => new Date(a.date) - new Date(b.date))
                                     .map((reviews) => (
                                        <div key={reviews._id} onClick={() => handleOpenReview(reviews._id)} className=' flex h-auto w-full bg-primary rounded-lg overflow-hidden  border-2 cursor-pointer' data-aos='fade-up'>
@@ -140,8 +226,8 @@ const BodyStyle = () => {
                   
                                         </div>
                                      <div className='flex flex-col w-60 h-auto items-start justify-center p-2'>                          
-                                              <div className='text-secondary text-md font-russoone  pl-5'>
-                                              {reviews.category}
+                                              <div className='flex flex-col text-secondary text-md font-russoone  pl-5'>
+                                              {reviews.category}{''}<div className='bg-baseprimary h-[0.1rem] w-auto'/>
                                               </div>
                                               <h2 className=' text-baseextra4 text-xl font-semibold  font-ibmplexsans  pl-5'>
                                               {reviews.brand}

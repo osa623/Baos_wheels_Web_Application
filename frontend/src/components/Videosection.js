@@ -230,9 +230,12 @@ const Videosection = () => {
                 <h2 className='flex flex-col text-5xl font-russoone  text-primary mb-4 text-center overflow-hidden' data-aos='zoom-out'>
                   Tiktok Reels{''}<div className='bg-baseprimary h-[0.15rem] will-change-auto' data-aos='fade-right' data-aos-delay='700'/>
                 </h2>
-                <p className='text-md text-center w-[75vw] text-primary font-ibmplexsans' data-aos='fade-up' fade-aos-delay='20'>
-               {''}Baos Wheels brings you engaging auto mechanical videos on TikTok. We offer in-depth mechanical explanations, detailed car reviews, insights into the latest inventions, and record-breaking information in the auto industry. Stay informed and entertained with the newest trends and developments in the world of automobiles.
-                </p>
+                <div className='flex h-auto w-auto overflow-hidden'>
+                      <p className='text-md text-center w-[75vw] text-primary font-ibmplexsans' data-aos='fade-up' fade-aos-delay='20' style={{fontWeight:'200'}}>
+                    {''}Baos Wheels brings you engaging auto mechanical videos on TikTok. We offer in-depth mechanical explanations, detailed car reviews, insights into the latest inventions, and record-breaking information in the auto industry. Stay informed and entertained with the newest trends and developments in the world of automobiles.
+                      </p>
+                </div>
+               
                 <div className='grid grid-cols-2 gap-y-6 gap-x-8 w-auto h-auto items-center justify-center p-2'>
                       <button class="group relative h-12 w-30 overflow-hidden rounded-xl bg-white text-lg shadow" data-aos='flip-left' data-aos-delay='100'>
                           <div class="absolute inset-0 w-3 bg-baseprimary transition-all duration-[250ms] ease-out group-hover:w-full"></div>

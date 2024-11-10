@@ -127,9 +127,9 @@ const Reviewsection = () => {
     <AppContainer>
       <Wrapper>
         <div className='flex flex-col h-auto w-full items-center justify-center  overflow-hidden sms:space-y-2 lgs:space-y-5 lgs:mt-2'>
-          <div className='flex flex-col w-auto mds:mt-10 sms:mt-10 items-center justify-center'>
-            <h2 className='flex flex-col lgs:text-7xl mds:text-6xl sms:text-5xl font-russoone font-extrabold text-baseextra4 overflow-hidden' data-aos='fade-right'>Reviews
-              {''}<div className='flex  h-[0.15rem] bg-secondary' data-aos="fade-left"/>
+          <div className='flex flex-col w-auto mds:mt-10 sms:mt-10 items-center justify-center overflow-hidden'>
+            <h2 className='flex flex-col lgs:text-7xl mds:text-6xl sms:text-5xl font-russoone font-extrabold text-baseextra4 overflow-hidden' data-a0s-delay='300' data-aos='fade-up'>Reviews
+              {''}<div className='flex  h-[0.15rem] bg-secondary' data-aos-delay='600' data-aos="fade-left"/>
             </h2>
             </div>  
             <p className='mds:text-sm sms:text-md sms:p-10  text-baseextra1 font-ibmplexsans mds:w-[80vw] lgs:w-[60vw] lgs:p-10 lgs:text-lg h-inherit mb-5 mt-5 text-center' data-aos='zoom-in'
@@ -338,8 +338,8 @@ const Reviewsection = () => {
        transition={{duration:'1.5', ease:'easeInOut', delay:'0.4'}}
        className='flex flex-row items-center justify-center h-[10vh] sms:p-4 mds:p-2 lgs:p-10'>
 
-        <div className='text-2xl text-baseprimary font-semibold cursor-pointer font-russoone transition-transform duration-300 ease-in-out hover:scale-110'>
-          <Link style={{fontWeight:'300'}} to={`/reviews`}>See more</Link></div>
+        <div className='text-2xl text-baseprimary cursor-pointer font-russoone transition-transform duration-300 ease-in-out hover:scale-110'>
+          <Link style={{fontWeight:'200'}} to={`/reviews`}>See more</Link></div>
         <FontAwesomeIcon icon={faAngleDoubleRight} className='w-10 text-baseprimary'  style={{
           
         }}/>

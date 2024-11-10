@@ -5,57 +5,132 @@ import Loading2 from '../oth/Loading2';
 import { faSearch} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+// Brand Logos
+import mercedesbenz from '../assests/Brand Logos/Mercedes_benz.png';
+import bmw from '../assests/Brand Logos/bmw.png';
+import audi from '../assests/Brand Logos/audi.png';
+import nissan from '../assests/Brand Logos/nissan.png';
+import honda from '../assests/Brand Logos/honda.png';
+import mitsubishi from '../assests/Brand Logos/mitsubhishi.png';
+import rangerover from '../assests/Brand Logos/range_rover.png';
+import tesla from '../assests/Brand Logos/tesla.png';
+import toyota from '../assests/Brand Logos/toyota.png';
+import mazda from '../assests/Brand Logos/mazda.png';
+
 const Brands = () => {
   const { brandname } = useParams();
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setreviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [filteredItems, setFilteredItems] = useState([]);
+  const [isFiltered, setIsFiltered] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
     console.log("Brand name from URL:", brandname);
 
-    const fetchReviews = async () => {
+    const fetchreviews = async () => {
       try {
 
         const response = await axios.get(`http://localhost:5000/api/reviews/brand/${brandname}`);
-        setReviews(response.data);
+        setreviews(response.data);
         setIsLoading(false);
       } catch (error) {
-        console.error("Error Fetching Reviews:", error);
+        console.error("Error Fetching reviews:", error);
       }
     };
 
 
 
     if (brandname) {
-      fetchReviews();
+      fetchreviews();
     }
   }, [brandname]);
 
-  const filteredReviews = reviews.filter(reviews => 
+  const handleSearch = () => {
+    if (searchQuery.trim() === '') {
+      setIsFiltered(false); // If search is empty, reset to show all items
+      setFilteredItems([]);
+      return;
+    }
 
-    reviews.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    reviews.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    reviews.category.toLowerCase().includes(searchQuery.toLowerCase())
+    const filtered = reviews.filter((item) =>
+      item.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.category.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
-  )
+    setFilteredItems(filtered);
+    setIsFiltered(filtered.length > 0);
+  };
 
   
-  const handleOpenReview = (review_id) =>{
-    navigate(`/reviews/${review_id}`)
+  const handleOpenreviews = (reviews_id) =>{
+    navigate(`/reviews/${reviews_id}`)
 }
 
   return (
     <div className='relative w-full h-auto lgs:p-2'>
         
-          <div className='flex sms:flex-col lgs:w-full h-auto justify-between items-start sms:items-center sms:pt-24 lgs:pt-32 mds:pt-24 p-10'>
-            <h1 className='flex flex-col  text-4xl font-russoone sms:text-2xl'>
-                Reviews Of:{' '}<span className='text-6xl sms:text-4xl font-russoone text-baseextra4'>{brandname}</span>
-            </h1>
+          <div className='flex sms:flex-col lgs:w-full mds:w-[100vw] h-auto justify-between items-start sms:items-center sms:pt-24 lgs:pt-32 mds:pt-24 p-10'>
+            <div className='flex h-auto w-[50vw] justify-between items-start'>
 
-            <div className='hidden lgs:flex h-auto w-[40vw]  overflow-hidden'>
-              <div className="flex w-[40vw] lgs:p-5 items-center justify-center drop-shadow-lg" data-aos='fade-left' data-aos-delay='300'>
+            <div className='flex flex-col h-auto w-auto items-start'>
+                  <h1 className='flex flex-col w-auto lgs:text-2xl mds:text-md overflow-hidden font-ibmplexsans  sms:text-md' style={{
+                      fontWeight:'300'
+                    }}>
+                        Reviews{' '}<div className='h-[0.1rem] w-auto bg-baseprimary' data-aos='fade-right' data-aos-delay='400'/>
+                    </h1>
+                    <h1 className='flex flex-col  lgs:text-5xl font-russoone sms:text-2xl mds:text-4xl' style={{
+                      fontWeight:'300'
+                    }}>
+                        {brandname}
+                    </h1>
+
+              </div>
+
+              <div className='hidden sms:flex flex-col h-auto w-auto'>
+                <div className='flex flex-col items-start justify-center bg-transparent w-auto h-auto lgs:mr-8'>
+                      <h2 className='flex flex-col font-ibmplexsans text-md text-secondary overflow-hidden' style={{fontWeight:'300'}}>Brand{''}
+                        <div className='bg-baseprimary h-[0.15rem] will-change-auto' data-aos='fade-right'/>
+                      </h2>
+                        <div className='flex flex-col h-[6rem] sms:pt-2'>
+                      {((brandname === 'Mercedes Benz' || brandname === 'mercedes benz') && (
+                          <img src={mercedesbenz} alt='SUV' style={{width:'80px', objectFit:'fill'}}/>
+                        )) || ((brandname === 'Bmw' || brandname === 'bmw') && (
+                          <img src={bmw} alt='Sedan' style={{width:'50px'}}/>
+                        )) || ((brandname === 'Audi' || brandname === 'audi') && (
+                          <img src={audi} alt='Sedan' style={{width:'50px'}}/>   
+                        )) || ((brandname === 'Nissan' || brandname === 'nissan') && (
+                          <img src={nissan} alt='Sedan' style={{width:'50px'}}/>
+                        )) || ((brandname === 'honda' || brandname === 'Honda') && (
+                          <img src={honda} alt='Sedan' style={{width:'50px'}}/>   
+                        )) || ((brandname === 'Mitsubhishi' || brandname === 'mitsubhishi') && (
+                          <img src={mitsubishi} alt='Sedan' style={{width:'50px'}}/>   
+                        )) || ((brandname === 'Range Rover' || brandname === 'range rover') && (
+                          <img src={rangerover} alt='Sedan' style={{width:'100px'}}/>
+                        )) || ((brandname === 'tesla' || brandname === 'Tesla') && (
+                          <img src={tesla} alt='Sedan' style={{width:'50px'}}/>   
+                        )) || ((brandname === 'toyota' || brandname === 'Toyota') && (
+                          <img src={toyota} alt='Sedan' style={{width:'50px'}}/>   
+                        )) || ((brandname === 'Mazda' || brandname === 'mazda') && (
+                          <img src={mazda} alt='Sedan' style={{width:'50px'}}/>
+                        ))
+                        
+                        
+                        }</div>
+
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+
+            <div className='hidden lgs:flex mds:flex h-auto w-[50vw] items-center justify-center  overflow-hidden'>
+              <div className="flex w-[40vw] lgs:p-5 items-center justify-center drop-shadow-lg">
               <input
                 type="text"
                 className="transition-all duration-300 ease-in-out items-center $
@@ -63,40 +138,78 @@ const Brands = () => {
                 placeholder="Search by Brand, Body Type"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-              /><FontAwesomeIcon icon={faSearch} className='text-secondary lgs:h-6 cursor-pointer hover:scale-125'/>
+              />              <button
+              onClick={handleSearch}
+              className="flex flex-col lgs:w-[16rem] sms:w-[80vw] sms:mt-2 items-center justify-center lgs:h-[2.5rem] sms:h-[2.5rem] bg-baseprimary text-white rounded-full hover:bg-primary hover:text-baseprimary transition-all duration-300 ease-in-out"
+            >
+              Search{''}<div className='bg-baseprimary h-[0.15rem] will-change-auto transition-all duration-300 ease-in-out transform scale-x-0 group-hover:scale-x-100'/>
+            </button>
             </div>
         
-           </div>
+       </div>
           </div>   
       {isLoading ? (
         <Loading2/>
       ) : (
        
-        <div className='flex sms:flex-row flex-col w-auto h-auto bg-secondary rounded-t-2xl p-5'>
+        <div className='flex flex-col w-auto h-auto bg-secondary items-center justify-center rounded-t-2xl p-5 '>
 
-        <div className='hidden lgs:grid mds:grid lgs:grid-cols-4 lgs:gap-4 lgs:p-10 mds:grid-cols-2 gap-3 p-10'>
+             <div className="hidden sms:flex flex-col w-[100vw] lgs:p-6 items-center justify-center">
+              <div className="flex items-center">
+                <input
+                  type="text"
+                  className="transition-all duration-300 ease-in-out items-center 
+                   sms:w-[80vw]  sms:ml-5 mr-5 px-4 py-2 border-2 border-gray-300 focus:border-baseprimary focus:border-2 rounded-full outline-none"
+                  placeholder="Search by Brand, Body Type"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+              </div>
+              <button
+                  onClick={handleSearch}
+                  className="flex flex-col lgs:w-[8rem] sms:w-[80vw] sms:mt-2 items-center justify-center lgs:h-[2.5rem] sms:h-[2.5rem] bg-baseprimary text-white rounded-full transition-all duration-300 ease-in-out"
+                >
+                  Search{''}<div className='bg-baseprimary h-[0.15rem] will-change-auto transition-all duration-300 ease-in-out transform scale-x-0 group-hover:scale-x-100'/>
+                </button>
+            </div>
+
+        <div className='hidden lgs:grid mds:grid lgs:grid-cols-4 lgs:gap-4 lgs:p-10 mds:grid-cols-2 gap-3  p-10'>
         {isLoading ? (
                     <Loading2/>
                                     ) : (
                                         reviews.length > 0 ? (
-                                        filteredReviews
+                                          (isFiltered ? filteredItems : reviews)
                                         .map((reviews) => (
-                                        <div key={reviews._id} onClick={()=> handleOpenReview(reviews._id)} className='bg-primary rounded-lg border-2 drop-shadow-sm cursor-pointer ' data-aos='fade-left' data-aos-delay='100'>
-                                          <div className='bg-transparent sms:h-auto w-auto mb-10 rounded-lg overflow-hidden'>
-                                            {reviews.images && reviews.images.length > 0 && (
-                                            <img src={reviews.images[0]} alt={reviews.title} className="w-full h-[20vh] object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125" />
-                                            )}
-                                         </div>   
-                                            <div className='text-secondary sms:text-md lgs:w-[20vw] lgs:text-sm mds:text-md font-russoone sms:pl-4 pl-5'>
+                                          <div key={reviews._id} onClick={() => handleOpenreviews(reviews._id)} className=' bg-primary rounded-lg border-2 lgs:scale-125 cursor-pointer overflow-hidden transition-transform duration-1000 ease-in-out transform hover:scale-105' data-aos='fade-up'>
+                                          <div className='bg-transparent lgs:h-[8rem] w-auto mb-2 rounded-lg overflow-hidden'>
+                         
+                                                                     {reviews.images.length > 0 && (
+                                                                         <img
+                                                                         src={reviews.images[1]}
+                                                                         alt={reviews.title}
+                                                                         className="w-full lgs:h-[8rem] object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
+                     />
+                                                                     )}
+                     
+                     
+                     
+                                           </div>
+                     
+                                           <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm font-ibmplexsans sms:pl-4 pl-5'>
                                             {reviews.category}
-                                            </div>
-                                            <h2 className='text-baseextra4 font-semibold sms:text-3xl lgs:text-3xl mds:text-xl font-kanit sms:pl-4 pl-5'>
+                                           </div>
+                                           <div className='flex lgs:w-[6rem] h-auto lgs:pl-5 overflow-hidden mt-1'>
+                                             <div className='bg-baseprimary w-[5rem] h-[0.15rem] rounded-full' data-aos='fade-left'/>
+                                           </div>
+                                           <h2 className=' text-baseextra4 font-semibold lgs:text-3xl mds:text-2xl font-kanit  sms:pl-4 pl-5'>
                                             {reviews.brand}
-                                            </h2>
-                                            <h3 className='text-baseextra4 text-xl mds:text-xl lgs:mb-5 font-kanit pl-5'>
+                                         </h2>
+                                         <h3 className=' text-baseextra4 lg:text-md mds:text-xl  mds:mb-10 font-kanit lgs:mb-5 sms:pl-4 pl-5' style={{
+                                           fontWeight:'300'
+                                         }}>
                                             {reviews.title}
-                                            </h3>
-                                        </div>
+                                         </h3>
+                                          </div>
                                         ))
                                     ) : (
                                         <p className=''>No related reviews found.</p>
@@ -104,39 +217,39 @@ const Brands = () => {
                         )}
          </div>
 
-              <div className='hidden sms:grid  sms:grid-cols-1  gap-3 p-10'>
+              <div className='hidden sms:grid  sms:grid-cols-1  gap-3 p-5 mt-5 overflow-hidden'>
                   {isLoading ? (
                     <Loading2/>
                   ) : (
-                                 filteredReviews
+                                   (isFiltered ? filteredItems : reviews)
                                     .sort((b,a) => new Date(a.date) - new Date(b.date))
                                     .map((reviews) => (
-                                       <div key={reviews._id} onClick={() => handleOpenReview(reviews._id)} className=' flex h-auto w-full bg-primary rounded-lg overflow-hidden  border-2 cursor-pointer' data-aos='fade-up'>
-                                       <div className='bg-transparent h-auto w-40 rounded-lg overflow-hidden'>
-                      
-                                                                  {reviews.images.length > 0 && (
-                                                                      <img
-                                                                      src={reviews.images[0]}
-                                                                      alt={reviews.title}
-                                                                      className="w-full h-40  object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
-                  />
-                                                                  )}
-                  
-                  
-                  
-                                        </div>
-                                     <div className='flex flex-col w-60 h-auto items-start justify-center p-2'>                          
-                                              <div className='text-secondary text-md font-russoone  pl-5'>
-                                              {reviews.category}
-                                              </div>
-                                              <h2 className=' text-baseextra4 text-xl font-semibold  font-ibmplexsans  pl-5'>
-                                              {reviews.brand}
-                                            </h2>
-                                            <h3 className=' text-baseextra4 text-md mds:text-xl font-kanit pl-5'>
-                                              {reviews.title}
-                                            </h3>
-                                     </div>              
+                                      <div key={reviews._id} onClick={() => handleOpenreviews(reviews._id)} className=' flex h-auto w-full bg-primary rounded-lg overflow-hidden  border-2 cursor-pointer' data-aos='fade-up'>
+                                      <div className='bg-transparent h-auto w-40 rounded-lg overflow-hidden'>
+                     
+                                                                 {reviews.images.length > 0 && (
+                                                                     <img
+                                                                     src={reviews.images[0]}
+                                                                     alt={reviews.title}
+                                                                     className="w-full h-40  object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
+                 />
+                                                                 )}
+                 
+                 
+                 
                                        </div>
+                                    <div className='flex flex-col w-60 h-auto items-start justify-center p-2'>                          
+                                             <div className='flex flex-col text-secondary text-md font-russoone  pl-5'>
+                                             {reviews.category}{''}<div className='bg-baseprimary h-[0.1rem] w-auto'/>
+                                             </div>
+                                             <h2 className=' text-baseextra4 text-xl font-semibold  font-ibmplexsans  pl-5'>
+                                             {reviews.brand}
+                                           </h2>
+                                           <h3 className=' text-baseextra4 text-md mds:text-xl font-kanit pl-5'>
+                                             {reviews.title}
+                                           </h3>
+                                    </div>              
+                                      </div>
                  ))
                   )}
 

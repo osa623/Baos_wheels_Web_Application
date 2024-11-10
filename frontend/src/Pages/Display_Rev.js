@@ -124,12 +124,49 @@ const Display_Rev = () => {
   return (
      <div className='relative w-full min-h-screen'>
        <div id='main' className='relative w-auto h-auto z-30'>
-                   <div className='hidden sms:flex mds:flex flex-row w-full h-auto items-center justify-between sms:pt-20 mds:pt-20 sms:mb-5'>
+                   <div className='hidden sms:flex mds:flex flex-row w-[100vw] h-auto items-center justify-start sms:pt-20 mds:pt-20 sms:mb-5'>
+                    <div className='flex w-[30vw] h-auto justify-center items-center'>
                     <Link to={`/reviews`}>
                       <button className='flex sms:flex-row justify-center drop-shadow-xl border-2 items-center sms:w-[25vw] mds:w-[25vw] mds:mb-5 sms:ml-2 mds:ml-5 sms:p-2 mds:p-3  sms:h-auto rounded-2xl'>
                         {''}<FontAwesomeIcon icon={faAngleDoubleLeft}/>{''}<span className='mx-2 mds:text-xl'>Back</span>
                       </button>
                       </Link>
+                    </div>
+
+                  {/* Moblie view upper section */}
+                  <div className='flex items-center justify-end h-auto w-[70vw] sms:p-2 sms:pr-5'>
+                      <div className='hidden sms:flex flex-col items-start justify-center bg-transparent w-auto h-auto lgs:mr-24'>
+                          <h2 className='flex flex-col font-ibmplexsans text-md text-secondary overflow-hidden' style={{fontWeight:'300'}}>Body Style
+                            {''}<div className='bg-baseprimary h-[0.15rem] will-change-auto' data-aos='fade-right'/>
+                          </h2>
+                          <div className='flex flex-col sms:h-auto]'>
+                          {((review.category === 'SUV' || review.category === 'suv') && (
+                              <img src={suv} alt='SUV' style={{width:'120px', marginTop:'10px'}}/>
+                            )) || ((review.category === 'Sedan' || review.category === 'sedan') && (
+                              <img src={sedan} alt='Sedan' style={{width:'120px', marginTop:'10px'}}/>
+                            )) || ((review.category === 'Crossover' || review.category === 'crossover') && (
+                              <img src={crossover} alt='Sedan' style={{width:'120px', marginTop:'10px'}}/>   
+                            )) || ((review.category === 'Hatchback' || review.category === 'hatchback') && (
+                              <img src={hatchback} alt='Sedan' style={{width:'120px', marginTop:'10px'}}/>
+                            )) || ((review.category === 'Coupe' || review.category === 'coupe') && (
+                              <img src={coupe} alt='Sedan' style={{width:'120px', marginTop:'10px'}}/>   
+                            )) || ((review.category === 'MPV' || review.category === 'mpv') && (
+                              <img src={mpv} alt='Sedan' style={{width:'120px', marginTop:'10px'}}/>   
+                            )) || ((review.category === 'Sport' || review.category === 'sport') && (
+                              <img src={sport} alt='Sedan' style={{width:'120px', marginTop:'10px'}}/>
+                            )) || ((review.category === 'Wagon' || review.category === 'wagon') && (
+                              <img src={wagon} alt='Sedan' style={{width:'120px', marginTop:'10px'}}/>   
+                            ))
+                            
+                            
+                            }</div>
+
+
+                      </div>
+
+                  </div>
+
+
                    </div>
 
                    
@@ -143,13 +180,13 @@ const Display_Rev = () => {
               <div className='flex flex-col h-auto w-auto items-start justify-center'>
 
               <div className='flex flex-col h-auto w-auto overflow-hidden'>
-                     <h2 className='flex flex-col font-ibmplexsans lgs:mt-2 text-secondary text-xl' style={{fontWeight:'300'}}>{review.title}
+                     <h2 className='flex flex-col font-ibmplexsans lgs:mt-2 text-secondary text-xl sms:text-md' style={{fontWeight:'300'}}>{review.title}
                       {''}<div className='bg-baseprimary lgs:mt-2 h-[0.2rem] will-change-auto' data-aos='fade-right' data-aos-delay='500'/>                     
                      </h2>
                   </div>  
 
                   <div className='flex flex-col h-auto w-auto overflow-hidden lgs:mt-2'>
-                     <h2 className='flex flex-col font-russoone text-baseextra4 lgs:text-6xl' style={{fontWeight:'300'}}>{review.brand}                   
+                     <h2 className='flex flex-col sms:text-4xl font-russoone text-baseextra4 lgs:text-6xl mds:text-' style={{fontWeight:'300'}}>{review.brand}                   
                      </h2>
                   </div> 
 
@@ -236,48 +273,48 @@ const Display_Rev = () => {
             <div className='flex flex-col h-auto w-full sms:pt-10 mds:pt-10 lgs:items-center'>
 
               {/*Specification section */}
-              <div className='flex h-auto lgs:w-full items-center sms:space-y-4 bg-gray-200  border-2 sms:p-5 mds:p-5 lgs:p-6'>
+              <div className='flex h-auto lgs:w-full items-center sms:space-y-4 bg-gray-200 justify-center border-2 sms:p-5 mds:p-5 lgs:p-6'>
 
 
                 <div className='flex lgs:w-full items-center justify-center'>
 
                 <div className='grid sms:grid-cols-2 mds:grid-cols-2 lgs:grid-cols-6 sms:w-auto lgs:w-auto h-auto mds:pt-10 sms:p-1 sms:gap-5 mds:gap-5 lgs:gap-12'>
-                          <div className='flex flex-col h-auto w-auto justify-center lgs:justify-start sms:items-start items-center'>
+                          <div className='flex flex-col h-auto w-auto justify-center lgs:justify-start sms:items-start sms:justify-start items-center'>
                                 <h2 className='flex flex-col font-russoone sms:text-lg mds:text-xl lgs:text-xl  overflow-hidden text-baseextra4'>Engine
                                   {''}<div className='bg-baseprimary h-[0.15rem] will-change-auto' data-aos='fade-right'/>
                                 </h2>
                                 <h2 className='font-ibmplexsans text-sm lgs:w-auto text-center lgs:mt-4 sms:text-start mds:text-lg  text-baseextra4'>{review.engine}</h2>
                             </div>
 
-                            <div className='flex flex-col h-auto w-auto justify-center lgs:justify-start sms:items-start items-center'>
+                            <div className='flex flex-col h-auto w-auto justify-center lgs:justify-start sms:items-start sms:justify-start items-center'>
                                 <h2 className='flex flex-col font-russoone sms:text-lg mds:text-xl lgs:text-xl  overflow-hidden text-baseextra4'>Drivetrain
                                   {''}<div className='bg-baseprimary h-[0.15rem] will-change-auto' data-aos='fade-right'/>
                                 </h2>
                                 <h2 className='font-ibmplexsans text-sm lgs:w-auto text-center  lgs:mt-4 sms:text-start mds:text-lg text-baseextra4'>{review.drivetrain}</h2>
                             </div>
 
-                            <div className='flex flex-col h-auto w-auto justify-center lgs:justify-start sms:items-start items-center'>
+                            <div className='flex flex-col h-auto w-auto justify-center lgs:justify-start sms:items-start sms:justify-start items-center'>
                                 <h2 className='flex flex-col font-russoone sms:text-lg mds:text-xl lgs:text-xl  overflow-hidden text-baseextra4'>Transmission
                                   {''}<div className='bg-baseprimary h-[0.15rem] will-change-auto' data-aos='fade-right'/>
                                 </h2>
                                 <h2 className='font-ibmplexsans text-sm lgs:w-auto text-center lgs:mt-4 sms:text-start mds:text-lg  text-baseextra4'>{review.transmission}</h2>
                             </div>
 
-                            <div className='flex flex-col h-auto w-auto justify-center lgs:justify-start sms:items-start items-center'>
+                            <div className='flex flex-col h-auto w-auto justify-center lgs:justify-start sms:items-start sms:justify-start items-center'>
                                 <h2 className='flex flex-col font-russoone sms:text-lg mds:text-xl lgs:text-xl  overflow-hidden text-baseextra4'>Fuel Economy
                                   {''}<div className='bg-baseprimary h-[0.15rem] will-change-auto' data-aos='fade-right'/>
                                 </h2>
                                 <h2 className='font-ibmplexsans text-sm lgs:w-auto text-center lgs:mt-4 sms:text-start mds:text-lg text-baseextra4'>{review.fuelEconomy}</h2>
                             </div>
 
-                            <div className='flex flex-col h-auto w-auto justify-center lgs:justify-start sms:items-start items-center'>
+                            <div className='flex flex-col h-auto w-auto justify-center lgs:justify-start sms:items-start sms:justify-start items-center'>
                                 <h2 className='flex flex-col font-russoone sms:text-lg mds:text-xl lgs:text-xl  overflow-hidden text-baseextra4'>Capacity
                                   {''}<div className='bg-baseprimary h-[0.15rem] will-change-auto' data-aos='fade-right'/>
                                 </h2>
                                 <h2 className='font-ibmplexsans text-sm lgs:w-auto text-center lgs:mt-4 sms:text-start mds:text-lg text-baseextra4'>{review.seatingCapacity}</h2>
                             </div>
 
-                            <div className='flex flex-col h-auto w-auto justify-center lgs:justify-start sms:items-start items-center'>
+                            <div className='flex flex-col h-auto w-auto justify-center lgs:justify-start sms:items-start sms:justify-start items-center'>
                                 <h2 className='flex flex-col font-russoone sms:text-lg mds:text-xl lgs:text-xl  overflow-hidden text-baseextra4'>Price
                                   {''}<div className='bg-baseprimary h-[0.15rem] will-change-auto' data-aos='fade-right'/>
                                 </h2>
@@ -477,7 +514,7 @@ const Display_Rev = () => {
 
        </div>
 
-       {isVisible && (
+      {/* {isVisible && (
 
 <div
 className={`hidden sms:flex mds:flex fixed h-auto w-auto bg-transparent bottom-20 right-8 z-40 justify-center items-center transition-opacity duration-1000 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
@@ -490,7 +527,7 @@ className={`hidden sms:flex mds:flex fixed h-auto w-auto bg-transparent bottom-2
 
 
 
-       )};
+       )};*/}
 
        
   </div>   
