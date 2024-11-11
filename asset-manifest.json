@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/Baos_wheels_Web_Application/static/css/main.da32933d.css",
-    "main.js": "/Baos_wheels_Web_Application/static/js/main.dbfcdd16.js",
+    "main.css": "/Baos_wheels_Web_Application/static/css/main.a65c122c.css",
+    "main.js": "/Baos_wheels_Web_Application/static/js/main.9fb0fb41.js",
     "static/js/453.8ab44547.chunk.js": "/Baos_wheels_Web_Application/static/js/453.8ab44547.chunk.js",
     "static/media/bgvideo.mp4": "/Baos_wheels_Web_Application/static/media/bgvideo.3f605177dbaac2b6ba14.mp4",
+    "static/media/loading.mp4": "/Baos_wheels_Web_Application/static/media/loading.45e84a2d0503f6af07b5.mp4",
     "static/media/HeroWallpaper.png": "/Baos_wheels_Web_Application/static/media/HeroWallpaper.710433221a941c82caba.png",
     "static/media/gtr.png": "/Baos_wheels_Web_Application/static/media/gtr.34537d73b8a90a1f1160.png",
     "static/media/superchargervsturbocharger.jpg": "/Baos_wheels_Web_Application/static/media/superchargervsturbocharger.5139661392e610386a70.jpg",
@@ -30,12 +31,12 @@
     "static/media/tesla.png": "/Baos_wheels_Web_Application/static/media/tesla.e158d5938dcd705cbfe5.png",
     "static/media/mitsubhishi.png": "/Baos_wheels_Web_Application/static/media/mitsubhishi.2ce990001ca34cecf027.png",
     "index.html": "/Baos_wheels_Web_Application/index.html",
-    "main.da32933d.css.map": "/Baos_wheels_Web_Application/static/css/main.da32933d.css.map",
-    "main.dbfcdd16.js.map": "/Baos_wheels_Web_Application/static/js/main.dbfcdd16.js.map",
+    "main.a65c122c.css.map": "/Baos_wheels_Web_Application/static/css/main.a65c122c.css.map",
+    "main.9fb0fb41.js.map": "/Baos_wheels_Web_Application/static/js/main.9fb0fb41.js.map",
     "453.8ab44547.chunk.js.map": "/Baos_wheels_Web_Application/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.da32933d.css",
-    "static/js/main.dbfcdd16.js"
+    "static/css/main.a65c122c.css",
+    "static/js/main.9fb0fb41.js"
   ]
 }
