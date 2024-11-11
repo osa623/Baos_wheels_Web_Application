@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import Loading2 from '../oth/Loading2';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -75,7 +75,7 @@ const BodyStyle = () => {
                   <h1 className='flex flex-col w-auto lgs:text-2xl overflow-hidden font-ibmplexsans  sms:text-md' style={{
                       fontWeight:'300'
                     }}>
-                        Reviews{' '}<div className='h-[0.1rem] w-auto bg-baseprimary' data-aos='fade-right' data-aos-delay='400'/>
+                        <Link to={'/reviews'}>Reviews</Link>{' '}<div className='h-[0.1rem] w-auto bg-baseprimary' data-aos='fade-right' data-aos-delay='400'/>
                     </h1>
                     <h1 className='flex flex-col  lgs:text-5xl font-russoone sms:text-3xl mds:text-4xl' style={{
                       fontWeight:'300'

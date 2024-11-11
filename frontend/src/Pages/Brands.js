@@ -146,7 +146,7 @@ const Brands = () => {
             </button>
             </div>
         
-       </div>
+           </div>
           </div>   
       {isLoading ? (
         <Loading2/>
@@ -159,7 +159,7 @@ const Brands = () => {
                     <input
                       type="text"
                       className="transition-all duration-300 ease-in-out items-center justify-center 
-                      sms:w-[80vw] mds:w-[80vw]  sms:ml-5  px-4 py-2 border-2 border-gray-300 focus:border-baseprimary focus:border-2 rounded-full outline-none"
+                      sms:w-[80vw] mds:w-[80vw] px-4 py-2 border-2 border-gray-300 focus:border-baseprimary focus:border-2 rounded-full outline-none"
                       placeholder="Search by Brand, Body Type"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
@@ -167,9 +167,9 @@ const Brands = () => {
                   </div>
                   <button
                       onClick={handleSearch}
-                      className="flex flex-col lgs:w-[8rem] sms:w-[80vw] mds:w-[80vw] mt-2 items-center justify-center h-[2.5rem] bg-baseprimary text-white rounded-full transition-all duration-300 ease-in-out"
+                      className="flex lgs:w-[8rem] sms:w-[80vw] mds:w-[80vw] mt-2 items-center justify-center h-[2.5rem] bg-baseprimary text-white rounded-full transition-all duration-300 ease-in-out"
                     >
-                      Search{''}<div className='bg-baseprimary h-[0.15rem] will-change-auto transition-all duration-300 ease-in-out transform scale-x-0 group-hover:scale-x-100'/>
+                      Search{''}<FontAwesomeIcon icon={faSearch} className='mx-2'/>{''}<div className='bg-baseprimary h-[0.15rem] will-change-auto transition-all duration-300 ease-in-out transform scale-x-0 group-hover:scale-x-100'/>
                     </button>
             </div>
 

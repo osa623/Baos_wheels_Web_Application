@@ -11,7 +11,7 @@ import Loading2 from '../oth/Loading2';
 
 
 // Brand Logos
-import mercedesbenz from '../assests/Brand Logos/Mercedes_benz.png';
+/*import mercedesbenz from '../assests/Brand Logos/Mercedes_benz.png';
 import bmw from '../assests/Brand Logos/bmw.png';
 import audi from '../assests/Brand Logos/audi.png';
 import nissan from '../assests/Brand Logos/nissan.png';
@@ -20,7 +20,7 @@ import mitsubishi from '../assests/Brand Logos/mitsubhishi.png';
 import rangerover from '../assests/Brand Logos/range_rover.png';
 import tesla from '../assests/Brand Logos/tesla.png';
 import toyota from '../assests/Brand Logos/toyota.png';
-import mazda from '../assests/Brand Logos/mazda.png';
+import mazda from '../assests/Brand Logos/mazda.png'; */
 
 
 
@@ -180,13 +180,15 @@ const Display_Rev = () => {
               <div className='flex flex-col h-auto w-auto items-start justify-center'>
 
               <div className='flex flex-col h-auto w-auto overflow-hidden'>
-                     <h2 className='flex flex-col font-ibmplexsans lgs:mt-2 text-secondary text-xl sms:text-md' style={{fontWeight:'300'}}>{review.title}
-                      {''}<div className='bg-baseprimary lgs:mt-2 h-[0.2rem] will-change-auto' data-aos='fade-right' data-aos-delay='500'/>                     
+                     <h2 className='flex flex-col font-ibmplexsans lgs:mt-2 text-secondary text-xl sms:text-md' style={{fontWeight:'300'}}><div className=''>
+                     <Link to={'/reviews'} className='font-semibold'>Reviews</Link> | {review.title}
+                      </div>
+                      {''}<div className='bg-baseprimary lgs:mt-2 h-[0.1rem] will-change-auto' data-aos='fade-right' data-aos-delay='500'/>                     
                      </h2>
                   </div>  
 
                   <div className='flex flex-col h-auto w-auto overflow-hidden lgs:mt-2'>
-                     <h2 className='flex flex-col sms:text-4xl font-russoone text-baseextra4 lgs:text-6xl mds:text-' style={{fontWeight:'300'}}>{review.brand}                   
+                     <h2 className='flex flex-col sms:text-4xl font-russoone text-baseextra4 lgs:text-6xl mds:text-4xl' style={{fontWeight:'300'}}>{review.brand}                   
                      </h2>
                   </div> 
 
@@ -400,8 +402,9 @@ const Display_Rev = () => {
                       </p>
                   </div>
                   </div> 
-                  <div className='hidden lgs:flex flex-col h-auto lgs:p-10 w-[40vw]'>
 
+                  <div className='hidden lgs:flex flex-col h-auto lgs:p-10 w-[40vw]'>
+                      {/* Adertising and others */}
                   </div>
             </div>   
 

@@ -28,7 +28,7 @@ const NewHeroSection = () => {
 
     
     <main className='relative h-auto w-full overflow-hidden'>
-              <section className='flex flex-col max-w-sms mx-auto'>
+              <section className='flex flex-col  max-w-sms mx-auto'>
                 <div className='hidden sms:flex h-auto w-full overflow-hidden'>
                   <video src={bgvideo} autoPlay loop muted playsInline/>
 
