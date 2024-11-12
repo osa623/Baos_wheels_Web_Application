@@ -49,7 +49,7 @@ const Reviewsection = () => {
 
       try {
     
-        const response = await axios.get("http://localhost:5000/api/reviews/get");
+        const response = await axios.get("http://134.209.154.70:5000/api/reviews");
         setReview(response.data);
     
         await new Promise(resolve => setTimeout(resolve, 2000));

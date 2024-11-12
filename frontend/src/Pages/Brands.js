@@ -32,7 +32,7 @@ const Brands = () => {
     const fetchreviews = async () => {
       try {
 
-        const response = await axios.get(`http://localhost:5000/api/reviews/brand/${brandname}`);
+        const response = await axios.get(`http://134.209.154.70:5000/api/reviews/brand/${brandname}`);
         setreviews(response.data);
         setIsLoading(false);
       } catch (error) {

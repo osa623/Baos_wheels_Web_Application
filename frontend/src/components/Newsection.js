@@ -21,7 +21,7 @@ const Newsection = () => {
           
         try {
           
-          const response = await axios.get("http://localhost:5000/api/articles/get");
+          const response = await axios.get("http://134.209.154.70:5000/api/articles");
           setArticles(response.data);
 
         } catch (error) {
