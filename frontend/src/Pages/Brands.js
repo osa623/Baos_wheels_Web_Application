@@ -69,6 +69,10 @@ const Brands = () => {
     navigate(`/reviews/${reviews_id}`)
 }
 
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+
   return (
     <div className='relative w-full h-auto lgs:p-2'>
         

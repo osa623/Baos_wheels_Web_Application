@@ -2,28 +2,37 @@ import React from 'react';
 
 // Image file import
 import bwlogo from '../assests/baoswheelslogo.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
     <footer className="w-full bg-secondary flex flex-col items-center">
       {/* Logo and Navigation */}
-      <div className="flex sms:flex-col mds:flex-col lgs:flex-col md:justify-between items-center w-full p-4 space-y-4 md:space-y-0 md:space-x-12 lg:mt-10">
+      <div className="flex flex-col justify-center items-center w-full p-4 space-y-4 mds:space-y-0 lgs:mt-10">
         <div className="flex justify-center h-auto lgs:w-[80vw] sms:w-[75vw]">
           <img src={bwlogo} alt="Baos Wheels Logo" className="h-auto sms:w-[75vw] mds:w-[75vw] lgs:w-[75vw]" />
         </div>
         <nav className="flex justify-center">
-          <ul className="flex flex-wrap gap-6 font-kanit text-primary text-sm md:text-base lg:text-xl items-center justify-center p-0 m-0">
-            <li className="hover:text-baseprimary cursor-pointer">Home</li>
-            <li className="hover:text-baseprimary cursor-pointer">Articles</li>
-            <li className="hover:text-baseprimary cursor-pointer">Reviews</li>
-            <li className="hover:text-baseprimary cursor-pointer">About Us</li>
+          <ul className="flex flex-wrap gap-6 font-kanit text-primary text-sm  md:text-base lg:text-xl items-center justify-center p-0 m-0">
+            <li className="hover:text-baseprimary cursor-pointer">
+            <Link to="/">Home</Link>
+            </li>
+            <li className="hover:text-baseprimary cursor-pointer">
+            <Link to="/reviews">Reviews</Link>
+            </li>
+            <li className="hover:text-baseprimary cursor-pointer">
+            <Link to="/articles">Articles</Link>
+            </li>
+            <li className="hover:text-baseprimary cursor-pointer">
+            <Link to="/about">About</Link>
+            </li>
           </ul>
         </nav>
       </div>
 
       {/* Social Media Icons */}
       <div className="flex justify-center space-x-8 py-4">
-      <span class="[&>svg]:h-6 [&>svg]:w-6 cursor-pointer">
+                                      <span class="[&>svg]:h-6 [&>svg]:w-6 cursor-pointer">
                                                 <svg
                                                   xmlns="http://www.w3.org/2000/svg"
                                                   fill="currentColor"
@@ -67,20 +76,15 @@ const Footer = () => {
 
       {/* Copyright */}
 
-      <div className="flex lgs:w-[100vw] sms:w-[100vw] bg-transparent justify-between sms:justify-center sms:items-center text-center py-4">
+      <div className="flex lgs:w-[100vw] sms:w-[100vw] bg-transparent justify-center sms:justify-center sms:items-center text-center py-4">
 
-        <div className='hidden lgs:flex lgs:w-[20vw] bg-transparent items-center justify-center'>
-          <h2 className="text-primary font-ibmplexsans text-sm">Privacy Policy</h2>
+
+
+        <div className='flex  lgs:w-[60vw] bg-transparent items-center justify-center'>
+           <h2 className="text-primary font-ibmplexsans text-md">Copyright 2024 © Baos Wheels. All Rights Reserved.</h2>
         </div>
 
-        <div className='flex flex-col lgs:w-[60vw] bg-transparent items-center justify-center'>
-           <h2 className="text-primary font-ibmplexsans text-xs">Copyright 2024 © Baos Wheels. All Rights Reserved.</h2>
-          <h2 className="text-primary font-ibmplexsans text-xs">Design By {''}<span className='text-cyan-500'><a href='https://github.com/osa623'>Osa_6twent3</a></span></h2>
-        </div>
 
-        <div className='hidden lgs:flex lgs:w-[20vw] bg-transparent items-center justify-center'>
-          <h2 className="text-primary font-ibmplexsans text-sm">Terms and Condtions</h2>
-        </div>
 
       </div>
     </footer>

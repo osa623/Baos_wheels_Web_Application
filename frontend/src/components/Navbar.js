@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <div className='fixed w-full flex items-center justify-between bg-secondary px-4 z-50 transition-all duration-300'>
       <div className="flex items-center">
-        <img src={bwlogo} alt="bwlogo" className="h-12 w-auto m-4 mds:h-8 mds:m-2 lgs:h-12 sms:h-6" />
+        <img src={bwlogo} alt="bwlogo" className="h-12 w-auto m-4 mds:h-8 mds:m-2 lgs:h-10 sms:h-6" />
       </div>
       <ul className="hidden md:flex lgs:flex  items-center font-russoone text-primary text-xl cursor-pointer">
         {/* Use Link component for routing */}

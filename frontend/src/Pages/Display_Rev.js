@@ -114,6 +114,10 @@ const Display_Rev = () => {
   const handleClickReview = (review_id) =>{
     navigate(`/reviews/${review_id}`);
   } 
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   
   if (isLoading) {
     return <Loading2 />;
@@ -418,8 +422,10 @@ const Display_Rev = () => {
 
               <div className='flex flex-col h-auto w-full bg-secondary rounded-t-3xl'>
                       <div className='flex flex-col w-auto h-auto items-center justify-center p-10'>
-                        <h2 className='flex flex-col overflow-hidden font-russoone sms:text-xl lgs:text-2xl mds:text-3xl text-primary  text-start'>
-                          More Reviews of{''}<div className='bg-primary h-[0.15rem] w-auto lgs:mt-2' data-aos=''fade-right/>
+                        <h2 className='flex flex-col overflow-hidden font-ibmplexsans sms:text-xl lgs:text-2xl mds:text-3xl text-primary  text-start' style={{
+                          fontweight:'200'
+                        }}>
+                          More Reviews{''}<div className='bg-primary h-[0.15rem] w-auto ' data-aos=''fade-right/>
                         </h2>
                         <h2 className='font-russoone sms:text-4xl text-5xl text-baseprimary text-start'>
                           {review.brand} 

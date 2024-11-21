@@ -57,6 +57,10 @@ const fetchReviews = async () => {
 
  };
 
+ useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+
   useEffect(() => {
     fetchReviews();
     Aos.init({
@@ -122,9 +126,9 @@ const fetchReviews = async () => {
       <div className='flex flex-col w-full h-auto bg-primary items-center justify-start'>
         <div className='flex md:h-[10vh] sms:h-[10vh] mds:h-[10vh] lgs:h-[10rem] w-full items-center justify-center' />
         <div className='flex flex-col sms:h-[10vh] w-full items-center justify-center mds:pt-10 lgs:pb-5 overflow-hidden'>
-          <h2 className='flex flex-col mds:text-7xl sms:text-6xl lgs:text-7xl  font-russoone text-baseextra4 overflow-hidden' data-aos='flip-up'>Reviews
-            {''}<div className='bg-baseprimary h-[0.15rem] will-change-auto' data-aos='fade-right' data-aos-delay='700'/>
-          </h2>
+             <h2 className='flex flex-col mds:text-7xl sms:text-5xl lgs:text-7xl  font-russoone text-baseextra4 overflow-hidden' data-aos='flip-up'>Reviews
+                {''}<div className='bg-baseprimary h-[0.15rem] will-change-auto' data-aos='fade-right' data-aos-delay='700'/>
+              </h2>
           
         </div>
 
@@ -138,10 +142,10 @@ const fetchReviews = async () => {
         <div className='flex flex-col w-full h-auto items-center justify-center'>
           <h2 className='text-2xl mds:text-3xl font-russoone text-baseextra4 m-2' data-aos='zoom-in'>Explore by Brand Names</h2>
 
-          <div className='flex flex-col w-full h-auto justify-center items-center p-5'>
+          <div className='flex flex-col w-full h-auto justify-center items-center p-5 overflow-hidden'>
             <div className='grid lgs:grid-cols-4 sms:grid-cols-2 mds:grid-cols-3 gap-3 sms:gap-2 mds:w-[95vw] lgs:w-[70rem] h-auto cursor-pointer justify-items-center mds:p-5'>
               {Autobrands.slice(0,10).map((brand, index) => (
-                <div key={index} onClick={()=> {handleBrandClick(brand.name)}} className='flex flex-col  w-[15rem] sms:h-[10rem] sms:w-auto mds:w-[25vw] items-center h-auto drop-shadow-lg justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:drop-shadow-md  transition-transform' data-aos='flip-up'>
+                <div key={index} onClick={()=> {handleBrandClick(brand.name)}} className='flex flex-col  w-[15rem] sms:h-[10rem] sms:w-auto mds:w-[25vw] items-center h-auto drop-shadow-lg justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:drop-shadow-md  transition-transform overflow-hidden' data-aos='fade-up' data-aos-delay='200'>
                   <img
                     src={brand.logo}
                     alt={brand.name}
@@ -171,7 +175,7 @@ const fetchReviews = async () => {
           <div className='grid lgs:grid-cols-4 sms:grid-cols-2 mds:grid-cols-4 sms:gap-5 lgs:w-[70rem] sms:w-[25rem] mds:w-[100vw] justify-items-center h-auto cursor-pointer mds:p-10 sms:p-10'>
             {bodystyle.map((bstyle, index) => (
               <div key={index} onClick={()=> handleStyleClick(bstyle.name)} className='flex flex-col  w-[15rem] mds:w-[20vw]  sms:h-auto sms:w-auto items-center lgs:h-[12rem] drop-shadow-lg justify-center rounded-lg   m-2 hover:drop-shadow-md transition-transform'
-              data-aos='flip-right'>
+              data-aos='fade-up' data-aos-delay='400'>
                 <img
                   src={bstyle.src}
                   alt={bstyle.name}
@@ -236,7 +240,7 @@ const fetchReviews = async () => {
 
 
         <div className='flex w-auto h-auto justify-center overflow-hidden'>
-        <div className='hidden lgs:grid mds:grid lgs:grid-cols-4 lgs:gap-4 lgs:p-10 mds:grid-cols-2 gap-3 p-10'>
+            <div className='hidden lgs:grid mds:grid lgs:grid-cols-4 lgs:gap-4 lgs:p-10 mds:grid-cols-2 gap-3 p-10'>
                   {isLoading ? (
                     <Loading2/>
                   ) : (
@@ -279,7 +283,7 @@ const fetchReviews = async () => {
 
               </div>
 
-        <div className='hidden sms:grid  sms:grid-cols-1  gap-3 p-5 overflow-hidden'>
+            <div className='hidden sms:grid  sms:grid-cols-1  gap-3 p-5 overflow-hidden'>
                   {isLoading ? (
                     <Loading2/>
                   ) : (

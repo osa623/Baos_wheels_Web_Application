@@ -1,11 +1,16 @@
 // src/Pages/Home.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import Newsection from '../components/Newsection';
 import Reviewsection from '../components/Reviewsection';
 import Videosection from '../components/Videosection';
 import NewHeroSection from '../components/NewHeroSection';
 
 const Home = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <>
     <div className='flex-grow'>
