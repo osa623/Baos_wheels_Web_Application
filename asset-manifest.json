@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Baos_wheels_Web_Application/static/css/main.01ca4194.css",
-    "main.js": "/Baos_wheels_Web_Application/static/js/main.3f1e6166.js",
+    "main.css": "/Baos_wheels_Web_Application/static/css/main.9d69ebe6.css",
+    "main.js": "/Baos_wheels_Web_Application/static/js/main.0d51b0f8.js",
     "static/js/453.8ab44547.chunk.js": "/Baos_wheels_Web_Application/static/js/453.8ab44547.chunk.js",
     "static/media/bgvideo.mp4": "/Baos_wheels_Web_Application/static/media/bgvideo.3f605177dbaac2b6ba14.mp4",
     "static/media/loading.mp4": "/Baos_wheels_Web_Application/static/media/loading.45e84a2d0503f6af07b5.mp4",
@@ -9,6 +9,7 @@
     "static/media/HeroWallpaper.png": "/Baos_wheels_Web_Application/static/media/HeroWallpaper.710433221a941c82caba.png",
     "static/media/mechnaic.jpg": "/Baos_wheels_Web_Application/static/media/mechnaic.0c693d0dee4d0a14800e.jpg",
     "static/media/gtr.png": "/Baos_wheels_Web_Application/static/media/gtr.34537d73b8a90a1f1160.png",
+    "static/media/bwlogo.png": "/Baos_wheels_Web_Application/static/media/bwlogo.9bdd00819193d485764f.png",
     "static/media/AutoTech.jpg": "/Baos_wheels_Web_Application/static/media/AutoTech.1296e59fd80b02777958.jpg",
     "static/media/drivingTips.jpg": "/Baos_wheels_Web_Application/static/media/drivingTips.8d184c1595296bd52f01.jpg",
     "static/media/superchargervsturbocharger.jpg": "/Baos_wheels_Web_Application/static/media/superchargervsturbocharger.5139661392e610386a70.jpg",
@@ -35,12 +36,12 @@
     "static/media/tesla.png": "/Baos_wheels_Web_Application/static/media/tesla.e158d5938dcd705cbfe5.png",
     "static/media/mitsubhishi.png": "/Baos_wheels_Web_Application/static/media/mitsubhishi.2ce990001ca34cecf027.png",
     "index.html": "/Baos_wheels_Web_Application/index.html",
-    "main.01ca4194.css.map": "/Baos_wheels_Web_Application/static/css/main.01ca4194.css.map",
-    "main.3f1e6166.js.map": "/Baos_wheels_Web_Application/static/js/main.3f1e6166.js.map",
+    "main.9d69ebe6.css.map": "/Baos_wheels_Web_Application/static/css/main.9d69ebe6.css.map",
+    "main.0d51b0f8.js.map": "/Baos_wheels_Web_Application/static/js/main.0d51b0f8.js.map",
     "453.8ab44547.chunk.js.map": "/Baos_wheels_Web_Application/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.01ca4194.css",
-    "static/js/main.3f1e6166.js"
+    "static/css/main.9d69ebe6.css",
+    "static/js/main.0d51b0f8.js"
   ]
 }
