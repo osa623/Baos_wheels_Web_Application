@@ -54,6 +54,7 @@ const Display_Rev = () => {
         setReview(response.data);
 
         console.log('Review  Details: ', relatedReviews);
+        console.log('Brand: ', response.data.brand);
 
         const relatedreviews = await axios.get(`http://localhost:5000/api/reviews/brand/${response.data.brand}`);
         setRelatedReviews(relatedreviews.data);

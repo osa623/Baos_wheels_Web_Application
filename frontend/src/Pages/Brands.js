@@ -16,6 +16,7 @@ import rangerover from '../assests/Brand Logos/range_rover.png';
 import tesla from '../assests/Brand Logos/tesla.png';
 import toyota from '../assests/Brand Logos/toyota.png';
 import mazda from '../assests/Brand Logos/mazda.png';
+import Lexus from '../assests/Brand Logos/mazda.png';
 
 const Brands = () => {
   const { brandname } = useParams();
@@ -32,7 +33,7 @@ const Brands = () => {
     const fetchreviews = async () => {
       try {
 
-        const response = await axios.get(`http://134.209.154.70:5000/api/reviews/brand/${brandname}`);
+        const response = await axios.get(`http://localhost:5000/api/reviews/brand/${brandname}`);
         setreviews(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -119,6 +120,8 @@ useEffect(() => {
                           <img src={toyota} alt='Sedan' style={{width:'50px'}}/>   
                         )) || ((brandname === 'Mazda' || brandname === 'mazda') && (
                           <img src={mazda} alt='Sedan' style={{width:'50px'}}/>
+                        )) || ((brandname === 'Lexus' || brandname === 'lexus') && (
+                          <img src={Lexus} alt='Sedan' style={{width:'50px'}}/>
                         ))
                         
                         

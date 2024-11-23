@@ -111,20 +111,29 @@ const Display_Arc = () => {
             <div className='flex flex-col h-auto w-full lgs:justify-between lgs:items-start lgs:p-5'>
               
                   <div className='flex flex-col justify-center items-start w-auto h-auto lgs:space-y-1'>
-                              <h2 className='flex  font-ibmplexsans sms:text-sxl lgs:text-xl mds:text-6xl text-center lgs:text-start text-baseextra4'
+                              <h2 className='flex flex-col  font-ibmplexsans sms:text-sxl lgs:text-xl mds:text-6xl text-center lgs:text-start text-baseextra4'
                               style={{
                                 fontWeight:'300'
                               }}>
+
+                                  <div className='flex h-auto w-auto justify-center items-center'>
                                       <Link to={'/articles'} style={{
-                                        fontWeight:'400'
-                                      }}>
-                                      Articles
-                                      </Link>
-                                       <h2 className='mx-2 sms:mx-1'>
-                                        |
-                                      </h2> {''}<h2 className='mx-1 sms:mx-0'>
-                                      {article.category}  
-                                      </h2>
+                                            fontWeight:'400'
+                                          }}>
+                                          Articles
+                                          </Link>
+                                          <h2 className='mx-2 sms:mx-1'>
+                                            |
+                                          </h2> {''}<h2 className='mx-1 sms:mx-0'>
+                                          {article.category}  
+                                          </h2>
+
+
+                                  </div>{''}<div className='bg-baseprimary w-auto h-[0.05rem]'/>
+
+
+
+
                                 </h2>
                                 <h2 className='w-auto font-russoone sms:text-3xl lgs:text-7xl mds:text-6xl text-center lgs:text-start text-baseextra4'>
                                       {article.title}

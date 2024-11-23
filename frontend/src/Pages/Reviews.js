@@ -106,6 +106,7 @@ const fetchReviews = async () => {
     { name: 'Range Rover', logo: rangerover },
     { name: 'Tesla', logo: tesla },
     { name: 'Toyota', logo: toyota },
+    { name: 'Lexus', logo: rangerover },
   ];
 
   const bodystyle = [
@@ -145,11 +146,11 @@ const fetchReviews = async () => {
           <div className='flex flex-col w-full h-auto justify-center items-center p-5 overflow-hidden'>
             <div className='grid lgs:grid-cols-4 sms:grid-cols-2 mds:grid-cols-3 gap-3 sms:gap-2 mds:w-[95vw] lgs:w-[70rem] h-auto cursor-pointer justify-items-center mds:p-5'>
               {Autobrands.slice(0,10).map((brand, index) => (
-                <div key={index} onClick={()=> {handleBrandClick(brand.name)}} className='flex flex-col  w-[15rem] sms:h-[10rem] sms:w-auto mds:w-[25vw] items-center h-auto drop-shadow-lg justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:drop-shadow-md  transition-transform overflow-hidden' data-aos='fade-up' data-aos-delay='200'>
+                <div key={index} onClick={()=> {handleBrandClick(brand.name)}} className='group flex flex-col  w-[15rem] sms:h-[10rem] sms:w-auto mds:w-[25vw] items-center h-auto drop-shadow-lg justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:drop-shadow-md  transition-transform overflow-hidden' data-aos='fade-up' data-aos-delay='200'>
                   <img
                     src={brand.logo}
                     alt={brand.name}
-                    className="sms:w-20 sms:h-20 w-20 h-20 lgs:w-20 lgs:h-20 lgs:hover:scale-125 transform transition-transform duration-300 ease-in-out p-1"
+                    className="sms:w-20 sms:h-20 w-20 h-20 lgs:w-20 lgs:h-20 hover:scale-125 transform transition-transform duration-300 ease-in-out p-1"
                     style={{ objectFit: 'contain' }}
                   />
                     <span className="flex flex-col text-sm sms:text-md mds:text-sm lgs:text-lg pt-2 font-ibmplexsans text-center group">
@@ -174,7 +175,7 @@ const fetchReviews = async () => {
 
           <div className='grid lgs:grid-cols-4 sms:grid-cols-2 mds:grid-cols-4 sms:gap-5 lgs:w-[70rem] sms:w-[25rem] mds:w-[100vw] justify-items-center h-auto cursor-pointer mds:p-10 sms:p-10'>
             {bodystyle.map((bstyle, index) => (
-              <div key={index} onClick={()=> handleStyleClick(bstyle.name)} className='flex flex-col  w-[15rem] mds:w-[20vw]  sms:h-auto sms:w-auto items-center lgs:h-[12rem] drop-shadow-lg justify-center rounded-lg   m-2 hover:drop-shadow-md transition-transform'
+              <div key={index} onClick={()=> handleStyleClick(bstyle.name)} className='group flex flex-col  w-[15rem] mds:w-[20vw]  sms:h-auto sms:w-auto items-center lgs:h-[12rem] drop-shadow-lg justify-center rounded-lg   m-2 hover:drop-shadow-md transition-transform'
               data-aos='fade-up' data-aos-delay='400'>
                 <img
                   src={bstyle.src}
@@ -246,7 +247,7 @@ const fetchReviews = async () => {
                   ) : (
                                    (isFiltered ? filteredItems : review)
                                     .sort((b,a) => new Date(a.date) - new Date(b.date))
-                                    .slice(0,4).map((reviews) => (
+                                    .slice(0,8).map((reviews) => (
                                        <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' bg-primary rounded-lg border-2 lgs:scale-125 cursor-pointer overflow-hidden transition-transform duration-1000 ease-in-out transform hover:scale-105' data-aos='fade-up'>
                                        <div className='bg-transparent lgs:h-[8rem] mds:h-[8rem] w-auto mb-2 rounded-lg overflow-hidden'>
                       

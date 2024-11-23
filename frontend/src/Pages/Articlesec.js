@@ -20,6 +20,7 @@ const [filteredItems, setFilteredItems] = useState([]);
 const [isFiltered, setIsFiltered] = useState(false);
 const [isLoading, setIsLoading] = useState(true);
 
+
 //all the apis
 
 const fetchArticles = async () => {
@@ -54,6 +55,10 @@ const handleSearch = () => {
 
 const handleSubmitArticle = (article_id) =>{
   navigate(`/articles/${article_id}`)
+}
+
+const handleCategoryArticle = (category) =>{
+  navigate(`/article/category/${category}`)
 }
 
 useEffect(()=>{
@@ -92,8 +97,10 @@ useEffect(() => {
                     <p className='flex h-auto sms:w-[75vw] mds:w-[75vw] lgs:w-[60vw] text-center font-ibmplexsans sms:text-md mds:text-lg lgs:text-lg' style={{fontWeight:'300'}}>{''} Our{''} Articles section is your go-to destination for all things automotive. From insights into mechanical parts and the latest car inventions to coverage of auto companies and industry news, we have it all. I also share my thoughts on the most groundbreaking advancements in the automotive world. Whether you're an enthusiast or curious, this section offers a wealth of knowledge and captivating content.</p>
               </div>
 
-              <div className='grid lgs:grid-cols-2 mds:grid-cols-2 sms:flex sms:flex-col lgs:gap-12 mds:gap-6 w-auto h-auto items-center sms:space-y-5 justify-center lgs:mb-32'>
-                   <div className='group flex bg-primary lgs:w-[20rem] mds:w-[18rem] mds:h-[18rem] sms:w-[20rem] sms:h-[20rem] overflow-hidden  border-2 lgs:h-[20rem] cursor-pointer rounded-xl transition-transform duration-700 ease-in-out hover:scale-110 hover:shadow-[inset_0_0px_5px_rgba(0,0,0,0.2),_0_0px_20px_rgba(255,223,0,0.5)]'>
+              <div className='grid lgs:grid-cols-2 mds:grid-cols-2 sms:flex sms:flex-col lgs:gap-12 mds:gap-6 w-auto h-auto items-center sms:space-y-5 justify-center lgs:mb-32 overflow-hidden'>
+                   <div 
+                   onClick={()=>handleCategoryArticle('Mechanics')}
+                   className='group flex bg-primary lgs:w-[20rem] mds:w-[18rem] mds:h-[18rem] sms:w-[20rem] sms:h-[20rem] overflow-hidden  border-2 lgs:h-[20rem] cursor-pointer rounded-xl transition-transform duration-700 ease-in-out hover:scale-110 hover:shadow-[inset_0_0px_5px_rgba(0,0,0,0.2),_0_0px_20px_rgba(255,223,0,0.5)]' data-aos='fade-up' data-aos-delay='300'>
                      <div className='flex w-auto h-auto z-20'>
                           <img src= {ArticleMech} alt='' className='object-cover'/>
 
@@ -103,7 +110,7 @@ useEffect(() => {
 
                      <div className='absolute lgs:h-[20rem] mds:w-[18rem] mds:h-[18rem] sms:w-[20rem] sms:h-[20rem] flex flex-col items-center justify-center lgs:w-[20rem]  z-40'>
                          
-                         <div className='flex flex-col h-auto mt-10 rounded-xl items-center justify-center mds:space-y-2 sms:space-y-4'>
+                         <div className='flex flex-col h-auto mt-10 rounded-xl items-center cursor-default justify-center mds:space-y-2 sms:space-y-4'>
                             <h2 className='flex flex-col font-russoone lgs:w-[15rem] sms:w-[15rem] lgs:space-y-2 text-center font-thin items-center justify-center text-primary text-2xl sms:text-3xl overflow-hidden'>
                               Mechanics and Maintenance{''}
                               <div className='bg-yellow-500  w-1/4 h-[0.15rem]  group-hover:w-3/4 transition-all ease-in-out duration-1000'/>
@@ -118,7 +125,7 @@ useEffect(() => {
                      </div>
 
                    </div>
-                   <div className='group flex bg-primary lgs:w-[20rem] mds:w-[18rem] mds:h-[18rem] sms:w-[20rem] sms:h-[20rem]   overflow-hidden  border-2 lgs:h-[20rem] cursor-pointer rounded-xl transition-transform duration-700 ease-in-out hover:scale-110 hover:shadow-[inset_0_0px_5px_rgba(0,0,0,0.2),_0_0px_20px_rgba(30,144,255,0.5)]'>
+                   <div className='group flex bg-primary lgs:w-[20rem] mds:w-[18rem] mds:h-[18rem] sms:w-[20rem] sms:h-[20rem]   overflow-hidden  border-2 lgs:h-[20rem] cursor-pointer rounded-xl transition-transform duration-700 ease-in-out hover:scale-110 hover:shadow-[inset_0_0px_5px_rgba(0,0,0,0.2),_0_0px_20px_rgba(30,144,255,0.5)]' data-aos='fade-up' data-aos-delay='350'>
                      <div className='flex w-auto h-auto z-20'>
                           <img src= {ArticleTips} alt='' className='object-cover'/>
 
@@ -140,7 +147,7 @@ useEffect(() => {
                      </div>
 
                    </div>
-                   <div className='group flex bg-primary lgs:w-[20rem] mds:w-[18rem] mds:h-[18rem] sms:w-[20rem] sms:h-[20rem]  overflow-hidden  border-2 lgs:h-[20rem] cursor-pointer rounded-xl transition-transform duration-700 ease-in-out hover:scale-110 hover:shadow-[inset_0_0px_5px_rgba(0,0,0,0.2),_0_0px_20px_rgba(255,0,0,0.5)]'>
+                   <div className='group flex bg-primary lgs:w-[20rem] mds:w-[18rem] mds:h-[18rem] sms:w-[20rem] sms:h-[20rem]  overflow-hidden  border-2 lgs:h-[20rem] cursor-pointer rounded-xl transition-transform duration-700 ease-in-out hover:scale-110 hover:shadow-[inset_0_0px_5px_rgba(0,0,0,0.2),_0_0px_20px_rgba(0,0,0,0.5)]' data-aos='fade-up' data-aos-delay='400'>
                      <div className='flex w-auto h-auto z-20'>
                           <img src= {ArticleNews} alt='' className='object-cover'/>
 
@@ -163,7 +170,7 @@ useEffect(() => {
                      </div>
 
                    </div>
-                   <div className='group flex bg-primary lgs:w-[20rem] mds:w-[18rem] mds:h-[18rem] sms:w-[20rem] sms:h-[20rem]   overflow-hidden  border-2 lgs:h-[20rem] cursor-pointer rounded-xl transition-transform duration-700 ease-in-out hover:scale-110 hover:shadow-[inset_0_0px_5px_rgba(0,0,0,0.2),_0_0px_20px_rgba(199,21,133,0.5)]'>
+                   <div className='group flex bg-primary lgs:w-[20rem] mds:w-[18rem] mds:h-[18rem] sms:w-[20rem] sms:h-[20rem]   overflow-hidden  border-2 lgs:h-[20rem] cursor-pointer rounded-xl transition-transform duration-700 ease-in-out hover:scale-110 hover:shadow-[inset_0_0px_5px_rgba(0,0,0,0.2),_0_0px_20px_rgba(199,21,133,0.5)]' data-aos='fade-up' data-aos-delay='450'>
                      <div className='flex w-auto h-auto z-20'>
                           <img src= {ArticleTech} alt='' className='object-cover'/>
 

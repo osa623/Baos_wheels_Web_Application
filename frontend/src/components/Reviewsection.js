@@ -105,11 +105,7 @@ const Reviewsection = () => {
     { name: 'Range Rover', logo: rangerover },
     { name: 'Tesla', logo: tesla },
     { name: 'Toyota', logo: toyota },
-    { name: 'Mitsubhishi', logo: mitsubhishi },
-    { name: 'Nissan', logo: nissan },
-    { name: 'Range Rover', logo: rangerover },
-    { name: 'Tesla', logo: tesla },
-    { name: 'Toyota', logo: toyota }
+    { name: 'Lexus', logo: mitsubhishi }
   ];
 
   useEffect(() => {
@@ -117,8 +113,11 @@ const Reviewsection = () => {
   }, []);
 
   const handleBrandClick = (brandName) => {
-    setBrand(brandName);
     navigate(`/reviews/brand/${brandName}`);
+  };
+
+  const handleStyleClick = (bodyStyle) => {
+    navigate(`/reviews/bodystyle/${bodyStyle}`);
   };
 
 
@@ -144,7 +143,7 @@ const Reviewsection = () => {
         <Marquee >
           <MarqueeGroup isPaused ={isPaused}>
             {row1.map((el, index) => (
-              <ImageGroup key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className='cursor-pointer'>
+              <ImageGroup key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={()=>handleStyleClick(el.name)} className='cursor-pointer'>
                 <a href={el.url} target="_blank" rel="noopener noreferrer">
                   <Image src={el.src} />
                 </a>
@@ -182,8 +181,8 @@ const Reviewsection = () => {
               <div className='grid grid-flow-row grid-cols-2 gap-4'>
                 {row1.map((el, index) => (
                       
-                        <div className='flex flex-col h-[8rem] w-[10rem] p-3 rounded-lg items-center cursor-pointer' style={{
-                          boxShadow:'inset 0 4px 5px rgba(0,0,0,0.2)'
+                        <div className='flex flex-col h-[8rem] w-[10rem] p-3 rounded-lg bg-gray-50 items-center cursor-pointer' style={{
+                          boxShadow:' 0 2px 5px rgba(0,0,0,0.1)'
                         }} key={index}>
                           <img src={el.src}
                                 alt={el.url}

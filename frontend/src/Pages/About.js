@@ -5,7 +5,8 @@ import emailjs from '@emailjs/browser';
 import { faQuoteLeft, faQuoteRight, faMailForward, faMessage} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
+//image file
+import  bwlogo from '../assests/bwlogo.png';
 
 
 
@@ -170,13 +171,13 @@ const About = () => {
           </div>     
           
           <div className='flex sms:flex-col mds:flex-col h-auto w-auto justify-center items-center sms:space-y-5 sms:pb-20 mds:pt-20 lgs:pt-20 mds:space-y-10 lgs:space-x-10'>
-            <div className='hidden lgs:flex mds:flex flex-col w-auto h-auto space-y-5'>
-               <h2 className='font-russoone text-3xl text-center text-baseextra4'  data-aos='fade-right' data-aos-delay='300'>Fuel the Ride</h2>
+            <div className='hidden lgs:flex mds:flex flex-col w-auto h-auto space-y-5 items-center justify-center'>
+               <h2 className='flex flex-col font-russoone text-3xl text-center text-baseextra4 overflow-hidden '  data-aos='fade-right' data-aos-delay='300'>Fuel the Ride{''}
+               <div className='bg-baseprimary h-[0.15rem] w-auto' data-aos='fade-left' data-aos-delay='450'/>
+               </h2>
                <p className='h-auto sms:w-[80vw] mds:w-[60vw] lgs:w-[40vw] text-center font-kanit sms:text-md lgs:text-lg text-secondary'  data-aos='fade-right' data-aos-delay='500'>{''}<FontAwesomeIcon icon={faQuoteLeft} className='my-1'/> Share your thoughts and connect with fellow car enthusiasts. Your input helps keep the conversation lively and engaging. Join us and be part of the journey!{' '}<FontAwesomeIcon icon={faQuoteRight} className='my-1'/>{' '}</p>
-               <div className='hidden lgs:flex w-auto h-auto'>
-                      <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
-
-        <               dotlottie-player src="https://lottie.host/d6900073-d1ea-4a5c-825b-fd00ecab7166/nUX0zaX5m8.json" background="transparent" speed="1" className='w-full' style={{height:'500px'}} loop autoplay></dotlottie-player>
+               <div className='hidden lgs:flex w-auto h-auto items-center justify-center overflow-hidden'>
+                     <img src= {bwlogo} alt='' className='h-[20rem]' data-aos='zoom-in' data-aos-delay='400'/>
                </div>
          
          
