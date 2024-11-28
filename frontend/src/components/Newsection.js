@@ -60,7 +60,7 @@ const Newsection = () => {
           <p className='lgs:text-lg font-ibmplexsans lgs:h-auto lgs:w-[50vw] sms:w-[80vw] mds:w-[75vw] sms:text-md mds:text-sm text-center justify-center align-middle'
           style={{
              fontWeight:'300'
-          }} data-aos='zoom-in'>
+          }} data-aos="zoom-in">
             Stay Updated with the Latest in the Automotive World. From new model releases and industry trends to expert reviews and technological innovations. Whether you are a car enthusiast or just curious, explore and stay informed about the future of transportation
           </p>
         </div>

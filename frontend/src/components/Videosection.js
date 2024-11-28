@@ -11,6 +11,7 @@ import gtr_img from '../assests/Youtube thumbnails/gtr.png';
 import panda_img from '../assests/Youtube thumbnails/micro_panda.jpg';
 import yaris_img from '../assests/Youtube thumbnails/Yaris_img.jpg'
 import charger_img from '../assests/Youtube thumbnails/superchargervsturbocharger.jpg'
+import { Link } from 'react-router-dom';
 
 //youtube grid array list
 
@@ -144,20 +145,27 @@ const Videosection = () => {
         
 
       }}>
-      <div className='flex flex-col w-auto mds:h-[25vh] lgs:h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+      <Link 
+      to={'https://youtu.be/MQNrd8RD5EU?si=xGBKChhY4Tw1lAP1'}
+      className='flex flex-col w-auto mds:h-[25vh] lgs:h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
            borderRadius: '20px',
            overflow:'hidden'
       }}>
-        <img src={supra_img} alt="supta" style={{
-          width:'100%',
-          height: '100%',
-          objectFit: 'Fill',
-          borderRadius: 'inherit'
-        }}/>
+        
+    
+            <img src={supra_img} alt="supta" style={{
+              width:'100%',
+              height: '100%',
+              objectFit: 'Fill',
+              borderRadius: 'inherit'
+            }}/>
+        
 
-      </div>
+      </Link>
 
-      <div className='flex flex-col w-auto mds:h-[25vh] lgs:h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+      <Link 
+      to={'https://youtu.be/quGTcDHwnUI?si=EHCyuH_eviB5DJm4'}
+      className='flex flex-col w-auto mds:h-[25vh] lgs:h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
         borderRadius:'20px',
         overflow:'hidden'
       }}>
@@ -170,8 +178,10 @@ const Videosection = () => {
 
         }}/>
 
-      </div>
-      <div className='flex flex-col w-auto mds:h-[25vh] lgs:h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+      </Link>
+      <Link
+      to={'https://youtu.be/k_n20pKXZJk?si=U3lFz5kKsitLHYgs'}
+      className='flex flex-col w-auto mds:h-[25vh] lgs:h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
            borderRadius: '20px',
            overflow:'hidden'
       }}>
@@ -183,9 +193,11 @@ const Videosection = () => {
 
         }}/>
 
-     </div>
+     </Link>
 
-     <div className='flex flex-col w-auto mds:h-[25vh] lgs:h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+     <Link
+     to={'https://youtu.be/MF-wVTab9-E?si=MPgcie2Wa6hOakqe'}
+     className='flex flex-col w-auto mds:h-[25vh] lgs:h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
            borderRadius: '20px',
            overflow:'hidden'
       }}>
@@ -198,8 +210,10 @@ const Videosection = () => {
         }}/>
 
 
-    </div>
-      <div className='flex flex-col w-auto mds:h-[25vh] lgs:h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out'style={{
+    </Link>
+      <Link
+      to={'https://youtu.be/yfXDQ-fDv0I?si=qc8_YPM-i4xU3h3w'}
+      className='flex flex-col w-auto mds:h-[25vh] lgs:h-[30vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out'style={{
            borderRadius: '20px',
            overflow:'hidden'
       }}>
@@ -212,7 +226,7 @@ const Videosection = () => {
         }}/>
 
 
-     </div>
+     </Link>
 
       </Marquee>
       </div> 

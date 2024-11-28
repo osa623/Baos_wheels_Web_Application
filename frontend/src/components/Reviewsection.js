@@ -160,7 +160,7 @@ const Reviewsection = () => {
           </MarqueeGroup>
           <MarqueeGroup isPaused ={isPaused}>
             {row1.map((el, index) => (
-              <ImageGroup key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+              <ImageGroup key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={()=> handleStyleClick(el.name)}>
                 <a href={el.url} target="_blank" rel="noopener noreferrer">
                   <Image src={el.src} />
                 </a>
@@ -284,7 +284,7 @@ const Reviewsection = () => {
                                       </h3>
 
                                        </div>
-                                  </div>     
+                                       </div>     
                  ))
                   )}
 

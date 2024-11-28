@@ -44,8 +44,6 @@ const fetchReviews = async () => {
   try {
     const response = await axios.get("http://localhost:5000/api/reviews/get");
     setReview(response.data);
-    setFilteredItems(response.data);  
-    await new Promise(resolve => setTimeout(resolve, 2000));
     setIsLoading(false);
   } catch (error) {
     console.error("Error Fetching Articles:", error);
@@ -69,6 +67,7 @@ const fetchReviews = async () => {
   },);
 
 
+  
   const handleSearch = () => {
     if (searchQuery.trim() === '') {
       setIsFiltered(false); // If search is empty, reset to show all items
@@ -268,7 +267,7 @@ const fetchReviews = async () => {
                                          {reviews.category}{''}<div className='bg-baseprimary h-[0.15rem] w-auto' data-aos='fade-left' data-aos-delay='400'/>
                                         </div>
 
-                                        <h2 className=' text-baseextra4 font-semibold lgs:text-3xl mds:text-2xl font-kanit  pl-5'>
+                                        <h2 className=' text-baseextra4 font-semibold lgs:text-2xl mds:text-2xl font-kanit  pl-5'>
                                          {reviews.brand}
                                       </h2>
                                       <h3 className=' text-baseextra4 lg:text-md mds:text-xl  mds:mb-5 font-kanit lgs:mb-5  pl-5' style={{
@@ -278,7 +277,7 @@ const fetchReviews = async () => {
                                       </h3>
 
                                        </div>
-                                  </div>     
+                                       </div>     
                  ))
                   )}
 

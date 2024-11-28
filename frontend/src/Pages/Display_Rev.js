@@ -440,36 +440,37 @@ const Display_Rev = () => {
                                   ) : (
                                     relatedReviews.length > 0 ? (
                                       relatedReviews.map((reviews) => (
-                                      <div key={reviews._id} onClick={() => handleClickReview(reviews._id)} className=' bg-primary rounded-lg border-2 lgs:scale-125 cursor-pointer overflow-hidden transition-transform duration-1000 ease-in-out transform hover:scale-105' data-aos='fade-up'>
-                                      <div className='bg-transparent lgs:h-[8rem] w-auto mb-2 rounded-lg overflow-hidden'>
-                     
-                                         {reviews.images.length > 0 && (
-                                              <img
-                                              src={reviews.images[1]}
-                                              alt={reviews.title}
-                                              className="w-full lgs:h-[8rem] object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
-                 />
-                                          )}
-                 
-                 
-                 
-                                       </div>
-                 
-                                       <div className='text-secondary sms:text-md lgs:w-[50vw] lgs:text-sm font-ibmplexsans sms:pl-4 pl-5'>
-                                        {reviews.category}
-                                       </div>
-                                       <div className='flex lgs:w-[6rem] h-auto lgs:pl-5 overflow-hidden mt-1'>
-                                         <div className='bg-baseprimary w-[5rem] h-[0.15rem] rounded-full' data-aos='fade-left'/>
-                                       </div>
-                                       <h2 className=' text-baseextra4 font-semibold lgs:text-3xl mds:text-2xl font-kanit  sms:pl-4 pl-5'>
-                                        {reviews.brand}
-                                     </h2>
-                                     <h3 className=' text-baseextra4 lg:text-md mds:text-xl  mds:mb-10 font-kanit lgs:mb-5 sms:pl-4 pl-5' style={{
-                                       fontWeight:'300'
-                                     }}>
-                                        {reviews.title}
-                                     </h3>
-                                      </div>
+                                        <div key={reviews._id} onClick={() => handleClickReview(reviews._id)} className=' bg-primary rounded-lg border-2 lgs:scale-125 cursor-pointer overflow-hidden transition-transform duration-1000 ease-in-out transform hover:scale-105' data-aos='fade-up'>
+                                        <div className='bg-transparent lgs:h-[8rem] mds:h-[8rem] w-auto mb-2 rounded-lg overflow-hidden'>
+                       
+                                                                   {reviews.images.length > 0 && (
+                                                                       <img
+                                                                       src={reviews.images[0]}
+                                                                       alt={reviews.title}
+                                                                       className="w-full lgs:h-[8rem] mds:h-[8rem] mds:w-[30rem] object-cover rounded-t-lg  transition-transform duration-300 ease-in-out  hover:scale-125"
+                   />
+                                                                   )}
+                   
+                   
+                   
+                                         </div>
+                   
+                                   <div className='flex flex-col h-auto mds:w-auto lgs:w-[100vw] justify-start items-start '>
+                                         <div className='flex flex-col overflow-hidden text-secondary sms:text-md lgs:text-sm font-ibmplexsans sms:pl-4 pl-5'>
+                                          {reviews.category}{''}<div className='bg-baseprimary h-[0.15rem] w-auto' data-aos='fade-left' data-aos-delay='400'/>
+                                         </div>
+  
+                                         <h2 className=' text-baseextra4 font-semibold lgs:text-3xl mds:text-2xl font-kanit  pl-5'>
+                                          {reviews.brand}
+                                       </h2>
+                                       <h3 className=' text-baseextra4 lg:text-md mds:text-xl  mds:mb-5 font-kanit lgs:mb-5  pl-5' style={{
+                                         fontWeight:'300'
+                                       }}>
+                                          {reviews.title}
+                                       </h3>
+  
+                                        </div>
+                                        </div> 
                                       ))
                                     ) : (
                                       <p className=''>No related reviews found.</p>
@@ -485,32 +486,32 @@ const Display_Rev = () => {
                                     relatedReviews
                                     .sort((b,a) => new Date(a.date) - new Date(b.date))
                                     .map((reviews) => (
-                                       <div key={reviews._id} onClick={() => handleClickReview(reviews._id)} className=' flex h-auto w-full bg-primary rounded-lg overflow-hidden  border-2 cursor-pointer' data-aos='fade-up'>
-                                       <div className='bg-transparent h-auto w-40 rounded-lg overflow-hidden'>
-                      
-                                                                  {reviews.images.length > 0 && (
-                                                                      <img
-                                                                      src={reviews.images[0]}
-                                                                      alt={reviews.title}
-                                                                      className="w-full h-40  object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
-                  />
-                                                                  )}
-                  
-                  
-                  
-                                        </div>
-                                     <div className='flex flex-col w-60 h-auto items-start justify-center p-2'>                          
-                                              <div className='text-secondary text-md font-russoone  pl-5'>
-                                              {reviews.category}
-                                              </div>
-                                              <h2 className=' text-baseextra4 text-xl font-semibold  font-ibmplexsans  pl-5'>
-                                              {reviews.brand}
-                                            </h2>
-                                            <h3 className=' text-baseextra4 text-md mds:text-xl font-kanit pl-5'>
-                                              {reviews.title}
-                                            </h3>
-                                     </div>              
+                                      <div key={reviews._id} onClick={() => handleClickReview(reviews._id)} className=' flex h-auto w-full bg-primary rounded-lg overflow-hidden  border-2 cursor-pointer' data-aos='fade-up'>
+                                      <div className='bg-transparent h-auto w-40 rounded-lg overflow-hidden'>
+                     
+                                                                 {reviews.images.length > 0 && (
+                                                                     <img
+                                                                     src={reviews.images[0]}
+                                                                     alt={reviews.title}
+                                                                     className="w-full h-40  object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
+                 />
+                                                                 )}
+                 
+                 
+                 
                                        </div>
+                                    <div className='flex flex-col w-60 h-auto items-start justify-center p-2'>                          
+                                             <div className='flex flex-col text-secondary text-md font-russoone  pl-5'>
+                                             {reviews.category}{''}<div className='bg-baseprimary h-[0.1rem] w-auto'/>
+                                             </div>
+                                             <h2 className=' text-baseextra4 text-xl font-semibold  font-ibmplexsans  pl-5'>
+                                             {reviews.brand}
+                                           </h2>
+                                           <h3 className=' text-baseextra4 text-md mds:text-xl font-kanit pl-5'>
+                                             {reviews.title}
+                                           </h3>
+                                    </div>              
+                                      </div>
                  ))
                   )}
                       </div>

@@ -159,7 +159,7 @@ useEffect(() => {
         <Loading2/>
       ) : (
        
-        <div className='flex flex-col w-auto h-auto bg-secondary items-center justify-center rounded-t-2xl p-5 '>
+        <div className='flex flex-col w-auto h-auto bg-secondary items-center justify-center rounded-t-2xl p-5 mds:mt-24 '>
 
              <div className="hidden sms:flex mds:flex flex-col w-[100vw] mds:h-[10rem] lgs:p-6 items-center justify-center">
                   <div className="flex w-auto items-center justify-center">
@@ -180,7 +180,7 @@ useEffect(() => {
                     </button>
             </div>
 
-            <div className='hidden lgs:grid mds:grid lgs:grid-cols-4 lgs:gap-4 lgs:p-10 mds:grid-cols-2 gap-3 p-10'>
+            <div className='hidden lgs:grid mds:grid lgs:grid-cols-4 lgs:gap-4 lgs:p-10 mds:grid-cols-2 gap-3 p-10 overflow-hidden'>
                   {isLoading ? (
                     <Loading2/>
                   ) : (

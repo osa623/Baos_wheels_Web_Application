@@ -98,18 +98,18 @@ useEffect(() => {
                           <img src={suv} alt='SUV' style={{width:'150px', marginTop:'10px'}}/>
                         )) || ((category === 'Sedan' || category === 'sedan') && (
                           <img src={sedan} alt='Sedan' style={{width:'150px', marginTop:'10px'}}/>
-                        )) || ((reviews.category === 'Crossover' || reviews.category === 'crossover') && (
-                          <img src={crossover} alt='Sedan' style={{width:'150px', marginTop:'10px'}}/>   
-                        )) || ((reviews.category === 'Hatchback' || reviews.category === 'hatchback') && (
-                          <img src={hatchback} alt='Sedan' style={{width:'150px', marginTop:'10px'}}/>
-                        )) || ((reviews.category === 'Coupe' || reviews.category === 'coupe') && (
-                          <img src={coupe} alt='Sedan' style={{width:'150px', marginTop:'10px'}}/>   
-                        )) || ((reviews.category === 'MPV' || reviews.category === 'mpv') && (
-                          <img src={mpv} alt='Sedan' style={{width:'150px', marginTop:'10px'}}/>   
-                        )) || ((reviews.category === 'Sport' || reviews.category === 'sport') && (
-                          <img src={sport} alt='Sedan' style={{width:'150px', marginTop:'10px'}}/>
-                        )) || ((reviews.category === 'Wagon' || reviews.category === 'wagon') && (
-                          <img src={wagon} alt='Sedan' style={{width:'150px', marginTop:'10px'}}/>   
+                        )) || ((category === 'Crossover' || category === 'crossover') && (
+                          <img src={crossover} alt='Crossover' style={{width:'150px', marginTop:'10px'}}/>   
+                        )) || ((category === 'Hatchback' || category === 'hatchback') && (
+                          <img src={hatchback} alt='Hatchback' style={{width:'150px', marginTop:'10px'}}/>
+                        )) || ((category === 'Coupe' || category === 'coupe') && (
+                          <img src={coupe} alt='Coupe' style={{width:'150px', marginTop:'10px'}}/>   
+                        )) || ((category === 'MPV' || category === 'mpv') && (
+                          <img src={mpv} alt='MPV' style={{width:'150px', marginTop:'10px'}}/>   
+                        )) || ((category === 'Sport' || category === 'sport') && (
+                          <img src={sport} alt='Sport' style={{width:'150px', marginTop:'10px'}}/>
+                        )) || ((category === 'Wagon' || category === 'wagon') && (
+                          <img src={wagon} alt='Wagon' style={{width:'150px', marginTop:'10px'}}/>   
                         ))
                         
                         
@@ -143,7 +143,7 @@ useEffect(() => {
         <Loading2/>
       ) : (
        
-        <div className='flex sms:flex-col flex-col w-auto h-auto bg-secondary rounded-t-3xl p-5'>
+                      <div className='flex sms:flex-col flex-col w-auto h-auto bg-secondary rounded-t-3xl p-5 mds:mt-48'>
           
           
        <div className='hidden sms:flex  h-[20vh] w-full justify-center overflow-hidden sms:pt-5'>
@@ -171,76 +171,83 @@ useEffect(() => {
                                    (isFiltered ? filteredItems : reviews)
                                     .sort((b,a) => new Date(a.date) - new Date(b.date))
                                     .slice(0,4).map((reviews) => (
-                                       <div key={reviews._id} onClick={() => handleOpenReview(reviews._id)} className=' bg-primary rounded-lg border-2 lgs:scale-125 cursor-pointer overflow-hidden transition-transform duration-1000 ease-in-out transform hover:scale-105' data-aos='fade-up'>
-                                       <div className='bg-transparent lgs:h-[8rem] mds:h-[8rem] w-auto mb-2 rounded-lg overflow-hidden'>
-                      
-                                                                  {reviews.images.length > 0 && (
-                                                                      <img
-                                                                      src={reviews.images[0]}
-                                                                      alt={reviews.title}
-                                                                      className="w-full lgs:h-[8rem] mds:h-[8rem] mds:w-[20rem] object-cover rounded-t-lg  transition-transform duration-300 ease-in-out  hover:scale-125"
-                  />
-                                                                  )}
-                  
-                  
-                  
-                                        </div>
-                  
-                                  <div className='flex flex-col h-auto mds:w-auto lgs:w-[100vw] justify-start items-start '>
-                                        <div className='flex flex-col overflow-hidden text-secondary sms:text-md lgs:text-sm font-ibmplexsans sms:pl-4 pl-5'>
-                                         {reviews.category}{''}<div className='bg-baseprimary h-[0.15rem] w-auto' data-aos='fade-left' data-aos-delay='400'/>
-                                        </div>
-
-                                        <h2 className=' text-baseextra4 font-semibold lgs:text-3xl mds:text-2xl font-kanit  pl-5'>
-                                         {reviews.brand}
-                                      </h2>
-                                      <h3 className=' text-baseextra4 lg:text-md mds:text-xl  mds:mb-5 font-kanit lgs:mb-5  pl-5' style={{
-                                        fontWeight:'300'
-                                      }}>
-                                         {reviews.title}
-                                      </h3>
-
+                                      <div key={reviews._id} onClick={() => handleOpenReview(reviews._id)} className=' bg-primary rounded-lg border-2 lgs:scale-125 cursor-pointer overflow-hidden transition-transform duration-1000 ease-in-out transform hover:scale-105' data-aos='fade-up'>
+                                      <div className='bg-transparent lgs:h-[8rem] mds:h-[8rem] w-auto mb-2 rounded-lg overflow-hidden'>
+                     
+                                                                 {reviews.images.length > 0 && (
+                                                                     <img
+                                                                     src={reviews.images[0]}
+                                                                     alt={reviews.title}
+                                                                     className="w-full lgs:h-[8rem] mds:h-[8rem] mds:w-[30rem] object-cover rounded-t-lg  transition-transform duration-300 ease-in-out  hover:scale-125"
+                 />
+                                                                 )}
+                 
+                 
+                 
                                        </div>
-                                  </div>     
+                 
+                                 <div className='flex flex-col h-auto mds:w-auto lgs:w-[100vw] justify-start items-start '>
+                                       <div className='flex flex-col overflow-hidden text-secondary sms:text-md lgs:text-sm font-ibmplexsans sms:pl-4 pl-5'>
+                                        {reviews.category}{''}<div className='bg-baseprimary h-[0.15rem] w-auto' data-aos='fade-left' data-aos-delay='400'/>
+                                       </div>
+
+                                       <h2 className=' text-baseextra4 font-semibold lgs:text-3xl mds:text-2xl font-kanit  pl-5'>
+                                        {reviews.brand}
+                                     </h2>
+                                     <h3 className=' text-baseextra4 lg:text-md mds:text-xl  mds:mb-5 font-kanit lgs:mb-5  pl-5' style={{
+                                       fontWeight:'300'
+                                     }}>
+                                        {reviews.title}
+                                     </h3>
+
+                                      </div>
+                                      </div>    
                  ))
                   )}
 
-              </div>
+       </div>
 
-        <div className='hidden sms:grid  sms:grid-cols-1  gap-3 p-5 overflow-hidden'>
+             <div className='hidden sms:grid  sms:grid-cols-1  gap-3 p-5 overflow-hidden'>
                   {isLoading ? (
                     <Loading2/>
                   ) : (
+
+                    (isFiltered ? filteredItems : reviews).length === 0 ? (
+                      <div className="text-center text-secondary text-xl font-semibold">
+                        No reviews right now
+                      </div>
+                    ) : (
                                     (isFiltered ? filteredItems : reviews)
                                     .sort((b,a) => new Date(a.date) - new Date(b.date))
                                     .map((reviews) => (
-                                       <div key={reviews._id} onClick={() => handleOpenReview(reviews._id)} className=' flex h-auto w-full bg-primary rounded-lg overflow-hidden  border-2 cursor-pointer' data-aos='fade-up'>
-                                       <div className='bg-transparent h-auto w-40 rounded-lg overflow-hidden'>
-                      
-                                                                  {reviews.images.length > 0 && (
-                                                                      <img
-                                                                      src={reviews.images[0]}
-                                                                      alt={reviews.title}
-                                                                      className="w-full h-40  object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
-                  />
-                                                                  )}
-                  
-                  
-                  
-                                        </div>
-                                     <div className='flex flex-col w-60 h-auto items-start justify-center p-2'>                          
-                                              <div className='flex flex-col text-secondary text-md font-russoone  pl-5'>
-                                              {reviews.category}{''}<div className='bg-baseprimary h-[0.1rem] w-auto'/>
-                                              </div>
-                                              <h2 className=' text-baseextra4 text-xl font-semibold  font-ibmplexsans  pl-5'>
-                                              {reviews.brand}
-                                            </h2>
-                                            <h3 className=' text-baseextra4 text-md mds:text-xl font-kanit pl-5'>
-                                              {reviews.title}
-                                            </h3>
-                                     </div>              
+                                      <div key={reviews._id} onClick={() => handleOpenReview(reviews._id)} className=' flex h-auto w-full bg-primary rounded-lg overflow-hidden  border-2 cursor-pointer' data-aos='fade-up'>
+                                      <div className='bg-transparent h-auto w-40 rounded-lg overflow-hidden'>
+                     
+                                                                 {reviews.images.length > 0 && (
+                                                                     <img
+                                                                     src={reviews.images[0]}
+                                                                     alt={reviews.title}
+                                                                     className="w-full h-40  object-cover rounded-t-lg transition-transform duration-300 ease-in-out  hover:scale-125"
+                 />
+                                                                 )}
+                 
+                 
+                 
                                        </div>
-                 ))
+                                    <div className='flex flex-col w-60 h-auto items-start justify-center p-2'>                          
+                                             <div className='flex flex-col text-secondary text-md font-russoone  pl-5'>
+                                             {reviews.category}{''}<div className='bg-baseprimary h-[0.1rem] w-auto'/>
+                                             </div>
+                                             <h2 className=' text-baseextra4 text-xl font-semibold  font-ibmplexsans  pl-5'>
+                                             {reviews.brand}
+                                           </h2>
+                                           <h3 className=' text-baseextra4 text-md mds:text-xl font-kanit pl-5'>
+                                             {reviews.title}
+                                           </h3>
+                                    </div>              
+                                      </div>
+                      ))
+                    )
                   )}
 
               </div>      
