@@ -25,10 +25,10 @@ const Display_Arc = () => {
     const fetchArticles = async () => {
 
         try {
-            const response = await axios.get(`http://localhost:5000/api/articles/get/${id}`);
+            const response = await axios.get(`https://admin.baoswheels.com/api/articles/get/${id}`);
             setArticle(response.data);
 
-            const relatedarticles = await axios.get(`http://localhost:5000/api/articles/category/${response.data.category}`);
+            const relatedarticles = await axios.get(`https://admin.baoswheels.com/api/articles/category/${response.data.category}`);
             setArticlesByCategory(relatedarticles.data);
 
             await new Promise(resolve => setTimeout(resolve, 2000));

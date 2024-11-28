@@ -50,7 +50,7 @@ const Display_Rev = () => {
   useEffect(() => {
     const fetchReview = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/reviews/get/${id}`);
+        const response = await axios.get(`https://admin.baoswheels.com/api/reviews/get/${id}`);
         setReview(response.data);
 
         console.log('Review  Details: ', relatedReviews);

@@ -33,7 +33,7 @@ const Brands = () => {
     const fetchreviews = async () => {
       try {
 
-        const response = await axios.get(`http://localhost:5000/api/reviews/brand/${brandname}`);
+        const response = await axios.get(`https://admin.baoswheels.com/api/reviews/brand/${brandname}`);
         setreviews(response.data);
         setIsLoading(false);
       } catch (error) {
