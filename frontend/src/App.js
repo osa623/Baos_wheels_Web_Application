@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 // Navbar and Footer components
 
@@ -79,9 +79,9 @@ const AppContent = () => {
 };
 
 const App = () => (
-  <HashRouter>
+  <BrowserRouter>
     <AppContent />
-  </HashRouter>
+  </BrowserRouter>
 );
 
 export default App;
