@@ -25,7 +25,7 @@ const [isLoading, setIsLoading] = useState(true);
 
 const fetchArticles = async () => {
     try {
-        const response = await axios.get("https://admin.baoswheels.com/api/articles/get");
+        const response = await axios.get("https://admin.baoswheels.com/api/article/get");
         setArticles(response.data);
 
         await new Promise(resolve => setTimeout(resolve, 2000));

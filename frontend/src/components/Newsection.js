@@ -21,7 +21,7 @@ const Newsection = () => {
           
         try {
           
-          const response = await axios.get("https://admin.baoswheels.com/api/articles/get");
+          const response = await axios.get("https://admin.baoswheels.com/api/article/get");
           setArticles(response.data);
 
         } catch (error) {
