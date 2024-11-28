@@ -214,7 +214,7 @@ useEffect(() => {
 
                     (isFiltered ? filteredItems : reviews).length === 0 ? (
                       <div className="text-center text-secondary text-xl font-semibold">
-                        No reviews right now
+                        No reviews right now ok
                       </div>
                     ) : (
                                     (isFiltered ? filteredItems : reviews)
