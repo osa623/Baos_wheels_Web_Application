@@ -56,10 +56,10 @@ const Display_Rev = () => {
         console.log('Review  Details: ', relatedReviews);
         console.log('Brand: ', response.data.brand);
 
-        const relatedreviews = await axios.get(`http://localhost:5000/api/reviews/brand/${response.data.brand}`);
+        const relatedreviews = await axios.get(`https://admin.baoswheels.com/api/reviews/brand/${response.data.brand}`);
         setRelatedReviews(relatedreviews.data);
 
-        const reviewsByCategory = await axios.get(`http://localhost:5000/api/reviews/category/${response.data.category}`);
+        const reviewsByCategory = await axios.get(`https://admin.baoswheels.com/api/reviews/category/${response.data.category}`);
         setReviewsByCategory(reviewsByCategory.data);
 
         await new Promise(resolve => setTimeout(resolve, 2000));
