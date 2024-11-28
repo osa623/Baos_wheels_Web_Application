@@ -20,7 +20,7 @@ const Article_cat = () => {
     const fetchArticles = async () => {
       try {
 
-        const response = await axios.get(`http://localhost:5000/api/articles/category/${category}`);
+        const response = await axios.get(`https://admin.baoswheels.com/api/articles/get/category/${category}`);
         setArticles(response.data);
         setIsLoading(false);
       } catch (error) {
