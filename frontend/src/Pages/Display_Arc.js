@@ -135,7 +135,7 @@ const Display_Arc = () => {
 
 
                                 </h2>
-                                <h2 className='w-auto font-russoone sms:text-3xl lgs:text-7xl mds:text-6xl text-center lgs:text-start text-baseextra4'>
+                                <h2 className='w-auto font-russoone sms:text-xl lgs:text-5xl mds:text-6xl text-center lgs:text-start text-baseextra4'>
                                       {article.title}
                                 </h2>
                                 
@@ -202,14 +202,14 @@ const Display_Arc = () => {
                           Looking for{''}
                           <div className='bg-primary w-auto h-[0.1rem]'/>
                         </h2>
-                        <h2 className='font-russoone sms:text-4xl text-5xl font-bold text-baseprimary text-start'>
-                          {article.category} 
+                        <h2 className='font-russoone sms:text-3xl text-5xl font-bold text-baseprimary text-start'>
+                          More Articles
                         </h2>
                         <p className='font-ibmplexsans lgs:text-xl text-primary text-start'>
                            Explore our latest in-depth articles of the newest {''}<span className=''>{article.category}</span> on the market
                         </p>
                     </div>  
-                    <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 h-auto w-auto lg:mt-[5vh] mds:grid-cols-2 gap-3 mds:p-10 sms:p-5'>
+                    <div className='grid sms:grid-cols-1 lgs:grid-cols-4 lgs:gap-4 lgs:p-10 h-auto w-auto lg:mt-[5vh] mds:grid-cols-2 gap-3 mds:p-10 sms:p-5 sms:overflow-hidden'>
 
                         {isLoading ? (
                           <Loading2/> 
