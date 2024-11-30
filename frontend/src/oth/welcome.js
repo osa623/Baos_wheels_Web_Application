@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 //video file
 import loading from '../assests/Videofiles/loading.mp4';
 
-const welcome = () => {
+const Welcome = () => {
+
+  const [isLoading, setIsLoading] = useState(true);
+
+
   return (
     <div className='flex h-screen w-[100vw] bg-secondary items-center justify-center'>
 
@@ -15,4 +19,4 @@ const welcome = () => {
   )
 }
 
-export default welcome;
+export default Welcome;

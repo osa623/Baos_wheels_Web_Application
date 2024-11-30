@@ -29,7 +29,7 @@ const AppContent = () => {
     // Display the welcome screen for 3 seconds initially
     const welcomeTimer = setTimeout(() => {
       setShowWelcome(false);
-    }, 10000); // Show welcome page for 3 seconds
+    }, 3000); // Show welcome page for 3 seconds
 
     return () => clearTimeout(welcomeTimer);
   }, []);
