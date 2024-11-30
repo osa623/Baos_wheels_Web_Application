@@ -197,7 +197,7 @@ const About = () => {
                     {/* Adding the form */}
 
                     <div className='flex sms:flex-col w-auto h-auto sms:justify-center items-center sms:p-2 mds:p-6 lgs:p-5'>
-                    <form onSubmit={handleSubmit} className="mx-auto lgs:max-w-xl sms:w-auto sms:mt-10 drop-shadow-md border-2 lgs:p-10 sms:p-5 mds:p-12 rounded-2xl bg-fontsecondary bg-opacity-80 z-40 items-center overflow-hidden" data-aos='fade-left' data-aos-delay='300'>
+                    <form onSubmit={handleSubmit} className="mx-auto lgs:max-w-xl sms:w-auto sms:mt-10 drop-shadow-md border-2 lgs:p-10 sms:p-5 mds:p-12 rounded-2xl bg-fontsecondary bg-opacity-80 z-40 items-center overflow-hidden" data-aos='fade-left' data-aos-delay='100'>
                                 
                               <div className='flex sms:w-[70vw] mds:w-[70vw] sms:h-auto mds:justify-start justify-center items-center overflow-hidden'data-aos='fade-right' data-aos-delay='650'>
                                 <h2 className='flex lgs:w-[30vw] sms:w-[70vw] h-auto text-center text-baseextra4 font-russoone mds:text-4xl lgs:text-5xl sms:text-4xl'>Let's Talk{''}<FontAwesomeIcon icon={faMessage} className='sms:mx-4 lgs:mx-2 lgs:h-5' /></h2>
