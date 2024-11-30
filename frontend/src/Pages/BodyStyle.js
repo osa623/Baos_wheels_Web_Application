@@ -74,14 +74,14 @@ useEffect(() => {
   return (
     <div className='relative w-full h-auto lgs:p-2'>
         
-          <div className='flex sms:flex-row lgs:w-full h-auto justify-between items-start sms:items-center sms:pt-24 lgs:pt-32 mds:pt-24 p-10'>
+          <div className='flex sms:flex-row lgs:w-full h-auto justify-between sms:space-x-8 items-start sms:items-center sms:pt-24 lgs:pt-32 mds:pt-24 p-10'>
           <div className='flex flex-col h-auto w-auto items-start'>
                   <h1 className='flex flex-col w-auto lgs:text-2xl overflow-hidden font-ibmplexsans  sms:text-md' style={{
                       fontWeight:'300'
                     }}>
                         <Link to={'/reviews'}>Reviews</Link>{' '}<div className='h-[0.1rem] w-auto bg-baseprimary' data-aos='fade-right' data-aos-delay='400'/>
                     </h1>
-                    <h1 className='flex flex-col  lgs:text-5xl font-russoone sms:text-3xl mds:text-4xl' style={{
+                    <h1 className='flex flex-col  lgs:text-5xl  font-russoone sms:text-2xl mds:text-4xl' style={{
                       fontWeight:'300'
                     }}>
                         {category}
