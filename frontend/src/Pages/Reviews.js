@@ -246,7 +246,7 @@ const fetchReviews = async () => {
                   ) : (
                                    (isFiltered ? filteredItems : review)
                                     .sort((b,a) => new Date(a.date) - new Date(b.date))
-                                    .slice(0,8).map((reviews) => (
+                                    .slice(0,12).map((reviews) => (
                                        <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' bg-primary rounded-lg border-2 lgs:scale-125 cursor-pointer overflow-hidden transition-transform duration-1000 ease-in-out transform hover:scale-105' data-aos='fade-up'>
                                        <div className='bg-transparent lgs:h-[8rem] mds:h-[8rem] w-auto mb-2 rounded-lg overflow-hidden'>
                       
