@@ -57,9 +57,6 @@ const handleSubmitArticle = (article_id) =>{
   navigate(`/articles/${article_id}`)
 }
 
-const handleCategoryArticle = (category) =>{
-  navigate(`/article/category/${category}`)
-}
 
 useEffect(()=>{
     fetchArticles();
@@ -99,7 +96,6 @@ useEffect(() => {
 
               <div className='grid lgs:grid-cols-2 mds:grid-cols-2 sms:flex sms:flex-col lgs:gap-12 mds:gap-6 w-auto h-auto items-center sms:space-y-5 justify-center lgs:mb-32 overflow-hidden'>
                    <div 
-                   onClick={()=>handleCategoryArticle('Mechanics')}
                    className='group flex bg-primary lgs:w-[20rem] mds:w-[18rem] mds:h-[18rem] sms:w-[20rem] sms:h-[20rem] overflow-hidden  border-2 lgs:h-[20rem] cursor-pointer rounded-xl transition-transform duration-700 ease-in-out hover:scale-110 hover:shadow-[inset_0_0px_5px_rgba(0,0,0,0.2),_0_0px_20px_rgba(255,223,0,0.5)]' data-aos='fade-up' data-aos-delay='300'>
                      <div className='flex w-auto h-auto z-20'>
                           <img src= {ArticleMech} alt='' className='object-cover'/>
@@ -237,7 +233,7 @@ useEffect(() => {
 
                     (isFiltered ? filteredItems : articles).slice(0,4).map((article) => (
                       <div key={article.id} onClick={(() => handleSubmitArticle(article._id))} className='hidden mds:flex lgs:flex flex-col lgs:h-[20rem] mds:h-[16rem] items-center border-2 border-gray-200 cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-2xl p-0' data-aos='fade-right'>
-                        <div className='bg-gray-700 lgs:h-[12rem] mds:h-[10rem] w-auto rounded-xl overflow-hidden'>
+                        <div className='bg-gray-700 lgs:h-[10rem] mds:h-[10rem]   w-auto rounded-xl overflow-hidden'>
                           <img src={article.images[1]} alt={article.title} className='rounded-t-xl transition-transform ease-in-out hover:scale-110'/>
                         </div>
                         <div className='flex flex-col items-start justify-start p-2 bg-transparent space-y-2 '>

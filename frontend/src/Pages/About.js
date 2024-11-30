@@ -7,18 +7,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 //image file
 import  bwlogo from '../assests/bwlogo.png';
+import { Link } from 'react-router-dom';
 
 
-
+const Popup = ({ message, onClose }) => (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="flex flex-col bg-white p-6 rounded-lg shadow-lg text-center items-center justify-center">
+      <img src= {bwlogo} alt='' className='hidden lgs:flex sms:flex lgs:h-[10rem]'/>
+      <p className="text-lg font-ibmplexsans mb-4">{message}</p>
+      <button
+        onClick={onClose}
+        className="px-4 py-2 bg-baseprimary text-white rounded"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+);
 
 
 
 const About = () => {
-
-     const Scode = process.env.service_Code;
-     const Tcode = process.env.temp_Code;
-     const PCode = process.env.private_Code
-
 
      const [formSubmit, setFormSubmit] = useState(false);
      const [formData, setFormData] = useState({
@@ -46,7 +55,7 @@ const About = () => {
          return;
        }
      
-       emailjs.sendForm(Scode, PCode, event.target, Tcode)
+       emailjs.sendForm('service_oq88bb9', 'template_1gsqs0j', event.target, 't9HDMRrmehzRQKGE9')
          .then((result) => {
            console.log(result.text);
            setFormSubmit(true);
@@ -77,10 +86,12 @@ const About = () => {
   return (
     
     <section className='relative h-auto w-full'>
-      <div className='flex flex-col w-full h-auto bg-primary items-center justify-start sms:space-y-2'>
+
+      <div className='flex flex-col w-full h-auto bg-primary items-center justify-start sms:space-y-2 z-40'>
 
     {/* About section title segment*/}
         <div className='flex sms:h-[10vh] mds:h-[10vh] lgs:h-[20vh] w-full items-center justify-center' />
+
         <div className='flex flex-col sms:h-[10vh] mds:h-auto w-full items-center justify-center mds:pt-10 lgs:p-5'>
             <h2 className='flex flex-col mds:text-7xl sms:text-6xl overflow-hidden lgs:text-7xl  font-russoone text-baseextra4' data-aos='flip-up'>About Us
               {''}<div className='bg-secondary w-autp h-[0.15rem]' data-aos='fade-right' data-aos-delay='400'/>
@@ -93,7 +104,7 @@ const About = () => {
                <h2 className='flex flex-col font-russoone text-3xl text-center overflow-hidden text-baseextra4' data-aos='fade-right' data-aos-delay='200'>Driven by Passion
                 {''}<div className='bg-baseprimary h-[0.15rem] w-auto' data-aos='fade-left' data-aos-delay='450'/>
                </h2>
-               <p className='h-auto sms:w-[80vw] mds:w-[75vw] lgs:w-[60vw] text-center font-ibmplexsans lgs:text-lg sms:text-md text-secondary' style={{fontWeight:'400'}}  data-aos='fade-right' data-aos-delay='400'>{''}<FontAwesomeIcon icon={faQuoteLeft} className='my-1'/>{' '}<span className='text-xl text-baseprimary'>Baos Wheels</span> isn't just a platform—it's a journey fueled by a deep love for automobiles. Our passion drives us to create content that resonates with enthusiasts and curious minds alike. We showcase the latest models and tell the stories behind the machines, innovations, and people shaping the automotive world{' '}<FontAwesomeIcon icon={faQuoteRight} className='my-1'/>{' '}</p>
+               <p className='h-auto sms:w-[80vw] mds:w-[75vw] lgs:w-[60vw] text-center font-ibmplexsans lgs:text-lg sms:text-md text-secondary' style={{fontWeight:'400'}}  data-aos='fade-right' data-aos-delay='400'>{' '}<FontAwesomeIcon icon={faQuoteLeft} className='my-1'/> Baos Wheels isn't just a platform—it's a journey fueled by a deep love for automobiles. Our passion drives us to create content that resonates with enthusiasts and curious minds alike. We showcase the latest models and tell the stories behind the machines, innovations, and people shaping the automotive world. {' '}<FontAwesomeIcon icon={faQuoteRight} className='my-1'/>{' '}</p>
           </div>
 
 
@@ -148,22 +159,22 @@ const About = () => {
                <h2 className='flex flex-col font-russoone text-3xl overflow-hidden text-center text-baseextra4'  data-aos='fade-right' data-aos-delay='300'>Join the Ride
                 {''}<div className='bg-baseprimary h-[0.15rem] w-auto' data-aos='fade-right' data-aos-delay='400'/>
                </h2>
-               <p className='h-auto sms:w-[80vw] mds:w-[70vw] lgs:w-[40vw] text-center font-ibmplexsans sms:text-md lgs:text-lg text-secondary'  data-aos='fade-right' data-aos-delay='500'>{''}<FontAwesomeIcon icon={faQuoteLeft} className='my-1'/>Join our automotive journey! Subscribe to our YouTube channel, follow us on TikTok and Instagram, and connect with a community that shares a passion for cars..{' '}<FontAwesomeIcon icon={faQuoteRight} className='my-1'/>{' '}</p>
+               <p className='h-auto sms:w-[80vw] mds:w-[70vw] lgs:w-[40vw] text-center font-ibmplexsans sms:text-md lgs:text-lg text-secondary'  data-aos='fade-right' data-aos-delay='500'>{''}<FontAwesomeIcon icon={faQuoteLeft} className='my-1'/> Join our automotive journey! Subscribe to our YouTube channel, follow us on TikTok and Instagram, and connect with a community that shares a passion for cars.{' '}<FontAwesomeIcon icon={faQuoteRight} className='my-1'/>{' '}</p>
 
                     <div className='flex h-auto w-auto sms:p-2 sms:justify-center sms:space-x-4 lgs:p-5 overflow-hidden lgs:space-x-5 mds:space-x-5'>
 
-                                  <button className='bg-transparent border-blue-700 w-10 h-10 rounded-xl items-center justify-between text-primary font-russoone' data-aos='fade-up' data-aos-delay='300'> 
+                                  <Link to={'https://www.facebook.com/Baos623/'} className='bg-transparent border-blue-700 w-10 h-10 rounded-xl items-center justify-between text-primary font-russoone' data-aos='fade-up' data-aos-delay='300'> 
                                   <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/facebook-new.png" alt="facebook-new" className='hover:scale-125 transition-transform' style={{transitionDuration:'0.5s'}}/>          
-                                  </button>
-                                  <button className='w-10 h-10 text-xl rounded-xl text-center text-primary font-russoone ' data-aos='fade-up' data-aos-delay='400'>
+                                  </Link>
+                                  <Link to={'https://www.tiktok.com/@baos_623'} className='w-10 h-10 text-xl rounded-xl text-center text-primary font-russoone ' data-aos='fade-up' data-aos-delay='400'>
                                   <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/tiktok--v1.png" alt="tiktok--v1" className='hover:scale-125 transition-transform' style={{transitionDuration:'0.5s'}}/>
-                                  </button>
-                                  <button className='w-10 h-10 text-xl rounded-xl text-center text-primary font-russoone' data-aos='fade-up' data-aos-delay='500'>
+                                  </Link>
+                                  <Link to={'https://www.instagram.com/baos.623/'} className='w-10 h-10 text-xl rounded-xl text-center text-primary font-russoone' data-aos='fade-up' data-aos-delay='500'>
                                   <img width="40" height="40" src="https://img.icons8.com/ios-filled/50/instagram-new--v1.png" alt="instagram-new--v1" className='hover:scale-125 transition-transform' style={{transitionDuration:'0.5s'}}/>
-                                  </button>
-                                  <button className='w-10 h-10 text-xl rounded-xl text-center text-primary font-russoone' data-aos='fade-up' data-aos-delay='600'>
+                                  </Link>
+                                  <Link to={'https://www.youtube.com/@baos_623'} className='w-10 h-10 text-xl rounded-xl text-center text-primary font-russoone' data-aos='fade-up' data-aos-delay='600'>
                                   <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/youtube-play.png" alt="youtube-play" className='hover:scale-125 transition-transform' style={{transitionDuration:'0.5s'}}/>
-                                  </button>
+                                  </Link>
 
                     </div>
           
@@ -243,18 +254,23 @@ const About = () => {
                                   </button>
                                 </div>
                      </form>
-                              {formSubmit && (
-                                <div className='absolute hidden sms:flex-grow mds:flex lgs:flex w-auto h-auto top-10 right-12' style={{ animationDuration:'20s' }}>
-                                  <div className='flex bg-primary lgs:w-[25vw] h-auto justify-center lgs:border-2 border-[#ec3434] rounded-3xl lgs:p-4'>
-                                    <p className='lgs:text-center font-semibold font-dmsans'>Thank you for reaching out to me! I appreciate your message and will get back to you as soon as possible.</p>
-                                  </div>
-                                </div>
-                              )}
+
+                     {formSubmit && (
+                    <Popup
+                      message="Thank you for reaching out to Baos Wheels! We appreciate your message and will get back to you shortly."
+                      onClose={() => setFormSubmit(false)}
+                    />
+                  )}
+                  {formError && <p className="mt-4 text-red-500 text-sm">{formError}</p>}
+
                     </div>
           </div>
 
 
+
       </div>
+
+    
 
 
           

@@ -181,7 +181,7 @@ const Reviewsection = () => {
               <div className='grid grid-flow-row grid-cols-2 gap-4'>
                 {row1.map((el, index) => (
                       
-                        <div className='flex flex-col h-[8rem] w-[10rem] p-3 rounded-lg bg-gray-50 items-center cursor-pointer' style={{
+                        <div onClick={()=> handleStyleClick(el.name)} className='flex flex-col h-[8rem] w-[10rem] p-3 rounded-lg bg-gray-50 items-center cursor-pointer' style={{
                           boxShadow:' 0 2px 5px rgba(0,0,0,0.1)'
                         }} key={index}>
                           <img src={el.src}

@@ -143,9 +143,9 @@ const fetchReviews = async () => {
           <h2 className='text-2xl mds:text-3xl font-russoone text-baseextra4 m-2' data-aos='zoom-in'>Explore by Brand Names</h2>
 
           <div className='flex flex-col w-full h-auto justify-center items-center p-5 overflow-hidden'>
-            <div className='grid lgs:grid-cols-4 sms:grid-cols-2 mds:grid-cols-3 gap-3 sms:gap-2 mds:w-[95vw] lgs:w-[70rem] h-auto cursor-pointer justify-items-center mds:p-5'>
+            <div className='grid lgs:grid-cols-5 sms:grid-cols-2 mds:grid-cols-3 gap-3 sms:gap-2 mds:w-auto lgs:w-[50rem] h-auto cursor-pointer justify-items-center mds:p-5'>
               {Autobrands.slice(0,10).map((brand, index) => (
-                <div key={index} onClick={()=> {handleBrandClick(brand.name)}} className='group flex flex-col  w-[15rem] sms:h-[10rem] sms:w-auto mds:w-[25vw] items-center h-auto drop-shadow-lg justify-center rounded-lg space-y-3 border-gray-200 bg-primary p-5 m-2 border-2 hover:drop-shadow-md  transition-transform overflow-hidden' data-aos='fade-up' data-aos-delay='200'>
+                <div key={index} onClick={()=> {handleBrandClick(brand.name)}} className='group flex flex-col  w-[15rem] sms:h-[10rem] sms:w-auto mds:w-[10rem] items-center h-auto  justify-center space-y-3 bg-transparent p-5 m-2  transition-transform overflow-hidden' data-aos='fade-up' data-aos-delay='200'>
                   <img
                     src={brand.logo}
                     alt={brand.name}

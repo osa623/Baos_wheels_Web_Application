@@ -65,11 +65,11 @@ const Newsection = () => {
           </p>
         </div>
       </div>
-      <div className='grid lgs:grid-cols-4 sms:grid-cols-2 lgs:gap-4 lgs:p-10 lgs:mt-[5vh] mds:grid-cols-2 mds:gap-3 p-10'>
+      <div className='grid lgs:grid-cols-4 sms:grid-cols-2 lgs:gap-4 lgs:p-10 sms:gap-4 lgs:mt-[5vh] mds:grid-cols-2 mds:gap-3 p-10'>
         {Articles.slice(0,4).map((article) => (
           <div key={article.id} onClick={(() => handleViewArticle(article._id))} className='hidden mds:flex lgs:flex flex-col lgs:h-[20rem] mds:h-[16rem] items-center border-2 border-gray-200 cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-2xl p-0' data-aos='fade-right'>
-            <div className='bg-gray-700 lgs:h-[12rem] mds:h-[10rem] w-auto rounded-xl overflow-hidden'>
-              <img src={article.images[1]} alt={article.title} className='rounded-t-xl transition-transform ease-in-out hover:scale-110'/>
+            <div className='bg-gray-700 lgs:h-[10rem] mds:h-[8rem] w-auto rounded-xl overflow-hidden'>
+              <img src={article.images[1]} alt={article.title} className='rounded-t-xl scale-125 transition-transform ease-in-out hover:scale-110'/>
             </div>
             <div className='flex flex-col items-start justify-start p-2 bg-transparent space-y-2 '>
                 <div className='flex h-auto lgs:w-auto mt-2 items-start bg-transparent'>
@@ -87,12 +87,12 @@ const Newsection = () => {
 
         {Articles.map((article) => (
           <div key={article.id} onClick={(() => handleViewArticle(article._id))} className='hidden sms:flex flex-col overflow-hidden h-[10rem] items-center cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-xl p-0' data-aos='fade-right'>
-            <div className='bg-primary w-auto  overflow-hidden'>
+            <div className='bg-primary w-auto h-[5rem]  overflow-hidden'>
               <img src={article.images[1]} alt={article.title} className='rounded-xl scale-125  transition-transform duration-300 ease-in-out hover:scale-110'/>
             </div>
 
 
-            <div className='flex flex-col justify-start w-full items-start h-auto'>
+            <div className='flex flex-col justify-start w-full items-start h-auto mt-4'>
                 <h3 className='flex flex-col text-baseextra4 sms:pl-1 sms:pt-1 overflow-hidden text-start w-auto font-ibmplexsans ' style={{fontSize:'0.6rem'}}>{article.category}
                   <div className='bg-baseprimary h-[0.10rem] will-change-auto'/>
                 </h3>
