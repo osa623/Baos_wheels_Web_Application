@@ -67,7 +67,7 @@ const Newsection = () => {
       </div>
       <div className='grid lgs:grid-cols-4 sms:grid-cols-2 lgs:gap-4 lgs:p-10 sms:gap-4 lgs:mt-[5vh] mds:grid-cols-2 mds:gap-3 p-10'>
         {Articles.slice(0,4).map((article) => (
-          <div key={article.id} onClick={(() => handleViewArticle(article._id))} className='hidden mds:flex lgs:flex flex-col lgs:h-[20rem] mds:h-[16rem] items-center border-2 border-gray-200 cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-2xl p-0' data-aos='fade-right'>
+          <div key={article.id} onClick={(() => handleViewArticle(article._id))} className='group hidden mds:flex lgs:flex flex-col lgs:h-[20rem] mds:h-[16rem] items-center border-2 border-gray-200 cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-2xl p-0' data-aos='fade-up'>
             <div className='bg-gray-700 lgs:h-[10rem] mds:h-[8rem] w-auto rounded-xl overflow-hidden'>
               <img src={article.images[1]} alt={article.title} className='rounded-t-xl scale-125 transition-transform ease-in-out hover:scale-110'/>
             </div>
@@ -75,9 +75,13 @@ const Newsection = () => {
                 <div className='flex h-auto lgs:w-auto mt-2 items-start bg-transparent'>
                 <h3 className='text-secondary font-ibmplexsans text-start mds:text-lg lgs:text-xl' style={{fontWeight:'500'}}>{article.title}</h3>
                 </div>
-                <div className='flex flex-col overflow-hidden'>
-                  <div className='flex bg-baseprimary h-[0.15rem] lgs:w-[8rem] mds:w-[10rem] transition-transform rounded-full duration-1000 ease-in-out' data-aos= "fade-right"/>
-                </div>
+                <div className="flex flex-col overflow-hidden">
+                    <div
+                      className="bg-baseprimary h-[0.15rem] lgs:w-[8rem] mds:w-[10rem] group-hover:w-[15rem] transition-all duration-3000 ease-in-out rounded-full"
+                    
+                    />
+                  </div>
+
                 <div className='flex h-auto lgs:w-[20vw] bg-transparent'>
                 <p className=' text-secondary text-start font-normal font-ibmplexsans text-xs mb-2'>{article.summary}</p>
                 </div>
@@ -86,7 +90,7 @@ const Newsection = () => {
         ))}
 
         {Articles.map((article) => (
-          <div key={article.id} onClick={(() => handleViewArticle(article._id))} className='hidden sms:flex flex-col overflow-hidden h-[10rem] items-center cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-xl p-0' data-aos='fade-right'>
+          <div key={article.id} onClick={(() => handleViewArticle(article._id))} className='hidden sms:flex flex-col overflow-hidden h-[10rem] items-center cursor-pointer w-auto drop-shadow-2xl bg-primary rounded-xl p-0' data-aos='fade-up'>
             <div className='bg-primary w-auto h-[5rem]  overflow-hidden'>
               <img src={article.images[1]} alt={article.title} className='rounded-xl scale-125  transition-transform duration-300 ease-in-out hover:scale-110'/>
             </div>
