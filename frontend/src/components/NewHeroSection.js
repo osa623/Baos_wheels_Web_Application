@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 
 //import bgvideo from '../assests/Videofiles/final bg hero.mp4';
 import bgvideo from '../assests/Videofiles/bgvideo.mp4';
+import SnowEffect from '../oth/SnowEffect';
 
 
 const NewHeroSection = () => {  
@@ -32,19 +33,28 @@ const NewHeroSection = () => {
                 <div className='hidden sms:flex h-auto w-full overflow-hidden'>
                   <video src={bgvideo} autoPlay loop muted playsInline/>
 
+                  
+
+
                   <motion.div 
                   initial={{height:'200vh'}}
                   whileInView={{height:'200vh'}}
                   transition={{duration:'2.0', ease:'easeInOut', delay:'0.3'}}
                   
-                  className='absolute flex-col bottom-0 w-full bg-transparent opacity-20 z-40'/>
+                  className='absolute flex-col bottom-0 w-full bg-transparent opacity-20 z-30'/>
+                    <div className='absolute flex-col bottom-0 w-full bg-transparent opacity-60 z-40'>
+                    <SnowEffect/>
+                    </div>
+
                    
                     
                     <div className='absolute bottom-0 bg-gradient-to-t from-secondary to-transparent sms:h-[50vh] opacity-100 w-full items-center justify-center'/>
                     <div className='absolute bottom-0 bg-gradient-to-t from-secondary to-transparent sms:h-[50vh] opacity-50 w-full items-center justify-center z-40'/>
+                  
                      <div className='absolute flex-col bottom-0 h-[30vh] w-full bg-transparent items-center justify-center z-20 space-y-5 overflow-hidden'>
 
                         <div className='flex h-auto w-auto items-center justify-center mx- space-x-2 mx-3 opacity-50 overflow-hidden'>
+
                             <motion.div
                             initial={{width:'0vw'}} 
                             whileInView={{width:'20vw'}}
@@ -91,12 +101,27 @@ const NewHeroSection = () => {
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat',
                   backgroundAttachment:'scroll'
-              }}>  
+
+              }}> 
+
+
+              <div className='hidden lgs:flex mds:flex w-full h-screen overflow-hidden'>
+                <SnowEffect/>
+              </div>  
+                              <div class="curved"/>
+
+           
+
+              
+
+
+              
 
                         <div className='absolute flex flex-col w-auto lgs:h-[50vh] mds:h-[15rem] bottom-10 right-20 items-end justify-start lgs:space-y-2 mds:space-y-5 overflow-hidden '>
+                            
                               <div className='flex flx-col w-auto h-auto'>
                               <div className='flex flex-col w-auto h-auto'>
-
+                               
                                     <h2 className='flex font-russoone lgs:text-8xl mds:text-7xl' data-aos='fade-down' data-aos-delay='300'>
                                       Drive The {''}<span className='text-baseprimary' data-aos='fade-up' data-aos-delay='500'>{'\u00A0'}Future</span>
                                     </h2>
@@ -121,10 +146,7 @@ const NewHeroSection = () => {
                      </div>             
 
               </div>    
-                <div class="curved">
 
-                  
-                </div>
                 
                 
 

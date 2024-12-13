@@ -3,6 +3,7 @@
     border-top-right-radius: 50% 100%;
     position: absolute;
     bottom: 0;
+    z-index: 1;
     width: 100%;
     background: #fff;
     height: 10%;

@@ -247,7 +247,10 @@ const fetchReviews = async () => {
                                    (isFiltered ? filteredItems : review)
                                     .sort((b,a) => new Date(a.date) - new Date(b.date))
                                     .slice(0,12).map((reviews) => (
-                                       <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' bg-primary rounded-lg border-2 lgs:scale-125 cursor-pointer overflow-hidden transition-transform duration-1000 ease-in-out transform hover:scale-105' data-aos='fade-up'>
+                                       <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' bg-primary rounded-lg lgs:scale-125 cursor-pointer overflow-hidden transition-transform duration-1000 ease-in-out transform hover:scale-105' data-aos='fade-up'
+                                       style={{
+                                        boxShadow:'0px 1px 10px rgba(255,255,255,0.5)'
+                                       }}>
                                        <div className='bg-transparent lgs:h-[8rem] mds:h-[8rem] w-auto mb-2 rounded-lg overflow-hidden'>
                       
                                                                   {reviews.images.length > 0 && (
@@ -290,7 +293,10 @@ const fetchReviews = async () => {
                                (isFiltered ? filteredItems : review)
                                     .sort((b,a) => new Date(a.date) - new Date(b.date))
                                     .map((reviews) => (
-                                       <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' flex h-auto w-full bg-primary rounded-lg overflow-hidden  border-2 cursor-pointer' data-aos='fade-up'>
+                                       <div key={reviews._id} onClick={() => handleReviewClick(reviews._id)} className=' flex h-auto w-full bg-primary rounded-lg overflow-hidden  cursor-pointer' data-aos='fade-up'
+                                       style={{
+                                        boxShadow:'0px 1px 10px rgba(255,255,255,0.5)'
+                                       }}>
                                        <div className='bg-transparent h-auto w-40 rounded-lg overflow-hidden'>
                       
                                                                   {reviews.images.length > 0 && (
@@ -305,13 +311,13 @@ const fetchReviews = async () => {
                   
                                         </div>
                                      <div className='flex flex-col w-60 h-auto items-start justify-center p-2'>                          
-                                              <div className='flex flex-col text-secondary text-md font-russoone  pl-5'>
+                                              <div className='flex flex-col text-secondary text-xs font-russoone  pl-5'>
                                               {reviews.category}{''}<div className='bg-baseprimary h-[0.1rem] w-auto'/>
                                               </div>
-                                              <h2 className=' text-baseextra4 text-xl font-semibold  font-ibmplexsans  pl-5'>
+                                              <h2 className=' text-baseextra4 text-lg font-semibold  font-ibmplexsans  pl-5'>
                                               {reviews.brand}
                                             </h2>
-                                            <h3 className=' text-baseextra4 text-md mds:text-xl font-kanit pl-5'>
+                                            <h3 className=' text-baseextra4 text-sm mds:text-xl font-kanit pl-5'>
                                               {reviews.title}
                                             </h3>
                                      </div>              
