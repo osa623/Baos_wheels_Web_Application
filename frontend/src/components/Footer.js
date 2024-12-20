@@ -76,15 +76,18 @@ const Footer = () => {
 
       {/* Copyright */}
 
-      <div className="flex lgs:w-[100vw] sms:w-[100vw] bg-transparent justify-center sms:justify-center sms:items-center text-center py-4">
+      <div className="flex sms:flex-col mds:flex-col lgs:w-[100vw] sms:w-[100vw] bg-transparent justify-center sms:justify-center sms:items-center text-center py-4">
 
-
+      <div className='flex  lgs:w-[20vw] bg-transparent items-center justify-center'/>
+  
 
         <div className='flex  lgs:w-[60vw] bg-transparent items-center justify-center'>
            <h2 className="text-primary font-ibmplexsans text-sm">Copyright 2024 © Baos Wheels. All Rights Reserved.</h2>
         </div>
 
-
+        <div className='flex  lgs:w-[20vw] bg-transparent items-center justify-center'>
+           <h2 className="text-primary font-ibmplexsans text-sm">Design and Development by {''}<Link to={'https://www.osanda.me'}><span className='text-lg font-russoone text-baseprimary'>Him</span></Link></h2>
+        </div>
 
       </div>
     </footer>
