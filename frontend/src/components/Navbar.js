@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="flex items-center">
         <img src={bwlogo} alt="bwlogo" className="h-12 w-auto m-4 mds:h-8 mds:m-2 lgs:h-10 sms:h-6" />
       </div>
-      <ul className="hidden md:flex lgs:flex  items-center font-russoone text-primary text-xl cursor-pointer">
+      <ul className="hidden md:flex lgs:flex  items-center font-ibmplexsans text-primary text-xl cursor-pointer">
         {/* Use Link component for routing */}
         <li className="p-4 hover:text-baseprimary mds:text-sm focus:text-baseprimary">
           <Link to="/" className=''>Home</Link>
@@ -40,7 +40,7 @@ const Navbar = () => {
       >
         <div className='relative flex-col h-screen bg-secondary w-auto flex justify-between items-center'>
               <div className='flex flex-col w-[75vw] h-auto'>
-                  <ul className="p-4 font-russoone text-primary items-center justify-center">
+                  <ul className="p-4 font-ibmplexsans text-primary items-center justify-center">
                     <div className="flex items-center justify-center">
                       <img src={bwlogo} alt="bwlogo" className="h-8 w-auto m-4" />
                     </div>

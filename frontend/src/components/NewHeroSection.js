@@ -1,11 +1,13 @@
 import React, {useEffect} from 'react';
-import wallpaper from '../assests/HeroWallpaper.png';
+import { Link } from 'react-router-dom';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import '../oth/shape.css';
 import { motion } from 'framer-motion';
 
 //import video and image files
+import wallpaper from '../assests/HeroWallpaper1.png';
+
 
 //import bgvideo from '../assests/Videofiles/final bg hero.mp4';
 import bgvideo from '../assests/Videofiles/bgvideo.mp4';
@@ -105,9 +107,6 @@ const NewHeroSection = () => {
               }}> 
 
 
-              <div className='hidden lgs:flex mds:flex w-full h-screen overflow-hidden'>
-                <SnowEffect/>
-              </div>  
                               <div class="curved"/>
 
            
@@ -120,30 +119,45 @@ const NewHeroSection = () => {
                         <div className='absolute flex flex-col w-auto lgs:h-[50vh] mds:h-[15rem] bottom-10 right-20 items-end justify-start lgs:space-y-2 mds:space-y-5 overflow-hidden '>
                             
                               <div className='flex flx-col w-auto h-auto'>
-                              <div className='flex flex-col w-auto h-auto'>
-                               
-                                    <h2 className='flex font-russoone lgs:text-8xl mds:text-7xl' data-aos='fade-down' data-aos-delay='300'>
-                                      Drive The {''}<span className='text-baseprimary' data-aos='fade-up' data-aos-delay='500'>{'\u00A0'}Future</span>
-                                    </h2>
+                                <div className='flex flex-col w-auto h-auto'>
+                                
+                                      <h2 className='flex font-russoone lgs:text-8xl text-primary text-shadow-xl mds:text-7xl' data-aos='fade-down' data-aos-delay='300'>
+                                        Drive The {''}<span className='text-baseprimary' data-aos='fade-up' data-aos-delay='500'>{'\u00A0'}Future</span>
+                                      </h2>
 
                                 </div> 
-                            </div>   
-                            <div className='flex flex-col w-auto h-auto  overflow-hidden'>
-                              <div className='flex flex-col w-auto h-auto'>
-                                        <p className='flex text-end text-secondary font-ibmplexsans lgs:text-lg mds:text-xs lgs:w-[40vw] mds:w-[50vw]' data-aos='fade-left'>
-                                        Baos Wheels is where car enthusiasts gather for detailed reviews, insightful articles, and the latest trends in the automotive world. Whether you're diving into cutting-edge technology, staying updated on industry developments, or fueling your passion for cars, Baos Wheels has everything you need to stay informed and inspired. Explore the thrill of the automotive world with us!
-                                        </p>
+                             </div>   
+                             <div className='flex flex-col w-auto h-auto  overflow-hidden'>
+                                <div className='flex flex-col w-auto h-auto'>
+                                        <h2 className='flex text-end text-primary text-shadow-xl lgs:justify-end items-center justify-center font-kanit lgs:text-2xl mds:text-xl mds:w-[75vw]' data-aos='fade-left'>
+                                        <div className='flex lgs:w-[10vw] mds:w-[10vw] h-[0.1rem] lgs:mr-2 bg-baseprimary'/>{''}Where Innovation Fuels Every Journey{''}<div className='flex lgs:w-[10vw] mds:w-[10vw] h-[0.1rem] lgs:ml-2 bg-baseprimary'/>
+                                        </h2>
 
                                 </div> 
-                            </div>  
-                          <div className='flex flex-col w-full h-auto items-end justify-center lgs:pt-5 lgs:pr-10'>     
-                            <div className='flex lgs:w-[30vw] mds:w-[45vw] h-auto lgs:bottom-40 lgs:right-36 overflow-hidden'>
-                                  <div className='lgs:w-[10vw] mds:w-[45vw] h-[0.4rem]  bg-baseprimary'/>
-                                  <div className='lgs:w-[10vw] mds:w-[45vw] h-[0.4rem] bg-primary '/>
-                                  <div className='lgs:w-[10vw] mds:w-[45vw] h-[0.4rem] bg-secondary '/>
-                            </div> 
-                        </div>        
-                     </div>             
+                             </div>  
+                            <div className='flex flex-col w-full h-auto items-end justify-center lgs:pt-5 lgs:pr-10'>     
+                                <div className='flex lgs:w-[30vw] mds:w-[45vw] h-auto lgs:bottom-40 lgs:right-36 overflow-hidden'>
+                                      <div className='lgs:w-[10vw] mds:w-[45vw] h-[0.4rem]  bg-baseprimary'/>
+                                      <div className='lgs:w-[10vw] mds:w-[45vw] h-[0.4rem] bg-primary '/>
+                                      <div className='lgs:w-[10vw] mds:w-[45vw] h-[0.4rem] bg-secondary '/>
+                                </div> 
+                           </div>  
+                           <div className='flex h-auto w-auto sms:p-2 sms:justify-center sms:space-x-4 lgs:p-5 overflow-hidden lgs:space-x-5 mds:space-x-5'>
+                           
+                                                             <Link to={'https://www.facebook.com/Baos623/'} className='bg-transparent border-blue-700 w-10 h-10 rounded-xl items-center justify-between text-blue-600 font-russoone' data-aos='fade-up' data-aos-delay='300'> 
+                                                             <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/facebook-new.png" alt="facebook-new" className='hover:scale-125 transition-transform' style={{transitionDuration:'0.5s'}}/>          
+                                                             </Link>
+                                                             <Link to={'https://www.tiktok.com/@baos_623'} className='w-10 h-10 text-xl rounded-xl text-center text-primary font-russoone ' data-aos='fade-up' data-aos-delay='400'>
+                                                             <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/tiktok--v1.png" alt="tiktok--v1" className='hover:scale-125 transition-transform' style={{transitionDuration:'0.5s'}}/>
+                                                             </Link>
+                                                             <Link to={'https://www.instagram.com/baos.623/'} className='w-10 h-10 text-xl rounded-xl text-center text-pink-700 font-russoone' data-aos='fade-up' data-aos-delay='500'>
+                                                             <img width="40" height="40" src="https://img.icons8.com/ios-filled/50/instagram-new--v1.png" alt="instagram-new--v1" className='hover:scale-125 transition-transform' style={{transitionDuration:'0.5s'}}/>
+                                                             </Link>
+                                                             <Link to={'https://www.youtube.com/@baos_623'} className='w-11 h-11 text-xl rounded-xl text-center text-primary font-russoone' data-aos='fade-up' data-aos-delay='600'>
+                                                             <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/youtube-play.png" alt="youtube-play" className='hover:scale-125 transition-transform' style={{transitionDuration:'0.5s'}}/>
+                                                             </Link>
+                           </div>      
+                      </div>             
 
               </div>    
 
