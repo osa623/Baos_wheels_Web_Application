@@ -13,8 +13,10 @@ import  wallpaper01 from '../assests/temp01.png';
 const temp = () => {
   return (
     <div className='relative flex bg-transparent w-full  h-screen overflow-hidden'>    
-        <div className='absolute flex-col bottom-0 w-full  h-screen blur-md bg-transparent opacity-100 z-30'>
-            <img src={wallpaper} alt='wallpaper' className='object-cover w-full h-full animate-pulse'/>
+        <div className='absolute flex-col bottom-0 w-full  h-screen blur-sm bg-transparent opacity-100 z-30'>
+            <img src={wallpaper} alt='wallpaper' className='object-cover w-full h-full animate-pulse' style={{
+               MozAnimation: 'pulse 10s infinite',
+            }}/>
         </div>
 
         <div className='absolute flex-col bottom-0 w-full  h-[100vh] bg-transparent opacity-100 z-40'>
@@ -56,7 +58,7 @@ const temp = () => {
 
                      <div className='flex  h-[20vh] sms:h-[10vh] bg-transparent w-full items-center justify-center z-30'>
 
-                            <div className='absolute  h-[20vh] blur-3xl bg-primary w-full items-center justify-center z-30'/>
+                            <div className='absolute  h-[20vh] blur-2xl bg-primary w-[60vw] items-center justify-center z-30'/>
                                 <div className='flex  h-[20vh] bg-transparent w-full items-center justify-center z-40'>
 
                                     <img src= {wallpaper01} alt='' className='object-cover  h-[20rem] sms:h-[5rem] sms:scale-90  scale-50 w-full'/>
@@ -71,7 +73,7 @@ const temp = () => {
 
                             <div className='flex  h-[10vh] w-full items-center justify-center'>
 
-                            <div className='absolute  h-[10vh] blur-3xl bg-primary w-[75vw] items-center justify-center z-30'/>
+                            <div className='absolute  h-[10vh] blur-2xl bg-primary w-[30vw] items-center justify-center z-30'/>
                                             <div className='flex flex-col  h-[10vh] bg-transparent w-full items-center justify-center z-40'>
                                               
                                               <h2 className='text-md sms:w-[75vw] sms:text-center font-ibmplexsans text-secondary' style={{
