@@ -24,7 +24,7 @@ const temp = () => {
                 <h2 className='hidden lgs:flex mds:flex text-md font-ibmplexsans text-secondary' style={{
                                                 fontWeight:'200'
                                               }}>
-                     Powered by {''}<Link to={'https://neurioxit.systems'}>NeurioxIT</Link>
+                     Powered by {''}<Link to={'https://neurioxit.systems'}><span className='ml-1'>Neuriox IT</span></Link>
                                               
                </h2>
 
