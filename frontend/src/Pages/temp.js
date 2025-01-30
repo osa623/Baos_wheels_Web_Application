@@ -59,7 +59,7 @@ const temp = () => {
                             <div className='absolute  h-[20vh] blur-3xl bg-primary w-full items-center justify-center z-30'/>
                                 <div className='flex  h-[20vh] bg-transparent w-full items-center justify-center z-40'>
 
-                                    <img src= {wallpaper01} alt='' className='object-cover  h-[18rem] sms:h-[5rem] sms:scale-90  scale-50 w-full'/>
+                                    <img src= {wallpaper01} alt='' className='object-cover  h-[20rem] sms:h-[5rem] sms:scale-90  scale-50 w-full'/>
                                   
                                 </div>
 
