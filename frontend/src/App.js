@@ -8,8 +8,8 @@ import Footer from './components/Footer';
 
 // Pages
 
-//import Home from './Pages/Home';
 //import Reviews from './Pages/Reviews';
+//import Home from './Pages/Home';
 //import Articlesec from './Pages/Articlesec';
 //import Sample from './Pages/Sample';
 //import About from './Pages/About';
@@ -56,19 +56,19 @@ const AppContent = () => {
       ) : (
         <>
         
-          {/*<Navbar />*/}
+
 
           <div className="flex-grow">
             {isLoading ? (
               <Loading />
             ) : (
               <Routes>
-                <Route path="/" element={<Temp />} />
+              <Route path="/" element={<Temp />} />
               </Routes>
+              
             )}
           </div>
 
-          {/*<Footer />*/}
 
         </>
       )}

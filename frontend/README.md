@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Baos Wheels Web Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![BaosWheels Logo](./public/assets/bwlogo.png)
 
-## Available Scripts
+Baos Wheels is a web application designed to provide users with an intuitive and seamless experience for exploring and purchasing wheels for their vehicles.
 
-In the project directory, you can run:
+![BaosWheels Logo](./public/assets/hero.png)
 
-### `npm start`
+![BaosWheels Logo](./public/assets/articles.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![BaosWheels Logo](./public/assets/reviews.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![BaosWheels Logo](./public/assets/sections.png)
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Browse a wide selection of wheels.
+- Filter and search for specific wheel types.
+- View detailed product information.
+- Add items to the cart and proceed to checkout.
 
-### `npm run build`
+## Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Frontend: [Specify the framework/library, e.g., React, etc.]
+- Backend: Node.js with Express.js
+- Styling: [CSS/SCSS/Tailwind/etc.]
+- API: [Mention any APIs used]
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Follow these steps to set up the project locally:
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Node.js (vXX.X.X or higher)
+- npm or yarn
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone the repository:
+   ```bash
+   git clone [repository-url]
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd d:\Baos_Wheels_webproject\frontend
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Running the Application
 
-## Learn More
+To start the development server, run:
+```bash
+npm start
+```
+The application will be available at `http://localhost:3000`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Building for Production
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To create a production build, run:
+```bash
+npm run build
+```
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Contributions are welcome! Please fork the repository and submit a pull request.
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+[Specify the license, e.g., MIT License]
 
-### Making a Progressive Web App
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For any inquiries, please contact [Your Contact Information].
