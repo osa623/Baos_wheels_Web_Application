@@ -1,16 +1,16 @@
 # Baos Wheels Web Project
 
-![BaosWheels Logo](/frontend/public/assets/bwlogo.png)
+![BaosWheels Logo](./public/assets/bwlogo.png)
 
 Baos Wheels is a web application designed to provide users with an intuitive and seamless experience for exploring and purchasing wheels for their vehicles.
 
-![SS 1](/frontend/public/assets/hero.png)
+![BaosWheels Logo](./public/assets/hero.png)
 
-![SS 1](/frontend/public/assets/articles.png)
+![BaosWheels Logo](./public/assets/articles.png)
 
-![SS 1](/frontend/public/assets/reviews.png)
+![BaosWheels Logo](./public/assets/reviews.png)
 
-![SS 1](/frontend/public/assets/sections.png)
+![BaosWheels Logo](./public/assets/sections.png)
 
 ## Features
 
@@ -32,7 +32,7 @@ Follow these steps to set up the project locally:
 
 ### Prerequisites
 
-- Node.js
+- Node.js (vXX.X.X or higher)
 - npm or yarn
 
 ### Installation
