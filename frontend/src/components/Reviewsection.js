@@ -49,7 +49,7 @@ const Reviewsection = () => {
 
       try {
     
-        const response = await axios.get("https://admin.baoswheels.com/api/reviews/get");
+        const response = await axios.get("https://baosbackend-9f8439698e78.herokuapp.com/api/reviews/get");
         setReview(response.data);
     
         await new Promise(resolve => setTimeout(resolve, 2000));
