@@ -20,7 +20,7 @@ const Article_cat = () => {
     const fetchArticles = async () => {
       try {
 
-        const response = await axios.get(`https://admin.baoswheels.com/api/article/get/category/${category}`);
+        const response = await axios.get(`https://baosbackend-9f8439698e78.herokuapp.com/api/article/get/category/${category}`);
         setArticles(response.data);
         setIsLoading(false);
       } catch (error) {

@@ -30,7 +30,7 @@ const BodyStyle = () => {
     const fetchReviews = async () => {
       try {
 
-        const response = await axios.get(`https://admin.baoswheels.com/api/reviews/category/${category}`);
+        const response = await axios.get(`https://baosbackend-9f8439698e78.herokuapp.com/api/reviews/category/${category}`);
         setReviews(response.data);
         setIsLoading(false);
       } catch (error) {

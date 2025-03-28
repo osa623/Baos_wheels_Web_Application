@@ -8,15 +8,15 @@ import Footer from './components/Footer';
 
 // Pages
 
-//import Reviews from './Pages/Reviews';
-//import Home from './Pages/Home';
-//import Articlesec from './Pages/Articlesec';
-//import Sample from './Pages/Sample';
-//import About from './Pages/About';
-//import DisplayRev from './Pages/Display_Rev';
-//import DisplayArc from './Pages/Display_Arc';
-//import Brands from './Pages/Brands';
-//import BodyStyle from './Pages/BodyStyle';
+import Reviews from './Pages/Reviews';
+import Home from './Pages/Home';
+import Articlesec from './Pages/Articlesec';
+import Sample from './Pages/Sample';
+import About from './Pages/About';
+import DisplayRev from './Pages/Display_Rev';
+import DisplayArc from './Pages/Display_Arc';
+import Brands from './Pages/Brands';
+import BodyStyle from './Pages/BodyStyle';
 
 import Temp from './Pages/temp';
 import Loading from './oth/Loading';
@@ -57,17 +57,27 @@ const AppContent = () => {
         <>
         
 
-
+          <Navbar />
           <div className="flex-grow">
             {isLoading ? (
               <Loading />
             ) : (
               <Routes>
-              <Route path="/" element={<Temp />} />
+              
+              <Route path="/" element={<Home />} />
+                <Route path="/reviews" element={<Reviews />} />
+                <Route path="/reviews/:id" element={<DisplayRev />} />
+                <Route path="/reviews/brand/:brandname" element={<Brands />} />
+                <Route path="/reviews/bodystyle/:category" element={<BodyStyle />} />
+                <Route path="/articles" element={<Articlesec />} />
+                <Route path="/articles/:id" element={<DisplayArc />} />
+                <Route path="/sample" element={<Sample />} />
+                <Route path="/about" element={<About />} />
               </Routes>
               
             )}
           </div>
+          <Footer />
 
 
         </>

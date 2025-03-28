@@ -50,16 +50,16 @@ const Display_Rev = () => {
   useEffect(() => {
     const fetchReview = async () => {
       try {
-        const response = await axios.get(`https://admin.baoswheels.com/api/reviews/get/${id}`);
+        const response = await axios.get(`https://baosbackend-9f8439698e78.herokuapp.com/api/reviews/get/${id}`);
         setReview(response.data);
 
         console.log('Review  Details: ', relatedReviews);
         console.log('Brand: ', response.data.brand);
 
-        const relatedreviews = await axios.get(`https://admin.baoswheels.com/api/reviews/brand/${response.data.brand}`);
+        const relatedreviews = await axios.get(`https://baosbackend-9f8439698e78.herokuapp.com/api/reviews/brand/${response.data.brand}`);
         setRelatedReviews(relatedreviews.data);
 
-        const reviewsByCategory = await axios.get(`https://admin.baoswheels.com/api/reviews/category/${response.data.category}`);
+        const reviewsByCategory = await axios.get(`https://baosbackend-9f8439698e78.herokuapp.com/api/reviews/category/${response.data.category}`);
         setReviewsByCategory(reviewsByCategory.data);
 
         await new Promise(resolve => setTimeout(resolve, 2000));

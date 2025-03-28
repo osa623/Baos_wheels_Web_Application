@@ -25,10 +25,10 @@ const Display_Arc = () => {
     const fetchArticles = async () => {
 
         try {
-            const response = await axios.get(`https://admin.baoswheels.com/api/article/get/${id}`);
+            const response = await axios.get(`https://baosbackend-9f8439698e78.herokuapp.com/api/article/get/${id}`);
             setArticle(response.data);
 
-            const relatedarticles = await axios.get(`https://admin.baoswheels.com/api/article/category/${response.data.category}`);
+            const relatedarticles = await axios.get(`https://baosbackend-9f8439698e78.herokuapp.com/api/article/category/${response.data.category}`);
             setArticlesByCategory(relatedarticles.data);
 
             await new Promise(resolve => setTimeout(resolve, 2000));
