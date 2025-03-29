@@ -1,6 +1,7 @@
 # Baos Wheels Web Project
 
-# Baos Web -> https://www.baoswheels.com
+# Baos Web
+ https://www.baoswheels.com
 
 ![BaosWheels Logo](/frontend/public/assets/bwlogo.png)
 
