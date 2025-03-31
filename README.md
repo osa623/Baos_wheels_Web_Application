@@ -67,15 +67,3 @@ To create a production build, run:
 ```bash
 npm run build
 ```
-
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request.
-
-## License
-
-[Specify the license, e.g., MIT License]
-
-## Contact
-
-For any inquiries, please contact [Your Contact Information].
